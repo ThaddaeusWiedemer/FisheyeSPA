@@ -3,7 +3,7 @@ This folder should contain all of your code, as well as the data you've used / g
 Furthermore, different diagrams like e.g. class diagrams describing your software should be put here as well.
 
 ## code/data
-Put here all your raw and preprocessed data. In addition add data you've generated and which could be used as a new dataset for further work.
+Put here all your raw and preprocessed data. In addition add data you've generated and which could be used as a new dataset for further work. Datasets reside on a different server drive for now, as they are fairly large.
 
 ## code/results
 This folder should contain everything you've generated. This includes for example plots for evaluation purposes and your best trained models.
