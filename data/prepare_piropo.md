@@ -70,5 +70,6 @@ A COCO-pretrained model for person detection is run to test the datasets:
 python mmdetection/tools/test.py \
     mmdetection/configs/fisheye/faster_rcnn_r50_caffe_fpn_mstrain_1x_coco-person_piropo.py \
     mmdetection/checkpoints/faster_rcnn_r50_fpn_1x_coco-person_20201216_175929-d022e227.pth \
-    --eval bbox
+    --eval bbox \
+    --out results/piropo_test.pkl
 ```
