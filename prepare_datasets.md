@@ -63,6 +63,10 @@ done
 Finally, we can use the script in `mmdetection/tools/misc/coco_concat.py` to concatenate several subsequences to larger
 datasets. These are just saved as `PIROPO/omni_<sequence name>.json` and link to the images.
 
+The script can also be used to generate multiple splits of different sizes. These are saved as 
+`PIROPO/omni_<sequence name>_<size><suffix>.json`, where `<suffix>` is alphabetically enumerating the different random 
+splits.
+
 # testing
 A COCO-pretrained model for person detection is run to test the datasets:
 
