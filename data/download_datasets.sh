@@ -1,0 +1,2 @@
+#wget -cO /data/CVRG/HumanCarOmniDataset.zip 'http://cvrg.iyte.edu.tr/datasets/HumanCarOmniDataset.zip'
+#wget -cO /data/CVRG/synthetic_omnidirectional_image_set.zip 'http://cvrg.iyte.edu.tr/datasets/synthetic_omnidirectional_image_set.zip'
