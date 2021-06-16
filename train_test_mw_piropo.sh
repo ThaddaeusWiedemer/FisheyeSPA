@@ -5,14 +5,16 @@ MODEL_DIR=work_dirs/MW-18Mar/training
 TEST_FILE=/data/PIROPO/omni_test2.json
 RES_ROOT=results/MW_PIROPO/test2
 N_GPU=4
+VIS_GPU=4,5,6,7
+GPU_PORT=29501
 
-mkdir results/MW_PIROPO
+# mkdir results/MW_PIROPO
 
 # finetuning on n samples per dataset, with 10 datasets labeled a through j per n
 for n in {1,2,5,10,20,50,100,200}; do
     for x in {a..j}; do
         # test
-        CUDA_VISIBLE_DEVICES=4,5,6,7 PORT=29501 ./${TOOL_PATH}/dist_test.sh \
+        CUDA_VISIBLE_DEVICES=${VIS_GPU} PORT=${GPU_PORT} ./${TOOL_PATH}/dist_test.sh \
             ${CONFIG_FILE} \
             ${MODEL_DIR}_${n}${x}/latest.pth \
             ${N_GPU} \
@@ -23,7 +25,7 @@ for n in {1,2,5,10,20,50,100,200}; do
 done
 
 # finetune once on whole dataset
-CUDA_VISIBLE_DEVICES=4,5,6,7 PORT=29501 ./${TOOL_PATH}/dist_test.sh \
+CUDA_VISIBLE_DEVICES=${VIS_GPU} PORT=${GPU_PORT} ./${TOOL_PATH}/dist_test.sh \
     ${CONFIG_FILE} \
     ${MODEL_DIR}_all/latest.pth \
     ${N_GPU} \

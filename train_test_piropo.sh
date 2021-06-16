@@ -4,6 +4,8 @@ WORK_DIR=work_dirs/PIROPO/training
 TRAIN_ROOT=/data/PIROPO/omni_training
 RES_ROOT=results/PIROPO/test2
 N_GPU=4
+VIS_GPU=4,5,6,7
+GPU_PORT=29501
 
 # no finetuning
 # python ${TOOL_PATH}/test.py \
@@ -17,17 +19,17 @@ for n in {1,2,5,10,20,50,100,200,500,1000}
 do
     for x in {a..j}
     do
-        mkdir ${WORK_DIR}_${n}${x}
+        # mkdir ${WORK_DIR}_${n}${x}
 
         # train
-        bash ${TOOL_PATH}/dist_train.sh \
-            ${CONFIG_FILE} \
-            ${N_GPU} \
-            --work-dir ${WORK_DIR}_${n}${x} \
-            --cfg-options data.train.ann_file=${TRAIN_ROOT}_${n}${x}.json
+        # bash ${TOOL_PATH}/dist_train.sh \
+        #     ${CONFIG_FILE} \
+        #     ${N_GPU} \
+        #     --work-dir ${WORK_DIR}_${n}${x} \
+        #     --cfg-options data.train.ann_file=${TRAIN_ROOT}_${n}${x}.json
 
         # test
-        bash ${TOOL_PATH}/dist_test.sh \
+        CUDA_VISIBLE_DEVICES=${VIS_GPU} PORT=${GPU_PORT} ./${TOOL_PATH}/dist_test.sh \
             ${CONFIG_FILE} \
             ${WORK_DIR}_${n}${x}/latest.pth \
             ${N_GPU} \
@@ -43,15 +45,15 @@ do
 done
 
 # finetune once on whole dataset
-mkdir work_dirs/PIROPO/training
+# mkdir work_dirs/PIROPO/training
 
-bash ${TOOL_PATH}/dist_train.sh \
-    ${CONFIG_FILE} \
-    ${N_GPU} \
-    --work-dir ${WORK_DIR}_all \
-    --cfg-options data.train.ann_file=${TRAIN_ROOT}.json
+# bash ${TOOL_PATH}/dist_train.sh \
+#     ${CONFIG_FILE} \
+#     ${N_GPU} \
+#     --work-dir ${WORK_DIR}_all \
+#     --cfg-options data.train.ann_file=${TRAIN_ROOT}.json
 
-bash ${TOOL_PATH}/dist_test.sh \
+CUDA_VISIBLE_DEVICES=${VIS_GPU} PORT=${GPU_PORT} ./${TOOL_PATH}/dist_test.sh \
     ${CONFIG_FILE} \
     ${WORK_DIR}_all/latest.pth \
     ${N_GPU} \
