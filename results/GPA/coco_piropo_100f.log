@@ -1,0 +1,1217 @@
+2021-07-13 21:10:41,361 - mmdet - INFO - Environment info:
+------------------------------------------------------------
+sys.platform: linux
+Python: 3.9.5 (default, May 18 2021, 19:34:48) [GCC 7.3.0]
+CUDA available: True
+GPU 0,1,2,3,4,5,6,7: NVIDIA GeForce GTX 1080 Ti
+CUDA_HOME: /usr/local/cuda-10.1
+NVCC: Cuda compilation tools, release 10.1, V10.1.105
+GCC: gcc (Ubuntu 6.5.0-2ubuntu1~18.04) 6.5.0 20181026
+PyTorch: 1.8.1
+PyTorch compiling details: PyTorch built with:
+  - GCC 7.3
+  - C++ Version: 201402
+  - Intel(R) oneAPI Math Kernel Library Version 2021.2-Product Build 20210312 for Intel(R) 64 architecture applications
+  - Intel(R) MKL-DNN v1.7.0 (Git Hash 7aed236906b1f7a05c0917e5257a1af05e9ff683)
+  - OpenMP 201511 (a.k.a. OpenMP 4.5)
+  - NNPACK is enabled
+  - CPU capability usage: AVX2
+  - CUDA Runtime 10.1
+  - NVCC architecture flags: -gencode;arch=compute_37,code=sm_37;-gencode;arch=compute_50,code=sm_50;-gencode;arch=compute_60,code=sm_60;-gencode;arch=compute_61,code=sm_61;-gencode;arch=compute_70,code=sm_70;-gencode;arch=compute_75,code=sm_75;-gencode;arch=compute_37,code=compute_37
+  - CuDNN 7.6.3
+  - Magma 2.5.2
+  - Build settings: BLAS_INFO=mkl, BUILD_TYPE=Release, CUDA_VERSION=10.1, CUDNN_VERSION=7.6.3, CXX_COMPILER=/opt/rh/devtoolset-7/root/usr/bin/c++, CXX_FLAGS= -Wno-deprecated -fvisibility-inlines-hidden -DUSE_PTHREADPOOL -fopenmp -DNDEBUG -DUSE_KINETO -DUSE_FBGEMM -DUSE_QNNPACK -DUSE_PYTORCH_QNNPACK -DUSE_XNNPACK -O2 -fPIC -Wno-narrowing -Wall -Wextra -Werror=return-type -Wno-missing-field-initializers -Wno-type-limits -Wno-array-bounds -Wno-unknown-pragmas -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -Wno-unused-result -Wno-unused-local-typedefs -Wno-strict-overflow -Wno-strict-aliasing -Wno-error=deprecated-declarations -Wno-stringop-overflow -Wno-psabi -Wno-error=pedantic -Wno-error=redundant-decls -Wno-error=old-style-cast -fdiagnostics-color=always -faligned-new -Wno-unused-but-set-variable -Wno-maybe-uninitialized -fno-math-errno -fno-trapping-math -Werror=format -Wno-stringop-overflow, LAPACK_INFO=mkl, PERF_WITH_AVX=1, PERF_WITH_AVX2=1, PERF_WITH_AVX512=1, TORCH_VERSION=1.8.1, USE_CUDA=ON, USE_CUDNN=ON, USE_EXCEPTION_PTR=1, USE_GFLAGS=OFF, USE_GLOG=OFF, USE_MKL=ON, USE_MKLDNN=ON, USE_MPI=OFF, USE_NCCL=ON, USE_NNPACK=ON, USE_OPENMP=ON, 
+
+TorchVision: 0.2.2
+OpenCV: 4.5.2
+MMCV: 1.3.6
+MMCV Compiler: GCC 7.5
+MMCV CUDA Compiler: 10.1
+MMDetection: 2.13.0+a5313e7
+------------------------------------------------------------
+
+INFO:mmdet:Environment info:
+------------------------------------------------------------
+sys.platform: linux
+Python: 3.9.5 (default, May 18 2021, 19:34:48) [GCC 7.3.0]
+CUDA available: True
+GPU 0,1,2,3,4,5,6,7: NVIDIA GeForce GTX 1080 Ti
+CUDA_HOME: /usr/local/cuda-10.1
+NVCC: Cuda compilation tools, release 10.1, V10.1.105
+GCC: gcc (Ubuntu 6.5.0-2ubuntu1~18.04) 6.5.0 20181026
+PyTorch: 1.8.1
+PyTorch compiling details: PyTorch built with:
+  - GCC 7.3
+  - C++ Version: 201402
+  - Intel(R) oneAPI Math Kernel Library Version 2021.2-Product Build 20210312 for Intel(R) 64 architecture applications
+  - Intel(R) MKL-DNN v1.7.0 (Git Hash 7aed236906b1f7a05c0917e5257a1af05e9ff683)
+  - OpenMP 201511 (a.k.a. OpenMP 4.5)
+  - NNPACK is enabled
+  - CPU capability usage: AVX2
+  - CUDA Runtime 10.1
+  - NVCC architecture flags: -gencode;arch=compute_37,code=sm_37;-gencode;arch=compute_50,code=sm_50;-gencode;arch=compute_60,code=sm_60;-gencode;arch=compute_61,code=sm_61;-gencode;arch=compute_70,code=sm_70;-gencode;arch=compute_75,code=sm_75;-gencode;arch=compute_37,code=compute_37
+  - CuDNN 7.6.3
+  - Magma 2.5.2
+  - Build settings: BLAS_INFO=mkl, BUILD_TYPE=Release, CUDA_VERSION=10.1, CUDNN_VERSION=7.6.3, CXX_COMPILER=/opt/rh/devtoolset-7/root/usr/bin/c++, CXX_FLAGS= -Wno-deprecated -fvisibility-inlines-hidden -DUSE_PTHREADPOOL -fopenmp -DNDEBUG -DUSE_KINETO -DUSE_FBGEMM -DUSE_QNNPACK -DUSE_PYTORCH_QNNPACK -DUSE_XNNPACK -O2 -fPIC -Wno-narrowing -Wall -Wextra -Werror=return-type -Wno-missing-field-initializers -Wno-type-limits -Wno-array-bounds -Wno-unknown-pragmas -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -Wno-unused-result -Wno-unused-local-typedefs -Wno-strict-overflow -Wno-strict-aliasing -Wno-error=deprecated-declarations -Wno-stringop-overflow -Wno-psabi -Wno-error=pedantic -Wno-error=redundant-decls -Wno-error=old-style-cast -fdiagnostics-color=always -faligned-new -Wno-unused-but-set-variable -Wno-maybe-uninitialized -fno-math-errno -fno-trapping-math -Werror=format -Wno-stringop-overflow, LAPACK_INFO=mkl, PERF_WITH_AVX=1, PERF_WITH_AVX2=1, PERF_WITH_AVX512=1, TORCH_VERSION=1.8.1, USE_CUDA=ON, USE_CUDNN=ON, USE_EXCEPTION_PTR=1, USE_GFLAGS=OFF, USE_GLOG=OFF, USE_MKL=ON, USE_MKLDNN=ON, USE_MPI=OFF, USE_NCCL=ON, USE_NNPACK=ON, USE_OPENMP=ON, 
+
+TorchVision: 0.2.2
+OpenCV: 4.5.2
+MMCV: 1.3.6
+MMCV Compiler: GCC 7.5
+MMCV CUDA Compiler: 10.1
+MMDetection: 2.13.0+a5313e7
+------------------------------------------------------------
+
+2021-07-13 21:10:41,803 - mmdet - INFO - Distributed training: True
+INFO:mmdet:Distributed training: True
+2021-07-13 21:10:42,354 - mmdet - INFO - Config:
+model = dict(
+    type='TwoStageDetectorAdaptive',
+    pretrained='open-mmlab://detectron2/resnet50_caffe',
+    backbone=dict(
+        type='ResNet',
+        depth=50,
+        num_stages=4,
+        out_indices=(0, 1, 2, 3),
+        frozen_stages=1,
+        norm_cfg=dict(type='BN', requires_grad=False),
+        norm_eval=True,
+        style='caffe'),
+    neck=dict(
+        type='FPN',
+        in_channels=[256, 512, 1024, 2048],
+        out_channels=256,
+        num_outs=5),
+    rpn_head=dict(
+        type='RPNHead',
+        in_channels=256,
+        feat_channels=256,
+        anchor_generator=dict(
+            type='AnchorGenerator',
+            scales=[8],
+            ratios=[0.5, 1.0, 2.0],
+            strides=[4, 8, 16, 32, 64]),
+        bbox_coder=dict(
+            type='DeltaXYWHBBoxCoder',
+            target_means=[0.0, 0.0, 0.0, 0.0],
+            target_stds=[1.0, 1.0, 1.0, 1.0]),
+        loss_cls=dict(
+            type='CrossEntropyLoss', use_sigmoid=True, loss_weight=1.0),
+        loss_bbox=dict(type='L1Loss', loss_weight=1.0)),
+    roi_head=dict(
+        type='StandardRoIHeadAdaptive',
+        bbox_roi_extractor=dict(
+            type='SingleRoIExtractor',
+            roi_layer=dict(type='RoIAlign', output_size=7, sampling_ratio=0),
+            out_channels=256,
+            featmap_strides=[4, 8, 16, 32]),
+        bbox_head=dict(
+            type='Shared2FCBBoxHeadAdaptive',
+            in_channels=256,
+            fc_out_channels=1024,
+            roi_feat_size=7,
+            num_classes=1,
+            bbox_coder=dict(
+                type='DeltaXYWHBBoxCoder',
+                target_means=[0.0, 0.0, 0.0, 0.0],
+                target_stds=[0.1, 0.1, 0.2, 0.2]),
+            reg_class_agnostic=False,
+            loss_cls=dict(
+                type='CrossEntropyLoss', use_sigmoid=False, loss_weight=1.0),
+            loss_bbox=dict(type='L1Loss', loss_weight=1.0))),
+    train_cfg=dict(
+        loss_weight_da=1.0,
+        loss_weight_da_rpn=1.0,
+        rpn=dict(
+            assigner=dict(
+                type='MaxIoUAssigner',
+                pos_iou_thr=0.7,
+                neg_iou_thr=0.3,
+                min_pos_iou=0.3,
+                match_low_quality=True,
+                ignore_iof_thr=-1),
+            sampler=dict(
+                type='RandomSampler',
+                num=256,
+                pos_fraction=0.5,
+                neg_pos_ub=-1,
+                add_gt_as_proposals=False),
+            allowed_border=-1,
+            pos_weight=-1,
+            debug=False),
+        rpn_proposal=dict(
+            nms_pre=2000,
+            max_per_img=1000,
+            nms=dict(type='nms', iou_threshold=0.7),
+            min_bbox_size=0),
+        rcnn=dict(
+            assigner=dict(
+                type='MaxIoUAssigner',
+                pos_iou_thr=0.5,
+                neg_iou_thr=0.5,
+                min_pos_iou=0.5,
+                match_low_quality=False,
+                ignore_iof_thr=-1),
+            sampler=dict(
+                type='RandomSampler',
+                num=512,
+                pos_fraction=0.25,
+                neg_pos_ub=-1,
+                add_gt_as_proposals=True),
+            pos_weight=-1,
+            debug=False)),
+    test_cfg=dict(
+        rpn=dict(
+            nms_pre=1000,
+            max_per_img=1000,
+            nms=dict(type='nms', iou_threshold=0.7),
+            min_bbox_size=0),
+        rcnn=dict(
+            score_thr=0.05,
+            nms=dict(type='nms', iou_threshold=0.5),
+            max_per_img=100)))
+dataset_type = 'CocoDataset'
+data_root_src = 'data/PIROPO/'
+data_root_tgt = 'data/MW-18Mar/'
+classes = ('person', )
+img_norm_cfg = dict(
+    mean=[103.53, 116.28, 123.675], std=[1.0, 1.0, 1.0], to_rgb=False)
+train_pipeline_src = [
+    dict(type='LoadImageFromFile'),
+    dict(type='LoadAnnotations', with_bbox=True),
+    dict(type='Resize', img_scale=(800, 800), keep_ratio=True),
+    dict(type='RandomFlip', flip_ratio=0.5),
+    dict(
+        type='Normalize',
+        mean=[103.53, 116.28, 123.675],
+        std=[1.0, 1.0, 1.0],
+        to_rgb=False),
+    dict(type='Pad', size_divisor=32),
+    dict(type='DefaultFormatBundle'),
+    dict(type='Collect', keys=['img', 'gt_bboxes', 'gt_labels'])
+]
+train_pipeline_tgt = [
+    dict(type='LoadImageFromFile'),
+    dict(type='LoadAnnotations', with_bbox=True),
+    dict(type='Resize', img_scale=(800, 800), keep_ratio=True),
+    dict(type='RandomFlip', flip_ratio=0.5),
+    dict(
+        type='Albu',
+        transforms=[
+            dict(
+                type='ShiftScaleRotate',
+                shift_limit=0.0,
+                scale_limit=0.0,
+                rotate_limit=180,
+                interpolation=1,
+                p=1.0)
+        ],
+        bbox_params=dict(
+            type='BboxParams',
+            format='pascal_voc',
+            label_fields=['gt_labels'],
+            min_visibility=0.0,
+            filter_lost_elements=True),
+        keymap=dict(img='image', gt_masks='masks', gt_bboxes='bboxes'),
+        update_pad_shape=False,
+        skip_img_without_anno=False),
+    dict(
+        type='Normalize',
+        mean=[103.53, 116.28, 123.675],
+        std=[1.0, 1.0, 1.0],
+        to_rgb=False),
+    dict(type='Pad', size_divisor=32),
+    dict(type='DefaultFormatBundle'),
+    dict(type='Collect', keys=['img', 'gt_bboxes', 'gt_labels'])
+]
+test_pipeline = [
+    dict(type='LoadImageFromFile'),
+    dict(
+        type='MultiScaleFlipAug',
+        img_scale=(1333, 800),
+        flip=False,
+        transforms=[
+            dict(type='Resize', keep_ratio=True),
+            dict(type='RandomFlip'),
+            dict(
+                type='Normalize',
+                mean=[103.53, 116.28, 123.675],
+                std=[1.0, 1.0, 1.0],
+                to_rgb=False),
+            dict(type='Pad', size_divisor=32),
+            dict(type='ImageToTensor', keys=['img']),
+            dict(type='Collect', keys=['img'])
+        ])
+]
+data = dict(
+    samples_per_gpu=2,
+    workers_per_gpu=2,
+    train_src=dict(
+        type='CocoDataset',
+        ann_file='/data/COCO/annotations/person_train2017.json',
+        img_prefix='/data/COCO/train2017',
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(type='LoadAnnotations', with_bbox=True),
+            dict(type='Resize', img_scale=(800, 800), keep_ratio=True),
+            dict(type='RandomFlip', flip_ratio=0.5),
+            dict(
+                type='Normalize',
+                mean=[103.53, 116.28, 123.675],
+                std=[1.0, 1.0, 1.0],
+                to_rgb=False),
+            dict(type='Pad', size_divisor=32),
+            dict(type='DefaultFormatBundle'),
+            dict(type='Collect', keys=['img', 'gt_bboxes', 'gt_labels'])
+        ],
+        classes=('person', )),
+    train_tgt=dict(
+        type='CocoDataset',
+        ann_file='/data/PIROPO/omni_training_100f.json',
+        img_prefix='None',
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(type='LoadAnnotations', with_bbox=True),
+            dict(type='Resize', img_scale=(800, 800), keep_ratio=True),
+            dict(type='RandomFlip', flip_ratio=0.5),
+            dict(
+                type='Albu',
+                transforms=[
+                    dict(
+                        type='ShiftScaleRotate',
+                        shift_limit=0.0,
+                        scale_limit=0.0,
+                        rotate_limit=180,
+                        interpolation=1,
+                        p=1.0)
+                ],
+                bbox_params=dict(
+                    type='BboxParams',
+                    format='pascal_voc',
+                    label_fields=['gt_labels'],
+                    min_visibility=0.0,
+                    filter_lost_elements=True),
+                keymap=dict(img='image', gt_masks='masks', gt_bboxes='bboxes'),
+                update_pad_shape=False,
+                skip_img_without_anno=False),
+            dict(
+                type='Normalize',
+                mean=[103.53, 116.28, 123.675],
+                std=[1.0, 1.0, 1.0],
+                to_rgb=False),
+            dict(type='Pad', size_divisor=32),
+            dict(type='DefaultFormatBundle'),
+            dict(type='Collect', keys=['img', 'gt_bboxes', 'gt_labels'])
+        ],
+        classes=('person', )),
+    val=dict(
+        type='CocoDataset',
+        ann_file='/data/PIROPO/omni_test2.json',
+        img_prefix='None',
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(
+                type='MultiScaleFlipAug',
+                img_scale=(1333, 800),
+                flip=False,
+                transforms=[
+                    dict(type='Resize', keep_ratio=True),
+                    dict(type='RandomFlip'),
+                    dict(
+                        type='Normalize',
+                        mean=[103.53, 116.28, 123.675],
+                        std=[1.0, 1.0, 1.0],
+                        to_rgb=False),
+                    dict(type='Pad', size_divisor=32),
+                    dict(type='ImageToTensor', keys=['img']),
+                    dict(type='Collect', keys=['img'])
+                ])
+        ],
+        classes=('person', )),
+    test=dict(
+        type='CocoDataset',
+        ann_file='data/MW-18Mar/test.json',
+        img_prefix='data/MW-18Mar/',
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(
+                type='MultiScaleFlipAug',
+                img_scale=(1333, 800),
+                flip=False,
+                transforms=[
+                    dict(type='Resize', keep_ratio=True),
+                    dict(type='RandomFlip'),
+                    dict(
+                        type='Normalize',
+                        mean=[103.53, 116.28, 123.675],
+                        std=[1.0, 1.0, 1.0],
+                        to_rgb=False),
+                    dict(type='Pad', size_divisor=32),
+                    dict(type='ImageToTensor', keys=['img']),
+                    dict(type='Collect', keys=['img'])
+                ])
+        ],
+        classes=('person', )))
+evaluation = dict(interval=2, metric='bbox')
+optimizer = dict(type='SGD', lr=0.001, momentum=0.9, weight_decay=0.0001)
+optimizer_config = dict(grad_clip=None)
+lr_config = dict(policy='step', warmup=None, step=[10000])
+runner = dict(type='EpochBasedRunnerAdaptive', max_epochs=12)
+checkpoint_config = dict(interval=1)
+log_config = dict(
+    interval=5,
+    hooks=[dict(type='TextLoggerHook'),
+           dict(type='TensorboardLoggerHook')])
+custom_hooks = [dict(type='NumClassCheckHook')]
+dist_params = dict(backend='nccl')
+log_level = 'INFO'
+load_from = 'mmdetection/checkpoints/faster_rcnn_r50_fpn_1x_coco-person_20201216_175929-d022e227.pth'
+resume_from = None
+workflow = [('train', 1)]
+work_dir = 'work_dirs/GPA/coco_piropo_100f'
+gpu_ids = range(0, 8)
+
+INFO:mmdet:Config:
+model = dict(
+    type='TwoStageDetectorAdaptive',
+    pretrained='open-mmlab://detectron2/resnet50_caffe',
+    backbone=dict(
+        type='ResNet',
+        depth=50,
+        num_stages=4,
+        out_indices=(0, 1, 2, 3),
+        frozen_stages=1,
+        norm_cfg=dict(type='BN', requires_grad=False),
+        norm_eval=True,
+        style='caffe'),
+    neck=dict(
+        type='FPN',
+        in_channels=[256, 512, 1024, 2048],
+        out_channels=256,
+        num_outs=5),
+    rpn_head=dict(
+        type='RPNHead',
+        in_channels=256,
+        feat_channels=256,
+        anchor_generator=dict(
+            type='AnchorGenerator',
+            scales=[8],
+            ratios=[0.5, 1.0, 2.0],
+            strides=[4, 8, 16, 32, 64]),
+        bbox_coder=dict(
+            type='DeltaXYWHBBoxCoder',
+            target_means=[0.0, 0.0, 0.0, 0.0],
+            target_stds=[1.0, 1.0, 1.0, 1.0]),
+        loss_cls=dict(
+            type='CrossEntropyLoss', use_sigmoid=True, loss_weight=1.0),
+        loss_bbox=dict(type='L1Loss', loss_weight=1.0)),
+    roi_head=dict(
+        type='StandardRoIHeadAdaptive',
+        bbox_roi_extractor=dict(
+            type='SingleRoIExtractor',
+            roi_layer=dict(type='RoIAlign', output_size=7, sampling_ratio=0),
+            out_channels=256,
+            featmap_strides=[4, 8, 16, 32]),
+        bbox_head=dict(
+            type='Shared2FCBBoxHeadAdaptive',
+            in_channels=256,
+            fc_out_channels=1024,
+            roi_feat_size=7,
+            num_classes=1,
+            bbox_coder=dict(
+                type='DeltaXYWHBBoxCoder',
+                target_means=[0.0, 0.0, 0.0, 0.0],
+                target_stds=[0.1, 0.1, 0.2, 0.2]),
+            reg_class_agnostic=False,
+            loss_cls=dict(
+                type='CrossEntropyLoss', use_sigmoid=False, loss_weight=1.0),
+            loss_bbox=dict(type='L1Loss', loss_weight=1.0))),
+    train_cfg=dict(
+        loss_weight_da=1.0,
+        loss_weight_da_rpn=1.0,
+        rpn=dict(
+            assigner=dict(
+                type='MaxIoUAssigner',
+                pos_iou_thr=0.7,
+                neg_iou_thr=0.3,
+                min_pos_iou=0.3,
+                match_low_quality=True,
+                ignore_iof_thr=-1),
+            sampler=dict(
+                type='RandomSampler',
+                num=256,
+                pos_fraction=0.5,
+                neg_pos_ub=-1,
+                add_gt_as_proposals=False),
+            allowed_border=-1,
+            pos_weight=-1,
+            debug=False),
+        rpn_proposal=dict(
+            nms_pre=2000,
+            max_per_img=1000,
+            nms=dict(type='nms', iou_threshold=0.7),
+            min_bbox_size=0),
+        rcnn=dict(
+            assigner=dict(
+                type='MaxIoUAssigner',
+                pos_iou_thr=0.5,
+                neg_iou_thr=0.5,
+                min_pos_iou=0.5,
+                match_low_quality=False,
+                ignore_iof_thr=-1),
+            sampler=dict(
+                type='RandomSampler',
+                num=512,
+                pos_fraction=0.25,
+                neg_pos_ub=-1,
+                add_gt_as_proposals=True),
+            pos_weight=-1,
+            debug=False)),
+    test_cfg=dict(
+        rpn=dict(
+            nms_pre=1000,
+            max_per_img=1000,
+            nms=dict(type='nms', iou_threshold=0.7),
+            min_bbox_size=0),
+        rcnn=dict(
+            score_thr=0.05,
+            nms=dict(type='nms', iou_threshold=0.5),
+            max_per_img=100)))
+dataset_type = 'CocoDataset'
+data_root_src = 'data/PIROPO/'
+data_root_tgt = 'data/MW-18Mar/'
+classes = ('person', )
+img_norm_cfg = dict(
+    mean=[103.53, 116.28, 123.675], std=[1.0, 1.0, 1.0], to_rgb=False)
+train_pipeline_src = [
+    dict(type='LoadImageFromFile'),
+    dict(type='LoadAnnotations', with_bbox=True),
+    dict(type='Resize', img_scale=(800, 800), keep_ratio=True),
+    dict(type='RandomFlip', flip_ratio=0.5),
+    dict(
+        type='Normalize',
+        mean=[103.53, 116.28, 123.675],
+        std=[1.0, 1.0, 1.0],
+        to_rgb=False),
+    dict(type='Pad', size_divisor=32),
+    dict(type='DefaultFormatBundle'),
+    dict(type='Collect', keys=['img', 'gt_bboxes', 'gt_labels'])
+]
+train_pipeline_tgt = [
+    dict(type='LoadImageFromFile'),
+    dict(type='LoadAnnotations', with_bbox=True),
+    dict(type='Resize', img_scale=(800, 800), keep_ratio=True),
+    dict(type='RandomFlip', flip_ratio=0.5),
+    dict(
+        type='Albu',
+        transforms=[
+            dict(
+                type='ShiftScaleRotate',
+                shift_limit=0.0,
+                scale_limit=0.0,
+                rotate_limit=180,
+                interpolation=1,
+                p=1.0)
+        ],
+        bbox_params=dict(
+            type='BboxParams',
+            format='pascal_voc',
+            label_fields=['gt_labels'],
+            min_visibility=0.0,
+            filter_lost_elements=True),
+        keymap=dict(img='image', gt_masks='masks', gt_bboxes='bboxes'),
+        update_pad_shape=False,
+        skip_img_without_anno=False),
+    dict(
+        type='Normalize',
+        mean=[103.53, 116.28, 123.675],
+        std=[1.0, 1.0, 1.0],
+        to_rgb=False),
+    dict(type='Pad', size_divisor=32),
+    dict(type='DefaultFormatBundle'),
+    dict(type='Collect', keys=['img', 'gt_bboxes', 'gt_labels'])
+]
+test_pipeline = [
+    dict(type='LoadImageFromFile'),
+    dict(
+        type='MultiScaleFlipAug',
+        img_scale=(1333, 800),
+        flip=False,
+        transforms=[
+            dict(type='Resize', keep_ratio=True),
+            dict(type='RandomFlip'),
+            dict(
+                type='Normalize',
+                mean=[103.53, 116.28, 123.675],
+                std=[1.0, 1.0, 1.0],
+                to_rgb=False),
+            dict(type='Pad', size_divisor=32),
+            dict(type='ImageToTensor', keys=['img']),
+            dict(type='Collect', keys=['img'])
+        ])
+]
+data = dict(
+    samples_per_gpu=2,
+    workers_per_gpu=2,
+    train_src=dict(
+        type='CocoDataset',
+        ann_file='/data/COCO/annotations/person_train2017.json',
+        img_prefix='/data/COCO/train2017',
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(type='LoadAnnotations', with_bbox=True),
+            dict(type='Resize', img_scale=(800, 800), keep_ratio=True),
+            dict(type='RandomFlip', flip_ratio=0.5),
+            dict(
+                type='Normalize',
+                mean=[103.53, 116.28, 123.675],
+                std=[1.0, 1.0, 1.0],
+                to_rgb=False),
+            dict(type='Pad', size_divisor=32),
+            dict(type='DefaultFormatBundle'),
+            dict(type='Collect', keys=['img', 'gt_bboxes', 'gt_labels'])
+        ],
+        classes=('person', )),
+    train_tgt=dict(
+        type='CocoDataset',
+        ann_file='/data/PIROPO/omni_training_100f.json',
+        img_prefix='None',
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(type='LoadAnnotations', with_bbox=True),
+            dict(type='Resize', img_scale=(800, 800), keep_ratio=True),
+            dict(type='RandomFlip', flip_ratio=0.5),
+            dict(
+                type='Albu',
+                transforms=[
+                    dict(
+                        type='ShiftScaleRotate',
+                        shift_limit=0.0,
+                        scale_limit=0.0,
+                        rotate_limit=180,
+                        interpolation=1,
+                        p=1.0)
+                ],
+                bbox_params=dict(
+                    type='BboxParams',
+                    format='pascal_voc',
+                    label_fields=['gt_labels'],
+                    min_visibility=0.0,
+                    filter_lost_elements=True),
+                keymap=dict(img='image', gt_masks='masks', gt_bboxes='bboxes'),
+                update_pad_shape=False,
+                skip_img_without_anno=False),
+            dict(
+                type='Normalize',
+                mean=[103.53, 116.28, 123.675],
+                std=[1.0, 1.0, 1.0],
+                to_rgb=False),
+            dict(type='Pad', size_divisor=32),
+            dict(type='DefaultFormatBundle'),
+            dict(type='Collect', keys=['img', 'gt_bboxes', 'gt_labels'])
+        ],
+        classes=('person', )),
+    val=dict(
+        type='CocoDataset',
+        ann_file='/data/PIROPO/omni_test2.json',
+        img_prefix='None',
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(
+                type='MultiScaleFlipAug',
+                img_scale=(1333, 800),
+                flip=False,
+                transforms=[
+                    dict(type='Resize', keep_ratio=True),
+                    dict(type='RandomFlip'),
+                    dict(
+                        type='Normalize',
+                        mean=[103.53, 116.28, 123.675],
+                        std=[1.0, 1.0, 1.0],
+                        to_rgb=False),
+                    dict(type='Pad', size_divisor=32),
+                    dict(type='ImageToTensor', keys=['img']),
+                    dict(type='Collect', keys=['img'])
+                ])
+        ],
+        classes=('person', )),
+    test=dict(
+        type='CocoDataset',
+        ann_file='data/MW-18Mar/test.json',
+        img_prefix='data/MW-18Mar/',
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(
+                type='MultiScaleFlipAug',
+                img_scale=(1333, 800),
+                flip=False,
+                transforms=[
+                    dict(type='Resize', keep_ratio=True),
+                    dict(type='RandomFlip'),
+                    dict(
+                        type='Normalize',
+                        mean=[103.53, 116.28, 123.675],
+                        std=[1.0, 1.0, 1.0],
+                        to_rgb=False),
+                    dict(type='Pad', size_divisor=32),
+                    dict(type='ImageToTensor', keys=['img']),
+                    dict(type='Collect', keys=['img'])
+                ])
+        ],
+        classes=('person', )))
+evaluation = dict(interval=2, metric='bbox')
+optimizer = dict(type='SGD', lr=0.001, momentum=0.9, weight_decay=0.0001)
+optimizer_config = dict(grad_clip=None)
+lr_config = dict(policy='step', warmup=None, step=[10000])
+runner = dict(type='EpochBasedRunnerAdaptive', max_epochs=12)
+checkpoint_config = dict(interval=1)
+log_config = dict(
+    interval=5,
+    hooks=[dict(type='TextLoggerHook'),
+           dict(type='TensorboardLoggerHook')])
+custom_hooks = [dict(type='NumClassCheckHook')]
+dist_params = dict(backend='nccl')
+log_level = 'INFO'
+load_from = 'mmdetection/checkpoints/faster_rcnn_r50_fpn_1x_coco-person_20201216_175929-d022e227.pth'
+resume_from = None
+workflow = [('train', 1)]
+work_dir = 'work_dirs/GPA/coco_piropo_100f'
+gpu_ids = range(0, 8)
+
+/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/detectors/two_stage_adaptive.py:29: UserWarning: DeprecationWarning: pretrained is deprecated, please use "init_cfg" instead
+  warnings.warn('DeprecationWarning: pretrained is deprecated, '
+/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/backbones/resnet.py:400: UserWarning: DeprecationWarning: pretrained is deprecated, please use "init_cfg" instead
+  warnings.warn('DeprecationWarning: pretrained is deprecated, '
+/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/detectors/two_stage_adaptive.py:29: UserWarning: DeprecationWarning: pretrained is deprecated, please use "init_cfg" instead
+  warnings.warn('DeprecationWarning: pretrained is deprecated, '
+/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/backbones/resnet.py:400: UserWarning: DeprecationWarning: pretrained is deprecated, please use "init_cfg" instead
+  warnings.warn('DeprecationWarning: pretrained is deprecated, '
+/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/detectors/two_stage_adaptive.py:29: UserWarning: DeprecationWarning: pretrained is deprecated, please use "init_cfg" instead
+  warnings.warn('DeprecationWarning: pretrained is deprecated, '
+/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/backbones/resnet.py:400: UserWarning: DeprecationWarning: pretrained is deprecated, please use "init_cfg" instead
+  warnings.warn('DeprecationWarning: pretrained is deprecated, '
+/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/detectors/two_stage_adaptive.py:29: UserWarning: DeprecationWarning: pretrained is deprecated, please use "init_cfg" instead
+  warnings.warn('DeprecationWarning: pretrained is deprecated, '
+/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/backbones/resnet.py:400: UserWarning: DeprecationWarning: pretrained is deprecated, please use "init_cfg" instead
+  warnings.warn('DeprecationWarning: pretrained is deprecated, '
+/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/detectors/two_stage_adaptive.py:29: UserWarning: DeprecationWarning: pretrained is deprecated, please use "init_cfg" instead
+  warnings.warn('DeprecationWarning: pretrained is deprecated, '
+/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/backbones/resnet.py:400: UserWarning: DeprecationWarning: pretrained is deprecated, please use "init_cfg" instead
+  warnings.warn('DeprecationWarning: pretrained is deprecated, '
+/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/detectors/two_stage_adaptive.py:29: UserWarning: DeprecationWarning: pretrained is deprecated, please use "init_cfg" instead
+  warnings.warn('DeprecationWarning: pretrained is deprecated, '
+/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/backbones/resnet.py:400: UserWarning: DeprecationWarning: pretrained is deprecated, please use "init_cfg" instead
+  warnings.warn('DeprecationWarning: pretrained is deprecated, '
+/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/detectors/two_stage_adaptive.py:29: UserWarning: DeprecationWarning: pretrained is deprecated, please use "init_cfg" instead
+  warnings.warn('DeprecationWarning: pretrained is deprecated, '
+/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/backbones/resnet.py:400: UserWarning: DeprecationWarning: pretrained is deprecated, please use "init_cfg" instead
+  warnings.warn('DeprecationWarning: pretrained is deprecated, '
+/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/detectors/two_stage_adaptive.py:29: UserWarning: DeprecationWarning: pretrained is deprecated, please use "init_cfg" instead
+  warnings.warn('DeprecationWarning: pretrained is deprecated, '
+/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/backbones/resnet.py:400: UserWarning: DeprecationWarning: pretrained is deprecated, please use "init_cfg" instead
+  warnings.warn('DeprecationWarning: pretrained is deprecated, '
+2021-07-13 21:10:42,767 - mmcv - INFO - load model from: open-mmlab://detectron2/resnet50_caffe
+INFO:mmcv:load model from: open-mmlab://detectron2/resnet50_caffe
+2021-07-13 21:10:42,767 - mmcv - INFO - Use load_from_openmmlab loader
+INFO:mmcv:Use load_from_openmmlab loader
+2021-07-13 21:10:48,835 - mmcv - WARNING - The model and loaded state dict do not match exactly
+
+unexpected key in source state_dict: conv1.bias
+
+WARNING:mmcv:The model and loaded state dict do not match exactly
+
+unexpected key in source state_dict: conv1.bias
+
+/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/cnn/utils/weight_init.py:118: UserWarning: init_cfg without layer key, if you do not define override key either, this init_cfg will do nothing
+  warnings.warn(
+/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/cnn/utils/weight_init.py:118: UserWarning: init_cfg without layer key, if you do not define override key either, this init_cfg will do nothing
+  warnings.warn(
+/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/cnn/utils/weight_init.py:118: UserWarning: init_cfg without layer key, if you do not define override key either, this init_cfg will do nothing
+  warnings.warn(
+/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/cnn/utils/weight_init.py:118: UserWarning: init_cfg without layer key, if you do not define override key either, this init_cfg will do nothing
+  warnings.warn(
+/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/cnn/utils/weight_init.py:118: UserWarning: init_cfg without layer key, if you do not define override key either, this init_cfg will do nothing
+  warnings.warn(
+/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/cnn/utils/weight_init.py:118: UserWarning: init_cfg without layer key, if you do not define override key either, this init_cfg will do nothing
+  warnings.warn(
+/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/cnn/utils/weight_init.py:118: UserWarning: init_cfg without layer key, if you do not define override key either, this init_cfg will do nothing
+  warnings.warn(
+/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/cnn/utils/weight_init.py:118: UserWarning: init_cfg without layer key, if you do not define override key either, this init_cfg will do nothing
+  warnings.warn(
+loading annotations into memory...
+loading annotations into memory...
+loading annotations into memory...
+loading annotations into memory...
+loading annotations into memory...
+loading annotations into memory...
+loading annotations into memory...
+loading annotations into memory...
+Done (t=6.20s)
+creating index...
+Done (t=6.23s)
+creating index...
+Done (t=6.29s)
+creating index...
+Done (t=6.27s)
+creating index...
+Done (t=6.33s)
+creating index...
+Done (t=6.44s)
+creating index...
+index created!
+index created!
+index created!
+index created!
+Done (t=6.68s)
+creating index...
+index created!
+index created!
+Done (t=6.78s)
+creating index...
+index created!
+loading annotations into memory...
+loading annotations into memory...
+Done (t=0.02s)
+creating index...
+index created!
+Done (t=0.02s)
+creating index...
+index created!
+loading annotations into memory...
+Done (t=0.02s)
+creating index...
+index created!
+loading annotations into memory...
+Done (t=0.02s)
+creating index...
+index created!
+index created!
+loading annotations into memory...
+Done (t=0.02s)
+creating index...
+index created!
+loading annotations into memory...
+Done (t=0.02s)
+creating index...
+index created!
+loading annotations into memory...
+Done (t=0.05s)
+creating index...
+index created!
+loading annotations into memory...
+Done (t=0.02s)
+creating index...
+index created!
+loading annotations into memory...
+loading annotations into memory...
+loading annotations into memory...
+Done (t=0.00s)
+creating index...
+Done (t=0.00s)
+creating index...
+loading annotations into memory...
+loading annotations into memory...
+index created!
+index created!
+Done (t=0.00s)
+creating index...
+loading annotations into memory...
+loading annotations into memory...
+index created!
+loading annotations into memory...
+2021-07-13 21:10:57,667 - mmdet - INFO - load checkpoint from mmdetection/checkpoints/faster_rcnn_r50_fpn_1x_coco-person_20201216_175929-d022e227.pth
+INFO:mmdet:load checkpoint from mmdetection/checkpoints/faster_rcnn_r50_fpn_1x_coco-person_20201216_175929-d022e227.pth
+2021-07-13 21:10:57,668 - mmdet - INFO - Use load_from_local loader
+INFO:mmdet:Use load_from_local loader
+Done (t=0.00s)
+creating index...
+Done (t=0.00s)
+creating index...
+index created!
+index created!
+Done (t=0.00s)
+creating index...
+Done (t=0.00s)
+creating index...
+index created!
+index created!
+Done (t=0.00s)
+creating index...
+index created!
+2021-07-13 21:10:57,954 - mmdet - WARNING - The model and loaded state dict do not match exactly
+
+missing keys in source state_dict: da_fc_roi.weight, da_fc_roi.bias, da_fc_rcnn.weight, da_fc_rcnn.bias
+
+WARNING:mmdet:The model and loaded state dict do not match exactly
+
+missing keys in source state_dict: da_fc_roi.weight, da_fc_roi.bias, da_fc_rcnn.weight, da_fc_rcnn.bias
+
+2021-07-13 21:10:57,958 - mmdet - INFO - Start running, host: thaddaus@wu02, work_dir: /home/thaddaus/MasterthesisCode/work_dirs/GPA/coco_piropo_100f
+INFO:mmdet:Start running, host: thaddaus@wu02, work_dir: /home/thaddaus/MasterthesisCode/work_dirs/GPA/coco_piropo_100f
+2021-07-13 21:10:57,958 - mmdet - INFO - workflow: [('train', 1)], max: 12 epochs
+INFO:mmdet:workflow: [('train', 1)], max: 12 epochs
+2021-07-13 21:11:29,857 - mmcv - INFO - Reducer buckets have been rebuilt in this iteration.
+INFO:mmcv:Reducer buckets have been rebuilt in this iteration.
+2021-07-13 21:11:38,138 - mmdet - INFO - Epoch [1][5/7]	lr: 1.000e-03, eta: 0:10:26, time: 7.936, data_time: 5.974, memory: 3375, loss_rpn_cls: 0.0501, loss_rpn_bbox: 0.0078, loss_cls: 0.1280, acc: 97.5757, loss_bbox: 0.0845, roi_loss_intra: 0.0405, roi_loss_inter: 0.7066, rcnn_loss_intra: 0.0024, rcnn_loss_inter: 0.9108, loss: 1.9308
+INFO:mmdet:Epoch [1][5/7]	lr: 1.000e-03, eta: 0:10:26, time: 7.936, data_time: 5.974, memory: 3375, loss_rpn_cls: 0.0501, loss_rpn_bbox: 0.0078, loss_cls: 0.1280, acc: 97.5757, loss_bbox: 0.0845, roi_loss_intra: 0.0405, roi_loss_inter: 0.7066, rcnn_loss_intra: 0.0024, rcnn_loss_inter: 0.9108, loss: 1.9308
+2021-07-13 21:11:46,123 - mmdet - INFO - Saving checkpoint at 1 epochs
+INFO:mmdet:Saving checkpoint at 1 epochs
+2021-07-13 21:12:26,791 - mmdet - INFO - Epoch [2][5/7]	lr: 1.000e-03, eta: 0:07:54, time: 7.875, data_time: 5.940, memory: 3375, loss_rpn_cls: 0.0203, loss_rpn_bbox: 0.0079, loss_cls: 0.1106, acc: 96.4185, loss_bbox: 0.0980, roi_loss_intra: 0.0860, roi_loss_inter: 0.6267, rcnn_loss_intra: 0.0025, rcnn_loss_inter: 0.9087, loss: 1.8607
+INFO:mmdet:Epoch [2][5/7]	lr: 1.000e-03, eta: 0:07:54, time: 7.875, data_time: 5.940, memory: 3375, loss_rpn_cls: 0.0203, loss_rpn_bbox: 0.0079, loss_cls: 0.1106, acc: 96.4185, loss_bbox: 0.0980, roi_loss_intra: 0.0860, roi_loss_inter: 0.6267, rcnn_loss_intra: 0.0025, rcnn_loss_inter: 0.9087, loss: 1.8607
+[                                                  ] 0/375, elapsed: 0s, ETA:[                                ] 1/375, 0.1 task/s, elapsed: 12s, ETA:  4371s[                                ] 2/375, 0.2 task/s, elapsed: 12s, ETA:  2180s[                                ] 3/375, 0.3 task/s, elapsed: 12s, ETA:  1449s[                                ] 4/375, 0.3 task/s, elapsed: 12s, ETA:  1084s[                                ] 5/375, 0.4 task/s, elapsed: 12s, ETA:   865s[                                ] 6/375, 0.5 task/s, elapsed: 12s, ETA:   719s[                                ] 7/375, 0.6 task/s, elapsed: 12s, ETA:   614s[                                ] 8/375, 0.7 task/s, elapsed: 12s, ETA:   536s[                                ] 9/375, 0.8 task/s, elapsed: 12s, ETA:   482s[                               ] 10/375, 0.8 task/s, elapsed: 12s, ETA:   433s[                               ] 11/375, 0.9 task/s, elapsed: 12s, ETA:   392s[                               ] 12/375, 1.0 task/s, elapsed: 12s, ETA:   359s[>                              ] 13/375, 1.1 task/s, elapsed: 12s, ETA:   330s[>                              ] 14/375, 1.2 task/s, elapsed: 12s, ETA:   306s[>                              ] 15/375, 1.3 task/s, elapsed: 12s, ETA:   285s[>                              ] 16/375, 1.3 task/s, elapsed: 12s, ETA:   266s[>                              ] 17/375, 1.4 task/s, elapsed: 12s, ETA:   252s[>                              ] 18/375, 1.5 task/s, elapsed: 12s, ETA:   238s[>                              ] 19/375, 1.6 task/s, elapsed: 12s, ETA:   225s[>                              ] 20/375, 1.7 task/s, elapsed: 12s, ETA:   213s[>                              ] 21/375, 1.8 task/s, elapsed: 12s, ETA:   202s[>                              ] 22/375, 1.8 task/s, elapsed: 12s, ETA:   192s[>                              ] 23/375, 1.9 task/s, elapsed: 12s, ETA:   183s[>                              ] 24/375, 2.0 task/s, elapsed: 12s, ETA:   175s[>>                             ] 25/375, 2.1 task/s, elapsed: 12s, ETA:   170s[>>                             ] 26/375, 2.1 task/s, elapsed: 12s, ETA:   163s[>>                             ] 27/375, 2.2 task/s, elapsed: 12s, ETA:   156s[>>                             ] 28/375, 2.3 task/s, elapsed: 12s, ETA:   150s[>>                             ] 29/375, 2.4 task/s, elapsed: 12s, ETA:   145s[>>                             ] 30/375, 2.5 task/s, elapsed: 12s, ETA:   139s[>>                             ] 31/375, 2.6 task/s, elapsed: 12s, ETA:   135s[>>                             ] 32/375, 2.6 task/s, elapsed: 12s, ETA:   130s[>>                             ] 33/375, 2.7 task/s, elapsed: 12s, ETA:   128s[>>                             ] 34/375, 2.8 task/s, elapsed: 12s, ETA:   123s[>>                             ] 35/375, 2.8 task/s, elapsed: 12s, ETA:   120s[>>                             ] 36/375, 2.9 task/s, elapsed: 12s, ETA:   116s[>>>                            ] 37/375, 3.0 task/s, elapsed: 12s, ETA:   112s[>>>                            ] 38/375, 3.1 task/s, elapsed: 12s, ETA:   109s[>>>                            ] 39/375, 3.2 task/s, elapsed: 12s, ETA:   106s[>>>                            ] 40/375, 3.2 task/s, elapsed: 12s, ETA:   103s[>>>                            ] 41/375, 3.3 task/s, elapsed: 12s, ETA:   102s[>>>                            ] 42/375, 3.4 task/s, elapsed: 12s, ETA:    99s[>>>                            ] 43/375, 3.4 task/s, elapsed: 12s, ETA:    96s[>>>                            ] 44/375, 3.5 task/s, elapsed: 12s, ETA:    94s[>>>                            ] 45/375, 3.6 task/s, elapsed: 12s, ETA:    91s[>>>                            ] 46/375, 3.7 task/s, elapsed: 12s, ETA:    89s[>>>                            ] 47/375, 3.8 task/s, elapsed: 12s, ETA:    87s[>>>                            ] 48/375, 3.8 task/s, elapsed: 12s, ETA:    85s[>>>>                           ] 49/375, 3.9 task/s, elapsed: 13s, ETA:    84s[>>>>                           ] 50/375, 4.0 task/s, elapsed: 13s, ETA:    82s[>>>>                           ] 51/375, 4.0 task/s, elapsed: 13s, ETA:    80s[>>>>                           ] 52/375, 4.1 task/s, elapsed: 13s, ETA:    78s[>>>>                           ] 53/375, 4.2 task/s, elapsed: 13s, ETA:    77s[>>>>                           ] 54/375, 4.3 task/s, elapsed: 13s, ETA:    75s[>>>>                           ] 55/375, 4.4 task/s, elapsed: 13s, ETA:    73s[>>>>                           ] 56/375, 4.4 task/s, elapsed: 13s, ETA:    72s[>>>>                           ] 57/375, 4.5 task/s, elapsed: 13s, ETA:    71s[>>>>                           ] 58/375, 4.5 task/s, elapsed: 13s, ETA:    70s[>>>>                           ] 59/375, 4.6 task/s, elapsed: 13s, ETA:    69s[>>>>                           ] 60/375, 4.7 task/s, elapsed: 13s, ETA:    67s[>>>>>                          ] 61/375, 4.8 task/s, elapsed: 13s, ETA:    66s[>>>>>                          ] 62/375, 4.8 task/s, elapsed: 13s, ETA:    65s[>>>>>                          ] 63/375, 4.9 task/s, elapsed: 13s, ETA:    63s[>>>>>                          ] 64/375, 5.0 task/s, elapsed: 13s, ETA:    62s[>>>>>                          ] 65/375, 5.0 task/s, elapsed: 13s, ETA:    62s[>>>>>                          ] 66/375, 5.1 task/s, elapsed: 13s, ETA:    61s[>>>>>                          ] 67/375, 5.2 task/s, elapsed: 13s, ETA:    59s[>>>>>                          ] 68/375, 5.3 task/s, elapsed: 13s, ETA:    58s[>>>>>                          ] 69/375, 5.3 task/s, elapsed: 13s, ETA:    57s[>>>>>                          ] 70/375, 5.4 task/s, elapsed: 13s, ETA:    56s[>>>>>                          ] 71/375, 5.5 task/s, elapsed: 13s, ETA:    55s[>>>>>                          ] 72/375, 5.6 task/s, elapsed: 13s, ETA:    54s[>>>>>>                         ] 73/375, 5.6 task/s, elapsed: 13s, ETA:    54s[>>>>>>                         ] 74/375, 5.6 task/s, elapsed: 13s, ETA:    53s[>>>>>>                         ] 75/375, 5.7 task/s, elapsed: 13s, ETA:    52s[>>>>>>                         ] 76/375, 5.8 task/s, elapsed: 13s, ETA:    52s[>>>>>>                         ] 77/375, 5.9 task/s, elapsed: 13s, ETA:    51s[>>>>>>                         ] 78/375, 6.0 task/s, elapsed: 13s, ETA:    50s[>>>>>>                         ] 79/375, 6.0 task/s, elapsed: 13s, ETA:    49s[>>>>>>                         ] 80/375, 6.1 task/s, elapsed: 13s, ETA:    48s[>>>>>>                         ] 81/375, 6.1 task/s, elapsed: 13s, ETA:    48s[>>>>>>                         ] 82/375, 6.2 task/s, elapsed: 13s, ETA:    47s[>>>>>>                         ] 83/375, 6.3 task/s, elapsed: 13s, ETA:    47s[>>>>>>                         ] 84/375, 6.3 task/s, elapsed: 13s, ETA:    46s[>>>>>>>                        ] 85/375, 6.4 task/s, elapsed: 13s, ETA:    45s[>>>>>>>                        ] 86/375, 6.5 task/s, elapsed: 13s, ETA:    45s[>>>>>>>                        ] 87/375, 6.6 task/s, elapsed: 13s, ETA:    44s[>>>>>>>                        ] 88/375, 6.6 task/s, elapsed: 13s, ETA:    43s[>>>>>>>                        ] 89/375, 6.6 task/s, elapsed: 13s, ETA:    43s[>>>>>>>                        ] 90/375, 6.7 task/s, elapsed: 13s, ETA:    43s[>>>>>>>                        ] 91/375, 6.8 task/s, elapsed: 13s, ETA:    42s[>>>>>>>                        ] 92/375, 6.8 task/s, elapsed: 13s, ETA:    41s[>>>>>>>                        ] 93/375, 6.9 task/s, elapsed: 13s, ETA:    41s[>>>>>>>                        ] 94/375, 7.0 task/s, elapsed: 13s, ETA:    40s[>>>>>>>                        ] 95/375, 7.1 task/s, elapsed: 13s, ETA:    40s[>>>>>>>                        ] 96/375, 7.1 task/s, elapsed: 13s, ETA:    39s[>>>>>>>>                       ] 97/375, 7.1 task/s, elapsed: 14s, ETA:    39s[>>>>>>>>                       ] 98/375, 7.2 task/s, elapsed: 14s, ETA:    38s[>>>>>>>>                       ] 99/375, 7.3 task/s, elapsed: 14s, ETA:    38s[>>>>>>>>                      ] 100/375, 7.3 task/s, elapsed: 14s, ETA:    37s[>>>>>>>>                      ] 101/375, 7.4 task/s, elapsed: 14s, ETA:    37s[>>>>>>>>                      ] 102/375, 7.5 task/s, elapsed: 14s, ETA:    36s[>>>>>>>>                      ] 103/375, 7.6 task/s, elapsed: 14s, ETA:    36s[>>>>>>>>                      ] 104/375, 7.6 task/s, elapsed: 14s, ETA:    35s[>>>>>>>>                      ] 105/375, 7.6 task/s, elapsed: 14s, ETA:    36s[>>>>>>>>                      ] 106/375, 7.7 task/s, elapsed: 14s, ETA:    35s[>>>>>>>>                      ] 107/375, 7.8 task/s, elapsed: 14s, ETA:    35s[>>>>>>>>                      ] 108/375, 7.8 task/s, elapsed: 14s, ETA:    34s[>>>>>>>>                      ] 109/375, 7.9 task/s, elapsed: 14s, ETA:    34s[>>>>>>>>                      ] 110/375, 8.0 task/s, elapsed: 14s, ETA:    33s[>>>>>>>>                      ] 111/375, 8.0 task/s, elapsed: 14s, ETA:    33s[>>>>>>>>                      ] 112/375, 8.1 task/s, elapsed: 14s, ETA:    32s[>>>>>>>>>                     ] 113/375, 8.1 task/s, elapsed: 14s, ETA:    32s[>>>>>>>>>                     ] 114/375, 8.2 task/s, elapsed: 14s, ETA:    32s[>>>>>>>>>                     ] 115/375, 8.2 task/s, elapsed: 14s, ETA:    32s[>>>>>>>>>                     ] 116/375, 8.3 task/s, elapsed: 14s, ETA:    31s[>>>>>>>>>                     ] 117/375, 8.4 task/s, elapsed: 14s, ETA:    31s[>>>>>>>>>                     ] 118/375, 8.5 task/s, elapsed: 14s, ETA:    30s[>>>>>>>>>                     ] 119/375, 8.5 task/s, elapsed: 14s, ETA:    30s[>>>>>>>>>                     ] 120/375, 8.6 task/s, elapsed: 14s, ETA:    30s[>>>>>>>>>                     ] 121/375, 8.6 task/s, elapsed: 14s, ETA:    30s[>>>>>>>>>                     ] 122/375, 8.7 task/s, elapsed: 14s, ETA:    29s[>>>>>>>>>                     ] 123/375, 8.7 task/s, elapsed: 14s, ETA:    29s[>>>>>>>>>                     ] 124/375, 8.8 task/s, elapsed: 14s, ETA:    28s[>>>>>>>>>>                    ] 125/375, 8.9 task/s, elapsed: 14s, ETA:    28s[>>>>>>>>>>                    ] 126/375, 9.0 task/s, elapsed: 14s, ETA:    28s[>>>>>>>>>>                    ] 127/375, 9.0 task/s, elapsed: 14s, ETA:    27s[>>>>>>>>>>                    ] 128/375, 9.1 task/s, elapsed: 14s, ETA:    27s[>>>>>>>>>>                    ] 129/375, 9.1 task/s, elapsed: 14s, ETA:    27s[>>>>>>>>>>                    ] 130/375, 9.1 task/s, elapsed: 14s, ETA:    27s[>>>>>>>>>>                    ] 131/375, 9.2 task/s, elapsed: 14s, ETA:    26s[>>>>>>>>>>                    ] 132/375, 9.3 task/s, elapsed: 14s, ETA:    26s[>>>>>>>>>>                    ] 133/375, 9.3 task/s, elapsed: 14s, ETA:    26s[>>>>>>>>>>                    ] 134/375, 9.4 task/s, elapsed: 14s, ETA:    26s[>>>>>>>>>>                    ] 135/375, 9.5 task/s, elapsed: 14s, ETA:    25s[>>>>>>>>>>                    ] 136/375, 9.6 task/s, elapsed: 14s, ETA:    25s[>>>>>>>>>>                    ] 137/375, 9.5 task/s, elapsed: 14s, ETA:    25s[>>>>>>>>>>>                   ] 138/375, 9.6 task/s, elapsed: 14s, ETA:    25s[>>>>>>>>>>>                   ] 139/375, 9.7 task/s, elapsed: 14s, ETA:    24s[>>>>>>>>>>>                   ] 140/375, 9.8 task/s, elapsed: 14s, ETA:    24s[>>>>>>>>>>>                   ] 141/375, 9.8 task/s, elapsed: 14s, ETA:    24s[>>>>>>>>>>>                   ] 142/375, 9.9 task/s, elapsed: 14s, ETA:    24s[>>>>>>>>>>>                  ] 143/375, 10.0 task/s, elapsed: 14s, ETA:    23s[>>>>>>>>>>>                  ] 144/375, 10.0 task/s, elapsed: 14s, ETA:    23s[>>>>>>>>>>>                  ] 145/375, 10.0 task/s, elapsed: 14s, ETA:    23s[>>>>>>>>>>>                  ] 146/375, 10.1 task/s, elapsed: 14s, ETA:    23s[>>>>>>>>>>>                  ] 147/375, 10.2 task/s, elapsed: 14s, ETA:    22s[>>>>>>>>>>>                  ] 148/375, 10.2 task/s, elapsed: 14s, ETA:    22s[>>>>>>>>>>>                  ] 149/375, 10.3 task/s, elapsed: 14s, ETA:    22s[>>>>>>>>>>>                  ] 150/375, 10.4 task/s, elapsed: 14s, ETA:    22s[>>>>>>>>>>>                  ] 151/375, 10.4 task/s, elapsed: 14s, ETA:    21s[>>>>>>>>>>>                  ] 152/375, 10.5 task/s, elapsed: 14s, ETA:    21s[>>>>>>>>>>>                  ] 153/375, 10.5 task/s, elapsed: 15s, ETA:    21s[>>>>>>>>>>>                  ] 154/375, 10.5 task/s, elapsed: 15s, ETA:    21s[>>>>>>>>>>>                  ] 155/375, 10.6 task/s, elapsed: 15s, ETA:    21s[>>>>>>>>>>>>                 ] 156/375, 10.7 task/s, elapsed: 15s, ETA:    21s[>>>>>>>>>>>>                 ] 157/375, 10.7 task/s, elapsed: 15s, ETA:    20s[>>>>>>>>>>>>                 ] 158/375, 10.8 task/s, elapsed: 15s, ETA:    20s[>>>>>>>>>>>>                 ] 159/375, 10.9 task/s, elapsed: 15s, ETA:    20s[>>>>>>>>>>>>                 ] 160/375, 10.9 task/s, elapsed: 15s, ETA:    20s[>>>>>>>>>>>>                 ] 161/375, 10.9 task/s, elapsed: 15s, ETA:    20s[>>>>>>>>>>>>                 ] 162/375, 10.9 task/s, elapsed: 15s, ETA:    19s[>>>>>>>>>>>>                 ] 163/375, 11.0 task/s, elapsed: 15s, ETA:    19s[>>>>>>>>>>>>                 ] 164/375, 11.1 task/s, elapsed: 15s, ETA:    19s[>>>>>>>>>>>>                 ] 165/375, 11.1 task/s, elapsed: 15s, ETA:    19s[>>>>>>>>>>>>                 ] 166/375, 11.2 task/s, elapsed: 15s, ETA:    19s[>>>>>>>>>>>>                 ] 167/375, 11.3 task/s, elapsed: 15s, ETA:    18s[>>>>>>>>>>>>                 ] 168/375, 11.3 task/s, elapsed: 15s, ETA:    18s[>>>>>>>>>>>>>                ] 169/375, 11.3 task/s, elapsed: 15s, ETA:    18s[>>>>>>>>>>>>>                ] 170/375, 11.4 task/s, elapsed: 15s, ETA:    18s[>>>>>>>>>>>>>                ] 171/375, 11.4 task/s, elapsed: 15s, ETA:    18s[>>>>>>>>>>>>>                ] 172/375, 11.5 task/s, elapsed: 15s, ETA:    18s[>>>>>>>>>>>>>                ] 173/375, 11.6 task/s, elapsed: 15s, ETA:    17s[>>>>>>>>>>>>>                ] 174/375, 11.6 task/s, elapsed: 15s, ETA:    17s[>>>>>>>>>>>>>                ] 175/375, 11.7 task/s, elapsed: 15s, ETA:    17s[>>>>>>>>>>>>>                ] 176/375, 11.8 task/s, elapsed: 15s, ETA:    17s[>>>>>>>>>>>>>                ] 177/375, 11.7 task/s, elapsed: 15s, ETA:    17s[>>>>>>>>>>>>>                ] 178/375, 11.8 task/s, elapsed: 15s, ETA:    17s[>>>>>>>>>>>>>                ] 179/375, 11.8 task/s, elapsed: 15s, ETA:    17s[>>>>>>>>>>>>>                ] 180/375, 11.9 task/s, elapsed: 15s, ETA:    16s[>>>>>>>>>>>>>                ] 181/375, 12.0 task/s, elapsed: 15s, ETA:    16s[>>>>>>>>>>>>>>               ] 182/375, 12.0 task/s, elapsed: 15s, ETA:    16s[>>>>>>>>>>>>>>               ] 183/375, 12.1 task/s, elapsed: 15s, ETA:    16s[>>>>>>>>>>>>>>               ] 184/375, 12.2 task/s, elapsed: 15s, ETA:    16s[>>>>>>>>>>>>>>               ] 185/375, 12.1 task/s, elapsed: 15s, ETA:    16s[>>>>>>>>>>>>>>               ] 186/375, 12.2 task/s, elapsed: 15s, ETA:    16s[>>>>>>>>>>>>>>               ] 187/375, 12.2 task/s, elapsed: 15s, ETA:    15s[>>>>>>>>>>>>>>               ] 188/375, 12.3 task/s, elapsed: 15s, ETA:    15s[>>>>>>>>>>>>>>               ] 189/375, 12.4 task/s, elapsed: 15s, ETA:    15s[>>>>>>>>>>>>>>               ] 190/375, 12.4 task/s, elapsed: 15s, ETA:    15s[>>>>>>>>>>>>>>               ] 191/375, 12.5 task/s, elapsed: 15s, ETA:    15s[>>>>>>>>>>>>>>               ] 192/375, 12.6 task/s, elapsed: 15s, ETA:    15s[>>>>>>>>>>>>>>               ] 193/375, 12.5 task/s, elapsed: 15s, ETA:    15s[>>>>>>>>>>>>>>>              ] 194/375, 12.6 task/s, elapsed: 15s, ETA:    14s[>>>>>>>>>>>>>>>              ] 195/375, 12.7 task/s, elapsed: 15s, ETA:    14s[>>>>>>>>>>>>>>>              ] 196/375, 12.7 task/s, elapsed: 15s, ETA:    14s[>>>>>>>>>>>>>>>              ] 197/375, 12.8 task/s, elapsed: 15s, ETA:    14s[>>>>>>>>>>>>>>>              ] 198/375, 12.9 task/s, elapsed: 15s, ETA:    14s[>>>>>>>>>>>>>>>              ] 199/375, 12.9 task/s, elapsed: 15s, ETA:    14s[>>>>>>>>>>>>>>>              ] 200/375, 13.0 task/s, elapsed: 15s, ETA:    13s[>>>>>>>>>>>>>>>              ] 201/375, 13.0 task/s, elapsed: 15s, ETA:    13s[>>>>>>>>>>>>>>>              ] 202/375, 13.1 task/s, elapsed: 15s, ETA:    13s[>>>>>>>>>>>>>>>              ] 203/375, 13.1 task/s, elapsed: 15s, ETA:    13s[>>>>>>>>>>>>>>>              ] 204/375, 13.2 task/s, elapsed: 15s, ETA:    13s[>>>>>>>>>>>>>>>              ] 205/375, 13.3 task/s, elapsed: 15s, ETA:    13s[>>>>>>>>>>>>>>>              ] 206/375, 13.3 task/s, elapsed: 15s, ETA:    13s[>>>>>>>>>>>>>>>>             ] 207/375, 13.4 task/s, elapsed: 15s, ETA:    13s[>>>>>>>>>>>>>>>>             ] 208/375, 13.4 task/s, elapsed: 15s, ETA:    12s[>>>>>>>>>>>>>>>>             ] 209/375, 13.4 task/s, elapsed: 16s, ETA:    12s[>>>>>>>>>>>>>>>>             ] 210/375, 13.4 task/s, elapsed: 16s, ETA:    12s[>>>>>>>>>>>>>>>>             ] 211/375, 13.5 task/s, elapsed: 16s, ETA:    12s[>>>>>>>>>>>>>>>>             ] 212/375, 13.6 task/s, elapsed: 16s, ETA:    12s[>>>>>>>>>>>>>>>>             ] 213/375, 13.6 task/s, elapsed: 16s, ETA:    12s[>>>>>>>>>>>>>>>>             ] 214/375, 13.7 task/s, elapsed: 16s, ETA:    12s[>>>>>>>>>>>>>>>>             ] 215/375, 13.8 task/s, elapsed: 16s, ETA:    12s[>>>>>>>>>>>>>>>>             ] 216/375, 13.8 task/s, elapsed: 16s, ETA:    11s[>>>>>>>>>>>>>>>>             ] 217/375, 13.8 task/s, elapsed: 16s, ETA:    11s[>>>>>>>>>>>>>>>>             ] 218/375, 13.8 task/s, elapsed: 16s, ETA:    11s[>>>>>>>>>>>>>>>>             ] 219/375, 13.9 task/s, elapsed: 16s, ETA:    11s[>>>>>>>>>>>>>>>>>            ] 220/375, 14.0 task/s, elapsed: 16s, ETA:    11s[>>>>>>>>>>>>>>>>>            ] 221/375, 14.0 task/s, elapsed: 16s, ETA:    11s[>>>>>>>>>>>>>>>>>            ] 222/375, 14.1 task/s, elapsed: 16s, ETA:    11s[>>>>>>>>>>>>>>>>>            ] 223/375, 14.2 task/s, elapsed: 16s, ETA:    11s[>>>>>>>>>>>>>>>>>            ] 224/375, 14.2 task/s, elapsed: 16s, ETA:    11s[>>>>>>>>>>>>>>>>>            ] 225/375, 14.1 task/s, elapsed: 16s, ETA:    11s[>>>>>>>>>>>>>>>>>            ] 226/375, 14.2 task/s, elapsed: 16s, ETA:    11s[>>>>>>>>>>>>>>>>>            ] 227/375, 14.2 task/s, elapsed: 16s, ETA:    10s[>>>>>>>>>>>>>>>>>            ] 228/375, 14.3 task/s, elapsed: 16s, ETA:    10s[>>>>>>>>>>>>>>>>>            ] 229/375, 14.4 task/s, elapsed: 16s, ETA:    10s[>>>>>>>>>>>>>>>>>            ] 230/375, 14.4 task/s, elapsed: 16s, ETA:    10s[>>>>>>>>>>>>>>>>>            ] 231/375, 14.5 task/s, elapsed: 16s, ETA:    10s[>>>>>>>>>>>>>>>>>            ] 232/375, 14.6 task/s, elapsed: 16s, ETA:    10s[>>>>>>>>>>>>>>>>>>           ] 233/375, 14.5 task/s, elapsed: 16s, ETA:    10s[>>>>>>>>>>>>>>>>>>           ] 234/375, 14.6 task/s, elapsed: 16s, ETA:    10s[>>>>>>>>>>>>>>>>>>           ] 235/375, 14.6 task/s, elapsed: 16s, ETA:    10s[>>>>>>>>>>>>>>>>>>           ] 236/375, 14.7 task/s, elapsed: 16s, ETA:     9s[>>>>>>>>>>>>>>>>>>           ] 237/375, 14.8 task/s, elapsed: 16s, ETA:     9s[>>>>>>>>>>>>>>>>>>           ] 238/375, 14.8 task/s, elapsed: 16s, ETA:     9s[>>>>>>>>>>>>>>>>>>           ] 239/375, 14.9 task/s, elapsed: 16s, ETA:     9s[>>>>>>>>>>>>>>>>>>           ] 240/375, 14.9 task/s, elapsed: 16s, ETA:     9s[>>>>>>>>>>>>>>>>>>           ] 241/375, 14.8 task/s, elapsed: 16s, ETA:     9s[>>>>>>>>>>>>>>>>>>           ] 242/375, 14.9 task/s, elapsed: 16s, ETA:     9s[>>>>>>>>>>>>>>>>>>           ] 243/375, 15.0 task/s, elapsed: 16s, ETA:     9s[>>>>>>>>>>>>>>>>>>           ] 244/375, 15.0 task/s, elapsed: 16s, ETA:     9s[>>>>>>>>>>>>>>>>>>           ] 245/375, 15.1 task/s, elapsed: 16s, ETA:     9s[>>>>>>>>>>>>>>>>>>>          ] 246/375, 15.2 task/s, elapsed: 16s, ETA:     9s[>>>>>>>>>>>>>>>>>>>          ] 247/375, 15.2 task/s, elapsed: 16s, ETA:     8s[>>>>>>>>>>>>>>>>>>>          ] 248/375, 15.3 task/s, elapsed: 16s, ETA:     8s[>>>>>>>>>>>>>>>>>>>          ] 249/375, 15.2 task/s, elapsed: 16s, ETA:     8s[>>>>>>>>>>>>>>>>>>>          ] 250/375, 15.3 task/s, elapsed: 16s, ETA:     8s[>>>>>>>>>>>>>>>>>>>          ] 251/375, 15.3 task/s, elapsed: 16s, ETA:     8s[>>>>>>>>>>>>>>>>>>>          ] 252/375, 15.4 task/s, elapsed: 16s, ETA:     8s[>>>>>>>>>>>>>>>>>>>          ] 253/375, 15.5 task/s, elapsed: 16s, ETA:     8s[>>>>>>>>>>>>>>>>>>>          ] 254/375, 15.5 task/s, elapsed: 16s, ETA:     8s[>>>>>>>>>>>>>>>>>>>          ] 255/375, 15.6 task/s, elapsed: 16s, ETA:     8s[>>>>>>>>>>>>>>>>>>>          ] 256/375, 15.6 task/s, elapsed: 16s, ETA:     8s[>>>>>>>>>>>>>>>>>>>          ] 257/375, 15.5 task/s, elapsed: 17s, ETA:     8s[>>>>>>>>>>>>>>>>>>>          ] 258/375, 15.6 task/s, elapsed: 17s, ETA:     8s[>>>>>>>>>>>>>>>>>>>>         ] 259/375, 15.7 task/s, elapsed: 17s, ETA:     7s[>>>>>>>>>>>>>>>>>>>>         ] 260/375, 15.7 task/s, elapsed: 17s, ETA:     7s[>>>>>>>>>>>>>>>>>>>>         ] 261/375, 15.8 task/s, elapsed: 17s, ETA:     7s[>>>>>>>>>>>>>>>>>>>>         ] 262/375, 15.8 task/s, elapsed: 17s, ETA:     7s[>>>>>>>>>>>>>>>>>>>>         ] 263/375, 15.9 task/s, elapsed: 17s, ETA:     7s[>>>>>>>>>>>>>>>>>>>>         ] 264/375, 16.0 task/s, elapsed: 17s, ETA:     7s[>>>>>>>>>>>>>>>>>>>>         ] 265/375, 15.8 task/s, elapsed: 17s, ETA:     7s[>>>>>>>>>>>>>>>>>>>>         ] 266/375, 15.9 task/s, elapsed: 17s, ETA:     7s[>>>>>>>>>>>>>>>>>>>>         ] 267/375, 16.0 task/s, elapsed: 17s, ETA:     7s[>>>>>>>>>>>>>>>>>>>>         ] 268/375, 16.0 task/s, elapsed: 17s, ETA:     7s[>>>>>>>>>>>>>>>>>>>>         ] 269/375, 16.1 task/s, elapsed: 17s, ETA:     7s[>>>>>>>>>>>>>>>>>>>>         ] 270/375, 16.1 task/s, elapsed: 17s, ETA:     7s[>>>>>>>>>>>>>>>>>>>>         ] 271/375, 16.2 task/s, elapsed: 17s, ETA:     6s[>>>>>>>>>>>>>>>>>>>>>        ] 272/375, 16.3 task/s, elapsed: 17s, ETA:     6s[>>>>>>>>>>>>>>>>>>>>>        ] 273/375, 16.2 task/s, elapsed: 17s, ETA:     6s[>>>>>>>>>>>>>>>>>>>>>        ] 274/375, 16.3 task/s, elapsed: 17s, ETA:     6s[>>>>>>>>>>>>>>>>>>>>>        ] 275/375, 16.3 task/s, elapsed: 17s, ETA:     6s[>>>>>>>>>>>>>>>>>>>>>        ] 276/375, 16.4 task/s, elapsed: 17s, ETA:     6s[>>>>>>>>>>>>>>>>>>>>>        ] 277/375, 16.4 task/s, elapsed: 17s, ETA:     6s[>>>>>>>>>>>>>>>>>>>>>        ] 278/375, 16.5 task/s, elapsed: 17s, ETA:     6s[>>>>>>>>>>>>>>>>>>>>>        ] 279/375, 16.6 task/s, elapsed: 17s, ETA:     6s[>>>>>>>>>>>>>>>>>>>>>        ] 280/375, 16.6 task/s, elapsed: 17s, ETA:     6s[>>>>>>>>>>>>>>>>>>>>>        ] 281/375, 16.5 task/s, elapsed: 17s, ETA:     6s[>>>>>>>>>>>>>>>>>>>>>        ] 282/375, 16.6 task/s, elapsed: 17s, ETA:     6s[>>>>>>>>>>>>>>>>>>>>>        ] 283/375, 16.6 task/s, elapsed: 17s, ETA:     6s[>>>>>>>>>>>>>>>>>>>>>        ] 284/375, 16.7 task/s, elapsed: 17s, ETA:     5s[>>>>>>>>>>>>>>>>>>>>>>       ] 285/375, 16.8 task/s, elapsed: 17s, ETA:     5s[>>>>>>>>>>>>>>>>>>>>>>       ] 286/375, 16.8 task/s, elapsed: 17s, ETA:     5s[>>>>>>>>>>>>>>>>>>>>>>       ] 287/375, 16.9 task/s, elapsed: 17s, ETA:     5s[>>>>>>>>>>>>>>>>>>>>>>       ] 288/375, 16.9 task/s, elapsed: 17s, ETA:     5s[>>>>>>>>>>>>>>>>>>>>>>       ] 289/375, 16.9 task/s, elapsed: 17s, ETA:     5s[>>>>>>>>>>>>>>>>>>>>>>       ] 290/375, 17.0 task/s, elapsed: 17s, ETA:     5s[>>>>>>>>>>>>>>>>>>>>>>       ] 291/375, 17.0 task/s, elapsed: 17s, ETA:     5s[>>>>>>>>>>>>>>>>>>>>>>       ] 292/375, 17.1 task/s, elapsed: 17s, ETA:     5s[>>>>>>>>>>>>>>>>>>>>>>       ] 293/375, 17.1 task/s, elapsed: 17s, ETA:     5s[>>>>>>>>>>>>>>>>>>>>>>       ] 294/375, 17.2 task/s, elapsed: 17s, ETA:     5s[>>>>>>>>>>>>>>>>>>>>>>       ] 295/375, 17.2 task/s, elapsed: 17s, ETA:     5s[>>>>>>>>>>>>>>>>>>>>>>       ] 296/375, 17.3 task/s, elapsed: 17s, ETA:     5s[>>>>>>>>>>>>>>>>>>>>>>       ] 297/375, 17.2 task/s, elapsed: 17s, ETA:     5s[>>>>>>>>>>>>>>>>>>>>>>>      ] 298/375, 17.2 task/s, elapsed: 17s, ETA:     4s[>>>>>>>>>>>>>>>>>>>>>>>      ] 299/375, 17.3 task/s, elapsed: 17s, ETA:     4s[>>>>>>>>>>>>>>>>>>>>>>>      ] 300/375, 17.4 task/s, elapsed: 17s, ETA:     4s[>>>>>>>>>>>>>>>>>>>>>>>      ] 301/375, 17.4 task/s, elapsed: 17s, ETA:     4s[>>>>>>>>>>>>>>>>>>>>>>>      ] 302/375, 17.5 task/s, elapsed: 17s, ETA:     4s[>>>>>>>>>>>>>>>>>>>>>>>      ] 303/375, 17.5 task/s, elapsed: 17s, ETA:     4s[>>>>>>>>>>>>>>>>>>>>>>>      ] 304/375, 17.6 task/s, elapsed: 17s, ETA:     4s[>>>>>>>>>>>>>>>>>>>>>>>      ] 305/375, 17.5 task/s, elapsed: 17s, ETA:     4s[>>>>>>>>>>>>>>>>>>>>>>>      ] 306/375, 17.5 task/s, elapsed: 17s, ETA:     4s[>>>>>>>>>>>>>>>>>>>>>>>      ] 307/375, 17.6 task/s, elapsed: 17s, ETA:     4s[>>>>>>>>>>>>>>>>>>>>>>>      ] 308/375, 17.7 task/s, elapsed: 17s, ETA:     4s[>>>>>>>>>>>>>>>>>>>>>>>      ] 309/375, 17.7 task/s, elapsed: 17s, ETA:     4s[>>>>>>>>>>>>>>>>>>>>>>>      ] 310/375, 17.8 task/s, elapsed: 17s, ETA:     4s[>>>>>>>>>>>>>>>>>>>>>>>>     ] 311/375, 17.8 task/s, elapsed: 17s, ETA:     4s[>>>>>>>>>>>>>>>>>>>>>>>>     ] 312/375, 17.9 task/s, elapsed: 17s, ETA:     4s[>>>>>>>>>>>>>>>>>>>>>>>>     ] 313/375, 17.8 task/s, elapsed: 18s, ETA:     3s[>>>>>>>>>>>>>>>>>>>>>>>>     ] 314/375, 17.9 task/s, elapsed: 18s, ETA:     3s[>>>>>>>>>>>>>>>>>>>>>>>>     ] 315/375, 17.9 task/s, elapsed: 18s, ETA:     3s[>>>>>>>>>>>>>>>>>>>>>>>>     ] 316/375, 18.0 task/s, elapsed: 18s, ETA:     3s[>>>>>>>>>>>>>>>>>>>>>>>>     ] 317/375, 18.0 task/s, elapsed: 18s, ETA:     3s[>>>>>>>>>>>>>>>>>>>>>>>>     ] 318/375, 18.1 task/s, elapsed: 18s, ETA:     3s[>>>>>>>>>>>>>>>>>>>>>>>>     ] 319/375, 18.2 task/s, elapsed: 18s, ETA:     3s[>>>>>>>>>>>>>>>>>>>>>>>>     ] 320/375, 18.2 task/s, elapsed: 18s, ETA:     3s[>>>>>>>>>>>>>>>>>>>>>>>>     ] 321/375, 18.1 task/s, elapsed: 18s, ETA:     3s[>>>>>>>>>>>>>>>>>>>>>>>>     ] 322/375, 18.1 task/s, elapsed: 18s, ETA:     3s[>>>>>>>>>>>>>>>>>>>>>>>>     ] 323/375, 18.2 task/s, elapsed: 18s, ETA:     3s[>>>>>>>>>>>>>>>>>>>>>>>>>    ] 324/375, 18.3 task/s, elapsed: 18s, ETA:     3s[>>>>>>>>>>>>>>>>>>>>>>>>>    ] 325/375, 18.3 task/s, elapsed: 18s, ETA:     3s[>>>>>>>>>>>>>>>>>>>>>>>>>    ] 326/375, 18.4 task/s, elapsed: 18s, ETA:     3s[>>>>>>>>>>>>>>>>>>>>>>>>>    ] 327/375, 18.4 task/s, elapsed: 18s, ETA:     3s[>>>>>>>>>>>>>>>>>>>>>>>>>    ] 328/375, 18.5 task/s, elapsed: 18s, ETA:     3s[>>>>>>>>>>>>>>>>>>>>>>>>>    ] 329/375, 18.3 task/s, elapsed: 18s, ETA:     3s[>>>>>>>>>>>>>>>>>>>>>>>>>    ] 330/375, 18.4 task/s, elapsed: 18s, ETA:     2s[>>>>>>>>>>>>>>>>>>>>>>>>>    ] 331/375, 18.4 task/s, elapsed: 18s, ETA:     2s[>>>>>>>>>>>>>>>>>>>>>>>>>    ] 332/375, 18.5 task/s, elapsed: 18s, ETA:     2s[>>>>>>>>>>>>>>>>>>>>>>>>>    ] 333/375, 18.6 task/s, elapsed: 18s, ETA:     2s[>>>>>>>>>>>>>>>>>>>>>>>>>    ] 334/375, 18.6 task/s, elapsed: 18s, ETA:     2s[>>>>>>>>>>>>>>>>>>>>>>>>>    ] 335/375, 18.7 task/s, elapsed: 18s, ETA:     2s[>>>>>>>>>>>>>>>>>>>>>>>>>    ] 336/375, 18.7 task/s, elapsed: 18s, ETA:     2s[>>>>>>>>>>>>>>>>>>>>>>>>>>   ] 337/375, 18.7 task/s, elapsed: 18s, ETA:     2s[>>>>>>>>>>>>>>>>>>>>>>>>>>   ] 338/375, 18.7 task/s, elapsed: 18s, ETA:     2s[>>>>>>>>>>>>>>>>>>>>>>>>>>   ] 339/375, 18.8 task/s, elapsed: 18s, ETA:     2s[>>>>>>>>>>>>>>>>>>>>>>>>>>   ] 340/375, 18.8 task/s, elapsed: 18s, ETA:     2s[>>>>>>>>>>>>>>>>>>>>>>>>>>   ] 341/375, 18.9 task/s, elapsed: 18s, ETA:     2s[>>>>>>>>>>>>>>>>>>>>>>>>>>   ] 342/375, 18.9 task/s, elapsed: 18s, ETA:     2s[>>>>>>>>>>>>>>>>>>>>>>>>>>   ] 343/375, 19.0 task/s, elapsed: 18s, ETA:     2s[>>>>>>>>>>>>>>>>>>>>>>>>>>   ] 344/375, 19.0 task/s, elapsed: 18s, ETA:     2s[>>>>>>>>>>>>>>>>>>>>>>>>>>   ] 345/375, 18.9 task/s, elapsed: 18s, ETA:     2s[>>>>>>>>>>>>>>>>>>>>>>>>>>   ] 346/375, 19.0 task/s, elapsed: 18s, ETA:     2s[>>>>>>>>>>>>>>>>>>>>>>>>>>   ] 347/375, 19.0 task/s, elapsed: 18s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>>>>>>   ] 348/375, 19.1 task/s, elapsed: 18s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>>>>>>   ] 349/375, 19.1 task/s, elapsed: 18s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>>>>>>>  ] 350/375, 19.2 task/s, elapsed: 18s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>>>>>>>  ] 351/375, 19.2 task/s, elapsed: 18s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>>>>>>>  ] 352/375, 19.3 task/s, elapsed: 18s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>>>>>>>  ] 353/375, 19.2 task/s, elapsed: 18s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>>>>>>>  ] 354/375, 19.3 task/s, elapsed: 18s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>>>>>>>  ] 355/375, 19.3 task/s, elapsed: 18s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>>>>>>>  ] 356/375, 19.4 task/s, elapsed: 18s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>>>>>>>  ] 357/375, 19.4 task/s, elapsed: 18s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>>>>>>>  ] 358/375, 19.5 task/s, elapsed: 18s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>>>>>>>  ] 359/375, 19.6 task/s, elapsed: 18s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>>>>>>>  ] 360/375, 19.6 task/s, elapsed: 18s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>>>>>>>  ] 361/375, 19.5 task/s, elapsed: 19s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>>>>>>>  ] 362/375, 19.5 task/s, elapsed: 19s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>>>>>>>> ] 363/375, 19.6 task/s, elapsed: 19s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>>>>>>>> ] 364/375, 19.6 task/s, elapsed: 19s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>>>>>>>> ] 365/375, 19.7 task/s, elapsed: 19s, ETA:     1s[>>>>>>>>>>>>>>>>>>>>>>>>>>>> ] 366/375, 19.7 task/s, elapsed: 19s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>> ] 367/375, 19.8 task/s, elapsed: 19s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>> ] 368/375, 19.9 task/s, elapsed: 19s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>> ] 369/375, 19.8 task/s, elapsed: 19s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>> ] 370/375, 19.8 task/s, elapsed: 19s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>> ] 371/375, 19.9 task/s, elapsed: 19s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>> ] 372/375, 20.0 task/s, elapsed: 19s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>> ] 373/375, 20.0 task/s, elapsed: 19s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>> ] 374/375, 20.1 task/s, elapsed: 19s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>] 375/375, 20.1 task/s, elapsed: 19s, ETA:     0s[>>>>>>>>>>>>>>>>>>>>>>>>>>>>>] 376/375, 20.2 task/s, elapsed: 19s, ETA:     0s
+
+2021-07-13 21:13:00,369 - mmdet - INFO - Evaluating bbox...
+INFO:mmdet:Evaluating bbox...
+Loading and preparing results...
+DONE (t=0.00s)
+creating index...
+index created!
+Running per image evaluation...
+Evaluate annotation type *bbox*
+DONE (t=0.27s).
+Accumulating evaluation results...
+DONE (t=0.08s).
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.504
+ Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=1000 ] = 0.812
+ Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=1000 ] = 0.564
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.200
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.552
+ Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.711
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.596
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=300 ] = 0.596
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=1000 ] = 0.596
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=1000 ] = 0.395
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=1000 ] = 0.619
+ Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=1000 ] = 0.795
+Calculating miss-rate@FPPI and LAMR...
+LAMR = 0.24615010080357413
+2021-07-13 21:13:00,757 - mmdet - INFO - Saving checkpoint at 2 epochs
+INFO:mmdet:Saving checkpoint at 2 epochs
+2021-07-13 21:13:01,523 - mmdet - INFO - Exp name: faster_rcnn_r50_caffe_fpn_mstrain_1x_coco-person_adaptive.py
+INFO:mmdet:Exp name: faster_rcnn_r50_caffe_fpn_mstrain_1x_coco-person_adaptive.py
+2021-07-13 21:13:01,527 - mmdet - INFO - Epoch(val) [2][47]	bbox_LAMR: 0.2462, bbox_mr_FPPI: [[1.00000000e-04 6.76214197e-01 9.88398015e-01]
+ [1.14975700e-04 6.76214197e-01 9.88398015e-01]
+ [1.32194115e-04 6.76214197e-01 9.88398015e-01]
+ [1.51991108e-04 6.76214197e-01 9.88398015e-01]
+ [1.74752840e-04 6.76214197e-01 9.88398015e-01]
+ [2.00923300e-04 6.76214197e-01 9.88398015e-01]
+ [2.31012970e-04 6.76214197e-01 9.88398015e-01]
+ [2.65608778e-04 6.76214197e-01 9.88398015e-01]
+ [3.05385551e-04 6.76214197e-01 9.88398015e-01]
+ [3.51119173e-04 6.76214197e-01 9.88398015e-01]
+ [4.03701726e-04 6.76214197e-01 9.88398015e-01]
+ [4.64158883e-04 6.76214197e-01 9.88398015e-01]
+ [5.33669923e-04 6.76214197e-01 9.88398015e-01]
+ [6.13590727e-04 6.76214197e-01 9.88398015e-01]
+ [7.05480231e-04 6.76214197e-01 9.88398015e-01]
+ [8.11130831e-04 6.76214197e-01 9.88398015e-01]
+ [9.32603347e-04 6.76214197e-01 9.88398015e-01]
+ [1.07226722e-03 6.76214197e-01 9.88398015e-01]
+ [1.23284674e-03 6.76214197e-01 9.88398015e-01]
+ [1.41747416e-03 6.76214197e-01 9.88398015e-01]
+ [1.62975083e-03 6.76214197e-01 9.88398015e-01]
+ [1.87381742e-03 6.76214197e-01 9.88398015e-01]
+ [2.15443469e-03 6.76214197e-01 9.88398015e-01]
+ [2.47707636e-03 6.76214197e-01 9.88398015e-01]
+ [2.84803587e-03 6.00249066e-01 9.78749692e-01]
+ [3.27454916e-03 6.00249066e-01 9.78749692e-01]
+ [3.76493581e-03 6.00249066e-01 9.78749692e-01]
+ [4.32876128e-03 6.00249066e-01 9.78749692e-01]
+ [4.97702356e-03 6.00249066e-01 9.78749692e-01]
+ [5.72236766e-03 5.54171856e-01 9.71043408e-01]
+ [6.57933225e-03 5.54171856e-01 9.71043408e-01]
+ [7.56463328e-03 5.54171856e-01 9.71043408e-01]
+ [8.69749003e-03 5.18057285e-01 9.58388507e-01]
+ [1.00000000e-02 5.18057285e-01 9.58388507e-01]
+ [1.14975700e-02 5.11830635e-01 9.56257224e-01]
+ [1.32194115e-02 5.11830635e-01 9.56257224e-01]
+ [1.51991108e-02 5.11830635e-01 9.55956817e-01]
+ [1.74752840e-02 4.83188045e-01 9.47028518e-01]
+ [2.00923300e-02 4.76961395e-01 9.44057286e-01]
+ [2.31012970e-02 4.60772105e-01 9.29280043e-01]
+ [2.37137371e-02 4.60772105e-01 9.29280043e-01]
+ [2.65608778e-02 4.44582814e-01 9.17713821e-01]
+ [3.05385551e-02 4.12204234e-01 8.80401194e-01]
+ [3.51119173e-02 3.66127024e-01 8.29261422e-01]
+ [4.03701726e-02 3.62391034e-01 8.18467855e-01]
+ [4.64158883e-02 3.54919054e-01 8.04874778e-01]
+ [5.33669923e-02 3.42465753e-01 7.76696920e-01]
+ [5.62341325e-02 3.41220423e-01 7.76433587e-01]
+ [6.13590727e-02 3.33748443e-01 7.55976558e-01]
+ [7.05480231e-02 3.18804483e-01 7.37262249e-01]
+ [8.11130831e-02 3.17559153e-01 7.25534499e-01]
+ [9.32603347e-02 3.13823163e-01 7.08917141e-01]
+ [1.07226722e-01 3.07596513e-01 6.93153024e-01]
+ [1.23284674e-01 3.00124533e-01 6.76132143e-01]
+ [1.33352143e-01 2.98879203e-01 6.58485055e-01]
+ [1.41747416e-01 2.98879203e-01 6.56066000e-01]
+ [1.62975083e-01 2.92652553e-01 6.41084671e-01]
+ [1.87381742e-01 2.91407223e-01 6.28142178e-01]
+ [2.15443469e-01 2.90161893e-01 6.20121241e-01]
+ [2.47707636e-01 2.85180573e-01 6.08870625e-01]
+ [2.84803587e-01 2.82689913e-01 5.95845520e-01]
+ [3.16227766e-01 2.82689913e-01 5.86121559e-01]
+ [3.27454916e-01 2.82689913e-01 5.83697796e-01]
+ [3.76493581e-01 2.76463263e-01 5.68166316e-01]
+ [4.32876128e-01 2.72727273e-01 5.55824161e-01]
+ [4.97702356e-01 2.67745953e-01 5.31850934e-01]
+ [5.72236766e-01 2.54047323e-01 4.90880638e-01]
+ [6.57933225e-01 2.40348692e-01 4.44617867e-01]
+ [7.49894209e-01 2.30386052e-01 3.85634631e-01]
+ [7.56463328e-01 2.26650062e-01 3.78428578e-01]
+ [8.69749003e-01 2.09215442e-01 3.26837987e-01]
+ [1.00000000e+00 2.04234122e-01 2.94730872e-01]
+ [1.14975700e+00 1.90535492e-01 2.63473004e-01]
+ [1.32194115e+00 1.83063512e-01 2.28255123e-01]
+ [1.51991108e+00 1.66874222e-01 1.93404421e-01]
+ [1.74752840e+00 1.59402242e-01 1.57024756e-01]
+ [1.77827941e+00 1.59402242e-01 1.53469324e-01]
+ [2.00923300e+00 1.54420922e-01 1.33128837e-01]
+ [2.31012970e+00 1.46948941e-01 1.13944195e-01]
+ [2.65608778e+00 1.36986301e-01 9.83435661e-02]
+ [3.05385551e+00 1.24533001e-01 8.66234601e-02]
+ [3.51119173e+00 1.17061021e-01 7.76093677e-02]
+ [4.03701726e+00 1.14570361e-01 7.00201392e-02]
+ [4.21696503e+00 1.14570361e-01 6.72801584e-02]
+ [4.64158883e+00 1.10834371e-01 6.17204159e-02]
+ [5.33669923e+00 1.00871731e-01 5.42925932e-02]
+ [6.13590727e+00            nan            nan]
+ [7.05480231e+00            nan            nan]
+ [8.11130831e+00            nan            nan]
+ [9.32603347e+00            nan            nan]
+ [1.00000000e+01            nan            nan]
+ [1.07226722e+01            nan            nan]
+ [1.23284674e+01            nan            nan]
+ [1.41747416e+01            nan            nan]
+ [1.62975083e+01            nan            nan]
+ [1.87381742e+01            nan            nan]
+ [2.15443469e+01            nan            nan]
+ [2.47707636e+01            nan            nan]
+ [2.84803587e+01            nan            nan]
+ [3.27454916e+01            nan            nan]
+ [3.76493581e+01            nan            nan]
+ [4.32876128e+01            nan            nan]
+ [4.97702356e+01            nan            nan]
+ [5.72236766e+01            nan            nan]
+ [6.57933225e+01            nan            nan]
+ [7.56463328e+01            nan            nan]
+ [8.69749003e+01            nan            nan]
+ [1.00000000e+02            nan            nan]], bbox_mAP: 0.5040, bbox_mAP_50: 0.8120, bbox_mAP_75: 0.5640, bbox_mAP_s: 0.2000, bbox_mAP_m: 0.5520, bbox_mAP_l: 0.7110, bbox_mAP_copypaste: 0.504 0.812 0.564 0.200 0.552 0.711
+INFO:mmdet:Epoch(val) [2][47]	bbox_LAMR: 0.2462, bbox_mr_FPPI: [[1.00000000e-04 6.76214197e-01 9.88398015e-01]
+ [1.14975700e-04 6.76214197e-01 9.88398015e-01]
+ [1.32194115e-04 6.76214197e-01 9.88398015e-01]
+ [1.51991108e-04 6.76214197e-01 9.88398015e-01]
+ [1.74752840e-04 6.76214197e-01 9.88398015e-01]
+ [2.00923300e-04 6.76214197e-01 9.88398015e-01]
+ [2.31012970e-04 6.76214197e-01 9.88398015e-01]
+ [2.65608778e-04 6.76214197e-01 9.88398015e-01]
+ [3.05385551e-04 6.76214197e-01 9.88398015e-01]
+ [3.51119173e-04 6.76214197e-01 9.88398015e-01]
+ [4.03701726e-04 6.76214197e-01 9.88398015e-01]
+ [4.64158883e-04 6.76214197e-01 9.88398015e-01]
+ [5.33669923e-04 6.76214197e-01 9.88398015e-01]
+ [6.13590727e-04 6.76214197e-01 9.88398015e-01]
+ [7.05480231e-04 6.76214197e-01 9.88398015e-01]
+ [8.11130831e-04 6.76214197e-01 9.88398015e-01]
+ [9.32603347e-04 6.76214197e-01 9.88398015e-01]
+ [1.07226722e-03 6.76214197e-01 9.88398015e-01]
+ [1.23284674e-03 6.76214197e-01 9.88398015e-01]
+ [1.41747416e-03 6.76214197e-01 9.88398015e-01]
+ [1.62975083e-03 6.76214197e-01 9.88398015e-01]
+ [1.87381742e-03 6.76214197e-01 9.88398015e-01]
+ [2.15443469e-03 6.76214197e-01 9.88398015e-01]
+ [2.47707636e-03 6.76214197e-01 9.88398015e-01]
+ [2.84803587e-03 6.00249066e-01 9.78749692e-01]
+ [3.27454916e-03 6.00249066e-01 9.78749692e-01]
+ [3.76493581e-03 6.00249066e-01 9.78749692e-01]
+ [4.32876128e-03 6.00249066e-01 9.78749692e-01]
+ [4.97702356e-03 6.00249066e-01 9.78749692e-01]
+ [5.72236766e-03 5.54171856e-01 9.71043408e-01]
+ [6.57933225e-03 5.54171856e-01 9.71043408e-01]
+ [7.56463328e-03 5.54171856e-01 9.71043408e-01]
+ [8.69749003e-03 5.18057285e-01 9.58388507e-01]
+ [1.00000000e-02 5.18057285e-01 9.58388507e-01]
+ [1.14975700e-02 5.11830635e-01 9.56257224e-01]
+ [1.32194115e-02 5.11830635e-01 9.56257224e-01]
+ [1.51991108e-02 5.11830635e-01 9.55956817e-01]
+ [1.74752840e-02 4.83188045e-01 9.47028518e-01]
+ [2.00923300e-02 4.76961395e-01 9.44057286e-01]
+ [2.31012970e-02 4.60772105e-01 9.29280043e-01]
+ [2.37137371e-02 4.60772105e-01 9.29280043e-01]
+ [2.65608778e-02 4.44582814e-01 9.17713821e-01]
+ [3.05385551e-02 4.12204234e-01 8.80401194e-01]
+ [3.51119173e-02 3.66127024e-01 8.29261422e-01]
+ [4.03701726e-02 3.62391034e-01 8.18467855e-01]
+ [4.64158883e-02 3.54919054e-01 8.04874778e-01]
+ [5.33669923e-02 3.42465753e-01 7.76696920e-01]
+ [5.62341325e-02 3.41220423e-01 7.76433587e-01]
+ [6.13590727e-02 3.33748443e-01 7.55976558e-01]
+ [7.05480231e-02 3.18804483e-01 7.37262249e-01]
+ [8.11130831e-02 3.17559153e-01 7.25534499e-01]
+ [9.32603347e-02 3.13823163e-01 7.08917141e-01]
+ [1.07226722e-01 3.07596513e-01 6.93153024e-01]
+ [1.23284674e-01 3.00124533e-01 6.76132143e-01]
+ [1.33352143e-01 2.98879203e-01 6.58485055e-01]
+ [1.41747416e-01 2.98879203e-01 6.56066000e-01]
+ [1.62975083e-01 2.92652553e-01 6.41084671e-01]
+ [1.87381742e-01 2.91407223e-01 6.28142178e-01]
+ [2.15443469e-01 2.90161893e-01 6.20121241e-01]
+ [2.47707636e-01 2.85180573e-01 6.08870625e-01]
+ [2.84803587e-01 2.82689913e-01 5.95845520e-01]
+ [3.16227766e-01 2.82689913e-01 5.86121559e-01]
+ [3.27454916e-01 2.82689913e-01 5.83697796e-01]
+ [3.76493581e-01 2.76463263e-01 5.68166316e-01]
+ [4.32876128e-01 2.72727273e-01 5.55824161e-01]
+ [4.97702356e-01 2.67745953e-01 5.31850934e-01]
+ [5.72236766e-01 2.54047323e-01 4.90880638e-01]
+ [6.57933225e-01 2.40348692e-01 4.44617867e-01]
+ [7.49894209e-01 2.30386052e-01 3.85634631e-01]
+ [7.56463328e-01 2.26650062e-01 3.78428578e-01]
+ [8.69749003e-01 2.09215442e-01 3.26837987e-01]
+ [1.00000000e+00 2.04234122e-01 2.94730872e-01]
+ [1.14975700e+00 1.90535492e-01 2.63473004e-01]
+ [1.32194115e+00 1.83063512e-01 2.28255123e-01]
+ [1.51991108e+00 1.66874222e-01 1.93404421e-01]
+ [1.74752840e+00 1.59402242e-01 1.57024756e-01]
+ [1.77827941e+00 1.59402242e-01 1.53469324e-01]
+ [2.00923300e+00 1.54420922e-01 1.33128837e-01]
+ [2.31012970e+00 1.46948941e-01 1.13944195e-01]
+ [2.65608778e+00 1.36986301e-01 9.83435661e-02]
+ [3.05385551e+00 1.24533001e-01 8.66234601e-02]
+ [3.51119173e+00 1.17061021e-01 7.76093677e-02]
+ [4.03701726e+00 1.14570361e-01 7.00201392e-02]
+ [4.21696503e+00 1.14570361e-01 6.72801584e-02]
+ [4.64158883e+00 1.10834371e-01 6.17204159e-02]
+ [5.33669923e+00 1.00871731e-01 5.42925932e-02]
+ [6.13590727e+00            nan            nan]
+ [7.05480231e+00            nan            nan]
+ [8.11130831e+00            nan            nan]
+ [9.32603347e+00            nan            nan]
+ [1.00000000e+01            nan            nan]
+ [1.07226722e+01            nan            nan]
+ [1.23284674e+01            nan            nan]
+ [1.41747416e+01            nan            nan]
+ [1.62975083e+01            nan            nan]
+ [1.87381742e+01            nan            nan]
+ [2.15443469e+01            nan            nan]
+ [2.47707636e+01            nan            nan]
+ [2.84803587e+01            nan            nan]
+ [3.27454916e+01            nan            nan]
+ [3.76493581e+01            nan            nan]
+ [4.32876128e+01            nan            nan]
+ [4.97702356e+01            nan            nan]
+ [5.72236766e+01            nan            nan]
+ [6.57933225e+01            nan            nan]
+ [7.56463328e+01            nan            nan]
+ [8.69749003e+01            nan            nan]
+ [1.00000000e+02            nan            nan]], bbox_mAP: 0.5040, bbox_mAP_50: 0.8120, bbox_mAP_75: 0.5640, bbox_mAP_s: 0.2000, bbox_mAP_m: 0.5520, bbox_mAP_l: 0.7110, bbox_mAP_copypaste: 0.504 0.812 0.564 0.200 0.552 0.711
+Traceback (most recent call last):
+  File "/home/thaddaus/MasterthesisCode/./mmdetection/tools/train_adaptive.py", line 204, in <module>
+    main()
+  File "/home/thaddaus/MasterthesisCode/./mmdetection/tools/train_adaptive.py", line 192, in main
+    train_detector_adaptive(
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/apis/train.py", line 319, in train_detector_adaptive
+    runner.run(data_loaders_src, data_loaders_tgt, cfg.workflow)
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/adaptive/epoch_based_runner_adaptive.py", line 148, in run
+    epoch_runner(data_loaders_src[i], data_loaders_tgt[i], **kwargs)
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/adaptive/epoch_based_runner_adaptive.py", line 74, in train
+    self.call_hook('after_train_epoch')
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/runner/base_runner.py", line 307, in call_hook
+    getattr(hook, fn_name)(self)
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/runner/hooks/logger/base.py", line 158, in after_train_epoch
+    self.log(runner)
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/runner/dist_utils.py", line 103, in wrapper
+    return func(*args, **kwargs)
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/runner/hooks/logger/tensorboard.py", line 52, in log
+    self.writer.add_scalar(tag, val, self.get_iter(runner))
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/torch/utils/tensorboard/writer.py", line 345, in add_scalar
+    scalar(tag, scalar_value), global_step, walltime)
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/torch/utils/tensorboard/summary.py", line 248, in scalar
+    assert(scalar.squeeze().ndim == 0), 'scalar should be 0D'
+AssertionError: scalar should be 0D
+Traceback (most recent call last):
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/torch/distributed/launch.py", line 340, in <module>
+    main()
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/torch/distributed/launch.py", line 326, in main
+    sigkill_handler(signal.SIGTERM, None)  # not coming back
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/torch/distributed/launch.py", line 301, in sigkill_handler
+    raise subprocess.CalledProcessError(returncode=last_return_code, cmd=cmd)
+subprocess.CalledProcessError: Command '['/home/thaddaus/anaconda3/envs/open-mmlab/bin/python', '-u', './mmdetection/tools/train_adaptive.py', '--local_rank=7', 'mmdetection/configs/adaptive/faster_rcnn_r50_caffe_fpn_mstrain_1x_coco-person_adaptive.py', '--launcher', 'pytorch', '--work-dir', 'work_dirs/GPA/coco_piropo_100f', '--cfg-options', 'data.samples_per_gpu=2', 'data.train_src.ann_file=/data/COCO/annotations/person_train2017.json', 'data.train_src.img_prefix=/data/COCO/train2017', 'data.train_tgt.ann_file=/data/PIROPO/omni_training_100f.json', 'data.train_tgt.img_prefix=None', 'data.val.ann_file=/data/PIROPO/omni_test2.json', 'data.val.img_prefix=None']' returned non-zero exit status 1.
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+Killing subprocess 71394
+Killing subprocess 71395
+Killing subprocess 71398
+Killing subprocess 71401
+Killing subprocess 71402
+Killing subprocess 71403
+Killing subprocess 71404
+Killing subprocess 71405
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/multiprocessing/spawn.py", line 126, in _main
+    self = reduction.pickle.load(from_parent)
+_pickle.UnpicklingError: pickle data was truncated
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/multiprocessing/spawn.py", line 126, in _main
+    self = reduction.pickle.load(from_parent)
+_pickle.UnpicklingError: pickle data was truncated
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/multiprocessing/spawn.py", line 126, in _main
+    self = reduction.pickle.load(from_parent)
+_pickle.UnpicklingError: pickle data was truncated
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/multiprocessing/spawn.py", line 126, in _main
+    self = reduction.pickle.load(from_parent)
+_pickle.UnpicklingError: pickle data was truncated
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/multiprocessing/spawn.py", line 126, in _main
+    self = reduction.pickle.load(from_parent)
+_pickle.UnpicklingError: pickle data was truncated
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/multiprocessing/spawn.py", line 126, in _main
+    self = reduction.pickle.load(from_parent)
+_pickle.UnpicklingError: pickle data was truncated
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/multiprocessing/spawn.py", line 126, in _main
+    self = reduction.pickle.load(from_parent)
+_pickle.UnpicklingError: pickle data was truncated
+/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/multiprocessing/resource_tracker.py:216: UserWarning: resource_tracker: There appear to be 11 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/multiprocessing/resource_tracker.py:216: UserWarning: resource_tracker: There appear to be 11 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/multiprocessing/resource_tracker.py:216: UserWarning: resource_tracker: There appear to be 11 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/multiprocessing/resource_tracker.py:216: UserWarning: resource_tracker: There appear to be 11 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/multiprocessing/resource_tracker.py:216: UserWarning: resource_tracker: There appear to be 11 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/multiprocessing/resource_tracker.py:216: UserWarning: resource_tracker: There appear to be 11 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/multiprocessing/resource_tracker.py:216: UserWarning: resource_tracker: There appear to be 11 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '

@@ -189,3 +189,20 @@ done
 We use `mmdetection/tools/misc/coco_concat.py` to concat the subsets to a `train` sequence (`top-1`, `top-2`, `top-3`)
 and `test` sequence (`top-0`) in `Bomni-DB/<sequence name>.json`. Different splits of the `train` sequence are also
 saved as `<sequence name>_<size><suffix>.json`.
+
+# COCO
+```bash
+wget -O /data/COCO/train2017.zip 'http://images.cocodataset.org/zips/train2017.zip'
+wget -O /data/COCO/val2017.zip 'http://images.cocodataset.org/zips/val2017.zip'
+wget -O /data/COCO/test2017.zip 'http://images.cocodataset.org/zips/test2017.zip'
+wget -O /data/COCO/trainval2017.zip 'http://images.cocodataset.org/annotations/annotations_trainval2017.zip'
+
+cd /data/COCO
+unzip train2017.zip
+unzip test2017.zip
+unzip trainval2017.zip
+```
+
+## COCO person
+Create an annotation file with all ground-truths other than `person` removed and remove all annotations which don't
+contain the `person` class to begin with.
