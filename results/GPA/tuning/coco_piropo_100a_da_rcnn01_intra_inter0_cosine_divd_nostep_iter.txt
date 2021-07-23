@@ -1,175 +1,45 @@
-loading annotations into memory...
-loading annotations into memory...
-loading annotations into memory...
-loading annotations into memory...
-loading annotations into memory...
-loading annotations into memory...
-loading annotations into memory...
-Done (t=0.01s)
-creating index...
-loading annotations into memory...
-index created!
-Done (t=0.01s)
-creating index...
-Done (t=0.01s)
-creating index...
-index created!
-index created!
-Done (t=0.01s)
-creating index...
-Done (t=0.01s)
-creating index...
-index created!
-Done (t=0.01s)
-creating index...
-index created!
-index created!
-Done (t=0.01s)
-Done (t=0.01s)creating index...
-
-creating index...
-index created!
-index created!
-Use load_from_local loader
 Traceback (most recent call last):
-  File "/home/thaddaus/MasterthesisCode/./mmdetection/tools/test.py", line 237, in <module>
-    main()
-  File "/home/thaddaus/MasterthesisCode/./mmdetection/tools/test.py", line 190, in main
-    checkpoint = load_checkpoint(model, args.checkpoint, map_location='cpu')
-  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/runner/checkpoint.py", line 513, in load_checkpoint
-    checkpoint = _load_checkpoint(filename, map_location, logger)
-  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/runner/checkpoint.py", line 451, in _load_checkpoint
-    return CheckpointLoader.load_checkpoint(filename, map_location, logger)
-  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/runner/checkpoint.py", line 244, in load_checkpoint
-    return checkpoint_loader(filename, map_location)
-  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/runner/checkpoint.py", line 260, in load_from_local
-    raise IOError(f'{filename} is not a checkpoint file')
-OSError: work_dirs/GPA/tuning/coco_piropo_100a_da_rcnn01_intra_inter0_cosine_divd_nostep_iter/latest.pth is not a checkpoint file
-Use load_from_local loader
+  File "./mmdetection/tools/test.py", line 7, in <module>
+    import mmcv
+ModuleNotFoundError: No module named 'mmcv'
 Traceback (most recent call last):
-  File "/home/thaddaus/MasterthesisCode/./mmdetection/tools/test.py", line 237, in <module>
-    main()
-  File "/home/thaddaus/MasterthesisCode/./mmdetection/tools/test.py", line 190, in main
-    checkpoint = load_checkpoint(model, args.checkpoint, map_location='cpu')
-  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/runner/checkpoint.py", line 513, in load_checkpoint
-    checkpoint = _load_checkpoint(filename, map_location, logger)
-  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/runner/checkpoint.py", line 451, in _load_checkpoint
-    return CheckpointLoader.load_checkpoint(filename, map_location, logger)
-  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/runner/checkpoint.py", line 244, in load_checkpoint
-    return checkpoint_loader(filename, map_location)
-  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/runner/checkpoint.py", line 260, in load_from_local
-    raise IOError(f'{filename} is not a checkpoint file')
-OSError: work_dirs/GPA/tuning/coco_piropo_100a_da_rcnn01_intra_inter0_cosine_divd_nostep_iter/latest.pth is not a checkpoint file
-Use load_from_local loader
+  File "./mmdetection/tools/test.py", line 7, in <module>
+    import mmcv
+ModuleNotFoundError: No module named 'mmcv'
 Traceback (most recent call last):
-  File "/home/thaddaus/MasterthesisCode/./mmdetection/tools/test.py", line 237, in <module>
-    main()
-  File "/home/thaddaus/MasterthesisCode/./mmdetection/tools/test.py", line 190, in main
-    checkpoint = load_checkpoint(model, args.checkpoint, map_location='cpu')
-  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/runner/checkpoint.py", line 513, in load_checkpoint
-    checkpoint = _load_checkpoint(filename, map_location, logger)
-  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/runner/checkpoint.py", line 451, in _load_checkpoint
-    return CheckpointLoader.load_checkpoint(filename, map_location, logger)
-  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/runner/checkpoint.py", line 244, in load_checkpoint
-    return checkpoint_loader(filename, map_location)
-  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/runner/checkpoint.py", line 260, in load_from_local
-    raise IOError(f'{filename} is not a checkpoint file')
-OSError: work_dirs/GPA/tuning/coco_piropo_100a_da_rcnn01_intra_inter0_cosine_divd_nostep_iter/latest.pth is not a checkpoint file
-Use load_from_local loader
-Traceback (most recent call last):
-  File "/home/thaddaus/MasterthesisCode/./mmdetection/tools/test.py", line 237, in <module>
-    main()
-  File "/home/thaddaus/MasterthesisCode/./mmdetection/tools/test.py", line 190, in main
-    checkpoint = load_checkpoint(model, args.checkpoint, map_location='cpu')
-  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/runner/checkpoint.py", line 513, in load_checkpoint
-    checkpoint = _load_checkpoint(filename, map_location, logger)
-  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/runner/checkpoint.py", line 451, in _load_checkpoint
-    return CheckpointLoader.load_checkpoint(filename, map_location, logger)
-  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/runner/checkpoint.py", line 244, in load_checkpoint
-    return checkpoint_loader(filename, map_location)
-  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/runner/checkpoint.py", line 260, in load_from_local
-    raise IOError(f'{filename} is not a checkpoint file')
-OSError: work_dirs/GPA/tuning/coco_piropo_100a_da_rcnn01_intra_inter0_cosine_divd_nostep_iter/latest.pth is not a checkpoint file
-Use load_from_local loader
-Traceback (most recent call last):
-  File "/home/thaddaus/MasterthesisCode/./mmdetection/tools/test.py", line 237, in <module>
-    main()
-  File "/home/thaddaus/MasterthesisCode/./mmdetection/tools/test.py", line 190, in main
-    checkpoint = load_checkpoint(model, args.checkpoint, map_location='cpu')
-  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/runner/checkpoint.py", line 513, in load_checkpoint
-    checkpoint = _load_checkpoint(filename, map_location, logger)
-  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/runner/checkpoint.py", line 451, in _load_checkpoint
-    return CheckpointLoader.load_checkpoint(filename, map_location, logger)
-  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/runner/checkpoint.py", line 244, in load_checkpoint
-    return checkpoint_loader(filename, map_location)
-  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/runner/checkpoint.py", line 260, in load_from_local
-    raise IOError(f'{filename} is not a checkpoint file')
-OSError: work_dirs/GPA/tuning/coco_piropo_100a_da_rcnn01_intra_inter0_cosine_divd_nostep_iter/latest.pth is not a checkpoint file
-Use load_from_local loader
-Traceback (most recent call last):
-  File "/home/thaddaus/MasterthesisCode/./mmdetection/tools/test.py", line 237, in <module>
-    main()
-  File "/home/thaddaus/MasterthesisCode/./mmdetection/tools/test.py", line 190, in main
-    checkpoint = load_checkpoint(model, args.checkpoint, map_location='cpu')
-  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/runner/checkpoint.py", line 513, in load_checkpoint
-    checkpoint = _load_checkpoint(filename, map_location, logger)
-  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/runner/checkpoint.py", line 451, in _load_checkpoint
-    return CheckpointLoader.load_checkpoint(filename, map_location, logger)
-  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/runner/checkpoint.py", line 244, in load_checkpoint
-    return checkpoint_loader(filename, map_location)
-  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/runner/checkpoint.py", line 260, in load_from_local
-    raise IOError(f'{filename} is not a checkpoint file')
-OSError: work_dirs/GPA/tuning/coco_piropo_100a_da_rcnn01_intra_inter0_cosine_divd_nostep_iter/latest.pth is not a checkpoint file
-Use load_from_local loader
-Traceback (most recent call last):
-  File "/home/thaddaus/MasterthesisCode/./mmdetection/tools/test.py", line 237, in <module>
-    main()
-  File "/home/thaddaus/MasterthesisCode/./mmdetection/tools/test.py", line 190, in main
-    checkpoint = load_checkpoint(model, args.checkpoint, map_location='cpu')
-  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/runner/checkpoint.py", line 513, in load_checkpoint
-    checkpoint = _load_checkpoint(filename, map_location, logger)
-  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/runner/checkpoint.py", line 451, in _load_checkpoint
-    return CheckpointLoader.load_checkpoint(filename, map_location, logger)
-  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/runner/checkpoint.py", line 244, in load_checkpoint
-    return checkpoint_loader(filename, map_location)
-  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/runner/checkpoint.py", line 260, in load_from_local
-    raise IOError(f'{filename} is not a checkpoint file')
-OSError: work_dirs/GPA/tuning/coco_piropo_100a_da_rcnn01_intra_inter0_cosine_divd_nostep_iter/latest.pth is not a checkpoint file
-Use load_from_local loader
-Traceback (most recent call last):
-  File "/home/thaddaus/MasterthesisCode/./mmdetection/tools/test.py", line 237, in <module>
-    main()
-  File "/home/thaddaus/MasterthesisCode/./mmdetection/tools/test.py", line 190, in main
-    checkpoint = load_checkpoint(model, args.checkpoint, map_location='cpu')
-  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/runner/checkpoint.py", line 513, in load_checkpoint
-    checkpoint = _load_checkpoint(filename, map_location, logger)
-  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/runner/checkpoint.py", line 451, in _load_checkpoint
-    return CheckpointLoader.load_checkpoint(filename, map_location, logger)
-  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/runner/checkpoint.py", line 244, in load_checkpoint
-    return checkpoint_loader(filename, map_location)
-  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/runner/checkpoint.py", line 260, in load_from_local
-    raise IOError(f'{filename} is not a checkpoint file')
-OSError: work_dirs/GPA/tuning/coco_piropo_100a_da_rcnn01_intra_inter0_cosine_divd_nostep_iter/latest.pth is not a checkpoint file
-Traceback (most recent call last):
-  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/runpy.py", line 197, in _run_module_as_main
-    return _run_code(code, main_globals, None,
-  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/runpy.py", line 87, in _run_code
+  File "/usr/lib/python3.6/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/usr/lib/python3.6/runpy.py", line 85, in _run_code
     exec(code, run_globals)
-  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/torch/distributed/launch.py", line 340, in <module>
+  File "/usr/local/lib/python3.6/dist-packages/torch/distributed/launch.py", line 263, in <module>
     main()
-  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/torch/distributed/launch.py", line 326, in main
-    sigkill_handler(signal.SIGTERM, None)  # not coming back
-  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/torch/distributed/launch.py", line 301, in sigkill_handler
-    raise subprocess.CalledProcessError(returncode=last_return_code, cmd=cmd)
-subprocess.CalledProcessError: Command '['/home/thaddaus/anaconda3/envs/open-mmlab/bin/python', '-u', './mmdetection/tools/test.py', '--local_rank=7', 'mmdetection/configs/adaptive/faster_rcnn_r50_caffe_fpn_mstrain_1x_coco-person_adaptive.py', 'work_dirs/GPA/tuning/coco_piropo_100a_da_rcnn01_intra_inter0_cosine_divd_nostep_iter/latest.pth', '--launcher', 'pytorch', '--eval', 'bbox', '--cfg-options', 'data.samples_per_gpu=2', 'data.test.ann_file=/data/PIROPO/omni_test2.json', 'data.test.img_prefix=None', '--out', 'work_dirs/GPA/tuning/coco_piropo_100a_da_rcnn01_intra_inter0_cosine_divd_nostep_iter/piropo_test2.pkl']' returned non-zero exit status 1.
+  File "/usr/local/lib/python3.6/dist-packages/torch/distributed/launch.py", line 259, in main
+    cmd=cmd)
+subprocess.CalledProcessError: Command '['/usr/bin/python', '-u', './mmdetection/tools/test.py', '--local_rank=7', 'mmdetection/configs/adaptive/faster_rcnn_r50_caffe_fpn_mstrain_1x_coco-person_adaptive.py', '/root/WORK_DIRS/GPA/tuning/coco_piropo_100a_da_rcnn01_intra_inter0_cosine_divd_nostep_iter/latest.pth', '--launcher', 'pytorch', '--eval', 'bbox', '--cfg-options', 'data.samples_per_gpu=2', 'data.test.ann_file=/data/PIROPO/omni_test2.json', 'data.test.img_prefix=None', '--out', '/root/WORK_DIRS/GPA/tuning/coco_piropo_100a_da_rcnn01_intra_inter0_cosine_divd_nostep_iter/piropo_test2.pkl']' returned non-zero exit status 1.
 *****************************************
 Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
 *****************************************
-Killing subprocess 59003
-Killing subprocess 59004
-Killing subprocess 59005
-Killing subprocess 59006
-Killing subprocess 59007
-Killing subprocess 59008
-Killing subprocess 59009
-Killing subprocess 59011
+Traceback (most recent call last):
+  File "./mmdetection/tools/test.py", line 7, in <module>
+    import mmcv
+ModuleNotFoundError: No module named 'mmcv'
+Traceback (most recent call last):
+  File "./mmdetection/tools/test.py", line 7, in <module>
+    import mmcv
+ModuleNotFoundError: No module named 'mmcv'
+Traceback (most recent call last):
+  File "./mmdetection/tools/test.py", line 7, in <module>
+    import mmcv
+ModuleNotFoundError: No module named 'mmcv'
+Traceback (most recent call last):
+  File "./mmdetection/tools/test.py", line 7, in <module>
+    import mmcv
+ModuleNotFoundError: No module named 'mmcv'
+Traceback (most recent call last):
+  File "./mmdetection/tools/test.py", line 7, in <module>
+    import mmcv
+ModuleNotFoundError: No module named 'mmcv'
+Traceback (most recent call last):
+  File "./mmdetection/tools/test.py", line 7, in <module>
+    import mmcv
+ModuleNotFoundError: No module named 'mmcv'
