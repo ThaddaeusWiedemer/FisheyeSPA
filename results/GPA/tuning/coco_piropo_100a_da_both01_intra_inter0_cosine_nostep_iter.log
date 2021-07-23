@@ -1,0 +1,1139 @@
+2021-07-21 05:27:01,665 - mmdet - INFO - Environment info:
+------------------------------------------------------------
+sys.platform: linux
+Python: 3.9.5 (default, May 18 2021, 19:34:48) [GCC 7.3.0]
+CUDA available: True
+GPU 0,1,2,3,4,5,6,7: NVIDIA GeForce GTX 1080 Ti
+CUDA_HOME: /usr/local/cuda-10.1
+NVCC: Cuda compilation tools, release 10.1, V10.1.105
+GCC: gcc (Ubuntu 6.5.0-2ubuntu1~18.04) 6.5.0 20181026
+PyTorch: 1.8.1
+PyTorch compiling details: PyTorch built with:
+  - GCC 7.3
+  - C++ Version: 201402
+  - Intel(R) oneAPI Math Kernel Library Version 2021.2-Product Build 20210312 for Intel(R) 64 architecture applications
+  - Intel(R) MKL-DNN v1.7.0 (Git Hash 7aed236906b1f7a05c0917e5257a1af05e9ff683)
+  - OpenMP 201511 (a.k.a. OpenMP 4.5)
+  - NNPACK is enabled
+  - CPU capability usage: AVX2
+  - CUDA Runtime 10.1
+  - NVCC architecture flags: -gencode;arch=compute_37,code=sm_37;-gencode;arch=compute_50,code=sm_50;-gencode;arch=compute_60,code=sm_60;-gencode;arch=compute_61,code=sm_61;-gencode;arch=compute_70,code=sm_70;-gencode;arch=compute_75,code=sm_75;-gencode;arch=compute_37,code=compute_37
+  - CuDNN 7.6.3
+  - Magma 2.5.2
+  - Build settings: BLAS_INFO=mkl, BUILD_TYPE=Release, CUDA_VERSION=10.1, CUDNN_VERSION=7.6.3, CXX_COMPILER=/opt/rh/devtoolset-7/root/usr/bin/c++, CXX_FLAGS= -Wno-deprecated -fvisibility-inlines-hidden -DUSE_PTHREADPOOL -fopenmp -DNDEBUG -DUSE_KINETO -DUSE_FBGEMM -DUSE_QNNPACK -DUSE_PYTORCH_QNNPACK -DUSE_XNNPACK -O2 -fPIC -Wno-narrowing -Wall -Wextra -Werror=return-type -Wno-missing-field-initializers -Wno-type-limits -Wno-array-bounds -Wno-unknown-pragmas -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -Wno-unused-result -Wno-unused-local-typedefs -Wno-strict-overflow -Wno-strict-aliasing -Wno-error=deprecated-declarations -Wno-stringop-overflow -Wno-psabi -Wno-error=pedantic -Wno-error=redundant-decls -Wno-error=old-style-cast -fdiagnostics-color=always -faligned-new -Wno-unused-but-set-variable -Wno-maybe-uninitialized -fno-math-errno -fno-trapping-math -Werror=format -Wno-stringop-overflow, LAPACK_INFO=mkl, PERF_WITH_AVX=1, PERF_WITH_AVX2=1, PERF_WITH_AVX512=1, TORCH_VERSION=1.8.1, USE_CUDA=ON, USE_CUDNN=ON, USE_EXCEPTION_PTR=1, USE_GFLAGS=OFF, USE_GLOG=OFF, USE_MKL=ON, USE_MKLDNN=ON, USE_MPI=OFF, USE_NCCL=ON, USE_NNPACK=ON, USE_OPENMP=ON, 
+
+TorchVision: 0.2.2
+OpenCV: 4.5.2
+MMCV: 1.3.6
+MMCV Compiler: GCC 7.5
+MMCV CUDA Compiler: 10.1
+MMDetection: 2.13.0+957abcb
+------------------------------------------------------------
+
+INFO:mmdet:Environment info:
+------------------------------------------------------------
+sys.platform: linux
+Python: 3.9.5 (default, May 18 2021, 19:34:48) [GCC 7.3.0]
+CUDA available: True
+GPU 0,1,2,3,4,5,6,7: NVIDIA GeForce GTX 1080 Ti
+CUDA_HOME: /usr/local/cuda-10.1
+NVCC: Cuda compilation tools, release 10.1, V10.1.105
+GCC: gcc (Ubuntu 6.5.0-2ubuntu1~18.04) 6.5.0 20181026
+PyTorch: 1.8.1
+PyTorch compiling details: PyTorch built with:
+  - GCC 7.3
+  - C++ Version: 201402
+  - Intel(R) oneAPI Math Kernel Library Version 2021.2-Product Build 20210312 for Intel(R) 64 architecture applications
+  - Intel(R) MKL-DNN v1.7.0 (Git Hash 7aed236906b1f7a05c0917e5257a1af05e9ff683)
+  - OpenMP 201511 (a.k.a. OpenMP 4.5)
+  - NNPACK is enabled
+  - CPU capability usage: AVX2
+  - CUDA Runtime 10.1
+  - NVCC architecture flags: -gencode;arch=compute_37,code=sm_37;-gencode;arch=compute_50,code=sm_50;-gencode;arch=compute_60,code=sm_60;-gencode;arch=compute_61,code=sm_61;-gencode;arch=compute_70,code=sm_70;-gencode;arch=compute_75,code=sm_75;-gencode;arch=compute_37,code=compute_37
+  - CuDNN 7.6.3
+  - Magma 2.5.2
+  - Build settings: BLAS_INFO=mkl, BUILD_TYPE=Release, CUDA_VERSION=10.1, CUDNN_VERSION=7.6.3, CXX_COMPILER=/opt/rh/devtoolset-7/root/usr/bin/c++, CXX_FLAGS= -Wno-deprecated -fvisibility-inlines-hidden -DUSE_PTHREADPOOL -fopenmp -DNDEBUG -DUSE_KINETO -DUSE_FBGEMM -DUSE_QNNPACK -DUSE_PYTORCH_QNNPACK -DUSE_XNNPACK -O2 -fPIC -Wno-narrowing -Wall -Wextra -Werror=return-type -Wno-missing-field-initializers -Wno-type-limits -Wno-array-bounds -Wno-unknown-pragmas -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -Wno-unused-result -Wno-unused-local-typedefs -Wno-strict-overflow -Wno-strict-aliasing -Wno-error=deprecated-declarations -Wno-stringop-overflow -Wno-psabi -Wno-error=pedantic -Wno-error=redundant-decls -Wno-error=old-style-cast -fdiagnostics-color=always -faligned-new -Wno-unused-but-set-variable -Wno-maybe-uninitialized -fno-math-errno -fno-trapping-math -Werror=format -Wno-stringop-overflow, LAPACK_INFO=mkl, PERF_WITH_AVX=1, PERF_WITH_AVX2=1, PERF_WITH_AVX512=1, TORCH_VERSION=1.8.1, USE_CUDA=ON, USE_CUDNN=ON, USE_EXCEPTION_PTR=1, USE_GFLAGS=OFF, USE_GLOG=OFF, USE_MKL=ON, USE_MKLDNN=ON, USE_MPI=OFF, USE_NCCL=ON, USE_NNPACK=ON, USE_OPENMP=ON, 
+
+TorchVision: 0.2.2
+OpenCV: 4.5.2
+MMCV: 1.3.6
+MMCV Compiler: GCC 7.5
+MMCV CUDA Compiler: 10.1
+MMDetection: 2.13.0+957abcb
+------------------------------------------------------------
+
+2021-07-21 05:27:02,218 - mmdet - INFO - Distributed training: True
+INFO:mmdet:Distributed training: True
+/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/detectors/two_stage_adaptive.py:29: UserWarning: DeprecationWarning: pretrained is deprecated, please use "init_cfg" instead
+  warnings.warn('DeprecationWarning: pretrained is deprecated, '
+/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/backbones/resnet.py:400: UserWarning: DeprecationWarning: pretrained is deprecated, please use "init_cfg" instead
+  warnings.warn('DeprecationWarning: pretrained is deprecated, '
+/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/detectors/two_stage_adaptive.py:29: UserWarning: DeprecationWarning: pretrained is deprecated, please use "init_cfg" instead
+  warnings.warn('DeprecationWarning: pretrained is deprecated, '
+/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/backbones/resnet.py:400: UserWarning: DeprecationWarning: pretrained is deprecated, please use "init_cfg" instead
+  warnings.warn('DeprecationWarning: pretrained is deprecated, '
+/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/detectors/two_stage_adaptive.py:29: UserWarning: DeprecationWarning: pretrained is deprecated, please use "init_cfg" instead
+  warnings.warn('DeprecationWarning: pretrained is deprecated, '
+/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/backbones/resnet.py:400: UserWarning: DeprecationWarning: pretrained is deprecated, please use "init_cfg" instead
+  warnings.warn('DeprecationWarning: pretrained is deprecated, '
+/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/detectors/two_stage_adaptive.py:29: UserWarning: DeprecationWarning: pretrained is deprecated, please use "init_cfg" instead
+  warnings.warn('DeprecationWarning: pretrained is deprecated, '
+/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/backbones/resnet.py:400: UserWarning: DeprecationWarning: pretrained is deprecated, please use "init_cfg" instead
+  warnings.warn('DeprecationWarning: pretrained is deprecated, '
+/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/detectors/two_stage_adaptive.py:29: UserWarning: DeprecationWarning: pretrained is deprecated, please use "init_cfg" instead
+  warnings.warn('DeprecationWarning: pretrained is deprecated, '
+/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/backbones/resnet.py:400: UserWarning: DeprecationWarning: pretrained is deprecated, please use "init_cfg" instead
+  warnings.warn('DeprecationWarning: pretrained is deprecated, '
+/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/detectors/two_stage_adaptive.py:29: UserWarning: DeprecationWarning: pretrained is deprecated, please use "init_cfg" instead
+  warnings.warn('DeprecationWarning: pretrained is deprecated, '
+/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/backbones/resnet.py:400: UserWarning: DeprecationWarning: pretrained is deprecated, please use "init_cfg" instead
+  warnings.warn('DeprecationWarning: pretrained is deprecated, '
+/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/detectors/two_stage_adaptive.py:29: UserWarning: DeprecationWarning: pretrained is deprecated, please use "init_cfg" instead
+  warnings.warn('DeprecationWarning: pretrained is deprecated, '
+/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/backbones/resnet.py:400: UserWarning: DeprecationWarning: pretrained is deprecated, please use "init_cfg" instead
+  warnings.warn('DeprecationWarning: pretrained is deprecated, '
+2021-07-21 05:27:02,845 - mmdet - INFO - Config:
+model = dict(
+    type='TwoStageDetectorAdaptive',
+    pretrained='open-mmlab://detectron2/resnet50_caffe',
+    backbone=dict(
+        type='ResNet',
+        depth=50,
+        num_stages=4,
+        out_indices=(0, 1, 2, 3),
+        frozen_stages=1,
+        norm_cfg=dict(type='BN', requires_grad=False),
+        norm_eval=True,
+        style='caffe'),
+    neck=dict(
+        type='FPN',
+        in_channels=[256, 512, 1024, 2048],
+        out_channels=256,
+        num_outs=5),
+    rpn_head=dict(
+        type='RPNHead',
+        in_channels=256,
+        feat_channels=256,
+        anchor_generator=dict(
+            type='AnchorGenerator',
+            scales=[8],
+            ratios=[0.5, 1.0, 2.0],
+            strides=[4, 8, 16, 32, 64]),
+        bbox_coder=dict(
+            type='DeltaXYWHBBoxCoder',
+            target_means=[0.0, 0.0, 0.0, 0.0],
+            target_stds=[1.0, 1.0, 1.0, 1.0]),
+        loss_cls=dict(
+            type='CrossEntropyLoss', use_sigmoid=True, loss_weight=1.0),
+        loss_bbox=dict(type='L1Loss', loss_weight=1.0)),
+    roi_head=dict(
+        type='StandardRoIHeadAdaptive',
+        bbox_roi_extractor=dict(
+            type='SingleRoIExtractor',
+            roi_layer=dict(type='RoIAlign', output_size=7, sampling_ratio=0),
+            out_channels=256,
+            featmap_strides=[4, 8, 16, 32]),
+        bbox_head=dict(
+            type='Shared2FCBBoxHeadAdaptive',
+            in_channels=256,
+            fc_out_channels=1024,
+            roi_feat_size=7,
+            num_classes=1,
+            bbox_coder=dict(
+                type='DeltaXYWHBBoxCoder',
+                target_means=[0.0, 0.0, 0.0, 0.0],
+                target_stds=[0.1, 0.1, 0.2, 0.2]),
+            reg_class_agnostic=False,
+            loss_cls=dict(
+                type='CrossEntropyLoss', use_sigmoid=False, loss_weight=1.0),
+            loss_bbox=dict(type='L1Loss', loss_weight=1.0))),
+    train_cfg=dict(
+        loss_weight_da=1.0,
+        loss_weight_da_roi=0.1,
+        loss_weight_da_rcnn=0.1,
+        loss_weight_da_intra=1.0,
+        loss_weight_da_inter=0,
+        rpn=dict(
+            assigner=dict(
+                type='MaxIoUAssigner',
+                pos_iou_thr=0.7,
+                neg_iou_thr=0.3,
+                min_pos_iou=0.3,
+                match_low_quality=True,
+                ignore_iof_thr=-1),
+            sampler=dict(
+                type='RandomSampler',
+                num=256,
+                pos_fraction=0.5,
+                neg_pos_ub=-1,
+                add_gt_as_proposals=False),
+            allowed_border=-1,
+            pos_weight=-1,
+            debug=False),
+        rpn_proposal=dict(
+            nms_pre=2000,
+            max_per_img=1000,
+            nms=dict(type='nms', iou_threshold=0.7),
+            min_bbox_size=0),
+        rcnn=dict(
+            assigner=dict(
+                type='MaxIoUAssigner',
+                pos_iou_thr=0.5,
+                neg_iou_thr=0.5,
+                min_pos_iou=0.5,
+                match_low_quality=False,
+                ignore_iof_thr=-1),
+            sampler=dict(
+                type='RandomSampler',
+                num=512,
+                pos_fraction=0.25,
+                neg_pos_ub=-1,
+                add_gt_as_proposals=True),
+            pos_weight=-1,
+            debug=False)),
+    test_cfg=dict(
+        rpn=dict(
+            nms_pre=1000,
+            max_per_img=1000,
+            nms=dict(type='nms', iou_threshold=0.7),
+            min_bbox_size=0),
+        rcnn=dict(
+            score_thr=0.05,
+            nms=dict(type='nms', iou_threshold=0.5),
+            max_per_img=100)))
+dataset_type = 'CocoDataset'
+data_root_src = 'data/PIROPO/'
+data_root_tgt = 'data/MW-18Mar/'
+classes = ('person', )
+img_norm_cfg = dict(
+    mean=[103.53, 116.28, 123.675], std=[1.0, 1.0, 1.0], to_rgb=False)
+train_pipeline_src = [
+    dict(type='LoadImageFromFile'),
+    dict(type='LoadAnnotations', with_bbox=True),
+    dict(type='Resize', img_scale=(800, 800), keep_ratio=True),
+    dict(type='RandomFlip', flip_ratio=0.5),
+    dict(
+        type='Normalize',
+        mean=[103.53, 116.28, 123.675],
+        std=[1.0, 1.0, 1.0],
+        to_rgb=False),
+    dict(type='Pad', size_divisor=32),
+    dict(type='DefaultFormatBundle'),
+    dict(type='Collect', keys=['img', 'gt_bboxes', 'gt_labels'])
+]
+train_pipeline_tgt = [
+    dict(type='LoadImageFromFile'),
+    dict(type='LoadAnnotations', with_bbox=True),
+    dict(type='Resize', img_scale=(800, 800), keep_ratio=True),
+    dict(type='RandomFlip', flip_ratio=0.5),
+    dict(
+        type='Albu',
+        transforms=[
+            dict(
+                type='ShiftScaleRotate',
+                shift_limit=0.0,
+                scale_limit=0.0,
+                rotate_limit=180,
+                interpolation=1,
+                p=1.0)
+        ],
+        bbox_params=dict(
+            type='BboxParams',
+            format='pascal_voc',
+            label_fields=['gt_labels'],
+            min_visibility=0.0,
+            filter_lost_elements=True),
+        keymap=dict(img='image', gt_masks='masks', gt_bboxes='bboxes'),
+        update_pad_shape=False,
+        skip_img_without_anno=False),
+    dict(
+        type='Normalize',
+        mean=[103.53, 116.28, 123.675],
+        std=[1.0, 1.0, 1.0],
+        to_rgb=False),
+    dict(type='Pad', size_divisor=32),
+    dict(type='DefaultFormatBundle'),
+    dict(type='Collect', keys=['img', 'gt_bboxes', 'gt_labels'])
+]
+test_pipeline = [
+    dict(type='LoadImageFromFile'),
+    dict(
+        type='MultiScaleFlipAug',
+        img_scale=(1333, 800),
+        flip=False,
+        transforms=[
+            dict(type='Resize', keep_ratio=True),
+            dict(type='RandomFlip'),
+            dict(
+                type='Normalize',
+                mean=[103.53, 116.28, 123.675],
+                std=[1.0, 1.0, 1.0],
+                to_rgb=False),
+            dict(type='Pad', size_divisor=32),
+            dict(type='ImageToTensor', keys=['img']),
+            dict(type='Collect', keys=['img'])
+        ])
+]
+data = dict(
+    samples_per_gpu=2,
+    workers_per_gpu=2,
+    train_src=dict(
+        type='CocoDataset',
+        ann_file='/data/COCO/annotations/person_train2017.json',
+        img_prefix='/data/COCO/train2017',
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(type='LoadAnnotations', with_bbox=True),
+            dict(type='Resize', img_scale=(800, 800), keep_ratio=True),
+            dict(type='RandomFlip', flip_ratio=0.5),
+            dict(
+                type='Normalize',
+                mean=[103.53, 116.28, 123.675],
+                std=[1.0, 1.0, 1.0],
+                to_rgb=False),
+            dict(type='Pad', size_divisor=32),
+            dict(type='DefaultFormatBundle'),
+            dict(type='Collect', keys=['img', 'gt_bboxes', 'gt_labels'])
+        ],
+        classes=('person', )),
+    train_tgt=dict(
+        type='CocoDataset',
+        ann_file='/data/PIROPO/omni_training_100a.json',
+        img_prefix='None',
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(type='LoadAnnotations', with_bbox=True),
+            dict(type='Resize', img_scale=(800, 800), keep_ratio=True),
+            dict(type='RandomFlip', flip_ratio=0.5),
+            dict(
+                type='Albu',
+                transforms=[
+                    dict(
+                        type='ShiftScaleRotate',
+                        shift_limit=0.0,
+                        scale_limit=0.0,
+                        rotate_limit=180,
+                        interpolation=1,
+                        p=1.0)
+                ],
+                bbox_params=dict(
+                    type='BboxParams',
+                    format='pascal_voc',
+                    label_fields=['gt_labels'],
+                    min_visibility=0.0,
+                    filter_lost_elements=True),
+                keymap=dict(img='image', gt_masks='masks', gt_bboxes='bboxes'),
+                update_pad_shape=False,
+                skip_img_without_anno=False),
+            dict(
+                type='Normalize',
+                mean=[103.53, 116.28, 123.675],
+                std=[1.0, 1.0, 1.0],
+                to_rgb=False),
+            dict(type='Pad', size_divisor=32),
+            dict(type='DefaultFormatBundle'),
+            dict(type='Collect', keys=['img', 'gt_bboxes', 'gt_labels'])
+        ],
+        classes=('person', )),
+    val=dict(
+        type='CocoDataset',
+        ann_file='/data/PIROPO/omni_test2.json',
+        img_prefix='None',
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(
+                type='MultiScaleFlipAug',
+                img_scale=(1333, 800),
+                flip=False,
+                transforms=[
+                    dict(type='Resize', keep_ratio=True),
+                    dict(type='RandomFlip'),
+                    dict(
+                        type='Normalize',
+                        mean=[103.53, 116.28, 123.675],
+                        std=[1.0, 1.0, 1.0],
+                        to_rgb=False),
+                    dict(type='Pad', size_divisor=32),
+                    dict(type='ImageToTensor', keys=['img']),
+                    dict(type='Collect', keys=['img'])
+                ])
+        ],
+        classes=('person', )),
+    test=dict(
+        type='CocoDataset',
+        ann_file='data/MW-18Mar/test.json',
+        img_prefix='data/MW-18Mar/',
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(
+                type='MultiScaleFlipAug',
+                img_scale=(1333, 800),
+                flip=False,
+                transforms=[
+                    dict(type='Resize', keep_ratio=True),
+                    dict(type='RandomFlip'),
+                    dict(
+                        type='Normalize',
+                        mean=[103.53, 116.28, 123.675],
+                        std=[1.0, 1.0, 1.0],
+                        to_rgb=False),
+                    dict(type='Pad', size_divisor=32),
+                    dict(type='ImageToTensor', keys=['img']),
+                    dict(type='Collect', keys=['img'])
+                ])
+        ],
+        classes=('person', )))
+evaluation = dict(interval=7, metric='bbox')
+optimizer = dict(type='SGD', lr=0.001, momentum=0.9, weight_decay=0.0001)
+optimizer_config = dict(grad_clip=None)
+lr_config = dict(policy='step', warmup=None, step=[200])
+runner = dict(type='IterBasedRunnerAdaptive', max_iters=140)
+checkpoint_config = dict(interval=200)
+log_config = dict(interval=1, hooks=[dict(type='TextLoggerHook')])
+custom_hooks = [dict(type='NumClassCheckHook')]
+dist_params = dict(backend='nccl')
+log_level = 'INFO'
+load_from = 'mmdetection/checkpoints/faster_rcnn_r50_fpn_1x_coco-person_20201216_175929-d022e227.pth'
+resume_from = None
+workflow = [('train', 1)]
+work_dir = 'work_dirs/GPA/tuning/coco_piropo_100a_da_both01_intra_inter0_cosine_nostep_iter'
+gpu_ids = range(0, 8)
+
+INFO:mmdet:Config:
+model = dict(
+    type='TwoStageDetectorAdaptive',
+    pretrained='open-mmlab://detectron2/resnet50_caffe',
+    backbone=dict(
+        type='ResNet',
+        depth=50,
+        num_stages=4,
+        out_indices=(0, 1, 2, 3),
+        frozen_stages=1,
+        norm_cfg=dict(type='BN', requires_grad=False),
+        norm_eval=True,
+        style='caffe'),
+    neck=dict(
+        type='FPN',
+        in_channels=[256, 512, 1024, 2048],
+        out_channels=256,
+        num_outs=5),
+    rpn_head=dict(
+        type='RPNHead',
+        in_channels=256,
+        feat_channels=256,
+        anchor_generator=dict(
+            type='AnchorGenerator',
+            scales=[8],
+            ratios=[0.5, 1.0, 2.0],
+            strides=[4, 8, 16, 32, 64]),
+        bbox_coder=dict(
+            type='DeltaXYWHBBoxCoder',
+            target_means=[0.0, 0.0, 0.0, 0.0],
+            target_stds=[1.0, 1.0, 1.0, 1.0]),
+        loss_cls=dict(
+            type='CrossEntropyLoss', use_sigmoid=True, loss_weight=1.0),
+        loss_bbox=dict(type='L1Loss', loss_weight=1.0)),
+    roi_head=dict(
+        type='StandardRoIHeadAdaptive',
+        bbox_roi_extractor=dict(
+            type='SingleRoIExtractor',
+            roi_layer=dict(type='RoIAlign', output_size=7, sampling_ratio=0),
+            out_channels=256,
+            featmap_strides=[4, 8, 16, 32]),
+        bbox_head=dict(
+            type='Shared2FCBBoxHeadAdaptive',
+            in_channels=256,
+            fc_out_channels=1024,
+            roi_feat_size=7,
+            num_classes=1,
+            bbox_coder=dict(
+                type='DeltaXYWHBBoxCoder',
+                target_means=[0.0, 0.0, 0.0, 0.0],
+                target_stds=[0.1, 0.1, 0.2, 0.2]),
+            reg_class_agnostic=False,
+            loss_cls=dict(
+                type='CrossEntropyLoss', use_sigmoid=False, loss_weight=1.0),
+            loss_bbox=dict(type='L1Loss', loss_weight=1.0))),
+    train_cfg=dict(
+        loss_weight_da=1.0,
+        loss_weight_da_roi=0.1,
+        loss_weight_da_rcnn=0.1,
+        loss_weight_da_intra=1.0,
+        loss_weight_da_inter=0,
+        rpn=dict(
+            assigner=dict(
+                type='MaxIoUAssigner',
+                pos_iou_thr=0.7,
+                neg_iou_thr=0.3,
+                min_pos_iou=0.3,
+                match_low_quality=True,
+                ignore_iof_thr=-1),
+            sampler=dict(
+                type='RandomSampler',
+                num=256,
+                pos_fraction=0.5,
+                neg_pos_ub=-1,
+                add_gt_as_proposals=False),
+            allowed_border=-1,
+            pos_weight=-1,
+            debug=False),
+        rpn_proposal=dict(
+            nms_pre=2000,
+            max_per_img=1000,
+            nms=dict(type='nms', iou_threshold=0.7),
+            min_bbox_size=0),
+        rcnn=dict(
+            assigner=dict(
+                type='MaxIoUAssigner',
+                pos_iou_thr=0.5,
+                neg_iou_thr=0.5,
+                min_pos_iou=0.5,
+                match_low_quality=False,
+                ignore_iof_thr=-1),
+            sampler=dict(
+                type='RandomSampler',
+                num=512,
+                pos_fraction=0.25,
+                neg_pos_ub=-1,
+                add_gt_as_proposals=True),
+            pos_weight=-1,
+            debug=False)),
+    test_cfg=dict(
+        rpn=dict(
+            nms_pre=1000,
+            max_per_img=1000,
+            nms=dict(type='nms', iou_threshold=0.7),
+            min_bbox_size=0),
+        rcnn=dict(
+            score_thr=0.05,
+            nms=dict(type='nms', iou_threshold=0.5),
+            max_per_img=100)))
+dataset_type = 'CocoDataset'
+data_root_src = 'data/PIROPO/'
+data_root_tgt = 'data/MW-18Mar/'
+classes = ('person', )
+img_norm_cfg = dict(
+    mean=[103.53, 116.28, 123.675], std=[1.0, 1.0, 1.0], to_rgb=False)
+train_pipeline_src = [
+    dict(type='LoadImageFromFile'),
+    dict(type='LoadAnnotations', with_bbox=True),
+    dict(type='Resize', img_scale=(800, 800), keep_ratio=True),
+    dict(type='RandomFlip', flip_ratio=0.5),
+    dict(
+        type='Normalize',
+        mean=[103.53, 116.28, 123.675],
+        std=[1.0, 1.0, 1.0],
+        to_rgb=False),
+    dict(type='Pad', size_divisor=32),
+    dict(type='DefaultFormatBundle'),
+    dict(type='Collect', keys=['img', 'gt_bboxes', 'gt_labels'])
+]
+train_pipeline_tgt = [
+    dict(type='LoadImageFromFile'),
+    dict(type='LoadAnnotations', with_bbox=True),
+    dict(type='Resize', img_scale=(800, 800), keep_ratio=True),
+    dict(type='RandomFlip', flip_ratio=0.5),
+    dict(
+        type='Albu',
+        transforms=[
+            dict(
+                type='ShiftScaleRotate',
+                shift_limit=0.0,
+                scale_limit=0.0,
+                rotate_limit=180,
+                interpolation=1,
+                p=1.0)
+        ],
+        bbox_params=dict(
+            type='BboxParams',
+            format='pascal_voc',
+            label_fields=['gt_labels'],
+            min_visibility=0.0,
+            filter_lost_elements=True),
+        keymap=dict(img='image', gt_masks='masks', gt_bboxes='bboxes'),
+        update_pad_shape=False,
+        skip_img_without_anno=False),
+    dict(
+        type='Normalize',
+        mean=[103.53, 116.28, 123.675],
+        std=[1.0, 1.0, 1.0],
+        to_rgb=False),
+    dict(type='Pad', size_divisor=32),
+    dict(type='DefaultFormatBundle'),
+    dict(type='Collect', keys=['img', 'gt_bboxes', 'gt_labels'])
+]
+test_pipeline = [
+    dict(type='LoadImageFromFile'),
+    dict(
+        type='MultiScaleFlipAug',
+        img_scale=(1333, 800),
+        flip=False,
+        transforms=[
+            dict(type='Resize', keep_ratio=True),
+            dict(type='RandomFlip'),
+            dict(
+                type='Normalize',
+                mean=[103.53, 116.28, 123.675],
+                std=[1.0, 1.0, 1.0],
+                to_rgb=False),
+            dict(type='Pad', size_divisor=32),
+            dict(type='ImageToTensor', keys=['img']),
+            dict(type='Collect', keys=['img'])
+        ])
+]
+data = dict(
+    samples_per_gpu=2,
+    workers_per_gpu=2,
+    train_src=dict(
+        type='CocoDataset',
+        ann_file='/data/COCO/annotations/person_train2017.json',
+        img_prefix='/data/COCO/train2017',
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(type='LoadAnnotations', with_bbox=True),
+            dict(type='Resize', img_scale=(800, 800), keep_ratio=True),
+            dict(type='RandomFlip', flip_ratio=0.5),
+            dict(
+                type='Normalize',
+                mean=[103.53, 116.28, 123.675],
+                std=[1.0, 1.0, 1.0],
+                to_rgb=False),
+            dict(type='Pad', size_divisor=32),
+            dict(type='DefaultFormatBundle'),
+            dict(type='Collect', keys=['img', 'gt_bboxes', 'gt_labels'])
+        ],
+        classes=('person', )),
+    train_tgt=dict(
+        type='CocoDataset',
+        ann_file='/data/PIROPO/omni_training_100a.json',
+        img_prefix='None',
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(type='LoadAnnotations', with_bbox=True),
+            dict(type='Resize', img_scale=(800, 800), keep_ratio=True),
+            dict(type='RandomFlip', flip_ratio=0.5),
+            dict(
+                type='Albu',
+                transforms=[
+                    dict(
+                        type='ShiftScaleRotate',
+                        shift_limit=0.0,
+                        scale_limit=0.0,
+                        rotate_limit=180,
+                        interpolation=1,
+                        p=1.0)
+                ],
+                bbox_params=dict(
+                    type='BboxParams',
+                    format='pascal_voc',
+                    label_fields=['gt_labels'],
+                    min_visibility=0.0,
+                    filter_lost_elements=True),
+                keymap=dict(img='image', gt_masks='masks', gt_bboxes='bboxes'),
+                update_pad_shape=False,
+                skip_img_without_anno=False),
+            dict(
+                type='Normalize',
+                mean=[103.53, 116.28, 123.675],
+                std=[1.0, 1.0, 1.0],
+                to_rgb=False),
+            dict(type='Pad', size_divisor=32),
+            dict(type='DefaultFormatBundle'),
+            dict(type='Collect', keys=['img', 'gt_bboxes', 'gt_labels'])
+        ],
+        classes=('person', )),
+    val=dict(
+        type='CocoDataset',
+        ann_file='/data/PIROPO/omni_test2.json',
+        img_prefix='None',
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(
+                type='MultiScaleFlipAug',
+                img_scale=(1333, 800),
+                flip=False,
+                transforms=[
+                    dict(type='Resize', keep_ratio=True),
+                    dict(type='RandomFlip'),
+                    dict(
+                        type='Normalize',
+                        mean=[103.53, 116.28, 123.675],
+                        std=[1.0, 1.0, 1.0],
+                        to_rgb=False),
+                    dict(type='Pad', size_divisor=32),
+                    dict(type='ImageToTensor', keys=['img']),
+                    dict(type='Collect', keys=['img'])
+                ])
+        ],
+        classes=('person', )),
+    test=dict(
+        type='CocoDataset',
+        ann_file='data/MW-18Mar/test.json',
+        img_prefix='data/MW-18Mar/',
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(
+                type='MultiScaleFlipAug',
+                img_scale=(1333, 800),
+                flip=False,
+                transforms=[
+                    dict(type='Resize', keep_ratio=True),
+                    dict(type='RandomFlip'),
+                    dict(
+                        type='Normalize',
+                        mean=[103.53, 116.28, 123.675],
+                        std=[1.0, 1.0, 1.0],
+                        to_rgb=False),
+                    dict(type='Pad', size_divisor=32),
+                    dict(type='ImageToTensor', keys=['img']),
+                    dict(type='Collect', keys=['img'])
+                ])
+        ],
+        classes=('person', )))
+evaluation = dict(interval=7, metric='bbox')
+optimizer = dict(type='SGD', lr=0.001, momentum=0.9, weight_decay=0.0001)
+optimizer_config = dict(grad_clip=None)
+lr_config = dict(policy='step', warmup=None, step=[200])
+runner = dict(type='IterBasedRunnerAdaptive', max_iters=140)
+checkpoint_config = dict(interval=200)
+log_config = dict(interval=1, hooks=[dict(type='TextLoggerHook')])
+custom_hooks = [dict(type='NumClassCheckHook')]
+dist_params = dict(backend='nccl')
+log_level = 'INFO'
+load_from = 'mmdetection/checkpoints/faster_rcnn_r50_fpn_1x_coco-person_20201216_175929-d022e227.pth'
+resume_from = None
+workflow = [('train', 1)]
+work_dir = 'work_dirs/GPA/tuning/coco_piropo_100a_da_both01_intra_inter0_cosine_nostep_iter'
+gpu_ids = range(0, 8)
+
+/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/detectors/two_stage_adaptive.py:29: UserWarning: DeprecationWarning: pretrained is deprecated, please use "init_cfg" instead
+  warnings.warn('DeprecationWarning: pretrained is deprecated, '
+/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/backbones/resnet.py:400: UserWarning: DeprecationWarning: pretrained is deprecated, please use "init_cfg" instead
+  warnings.warn('DeprecationWarning: pretrained is deprecated, '
+2021-07-21 05:27:03,292 - mmcv - INFO - load model from: open-mmlab://detectron2/resnet50_caffe
+INFO:mmcv:load model from: open-mmlab://detectron2/resnet50_caffe
+2021-07-21 05:27:03,292 - mmcv - INFO - Use load_from_openmmlab loader
+INFO:mmcv:Use load_from_openmmlab loader
+2021-07-21 05:27:07,282 - mmcv - WARNING - The model and loaded state dict do not match exactly
+
+unexpected key in source state_dict: conv1.bias
+
+WARNING:mmcv:The model and loaded state dict do not match exactly
+
+unexpected key in source state_dict: conv1.bias
+
+/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/cnn/utils/weight_init.py:118: UserWarning: init_cfg without layer key, if you do not define override key either, this init_cfg will do nothing
+  warnings.warn(
+/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/cnn/utils/weight_init.py:118: UserWarning: init_cfg without layer key, if you do not define override key either, this init_cfg will do nothing
+  warnings.warn(
+/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/cnn/utils/weight_init.py:118: UserWarning: init_cfg without layer key, if you do not define override key either, this init_cfg will do nothing
+  warnings.warn(
+/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/cnn/utils/weight_init.py:118: UserWarning: init_cfg without layer key, if you do not define override key either, this init_cfg will do nothing
+  warnings.warn(
+/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/cnn/utils/weight_init.py:118: UserWarning: init_cfg without layer key, if you do not define override key either, this init_cfg will do nothing
+  warnings.warn(
+/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/cnn/utils/weight_init.py:118: UserWarning: init_cfg without layer key, if you do not define override key either, this init_cfg will do nothing
+  warnings.warn(
+/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/cnn/utils/weight_init.py:118: UserWarning: init_cfg without layer key, if you do not define override key either, this init_cfg will do nothing
+  warnings.warn(
+/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/cnn/utils/weight_init.py:118: UserWarning: init_cfg without layer key, if you do not define override key either, this init_cfg will do nothing
+  warnings.warn(
+loading annotations into memory...
+loading annotations into memory...
+loading annotations into memory...
+loading annotations into memory...
+loading annotations into memory...
+loading annotations into memory...
+loading annotations into memory...
+loading annotations into memory...
+Done (t=6.22s)
+creating index...
+Done (t=6.24s)
+creating index...
+Done (t=6.48s)
+creating index...
+Done (t=6.48s)
+creating index...
+Done (t=6.53s)
+creating index...
+index created!
+index created!
+Done (t=6.61s)
+creating index...
+index created!
+index created!
+index created!
+index created!
+Done (t=6.99s)
+creating index...
+loading annotations into memory...
+loading annotations into memory...
+Done (t=0.02s)
+creating index...
+index created!
+Done (t=0.02s)
+creating index...
+index created!
+index created!
+loading annotations into memory...
+loading annotations into memory...
+Done (t=0.02s)
+creating index...
+index created!
+Done (t=0.02s)
+creating index...
+index created!
+loading annotations into memory...
+Done (t=0.02s)
+creating index...
+index created!
+loading annotations into memory...
+Done (t=0.02s)
+creating index...
+index created!
+Done (t=7.72s)
+creating index...
+loading annotations into memory...
+Done (t=0.02s)
+creating index...
+index created!
+index created!
+loading annotations into memory...
+Done (t=0.02s)
+creating index...
+index created!
+loading annotations into memory...
+loading annotations into memory...
+Done (t=0.00s)
+creating index...
+index created!
+loading annotations into memory...
+Done (t=0.00s)
+creating index...
+2021-07-21 05:27:17,084 - mmdet - INFO - load checkpoint from mmdetection/checkpoints/faster_rcnn_r50_fpn_1x_coco-person_20201216_175929-d022e227.pth
+INFO:mmdet:load checkpoint from mmdetection/checkpoints/faster_rcnn_r50_fpn_1x_coco-person_20201216_175929-d022e227.pth
+2021-07-21 05:27:17,085 - mmdet - INFO - Use load_from_local loader
+INFO:mmdet:Use load_from_local loader
+index created!
+Done (t=0.00s)
+creating index...
+index created!
+loading annotations into memory...
+loading annotations into memory...
+loading annotations into memory...
+loading annotations into memory...
+loading annotations into memory...
+Done (t=0.00s)
+creating index...
+index created!
+Done (t=0.00s)
+Done (t=0.00s)creating index...
+
+creating index...
+Done (t=0.00s)
+creating index...
+index created!index created!
+
+index created!
+Done (t=0.00s)
+creating index...
+index created!
+2021-07-21 05:27:17,405 - mmdet - WARNING - The model and loaded state dict do not match exactly
+
+missing keys in source state_dict: da_fc_roi.weight, da_fc_roi.bias, da_fc_rcnn.weight, da_fc_rcnn.bias
+
+WARNING:mmdet:The model and loaded state dict do not match exactly
+
+missing keys in source state_dict: da_fc_roi.weight, da_fc_roi.bias, da_fc_rcnn.weight, da_fc_rcnn.bias
+
+2021-07-21 05:27:17,416 - mmdet - INFO - Start running, host: thaddaus@wu02, work_dir: /home/thaddaus/MasterthesisCode/work_dirs/GPA/tuning/coco_piropo_100a_da_both01_intra_inter0_cosine_nostep_iter
+INFO:mmdet:Start running, host: thaddaus@wu02, work_dir: /home/thaddaus/MasterthesisCode/work_dirs/GPA/tuning/coco_piropo_100a_da_both01_intra_inter0_cosine_nostep_iter
+2021-07-21 05:27:17,416 - mmdet - INFO - workflow: [('train', 1)], max: 140 iters
+INFO:mmdet:workflow: [('train', 1)], max: 140 iters
+2021-07-21 05:27:47,865 - mmdet - INFO - Iter [1/140]	lr: 1.000e-03, eta: 0:17:30, time: 7.560, data_time: 4.898, memory: 3100, loss_rpn_cls: 0.0707, loss_rpn_bbox: 0.0121, loss_cls: 0.1108, acc: 97.8638, loss_bbox: 0.0671, roi_loss_intra: 0.0312, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0125, rcnn_loss_inter: 0.0000, loss: 0.3043
+INFO:mmdet:Iter [1/140]	lr: 1.000e-03, eta: 0:17:30, time: 7.560, data_time: 4.898, memory: 3100, loss_rpn_cls: 0.0707, loss_rpn_bbox: 0.0121, loss_cls: 0.1108, acc: 97.8638, loss_bbox: 0.0671, roi_loss_intra: 0.0312, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0125, rcnn_loss_inter: 0.0000, loss: 0.3043
+2021-07-21 05:27:47,884 - mmcv - INFO - Reducer buckets have been rebuilt in this iteration.
+INFO:mmcv:Reducer buckets have been rebuilt in this iteration.
+2021-07-21 05:27:49,888 - mmdet - INFO - Iter [2/140]	lr: 1.000e-03, eta: 0:11:02, time: 2.046, data_time: 0.471, memory: 3100, loss_rpn_cls: 0.0544, loss_rpn_bbox: 0.0057, loss_cls: 0.1284, acc: 98.0713, loss_bbox: 0.0722, roi_loss_intra: 0.0332, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0131, rcnn_loss_inter: 0.0000, loss: 0.3070
+INFO:mmdet:Iter [2/140]	lr: 1.000e-03, eta: 0:11:02, time: 2.046, data_time: 0.471, memory: 3100, loss_rpn_cls: 0.0544, loss_rpn_bbox: 0.0057, loss_cls: 0.1284, acc: 98.0713, loss_bbox: 0.0722, roi_loss_intra: 0.0332, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0131, rcnn_loss_inter: 0.0000, loss: 0.3070
+2021-07-21 05:27:52,171 - mmdet - INFO - Iter [3/140]	lr: 1.000e-03, eta: 0:09:01, time: 2.260, data_time: 0.444, memory: 3222, loss_rpn_cls: 0.0230, loss_rpn_bbox: 0.0085, loss_cls: 0.1493, acc: 97.2778, loss_bbox: 0.0957, roi_loss_intra: 0.0277, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0096, rcnn_loss_inter: 0.0000, loss: 0.3138
+INFO:mmdet:Iter [3/140]	lr: 1.000e-03, eta: 0:09:01, time: 2.260, data_time: 0.444, memory: 3222, loss_rpn_cls: 0.0230, loss_rpn_bbox: 0.0085, loss_cls: 0.1493, acc: 97.2778, loss_bbox: 0.0957, roi_loss_intra: 0.0277, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0096, rcnn_loss_inter: 0.0000, loss: 0.3138
+2021-07-21 05:27:54,005 - mmdet - INFO - Iter [4/140]	lr: 1.000e-03, eta: 0:07:46, time: 1.843, data_time: 0.466, memory: 3375, loss_rpn_cls: 0.0213, loss_rpn_bbox: 0.0070, loss_cls: 0.1097, acc: 97.1191, loss_bbox: 0.0988, roi_loss_intra: 0.0255, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0084, rcnn_loss_inter: 0.0000, loss: 0.2708
+INFO:mmdet:Iter [4/140]	lr: 1.000e-03, eta: 0:07:46, time: 1.843, data_time: 0.466, memory: 3375, loss_rpn_cls: 0.0213, loss_rpn_bbox: 0.0070, loss_cls: 0.1097, acc: 97.1191, loss_bbox: 0.0988, roi_loss_intra: 0.0255, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0084, rcnn_loss_inter: 0.0000, loss: 0.2708
+2021-07-21 05:27:56,001 - mmdet - INFO - Iter [5/140]	lr: 1.000e-03, eta: 0:07:06, time: 2.073, data_time: 0.456, memory: 3375, loss_rpn_cls: 0.0568, loss_rpn_bbox: 0.0103, loss_cls: 0.1311, acc: 97.0459, loss_bbox: 0.0801, roi_loss_intra: 0.0264, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0105, rcnn_loss_inter: 0.0000, loss: 0.3151
+INFO:mmdet:Iter [5/140]	lr: 1.000e-03, eta: 0:07:06, time: 2.073, data_time: 0.456, memory: 3375, loss_rpn_cls: 0.0568, loss_rpn_bbox: 0.0103, loss_cls: 0.1311, acc: 97.0459, loss_bbox: 0.0801, roi_loss_intra: 0.0264, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0105, rcnn_loss_inter: 0.0000, loss: 0.3151
+2021-07-21 05:27:57,766 - mmdet - INFO - Iter [6/140]	lr: 1.000e-03, eta: 0:06:30, time: 1.727, data_time: 0.383, memory: 3375, loss_rpn_cls: 0.0303, loss_rpn_bbox: 0.0087, loss_cls: 0.0965, acc: 97.1191, loss_bbox: 0.0780, roi_loss_intra: 0.0231, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0093, rcnn_loss_inter: 0.0000, loss: 0.2458
+INFO:mmdet:Iter [6/140]	lr: 1.000e-03, eta: 0:06:30, time: 1.727, data_time: 0.383, memory: 3375, loss_rpn_cls: 0.0303, loss_rpn_bbox: 0.0087, loss_cls: 0.0965, acc: 97.1191, loss_bbox: 0.0780, roi_loss_intra: 0.0231, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0093, rcnn_loss_inter: 0.0000, loss: 0.2458
+2021-07-21 05:27:59,802 - mmdet - INFO - Iter [7/140]	lr: 1.000e-03, eta: 0:06:11, time: 2.028, data_time: 0.424, memory: 3375, loss_rpn_cls: 0.0198, loss_rpn_bbox: 0.0106, loss_cls: 0.0915, acc: 97.1680, loss_bbox: 0.1028, roi_loss_intra: 0.0284, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0111, rcnn_loss_inter: 0.0000, loss: 0.2642
+INFO:mmdet:Iter [7/140]	lr: 1.000e-03, eta: 0:06:11, time: 2.028, data_time: 0.424, memory: 3375, loss_rpn_cls: 0.0198, loss_rpn_bbox: 0.0106, loss_cls: 0.0915, acc: 97.1680, loss_bbox: 0.1028, roi_loss_intra: 0.0284, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0111, rcnn_loss_inter: 0.0000, loss: 0.2642
+2021-07-21 05:28:09,006 - mmdet - INFO - Iter [8/140]	lr: 1.000e-03, eta: 0:07:53, time: 9.185, data_time: 8.212, memory: 3375, loss_rpn_cls: 0.0221, loss_rpn_bbox: 0.0084, loss_cls: 0.1021, acc: 96.7896, loss_bbox: 0.0943, roi_loss_intra: 0.0265, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0133, rcnn_loss_inter: 0.0000, loss: 0.2668
+INFO:mmdet:Iter [8/140]	lr: 1.000e-03, eta: 0:07:53, time: 9.185, data_time: 8.212, memory: 3375, loss_rpn_cls: 0.0221, loss_rpn_bbox: 0.0084, loss_cls: 0.1021, acc: 96.7896, loss_bbox: 0.0943, roi_loss_intra: 0.0265, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0133, rcnn_loss_inter: 0.0000, loss: 0.2668
+2021-07-21 05:28:11,001 - mmdet - INFO - Iter [9/140]	lr: 1.000e-03, eta: 0:07:28, time: 2.060, data_time: 0.443, memory: 3375, loss_rpn_cls: 0.0123, loss_rpn_bbox: 0.0075, loss_cls: 0.1190, acc: 95.9473, loss_bbox: 0.0985, roi_loss_intra: 0.0244, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0102, rcnn_loss_inter: 0.0000, loss: 0.2719
+INFO:mmdet:Iter [9/140]	lr: 1.000e-03, eta: 0:07:28, time: 2.060, data_time: 0.443, memory: 3375, loss_rpn_cls: 0.0123, loss_rpn_bbox: 0.0075, loss_cls: 0.1190, acc: 95.9473, loss_bbox: 0.0985, roi_loss_intra: 0.0244, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0102, rcnn_loss_inter: 0.0000, loss: 0.2719
+2021-07-21 05:28:13,161 - mmdet - INFO - Iter [10/140]	lr: 1.000e-03, eta: 0:07:08, time: 2.149, data_time: 0.387, memory: 3375, loss_rpn_cls: 0.0137, loss_rpn_bbox: 0.0057, loss_cls: 0.0954, acc: 96.6064, loss_bbox: 0.0897, roi_loss_intra: 0.0254, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0094, rcnn_loss_inter: 0.0000, loss: 0.2394
+INFO:mmdet:Iter [10/140]	lr: 1.000e-03, eta: 0:07:08, time: 2.149, data_time: 0.387, memory: 3375, loss_rpn_cls: 0.0137, loss_rpn_bbox: 0.0057, loss_cls: 0.0954, acc: 96.6064, loss_bbox: 0.0897, roi_loss_intra: 0.0254, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0094, rcnn_loss_inter: 0.0000, loss: 0.2394
+2021-07-21 05:28:15,458 - mmdet - INFO - Iter [11/140]	lr: 1.000e-03, eta: 0:06:52, time: 2.284, data_time: 0.393, memory: 3375, loss_rpn_cls: 0.0161, loss_rpn_bbox: 0.0056, loss_cls: 0.1321, acc: 95.5566, loss_bbox: 0.0898, roi_loss_intra: 0.0223, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0099, rcnn_loss_inter: 0.0000, loss: 0.2758
+INFO:mmdet:Iter [11/140]	lr: 1.000e-03, eta: 0:06:52, time: 2.284, data_time: 0.393, memory: 3375, loss_rpn_cls: 0.0161, loss_rpn_bbox: 0.0056, loss_cls: 0.1321, acc: 95.5566, loss_bbox: 0.0898, roi_loss_intra: 0.0223, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0099, rcnn_loss_inter: 0.0000, loss: 0.2758
+2021-07-21 05:28:17,410 - mmdet - INFO - Iter [12/140]	lr: 1.000e-03, eta: 0:06:35, time: 1.910, data_time: 0.406, memory: 3375, loss_rpn_cls: 0.0153, loss_rpn_bbox: 0.0083, loss_cls: 0.0957, acc: 96.9238, loss_bbox: 0.0993, roi_loss_intra: 0.0185, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0100, rcnn_loss_inter: 0.0000, loss: 0.2471
+INFO:mmdet:Iter [12/140]	lr: 1.000e-03, eta: 0:06:35, time: 1.910, data_time: 0.406, memory: 3375, loss_rpn_cls: 0.0153, loss_rpn_bbox: 0.0083, loss_cls: 0.0957, acc: 96.9238, loss_bbox: 0.0993, roi_loss_intra: 0.0185, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0100, rcnn_loss_inter: 0.0000, loss: 0.2471
+2021-07-21 05:28:19,110 - mmdet - INFO - Iter [13/140]	lr: 1.000e-03, eta: 0:06:19, time: 1.722, data_time: 0.451, memory: 3375, loss_rpn_cls: 0.0141, loss_rpn_bbox: 0.0068, loss_cls: 0.1031, acc: 97.1069, loss_bbox: 0.0971, roi_loss_intra: 0.0194, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0106, rcnn_loss_inter: 0.0000, loss: 0.2512
+INFO:mmdet:Iter [13/140]	lr: 1.000e-03, eta: 0:06:19, time: 1.722, data_time: 0.451, memory: 3375, loss_rpn_cls: 0.0141, loss_rpn_bbox: 0.0068, loss_cls: 0.1031, acc: 97.1069, loss_bbox: 0.0971, roi_loss_intra: 0.0194, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0106, rcnn_loss_inter: 0.0000, loss: 0.2512
+2021-07-21 05:28:21,348 - mmdet - INFO - Iter [14/140]	lr: 1.000e-03, eta: 0:06:09, time: 2.251, data_time: 0.429, memory: 3375, loss_rpn_cls: 0.0096, loss_rpn_bbox: 0.0094, loss_cls: 0.0854, acc: 96.9849, loss_bbox: 0.0896, roi_loss_intra: 0.0115, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0093, rcnn_loss_inter: 0.0000, loss: 0.2147
+INFO:mmdet:Iter [14/140]	lr: 1.000e-03, eta: 0:06:09, time: 2.251, data_time: 0.429, memory: 3375, loss_rpn_cls: 0.0096, loss_rpn_bbox: 0.0094, loss_cls: 0.0854, acc: 96.9849, loss_bbox: 0.0896, roi_loss_intra: 0.0115, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0093, rcnn_loss_inter: 0.0000, loss: 0.2147
+2021-07-21 05:28:30,162 - mmdet - INFO - Iter [15/140]	lr: 1.000e-03, eta: 0:06:55, time: 8.777, data_time: 6.990, memory: 3375, loss_rpn_cls: 0.0115, loss_rpn_bbox: 0.0063, loss_cls: 0.1036, acc: 96.7163, loss_bbox: 0.0990, roi_loss_intra: 0.0120, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0058, rcnn_loss_inter: 0.0000, loss: 0.2382
+INFO:mmdet:Iter [15/140]	lr: 1.000e-03, eta: 0:06:55, time: 8.777, data_time: 6.990, memory: 3375, loss_rpn_cls: 0.0115, loss_rpn_bbox: 0.0063, loss_cls: 0.1036, acc: 96.7163, loss_bbox: 0.0990, roi_loss_intra: 0.0120, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0058, rcnn_loss_inter: 0.0000, loss: 0.2382
+2021-07-21 05:28:32,106 - mmdet - INFO - Iter [16/140]	lr: 1.000e-03, eta: 0:06:41, time: 1.956, data_time: 0.458, memory: 3375, loss_rpn_cls: 0.0064, loss_rpn_bbox: 0.0048, loss_cls: 0.0917, acc: 96.8628, loss_bbox: 0.1076, roi_loss_intra: 0.0080, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0080, rcnn_loss_inter: 0.0000, loss: 0.2264
+INFO:mmdet:Iter [16/140]	lr: 1.000e-03, eta: 0:06:41, time: 1.956, data_time: 0.458, memory: 3375, loss_rpn_cls: 0.0064, loss_rpn_bbox: 0.0048, loss_cls: 0.0917, acc: 96.8628, loss_bbox: 0.1076, roi_loss_intra: 0.0080, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0080, rcnn_loss_inter: 0.0000, loss: 0.2264
+2021-07-21 05:28:34,072 - mmdet - INFO - Iter [17/140]	lr: 1.000e-03, eta: 0:06:29, time: 1.959, data_time: 0.440, memory: 3375, loss_rpn_cls: 0.0121, loss_rpn_bbox: 0.0072, loss_cls: 0.0891, acc: 97.2534, loss_bbox: 0.0945, roi_loss_intra: 0.0077, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0072, rcnn_loss_inter: 0.0000, loss: 0.2178
+INFO:mmdet:Iter [17/140]	lr: 1.000e-03, eta: 0:06:29, time: 1.959, data_time: 0.440, memory: 3375, loss_rpn_cls: 0.0121, loss_rpn_bbox: 0.0072, loss_cls: 0.0891, acc: 97.2534, loss_bbox: 0.0945, roi_loss_intra: 0.0077, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0072, rcnn_loss_inter: 0.0000, loss: 0.2178
+2021-07-21 05:28:36,241 - mmdet - INFO - Iter [18/140]	lr: 1.000e-03, eta: 0:06:18, time: 2.098, data_time: 0.444, memory: 3375, loss_rpn_cls: 0.0076, loss_rpn_bbox: 0.0054, loss_cls: 0.0835, acc: 97.0215, loss_bbox: 0.0960, roi_loss_intra: 0.0086, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0068, rcnn_loss_inter: 0.0000, loss: 0.2078
+INFO:mmdet:Iter [18/140]	lr: 1.000e-03, eta: 0:06:18, time: 2.098, data_time: 0.444, memory: 3375, loss_rpn_cls: 0.0076, loss_rpn_bbox: 0.0054, loss_cls: 0.0835, acc: 97.0215, loss_bbox: 0.0960, roi_loss_intra: 0.0086, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0068, rcnn_loss_inter: 0.0000, loss: 0.2078
+2021-07-21 05:28:38,433 - mmdet - INFO - Iter [19/140]	lr: 1.000e-03, eta: 0:06:10, time: 2.296, data_time: 0.511, memory: 3375, loss_rpn_cls: 0.0080, loss_rpn_bbox: 0.0039, loss_cls: 0.0770, acc: 97.3022, loss_bbox: 0.0974, roi_loss_intra: 0.0155, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0102, rcnn_loss_inter: 0.0000, loss: 0.2120
+INFO:mmdet:Iter [19/140]	lr: 1.000e-03, eta: 0:06:10, time: 2.296, data_time: 0.511, memory: 3375, loss_rpn_cls: 0.0080, loss_rpn_bbox: 0.0039, loss_cls: 0.0770, acc: 97.3022, loss_bbox: 0.0974, roi_loss_intra: 0.0155, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0102, rcnn_loss_inter: 0.0000, loss: 0.2120
+2021-07-21 05:28:40,648 - mmdet - INFO - Iter [20/140]	lr: 1.000e-03, eta: 0:06:02, time: 2.208, data_time: 0.412, memory: 3375, loss_rpn_cls: 0.0062, loss_rpn_bbox: 0.0046, loss_cls: 0.0740, acc: 97.1802, loss_bbox: 0.0966, roi_loss_intra: 0.0049, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0046, rcnn_loss_inter: 0.0000, loss: 0.1909
+INFO:mmdet:Iter [20/140]	lr: 1.000e-03, eta: 0:06:02, time: 2.208, data_time: 0.412, memory: 3375, loss_rpn_cls: 0.0062, loss_rpn_bbox: 0.0046, loss_cls: 0.0740, acc: 97.1802, loss_bbox: 0.0966, roi_loss_intra: 0.0049, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0046, rcnn_loss_inter: 0.0000, loss: 0.1909
+2021-07-21 05:28:42,780 - mmdet - INFO - Iter [21/140]	lr: 1.000e-03, eta: 0:05:54, time: 2.084, data_time: 0.420, memory: 3375, loss_rpn_cls: 0.0133, loss_rpn_bbox: 0.0071, loss_cls: 0.1028, acc: 96.4478, loss_bbox: 0.1039, roi_loss_intra: 0.0055, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0048, rcnn_loss_inter: 0.0000, loss: 0.2374
+INFO:mmdet:Iter [21/140]	lr: 1.000e-03, eta: 0:05:54, time: 2.084, data_time: 0.420, memory: 3375, loss_rpn_cls: 0.0133, loss_rpn_bbox: 0.0071, loss_cls: 0.1028, acc: 96.4478, loss_bbox: 0.1039, roi_loss_intra: 0.0055, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0048, rcnn_loss_inter: 0.0000, loss: 0.2374
+2021-07-21 05:28:51,526 - mmdet - INFO - Iter [22/140]	lr: 1.000e-03, eta: 0:06:22, time: 8.779, data_time: 7.229, memory: 3375, loss_rpn_cls: 0.0127, loss_rpn_bbox: 0.0049, loss_cls: 0.1012, acc: 96.9238, loss_bbox: 0.1025, roi_loss_intra: 0.0042, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0048, rcnn_loss_inter: 0.0000, loss: 0.2303
+INFO:mmdet:Iter [22/140]	lr: 1.000e-03, eta: 0:06:22, time: 8.779, data_time: 7.229, memory: 3375, loss_rpn_cls: 0.0127, loss_rpn_bbox: 0.0049, loss_cls: 0.1012, acc: 96.9238, loss_bbox: 0.1025, roi_loss_intra: 0.0042, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0048, rcnn_loss_inter: 0.0000, loss: 0.2303
+2021-07-21 05:28:53,471 - mmdet - INFO - Iter [23/140]	lr: 1.000e-03, eta: 0:06:12, time: 1.914, data_time: 0.447, memory: 3375, loss_rpn_cls: 0.0099, loss_rpn_bbox: 0.0060, loss_cls: 0.0911, acc: 96.6553, loss_bbox: 0.1186, roi_loss_intra: 0.0052, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0055, rcnn_loss_inter: 0.0000, loss: 0.2363
+INFO:mmdet:Iter [23/140]	lr: 1.000e-03, eta: 0:06:12, time: 1.914, data_time: 0.447, memory: 3375, loss_rpn_cls: 0.0099, loss_rpn_bbox: 0.0060, loss_cls: 0.0911, acc: 96.6553, loss_bbox: 0.1186, roi_loss_intra: 0.0052, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0055, rcnn_loss_inter: 0.0000, loss: 0.2363
+2021-07-21 05:28:55,580 - mmdet - INFO - Iter [24/140]	lr: 1.000e-03, eta: 0:06:03, time: 2.136, data_time: 0.464, memory: 3375, loss_rpn_cls: 0.0109, loss_rpn_bbox: 0.0053, loss_cls: 0.0889, acc: 96.9482, loss_bbox: 0.1025, roi_loss_intra: 0.0039, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0044, rcnn_loss_inter: 0.0000, loss: 0.2158
+INFO:mmdet:Iter [24/140]	lr: 1.000e-03, eta: 0:06:03, time: 2.136, data_time: 0.464, memory: 3375, loss_rpn_cls: 0.0109, loss_rpn_bbox: 0.0053, loss_cls: 0.0889, acc: 96.9482, loss_bbox: 0.1025, roi_loss_intra: 0.0039, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0044, rcnn_loss_inter: 0.0000, loss: 0.2158
+2021-07-21 05:28:57,773 - mmdet - INFO - Iter [25/140]	lr: 1.000e-03, eta: 0:05:56, time: 2.205, data_time: 0.441, memory: 3375, loss_rpn_cls: 0.0107, loss_rpn_bbox: 0.0090, loss_cls: 0.0909, acc: 96.7896, loss_bbox: 0.1319, roi_loss_intra: 0.0041, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0052, rcnn_loss_inter: 0.0000, loss: 0.2518
+INFO:mmdet:Iter [25/140]	lr: 1.000e-03, eta: 0:05:56, time: 2.205, data_time: 0.441, memory: 3375, loss_rpn_cls: 0.0107, loss_rpn_bbox: 0.0090, loss_cls: 0.0909, acc: 96.7896, loss_bbox: 0.1319, roi_loss_intra: 0.0041, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0052, rcnn_loss_inter: 0.0000, loss: 0.2518
+2021-07-21 05:28:59,602 - mmdet - INFO - Iter [26/140]	lr: 1.000e-03, eta: 0:05:47, time: 1.819, data_time: 0.423, memory: 3375, loss_rpn_cls: 0.0106, loss_rpn_bbox: 0.0058, loss_cls: 0.1030, acc: 97.0459, loss_bbox: 0.0949, roi_loss_intra: 0.0054, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0053, rcnn_loss_inter: 0.0000, loss: 0.2250
+INFO:mmdet:Iter [26/140]	lr: 1.000e-03, eta: 0:05:47, time: 1.819, data_time: 0.423, memory: 3375, loss_rpn_cls: 0.0106, loss_rpn_bbox: 0.0058, loss_cls: 0.1030, acc: 97.0459, loss_bbox: 0.0949, roi_loss_intra: 0.0054, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0053, rcnn_loss_inter: 0.0000, loss: 0.2250
+2021-07-21 05:29:01,897 - mmdet - INFO - Iter [27/140]	lr: 1.000e-03, eta: 0:05:41, time: 2.299, data_time: 0.437, memory: 3375, loss_rpn_cls: 0.0126, loss_rpn_bbox: 0.0072, loss_cls: 0.0800, acc: 97.4976, loss_bbox: 0.0882, roi_loss_intra: 0.0037, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0045, rcnn_loss_inter: 0.0000, loss: 0.1962
+INFO:mmdet:Iter [27/140]	lr: 1.000e-03, eta: 0:05:41, time: 2.299, data_time: 0.437, memory: 3375, loss_rpn_cls: 0.0126, loss_rpn_bbox: 0.0072, loss_cls: 0.0800, acc: 97.4976, loss_bbox: 0.0882, roi_loss_intra: 0.0037, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0045, rcnn_loss_inter: 0.0000, loss: 0.1962
+2021-07-21 05:29:03,948 - mmdet - INFO - Iter [28/140]	lr: 1.000e-03, eta: 0:05:34, time: 2.053, data_time: 0.429, memory: 3375, loss_rpn_cls: 0.0054, loss_rpn_bbox: 0.0068, loss_cls: 0.0761, acc: 97.0703, loss_bbox: 0.1124, roi_loss_intra: 0.0034, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0042, rcnn_loss_inter: 0.0000, loss: 0.2083
+INFO:mmdet:Iter [28/140]	lr: 1.000e-03, eta: 0:05:34, time: 2.053, data_time: 0.429, memory: 3375, loss_rpn_cls: 0.0054, loss_rpn_bbox: 0.0068, loss_cls: 0.0761, acc: 97.0703, loss_bbox: 0.1124, roi_loss_intra: 0.0034, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0042, rcnn_loss_inter: 0.0000, loss: 0.2083
+2021-07-21 05:29:12,573 - mmdet - INFO - Iter [29/140]	lr: 1.000e-03, eta: 0:05:53, time: 8.617, data_time: 5.545, memory: 3375, loss_rpn_cls: 0.0203, loss_rpn_bbox: 0.0059, loss_cls: 0.1026, acc: 96.7285, loss_bbox: 0.1057, roi_loss_intra: 0.0043, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0058, rcnn_loss_inter: 0.0000, loss: 0.2446
+INFO:mmdet:Iter [29/140]	lr: 1.000e-03, eta: 0:05:53, time: 8.617, data_time: 5.545, memory: 3375, loss_rpn_cls: 0.0203, loss_rpn_bbox: 0.0059, loss_cls: 0.1026, acc: 96.7285, loss_bbox: 0.1057, roi_loss_intra: 0.0043, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0058, rcnn_loss_inter: 0.0000, loss: 0.2446
+2021-07-21 05:29:14,607 - mmdet - INFO - Iter [30/140]	lr: 1.000e-03, eta: 0:05:46, time: 2.078, data_time: 0.443, memory: 3375, loss_rpn_cls: 0.0055, loss_rpn_bbox: 0.0049, loss_cls: 0.0785, acc: 96.9604, loss_bbox: 0.1004, roi_loss_intra: 0.0040, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0041, rcnn_loss_inter: 0.0000, loss: 0.1975
+INFO:mmdet:Iter [30/140]	lr: 1.000e-03, eta: 0:05:46, time: 2.078, data_time: 0.443, memory: 3375, loss_rpn_cls: 0.0055, loss_rpn_bbox: 0.0049, loss_cls: 0.0785, acc: 96.9604, loss_bbox: 0.1004, roi_loss_intra: 0.0040, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0041, rcnn_loss_inter: 0.0000, loss: 0.1975
+2021-07-21 05:29:16,926 - mmdet - INFO - Iter [31/140]	lr: 1.000e-03, eta: 0:05:39, time: 2.218, data_time: 0.388, memory: 3375, loss_rpn_cls: 0.0129, loss_rpn_bbox: 0.0054, loss_cls: 0.0951, acc: 96.5698, loss_bbox: 0.1141, roi_loss_intra: 0.0043, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0045, rcnn_loss_inter: 0.0000, loss: 0.2363
+INFO:mmdet:Iter [31/140]	lr: 1.000e-03, eta: 0:05:39, time: 2.218, data_time: 0.388, memory: 3375, loss_rpn_cls: 0.0129, loss_rpn_bbox: 0.0054, loss_cls: 0.0951, acc: 96.5698, loss_bbox: 0.1141, roi_loss_intra: 0.0043, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0045, rcnn_loss_inter: 0.0000, loss: 0.2363
+2021-07-21 05:29:18,985 - mmdet - INFO - Iter [32/140]	lr: 1.000e-03, eta: 0:05:33, time: 2.134, data_time: 0.494, memory: 3375, loss_rpn_cls: 0.0092, loss_rpn_bbox: 0.0058, loss_cls: 0.0803, acc: 97.2168, loss_bbox: 0.1033, roi_loss_intra: 0.0039, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0040, rcnn_loss_inter: 0.0000, loss: 0.2065
+INFO:mmdet:Iter [32/140]	lr: 1.000e-03, eta: 0:05:33, time: 2.134, data_time: 0.494, memory: 3375, loss_rpn_cls: 0.0092, loss_rpn_bbox: 0.0058, loss_cls: 0.0803, acc: 97.2168, loss_bbox: 0.1033, roi_loss_intra: 0.0039, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0040, rcnn_loss_inter: 0.0000, loss: 0.2065
+2021-07-21 05:29:21,210 - mmdet - INFO - Iter [33/140]	lr: 1.000e-03, eta: 0:05:27, time: 2.231, data_time: 0.426, memory: 3375, loss_rpn_cls: 0.0081, loss_rpn_bbox: 0.0043, loss_cls: 0.1016, acc: 96.2158, loss_bbox: 0.1257, roi_loss_intra: 0.0055, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0041, rcnn_loss_inter: 0.0000, loss: 0.2493
+INFO:mmdet:Iter [33/140]	lr: 1.000e-03, eta: 0:05:27, time: 2.231, data_time: 0.426, memory: 3375, loss_rpn_cls: 0.0081, loss_rpn_bbox: 0.0043, loss_cls: 0.1016, acc: 96.2158, loss_bbox: 0.1257, roi_loss_intra: 0.0055, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0041, rcnn_loss_inter: 0.0000, loss: 0.2493
+2021-07-21 05:29:23,365 - mmdet - INFO - Iter [34/140]	lr: 1.000e-03, eta: 0:05:21, time: 2.187, data_time: 0.414, memory: 3375, loss_rpn_cls: 0.0126, loss_rpn_bbox: 0.0072, loss_cls: 0.0769, acc: 97.3145, loss_bbox: 0.0968, roi_loss_intra: 0.0039, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0035, rcnn_loss_inter: 0.0000, loss: 0.2009
+INFO:mmdet:Iter [34/140]	lr: 1.000e-03, eta: 0:05:21, time: 2.187, data_time: 0.414, memory: 3375, loss_rpn_cls: 0.0126, loss_rpn_bbox: 0.0072, loss_cls: 0.0769, acc: 97.3145, loss_bbox: 0.0968, roi_loss_intra: 0.0039, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0035, rcnn_loss_inter: 0.0000, loss: 0.2009
+2021-07-21 05:29:24,622 - mmdet - INFO - Iter [35/140]	lr: 1.000e-03, eta: 0:05:13, time: 1.197, data_time: 0.380, memory: 3375, loss_rpn_cls: 0.0073, loss_rpn_bbox: 0.0043, loss_cls: 0.0749, acc: 97.2778, loss_bbox: 0.0918, roi_loss_intra: 0.0048, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0045, rcnn_loss_inter: 0.0000, loss: 0.1877
+INFO:mmdet:Iter [35/140]	lr: 1.000e-03, eta: 0:05:13, time: 1.197, data_time: 0.380, memory: 3375, loss_rpn_cls: 0.0073, loss_rpn_bbox: 0.0043, loss_cls: 0.0749, acc: 97.2778, loss_bbox: 0.0918, roi_loss_intra: 0.0048, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0045, rcnn_loss_inter: 0.0000, loss: 0.1877
+2021-07-21 05:29:33,071 - mmdet - INFO - Iter [36/140]	lr: 1.000e-03, eta: 0:05:25, time: 8.476, data_time: 6.317, memory: 3375, loss_rpn_cls: 0.0050, loss_rpn_bbox: 0.0082, loss_cls: 0.0773, acc: 96.8140, loss_bbox: 0.1190, roi_loss_intra: 0.0029, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0035, rcnn_loss_inter: 0.0000, loss: 0.2159
+INFO:mmdet:Iter [36/140]	lr: 1.000e-03, eta: 0:05:25, time: 8.476, data_time: 6.317, memory: 3375, loss_rpn_cls: 0.0050, loss_rpn_bbox: 0.0082, loss_cls: 0.0773, acc: 96.8140, loss_bbox: 0.1190, roi_loss_intra: 0.0029, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0035, rcnn_loss_inter: 0.0000, loss: 0.2159
+2021-07-21 05:29:35,280 - mmdet - INFO - Iter [37/140]	lr: 1.000e-03, eta: 0:05:20, time: 2.189, data_time: 0.416, memory: 3375, loss_rpn_cls: 0.0036, loss_rpn_bbox: 0.0051, loss_cls: 0.0646, acc: 97.4976, loss_bbox: 0.0997, roi_loss_intra: 0.0029, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0035, rcnn_loss_inter: 0.0000, loss: 0.1795
+INFO:mmdet:Iter [37/140]	lr: 1.000e-03, eta: 0:05:20, time: 2.189, data_time: 0.416, memory: 3375, loss_rpn_cls: 0.0036, loss_rpn_bbox: 0.0051, loss_cls: 0.0646, acc: 97.4976, loss_bbox: 0.0997, roi_loss_intra: 0.0029, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0035, rcnn_loss_inter: 0.0000, loss: 0.1795
+2021-07-21 05:29:37,432 - mmdet - INFO - Iter [38/140]	lr: 1.000e-03, eta: 0:05:14, time: 2.170, data_time: 0.430, memory: 3375, loss_rpn_cls: 0.0074, loss_rpn_bbox: 0.0051, loss_cls: 0.0927, acc: 96.9360, loss_bbox: 0.1060, roi_loss_intra: 0.0032, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0039, rcnn_loss_inter: 0.0000, loss: 0.2184
+INFO:mmdet:Iter [38/140]	lr: 1.000e-03, eta: 0:05:14, time: 2.170, data_time: 0.430, memory: 3375, loss_rpn_cls: 0.0074, loss_rpn_bbox: 0.0051, loss_cls: 0.0927, acc: 96.9360, loss_bbox: 0.1060, roi_loss_intra: 0.0032, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0039, rcnn_loss_inter: 0.0000, loss: 0.2184
+2021-07-21 05:29:39,594 - mmdet - INFO - Iter [39/140]	lr: 1.000e-03, eta: 0:05:09, time: 2.192, data_time: 0.420, memory: 3375, loss_rpn_cls: 0.0055, loss_rpn_bbox: 0.0060, loss_cls: 0.0668, acc: 97.5708, loss_bbox: 0.0908, roi_loss_intra: 0.0028, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0031, rcnn_loss_inter: 0.0000, loss: 0.1750
+INFO:mmdet:Iter [39/140]	lr: 1.000e-03, eta: 0:05:09, time: 2.192, data_time: 0.420, memory: 3375, loss_rpn_cls: 0.0055, loss_rpn_bbox: 0.0060, loss_cls: 0.0668, acc: 97.5708, loss_bbox: 0.0908, roi_loss_intra: 0.0028, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0031, rcnn_loss_inter: 0.0000, loss: 0.1750
+2021-07-21 05:29:41,728 - mmdet - INFO - Iter [40/140]	lr: 1.000e-03, eta: 0:05:03, time: 2.025, data_time: 0.383, memory: 3375, loss_rpn_cls: 0.0029, loss_rpn_bbox: 0.0071, loss_cls: 0.0626, acc: 97.6807, loss_bbox: 0.1037, roi_loss_intra: 0.0027, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0025, rcnn_loss_inter: 0.0000, loss: 0.1815
+INFO:mmdet:Iter [40/140]	lr: 1.000e-03, eta: 0:05:03, time: 2.025, data_time: 0.383, memory: 3375, loss_rpn_cls: 0.0029, loss_rpn_bbox: 0.0071, loss_cls: 0.0626, acc: 97.6807, loss_bbox: 0.1037, roi_loss_intra: 0.0027, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0025, rcnn_loss_inter: 0.0000, loss: 0.1815
+2021-07-21 05:29:43,734 - mmdet - INFO - Iter [41/140]	lr: 1.000e-03, eta: 0:04:58, time: 2.070, data_time: 0.501, memory: 3375, loss_rpn_cls: 0.0073, loss_rpn_bbox: 0.0041, loss_cls: 0.0825, acc: 96.6064, loss_bbox: 0.1270, roi_loss_intra: 0.0026, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0029, rcnn_loss_inter: 0.0000, loss: 0.2264
+INFO:mmdet:Iter [41/140]	lr: 1.000e-03, eta: 0:04:58, time: 2.070, data_time: 0.501, memory: 3375, loss_rpn_cls: 0.0073, loss_rpn_bbox: 0.0041, loss_cls: 0.0825, acc: 96.6064, loss_bbox: 0.1270, roi_loss_intra: 0.0026, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0029, rcnn_loss_inter: 0.0000, loss: 0.2264
+2021-07-21 05:29:45,803 - mmdet - INFO - Iter [42/140]	lr: 1.000e-03, eta: 0:04:52, time: 2.088, data_time: 0.435, memory: 3375, loss_rpn_cls: 0.0154, loss_rpn_bbox: 0.0063, loss_cls: 0.0755, acc: 97.5342, loss_bbox: 0.0903, roi_loss_intra: 0.0033, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0032, rcnn_loss_inter: 0.0000, loss: 0.1941
+INFO:mmdet:Iter [42/140]	lr: 1.000e-03, eta: 0:04:52, time: 2.088, data_time: 0.435, memory: 3375, loss_rpn_cls: 0.0154, loss_rpn_bbox: 0.0063, loss_cls: 0.0755, acc: 97.5342, loss_bbox: 0.0903, roi_loss_intra: 0.0033, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0032, rcnn_loss_inter: 0.0000, loss: 0.1941
+2021-07-21 05:29:54,499 - mmdet - INFO - Iter [43/140]	lr: 1.000e-03, eta: 0:05:02, time: 8.698, data_time: 6.474, memory: 3375, loss_rpn_cls: 0.0042, loss_rpn_bbox: 0.0051, loss_cls: 0.0686, acc: 97.2290, loss_bbox: 0.0983, roi_loss_intra: 0.0032, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0037, rcnn_loss_inter: 0.0000, loss: 0.1829
+INFO:mmdet:Iter [43/140]	lr: 1.000e-03, eta: 0:05:02, time: 8.698, data_time: 6.474, memory: 3375, loss_rpn_cls: 0.0042, loss_rpn_bbox: 0.0051, loss_cls: 0.0686, acc: 97.2290, loss_bbox: 0.0983, roi_loss_intra: 0.0032, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0037, rcnn_loss_inter: 0.0000, loss: 0.1829
+2021-07-21 05:29:56,600 - mmdet - INFO - Iter [44/140]	lr: 1.000e-03, eta: 0:04:57, time: 2.087, data_time: 0.414, memory: 3375, loss_rpn_cls: 0.0086, loss_rpn_bbox: 0.0041, loss_cls: 0.0754, acc: 97.1436, loss_bbox: 0.0953, roi_loss_intra: 0.0029, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0034, rcnn_loss_inter: 0.0000, loss: 0.1897
+INFO:mmdet:Iter [44/140]	lr: 1.000e-03, eta: 0:04:57, time: 2.087, data_time: 0.414, memory: 3375, loss_rpn_cls: 0.0086, loss_rpn_bbox: 0.0041, loss_cls: 0.0754, acc: 97.1436, loss_bbox: 0.0953, roi_loss_intra: 0.0029, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0034, rcnn_loss_inter: 0.0000, loss: 0.1897
+2021-07-21 05:29:58,475 - mmdet - INFO - Iter [45/140]	lr: 1.000e-03, eta: 0:04:51, time: 1.789, data_time: 0.427, memory: 3375, loss_rpn_cls: 0.0058, loss_rpn_bbox: 0.0064, loss_cls: 0.0700, acc: 97.1802, loss_bbox: 0.1082, roi_loss_intra: 0.0025, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0030, rcnn_loss_inter: 0.0000, loss: 0.1959
+INFO:mmdet:Iter [45/140]	lr: 1.000e-03, eta: 0:04:51, time: 1.789, data_time: 0.427, memory: 3375, loss_rpn_cls: 0.0058, loss_rpn_bbox: 0.0064, loss_cls: 0.0700, acc: 97.1802, loss_bbox: 0.1082, roi_loss_intra: 0.0025, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0030, rcnn_loss_inter: 0.0000, loss: 0.1959
+2021-07-21 05:30:00,599 - mmdet - INFO - Iter [46/140]	lr: 1.000e-03, eta: 0:04:46, time: 2.193, data_time: 0.517, memory: 3375, loss_rpn_cls: 0.0124, loss_rpn_bbox: 0.0068, loss_cls: 0.0767, acc: 97.1558, loss_bbox: 0.0971, roi_loss_intra: 0.0022, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0026, rcnn_loss_inter: 0.0000, loss: 0.1978
+INFO:mmdet:Iter [46/140]	lr: 1.000e-03, eta: 0:04:46, time: 2.193, data_time: 0.517, memory: 3375, loss_rpn_cls: 0.0124, loss_rpn_bbox: 0.0068, loss_cls: 0.0767, acc: 97.1558, loss_bbox: 0.0971, roi_loss_intra: 0.0022, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0026, rcnn_loss_inter: 0.0000, loss: 0.1978
+2021-07-21 05:30:02,600 - mmdet - INFO - Iter [47/140]	lr: 1.000e-03, eta: 0:04:41, time: 2.177, data_time: 0.444, memory: 3375, loss_rpn_cls: 0.0099, loss_rpn_bbox: 0.0047, loss_cls: 0.0599, acc: 97.6807, loss_bbox: 0.0905, roi_loss_intra: 0.0025, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0025, rcnn_loss_inter: 0.0000, loss: 0.1700
+INFO:mmdet:Iter [47/140]	lr: 1.000e-03, eta: 0:04:41, time: 2.177, data_time: 0.444, memory: 3375, loss_rpn_cls: 0.0099, loss_rpn_bbox: 0.0047, loss_cls: 0.0599, acc: 97.6807, loss_bbox: 0.0905, roi_loss_intra: 0.0025, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0025, rcnn_loss_inter: 0.0000, loss: 0.1700
+2021-07-21 05:30:04,760 - mmdet - INFO - Iter [48/140]	lr: 1.000e-03, eta: 0:04:36, time: 2.009, data_time: 0.270, memory: 3375, loss_rpn_cls: 0.0074, loss_rpn_bbox: 0.0072, loss_cls: 0.0686, acc: 97.4976, loss_bbox: 0.1066, roi_loss_intra: 0.0031, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0037, rcnn_loss_inter: 0.0000, loss: 0.1965
+INFO:mmdet:Iter [48/140]	lr: 1.000e-03, eta: 0:04:36, time: 2.009, data_time: 0.270, memory: 3375, loss_rpn_cls: 0.0074, loss_rpn_bbox: 0.0072, loss_cls: 0.0686, acc: 97.4976, loss_bbox: 0.1066, roi_loss_intra: 0.0031, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0037, rcnn_loss_inter: 0.0000, loss: 0.1965
+2021-07-21 05:30:06,882 - mmdet - INFO - Iter [49/140]	lr: 1.000e-03, eta: 0:04:32, time: 2.118, data_time: 0.418, memory: 3375, loss_rpn_cls: 0.0068, loss_rpn_bbox: 0.0067, loss_cls: 0.0769, acc: 96.8018, loss_bbox: 0.1157, roi_loss_intra: 0.0019, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0019, rcnn_loss_inter: 0.0000, loss: 0.2099
+INFO:mmdet:Iter [49/140]	lr: 1.000e-03, eta: 0:04:32, time: 2.118, data_time: 0.418, memory: 3375, loss_rpn_cls: 0.0068, loss_rpn_bbox: 0.0067, loss_cls: 0.0769, acc: 96.8018, loss_bbox: 0.1157, roi_loss_intra: 0.0019, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0019, rcnn_loss_inter: 0.0000, loss: 0.2099
+2021-07-21 05:30:15,588 - mmdet - INFO - Iter [50/140]	lr: 1.000e-03, eta: 0:04:39, time: 8.709, data_time: 7.503, memory: 3375, loss_rpn_cls: 0.0039, loss_rpn_bbox: 0.0063, loss_cls: 0.0733, acc: 97.3755, loss_bbox: 0.1121, roi_loss_intra: 0.0022, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0020, rcnn_loss_inter: 0.0000, loss: 0.1999
+INFO:mmdet:Iter [50/140]	lr: 1.000e-03, eta: 0:04:39, time: 8.709, data_time: 7.503, memory: 3375, loss_rpn_cls: 0.0039, loss_rpn_bbox: 0.0063, loss_cls: 0.0733, acc: 97.3755, loss_bbox: 0.1121, roi_loss_intra: 0.0022, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0020, rcnn_loss_inter: 0.0000, loss: 0.1999
+2021-07-21 05:30:17,476 - mmdet - INFO - Iter [51/140]	lr: 1.000e-03, eta: 0:04:34, time: 1.860, data_time: 0.418, memory: 3375, loss_rpn_cls: 0.0045, loss_rpn_bbox: 0.0066, loss_cls: 0.0560, acc: 97.9248, loss_bbox: 0.0924, roi_loss_intra: 0.0021, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0025, rcnn_loss_inter: 0.0000, loss: 0.1641
+INFO:mmdet:Iter [51/140]	lr: 1.000e-03, eta: 0:04:34, time: 1.860, data_time: 0.418, memory: 3375, loss_rpn_cls: 0.0045, loss_rpn_bbox: 0.0066, loss_cls: 0.0560, acc: 97.9248, loss_bbox: 0.0924, roi_loss_intra: 0.0021, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0025, rcnn_loss_inter: 0.0000, loss: 0.1641
+2021-07-21 05:30:19,600 - mmdet - INFO - Iter [52/140]	lr: 1.000e-03, eta: 0:04:29, time: 2.105, data_time: 0.460, memory: 3375, loss_rpn_cls: 0.0095, loss_rpn_bbox: 0.0045, loss_cls: 0.0628, acc: 97.3511, loss_bbox: 0.0917, roi_loss_intra: 0.0019, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0025, rcnn_loss_inter: 0.0000, loss: 0.1728
+INFO:mmdet:Iter [52/140]	lr: 1.000e-03, eta: 0:04:29, time: 2.105, data_time: 0.460, memory: 3375, loss_rpn_cls: 0.0095, loss_rpn_bbox: 0.0045, loss_cls: 0.0628, acc: 97.3511, loss_bbox: 0.0917, roi_loss_intra: 0.0019, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0025, rcnn_loss_inter: 0.0000, loss: 0.1728
+2021-07-21 05:30:21,618 - mmdet - INFO - Iter [53/140]	lr: 1.000e-03, eta: 0:04:24, time: 2.057, data_time: 0.471, memory: 3375, loss_rpn_cls: 0.0069, loss_rpn_bbox: 0.0076, loss_cls: 0.0770, acc: 97.0093, loss_bbox: 0.1070, roi_loss_intra: 0.0021, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0025, rcnn_loss_inter: 0.0000, loss: 0.2031
+INFO:mmdet:Iter [53/140]	lr: 1.000e-03, eta: 0:04:24, time: 2.057, data_time: 0.471, memory: 3375, loss_rpn_cls: 0.0069, loss_rpn_bbox: 0.0076, loss_cls: 0.0770, acc: 97.0093, loss_bbox: 0.1070, roi_loss_intra: 0.0021, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0025, rcnn_loss_inter: 0.0000, loss: 0.2031
+2021-07-21 05:30:23,793 - mmdet - INFO - Iter [54/140]	lr: 1.000e-03, eta: 0:04:20, time: 2.146, data_time: 0.426, memory: 3375, loss_rpn_cls: 0.0037, loss_rpn_bbox: 0.0061, loss_cls: 0.0766, acc: 97.0337, loss_bbox: 0.1094, roi_loss_intra: 0.0028, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0033, rcnn_loss_inter: 0.0000, loss: 0.2019
+INFO:mmdet:Iter [54/140]	lr: 1.000e-03, eta: 0:04:20, time: 2.146, data_time: 0.426, memory: 3375, loss_rpn_cls: 0.0037, loss_rpn_bbox: 0.0061, loss_cls: 0.0766, acc: 97.0337, loss_bbox: 0.1094, roi_loss_intra: 0.0028, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0033, rcnn_loss_inter: 0.0000, loss: 0.2019
+2021-07-21 05:30:25,672 - mmdet - INFO - Iter [55/140]	lr: 1.000e-03, eta: 0:04:15, time: 1.910, data_time: 0.469, memory: 3375, loss_rpn_cls: 0.0065, loss_rpn_bbox: 0.0064, loss_cls: 0.0722, acc: 97.3633, loss_bbox: 0.1173, roi_loss_intra: 0.0023, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0025, rcnn_loss_inter: 0.0000, loss: 0.2072
+INFO:mmdet:Iter [55/140]	lr: 1.000e-03, eta: 0:04:15, time: 1.910, data_time: 0.469, memory: 3375, loss_rpn_cls: 0.0065, loss_rpn_bbox: 0.0064, loss_cls: 0.0722, acc: 97.3633, loss_bbox: 0.1173, roi_loss_intra: 0.0023, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0025, rcnn_loss_inter: 0.0000, loss: 0.2072
+2021-07-21 05:30:28,038 - mmdet - INFO - Iter [56/140]	lr: 1.000e-03, eta: 0:04:11, time: 2.306, data_time: 0.427, memory: 3375, loss_rpn_cls: 0.0067, loss_rpn_bbox: 0.0063, loss_cls: 0.0677, acc: 97.1558, loss_bbox: 0.1088, roi_loss_intra: 0.0020, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0018, rcnn_loss_inter: 0.0000, loss: 0.1934
+INFO:mmdet:Iter [56/140]	lr: 1.000e-03, eta: 0:04:11, time: 2.306, data_time: 0.427, memory: 3375, loss_rpn_cls: 0.0067, loss_rpn_bbox: 0.0063, loss_cls: 0.0677, acc: 97.1558, loss_bbox: 0.1088, roi_loss_intra: 0.0020, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0018, rcnn_loss_inter: 0.0000, loss: 0.1934
+2021-07-21 05:30:37,264 - mmdet - INFO - Iter [57/140]	lr: 1.000e-03, eta: 0:04:17, time: 9.314, data_time: 7.936, memory: 3375, loss_rpn_cls: 0.0034, loss_rpn_bbox: 0.0081, loss_cls: 0.0802, acc: 96.5698, loss_bbox: 0.1086, roi_loss_intra: 0.0023, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0026, rcnn_loss_inter: 0.0000, loss: 0.2053
+INFO:mmdet:Iter [57/140]	lr: 1.000e-03, eta: 0:04:17, time: 9.314, data_time: 7.936, memory: 3375, loss_rpn_cls: 0.0034, loss_rpn_bbox: 0.0081, loss_cls: 0.0802, acc: 96.5698, loss_bbox: 0.1086, roi_loss_intra: 0.0023, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0026, rcnn_loss_inter: 0.0000, loss: 0.2053
+2021-07-21 05:30:39,521 - mmdet - INFO - Iter [58/140]	lr: 1.000e-03, eta: 0:04:13, time: 2.213, data_time: 0.392, memory: 3375, loss_rpn_cls: 0.0048, loss_rpn_bbox: 0.0044, loss_cls: 0.0783, acc: 96.8750, loss_bbox: 0.1029, roi_loss_intra: 0.0021, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0022, rcnn_loss_inter: 0.0000, loss: 0.1947
+INFO:mmdet:Iter [58/140]	lr: 1.000e-03, eta: 0:04:13, time: 2.213, data_time: 0.392, memory: 3375, loss_rpn_cls: 0.0048, loss_rpn_bbox: 0.0044, loss_cls: 0.0783, acc: 96.8750, loss_bbox: 0.1029, roi_loss_intra: 0.0021, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0022, rcnn_loss_inter: 0.0000, loss: 0.1947
+2021-07-21 05:30:41,569 - mmdet - INFO - Iter [59/140]	lr: 1.000e-03, eta: 0:04:08, time: 2.060, data_time: 0.439, memory: 3375, loss_rpn_cls: 0.0037, loss_rpn_bbox: 0.0061, loss_cls: 0.0757, acc: 96.8384, loss_bbox: 0.1074, roi_loss_intra: 0.0019, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0018, rcnn_loss_inter: 0.0000, loss: 0.1966
+INFO:mmdet:Iter [59/140]	lr: 1.000e-03, eta: 0:04:08, time: 2.060, data_time: 0.439, memory: 3375, loss_rpn_cls: 0.0037, loss_rpn_bbox: 0.0061, loss_cls: 0.0757, acc: 96.8384, loss_bbox: 0.1074, roi_loss_intra: 0.0019, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0018, rcnn_loss_inter: 0.0000, loss: 0.1966
+2021-07-21 05:30:43,827 - mmdet - INFO - Iter [60/140]	lr: 1.000e-03, eta: 0:04:04, time: 2.259, data_time: 0.427, memory: 3375, loss_rpn_cls: 0.0043, loss_rpn_bbox: 0.0044, loss_cls: 0.0574, acc: 97.8638, loss_bbox: 0.0858, roi_loss_intra: 0.0020, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0020, rcnn_loss_inter: 0.0000, loss: 0.1560
+INFO:mmdet:Iter [60/140]	lr: 1.000e-03, eta: 0:04:04, time: 2.259, data_time: 0.427, memory: 3375, loss_rpn_cls: 0.0043, loss_rpn_bbox: 0.0044, loss_cls: 0.0574, acc: 97.8638, loss_bbox: 0.0858, roi_loss_intra: 0.0020, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0020, rcnn_loss_inter: 0.0000, loss: 0.1560
+2021-07-21 05:30:46,054 - mmdet - INFO - Iter [61/140]	lr: 1.000e-03, eta: 0:04:00, time: 2.153, data_time: 0.433, memory: 3375, loss_rpn_cls: 0.0031, loss_rpn_bbox: 0.0053, loss_cls: 0.0883, acc: 96.8262, loss_bbox: 0.1218, roi_loss_intra: 0.0020, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0023, rcnn_loss_inter: 0.0000, loss: 0.2228
+INFO:mmdet:Iter [61/140]	lr: 1.000e-03, eta: 0:04:00, time: 2.153, data_time: 0.433, memory: 3375, loss_rpn_cls: 0.0031, loss_rpn_bbox: 0.0053, loss_cls: 0.0883, acc: 96.8262, loss_bbox: 0.1218, roi_loss_intra: 0.0020, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0023, rcnn_loss_inter: 0.0000, loss: 0.2228
+2021-07-21 05:30:48,091 - mmdet - INFO - Iter [62/140]	lr: 1.000e-03, eta: 0:03:56, time: 2.136, data_time: 0.499, memory: 3375, loss_rpn_cls: 0.0053, loss_rpn_bbox: 0.0070, loss_cls: 0.0757, acc: 96.8384, loss_bbox: 0.1077, roi_loss_intra: 0.0020, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0023, rcnn_loss_inter: 0.0000, loss: 0.1999
+INFO:mmdet:Iter [62/140]	lr: 1.000e-03, eta: 0:03:56, time: 2.136, data_time: 0.499, memory: 3375, loss_rpn_cls: 0.0053, loss_rpn_bbox: 0.0070, loss_cls: 0.0757, acc: 96.8384, loss_bbox: 0.1077, roi_loss_intra: 0.0020, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0023, rcnn_loss_inter: 0.0000, loss: 0.1999
+2021-07-21 05:30:50,407 - mmdet - INFO - Iter [63/140]	lr: 1.000e-03, eta: 0:03:52, time: 2.286, data_time: 0.410, memory: 3375, loss_rpn_cls: 0.0047, loss_rpn_bbox: 0.0038, loss_cls: 0.0784, acc: 96.7773, loss_bbox: 0.0954, roi_loss_intra: 0.0026, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0027, rcnn_loss_inter: 0.0000, loss: 0.1875
+INFO:mmdet:Iter [63/140]	lr: 1.000e-03, eta: 0:03:52, time: 2.286, data_time: 0.410, memory: 3375, loss_rpn_cls: 0.0047, loss_rpn_bbox: 0.0038, loss_cls: 0.0784, acc: 96.7773, loss_bbox: 0.0954, roi_loss_intra: 0.0026, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0027, rcnn_loss_inter: 0.0000, loss: 0.1875
+2021-07-21 05:30:59,830 - mmdet - INFO - Iter [64/140]	lr: 1.000e-03, eta: 0:03:56, time: 9.426, data_time: 7.913, memory: 3375, loss_rpn_cls: 0.0037, loss_rpn_bbox: 0.0035, loss_cls: 0.0702, acc: 97.0947, loss_bbox: 0.1176, roi_loss_intra: 0.0020, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0018, rcnn_loss_inter: 0.0000, loss: 0.1989
+INFO:mmdet:Iter [64/140]	lr: 1.000e-03, eta: 0:03:56, time: 9.426, data_time: 7.913, memory: 3375, loss_rpn_cls: 0.0037, loss_rpn_bbox: 0.0035, loss_cls: 0.0702, acc: 97.0947, loss_bbox: 0.1176, roi_loss_intra: 0.0020, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0018, rcnn_loss_inter: 0.0000, loss: 0.1989
+2021-07-21 05:31:01,732 - mmdet - INFO - Iter [65/140]	lr: 1.000e-03, eta: 0:03:52, time: 1.860, data_time: 0.427, memory: 3375, loss_rpn_cls: 0.0028, loss_rpn_bbox: 0.0055, loss_cls: 0.0561, acc: 97.8638, loss_bbox: 0.0932, roi_loss_intra: 0.0017, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0017, rcnn_loss_inter: 0.0000, loss: 0.1612
+INFO:mmdet:Iter [65/140]	lr: 1.000e-03, eta: 0:03:52, time: 1.860, data_time: 0.427, memory: 3375, loss_rpn_cls: 0.0028, loss_rpn_bbox: 0.0055, loss_cls: 0.0561, acc: 97.8638, loss_bbox: 0.0932, roi_loss_intra: 0.0017, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0017, rcnn_loss_inter: 0.0000, loss: 0.1612
+2021-07-21 05:31:04,212 - mmdet - INFO - Iter [66/140]	lr: 1.000e-03, eta: 0:03:48, time: 2.433, data_time: 0.468, memory: 3375, loss_rpn_cls: 0.0034, loss_rpn_bbox: 0.0061, loss_cls: 0.0629, acc: 97.3755, loss_bbox: 0.0908, roi_loss_intra: 0.0021, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0025, rcnn_loss_inter: 0.0000, loss: 0.1678
+INFO:mmdet:Iter [66/140]	lr: 1.000e-03, eta: 0:03:48, time: 2.433, data_time: 0.468, memory: 3375, loss_rpn_cls: 0.0034, loss_rpn_bbox: 0.0061, loss_cls: 0.0629, acc: 97.3755, loss_bbox: 0.0908, roi_loss_intra: 0.0021, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0025, rcnn_loss_inter: 0.0000, loss: 0.1678
+2021-07-21 05:31:06,275 - mmdet - INFO - Iter [67/140]	lr: 1.000e-03, eta: 0:03:44, time: 2.157, data_time: 0.514, memory: 3375, loss_rpn_cls: 0.0046, loss_rpn_bbox: 0.0052, loss_cls: 0.0629, acc: 97.2290, loss_bbox: 0.0928, roi_loss_intra: 0.0020, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0019, rcnn_loss_inter: 0.0000, loss: 0.1695
+INFO:mmdet:Iter [67/140]	lr: 1.000e-03, eta: 0:03:44, time: 2.157, data_time: 0.514, memory: 3375, loss_rpn_cls: 0.0046, loss_rpn_bbox: 0.0052, loss_cls: 0.0629, acc: 97.2290, loss_bbox: 0.0928, roi_loss_intra: 0.0020, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0019, rcnn_loss_inter: 0.0000, loss: 0.1695
+2021-07-21 05:31:08,551 - mmdet - INFO - Iter [68/140]	lr: 1.000e-03, eta: 0:03:40, time: 2.294, data_time: 0.427, memory: 3375, loss_rpn_cls: 0.0022, loss_rpn_bbox: 0.0058, loss_cls: 0.0573, acc: 97.7905, loss_bbox: 0.1170, roi_loss_intra: 0.0021, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0020, rcnn_loss_inter: 0.0000, loss: 0.1863
+INFO:mmdet:Iter [68/140]	lr: 1.000e-03, eta: 0:03:40, time: 2.294, data_time: 0.427, memory: 3375, loss_rpn_cls: 0.0022, loss_rpn_bbox: 0.0058, loss_cls: 0.0573, acc: 97.7905, loss_bbox: 0.1170, roi_loss_intra: 0.0021, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0020, rcnn_loss_inter: 0.0000, loss: 0.1863
+2021-07-21 05:31:10,740 - mmdet - INFO - Iter [69/140]	lr: 1.000e-03, eta: 0:03:36, time: 2.171, data_time: 0.403, memory: 3375, loss_rpn_cls: 0.0056, loss_rpn_bbox: 0.0046, loss_cls: 0.0690, acc: 97.4854, loss_bbox: 0.1183, roi_loss_intra: 0.0015, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0015, rcnn_loss_inter: 0.0000, loss: 0.2005
+INFO:mmdet:Iter [69/140]	lr: 1.000e-03, eta: 0:03:36, time: 2.171, data_time: 0.403, memory: 3375, loss_rpn_cls: 0.0056, loss_rpn_bbox: 0.0046, loss_cls: 0.0690, acc: 97.4854, loss_bbox: 0.1183, roi_loss_intra: 0.0015, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0015, rcnn_loss_inter: 0.0000, loss: 0.2005
+2021-07-21 05:31:12,543 - mmdet - INFO - Iter [70/140]	lr: 1.000e-03, eta: 0:03:32, time: 1.803, data_time: 0.424, memory: 3375, loss_rpn_cls: 0.0049, loss_rpn_bbox: 0.0037, loss_cls: 0.0679, acc: 97.4121, loss_bbox: 0.0964, roi_loss_intra: 0.0015, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0016, rcnn_loss_inter: 0.0000, loss: 0.1760
+INFO:mmdet:Iter [70/140]	lr: 1.000e-03, eta: 0:03:32, time: 1.803, data_time: 0.424, memory: 3375, loss_rpn_cls: 0.0049, loss_rpn_bbox: 0.0037, loss_cls: 0.0679, acc: 97.4121, loss_bbox: 0.0964, roi_loss_intra: 0.0015, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0016, rcnn_loss_inter: 0.0000, loss: 0.1760
+2021-07-21 05:31:21,580 - mmdet - INFO - Iter [71/140]	lr: 1.000e-03, eta: 0:03:35, time: 8.968, data_time: 7.949, memory: 3375, loss_rpn_cls: 0.0038, loss_rpn_bbox: 0.0049, loss_cls: 0.0744, acc: 96.9971, loss_bbox: 0.0979, roi_loss_intra: 0.0019, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0019, rcnn_loss_inter: 0.0000, loss: 0.1848
+INFO:mmdet:Iter [71/140]	lr: 1.000e-03, eta: 0:03:35, time: 8.968, data_time: 7.949, memory: 3375, loss_rpn_cls: 0.0038, loss_rpn_bbox: 0.0049, loss_cls: 0.0744, acc: 96.9971, loss_bbox: 0.0979, roi_loss_intra: 0.0019, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0019, rcnn_loss_inter: 0.0000, loss: 0.1848
+2021-07-21 05:31:23,636 - mmdet - INFO - Iter [72/140]	lr: 1.000e-03, eta: 0:03:30, time: 2.043, data_time: 0.490, memory: 3375, loss_rpn_cls: 0.0060, loss_rpn_bbox: 0.0054, loss_cls: 0.0759, acc: 96.6553, loss_bbox: 0.1123, roi_loss_intra: 0.0018, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0020, rcnn_loss_inter: 0.0000, loss: 0.2034
+INFO:mmdet:Iter [72/140]	lr: 1.000e-03, eta: 0:03:30, time: 2.043, data_time: 0.490, memory: 3375, loss_rpn_cls: 0.0060, loss_rpn_bbox: 0.0054, loss_cls: 0.0759, acc: 96.6553, loss_bbox: 0.1123, roi_loss_intra: 0.0018, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0020, rcnn_loss_inter: 0.0000, loss: 0.2034
+2021-07-21 05:31:25,773 - mmdet - INFO - Iter [73/140]	lr: 1.000e-03, eta: 0:03:26, time: 2.205, data_time: 0.515, memory: 3375, loss_rpn_cls: 0.0073, loss_rpn_bbox: 0.0056, loss_cls: 0.0591, acc: 97.6807, loss_bbox: 0.1102, roi_loss_intra: 0.0024, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0026, rcnn_loss_inter: 0.0000, loss: 0.1871
+INFO:mmdet:Iter [73/140]	lr: 1.000e-03, eta: 0:03:26, time: 2.205, data_time: 0.515, memory: 3375, loss_rpn_cls: 0.0073, loss_rpn_bbox: 0.0056, loss_cls: 0.0591, acc: 97.6807, loss_bbox: 0.1102, roi_loss_intra: 0.0024, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0026, rcnn_loss_inter: 0.0000, loss: 0.1871
+2021-07-21 05:31:27,978 - mmdet - INFO - Iter [74/140]	lr: 1.000e-03, eta: 0:03:23, time: 2.228, data_time: 0.438, memory: 3375, loss_rpn_cls: 0.0017, loss_rpn_bbox: 0.0043, loss_cls: 0.0516, acc: 97.8271, loss_bbox: 0.0767, roi_loss_intra: 0.0015, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0016, rcnn_loss_inter: 0.0000, loss: 0.1374
+INFO:mmdet:Iter [74/140]	lr: 1.000e-03, eta: 0:03:23, time: 2.228, data_time: 0.438, memory: 3375, loss_rpn_cls: 0.0017, loss_rpn_bbox: 0.0043, loss_cls: 0.0516, acc: 97.8271, loss_bbox: 0.0767, roi_loss_intra: 0.0015, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0016, rcnn_loss_inter: 0.0000, loss: 0.1374
+2021-07-21 05:31:30,224 - mmdet - INFO - Iter [75/140]	lr: 1.000e-03, eta: 0:03:19, time: 2.202, data_time: 0.415, memory: 3375, loss_rpn_cls: 0.0084, loss_rpn_bbox: 0.0062, loss_cls: 0.0600, acc: 97.5098, loss_bbox: 0.1009, roi_loss_intra: 0.0017, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0017, rcnn_loss_inter: 0.0000, loss: 0.1789
+INFO:mmdet:Iter [75/140]	lr: 1.000e-03, eta: 0:03:19, time: 2.202, data_time: 0.415, memory: 3375, loss_rpn_cls: 0.0084, loss_rpn_bbox: 0.0062, loss_cls: 0.0600, acc: 97.5098, loss_bbox: 0.1009, roi_loss_intra: 0.0017, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0017, rcnn_loss_inter: 0.0000, loss: 0.1789
+2021-07-21 05:31:32,245 - mmdet - INFO - Iter [76/140]	lr: 1.000e-03, eta: 0:03:15, time: 2.024, data_time: 0.461, memory: 3375, loss_rpn_cls: 0.0022, loss_rpn_bbox: 0.0043, loss_cls: 0.0475, acc: 98.0957, loss_bbox: 0.0961, roi_loss_intra: 0.0017, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0020, rcnn_loss_inter: 0.0000, loss: 0.1538
+INFO:mmdet:Iter [76/140]	lr: 1.000e-03, eta: 0:03:15, time: 2.024, data_time: 0.461, memory: 3375, loss_rpn_cls: 0.0022, loss_rpn_bbox: 0.0043, loss_cls: 0.0475, acc: 98.0957, loss_bbox: 0.0961, roi_loss_intra: 0.0017, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0020, rcnn_loss_inter: 0.0000, loss: 0.1538
+2021-07-21 05:31:34,338 - mmdet - INFO - Iter [77/140]	lr: 1.000e-03, eta: 0:03:11, time: 2.138, data_time: 0.459, memory: 3375, loss_rpn_cls: 0.0093, loss_rpn_bbox: 0.0043, loss_cls: 0.0668, acc: 97.3389, loss_bbox: 0.0905, roi_loss_intra: 0.0021, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0032, rcnn_loss_inter: 0.0000, loss: 0.1764
+INFO:mmdet:Iter [77/140]	lr: 1.000e-03, eta: 0:03:11, time: 2.138, data_time: 0.459, memory: 3375, loss_rpn_cls: 0.0093, loss_rpn_bbox: 0.0043, loss_cls: 0.0668, acc: 97.3389, loss_bbox: 0.0905, roi_loss_intra: 0.0021, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0032, rcnn_loss_inter: 0.0000, loss: 0.1764
+2021-07-21 05:31:44,037 - mmdet - INFO - Iter [78/140]	lr: 1.000e-03, eta: 0:03:13, time: 9.675, data_time: 7.620, memory: 3375, loss_rpn_cls: 0.0018, loss_rpn_bbox: 0.0047, loss_cls: 0.0464, acc: 97.9004, loss_bbox: 0.0845, roi_loss_intra: 0.0023, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0031, rcnn_loss_inter: 0.0000, loss: 0.1427
+INFO:mmdet:Iter [78/140]	lr: 1.000e-03, eta: 0:03:13, time: 9.675, data_time: 7.620, memory: 3375, loss_rpn_cls: 0.0018, loss_rpn_bbox: 0.0047, loss_cls: 0.0464, acc: 97.9004, loss_bbox: 0.0845, roi_loss_intra: 0.0023, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0031, rcnn_loss_inter: 0.0000, loss: 0.1427
+2021-07-21 05:31:45,954 - mmdet - INFO - Iter [79/140]	lr: 1.000e-03, eta: 0:03:09, time: 1.916, data_time: 0.436, memory: 3375, loss_rpn_cls: 0.0057, loss_rpn_bbox: 0.0046, loss_cls: 0.0633, acc: 98.0713, loss_bbox: 0.0897, roi_loss_intra: 0.0016, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0019, rcnn_loss_inter: 0.0000, loss: 0.1669
+INFO:mmdet:Iter [79/140]	lr: 1.000e-03, eta: 0:03:09, time: 1.916, data_time: 0.436, memory: 3375, loss_rpn_cls: 0.0057, loss_rpn_bbox: 0.0046, loss_cls: 0.0633, acc: 98.0713, loss_bbox: 0.0897, roi_loss_intra: 0.0016, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0019, rcnn_loss_inter: 0.0000, loss: 0.1669
+2021-07-21 05:31:48,142 - mmdet - INFO - Iter [80/140]	lr: 1.000e-03, eta: 0:03:05, time: 2.227, data_time: 0.439, memory: 3375, loss_rpn_cls: 0.0029, loss_rpn_bbox: 0.0054, loss_cls: 0.0768, acc: 96.7407, loss_bbox: 0.1103, roi_loss_intra: 0.0019, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0020, rcnn_loss_inter: 0.0000, loss: 0.1994
+INFO:mmdet:Iter [80/140]	lr: 1.000e-03, eta: 0:03:05, time: 2.227, data_time: 0.439, memory: 3375, loss_rpn_cls: 0.0029, loss_rpn_bbox: 0.0054, loss_cls: 0.0768, acc: 96.7407, loss_bbox: 0.1103, roi_loss_intra: 0.0019, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0020, rcnn_loss_inter: 0.0000, loss: 0.1994
+2021-07-21 05:31:50,207 - mmdet - INFO - Iter [81/140]	lr: 1.000e-03, eta: 0:03:02, time: 2.043, data_time: 0.397, memory: 3375, loss_rpn_cls: 0.0026, loss_rpn_bbox: 0.0042, loss_cls: 0.0526, acc: 97.7783, loss_bbox: 0.0882, roi_loss_intra: 0.0024, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0027, rcnn_loss_inter: 0.0000, loss: 0.1528
+INFO:mmdet:Iter [81/140]	lr: 1.000e-03, eta: 0:03:02, time: 2.043, data_time: 0.397, memory: 3375, loss_rpn_cls: 0.0026, loss_rpn_bbox: 0.0042, loss_cls: 0.0526, acc: 97.7783, loss_bbox: 0.0882, roi_loss_intra: 0.0024, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0027, rcnn_loss_inter: 0.0000, loss: 0.1528
+2021-07-21 05:31:52,424 - mmdet - INFO - Iter [82/140]	lr: 1.000e-03, eta: 0:02:58, time: 2.186, data_time: 0.417, memory: 3375, loss_rpn_cls: 0.0044, loss_rpn_bbox: 0.0050, loss_cls: 0.0540, acc: 97.9370, loss_bbox: 0.0902, roi_loss_intra: 0.0016, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0021, rcnn_loss_inter: 0.0000, loss: 0.1573
+INFO:mmdet:Iter [82/140]	lr: 1.000e-03, eta: 0:02:58, time: 2.186, data_time: 0.417, memory: 3375, loss_rpn_cls: 0.0044, loss_rpn_bbox: 0.0050, loss_cls: 0.0540, acc: 97.9370, loss_bbox: 0.0902, roi_loss_intra: 0.0016, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0021, rcnn_loss_inter: 0.0000, loss: 0.1573
+2021-07-21 05:31:53,542 - mmdet - INFO - Iter [83/140]	lr: 1.000e-03, eta: 0:02:54, time: 1.387, data_time: 0.448, memory: 3375, loss_rpn_cls: 0.0020, loss_rpn_bbox: 0.0046, loss_cls: 0.0591, acc: 97.7051, loss_bbox: 0.0828, roi_loss_intra: 0.0016, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0015, rcnn_loss_inter: 0.0000, loss: 0.1516
+INFO:mmdet:Iter [83/140]	lr: 1.000e-03, eta: 0:02:54, time: 1.387, data_time: 0.448, memory: 3375, loss_rpn_cls: 0.0020, loss_rpn_bbox: 0.0046, loss_cls: 0.0591, acc: 97.7051, loss_bbox: 0.0828, roi_loss_intra: 0.0016, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0015, rcnn_loss_inter: 0.0000, loss: 0.1516
+2021-07-21 05:31:54,487 - mmdet - INFO - Iter [84/140]	lr: 1.000e-03, eta: 0:02:49, time: 0.896, data_time: 0.181, memory: 3375, loss_rpn_cls: 0.0048, loss_rpn_bbox: 0.0053, loss_cls: 0.0704, acc: 97.4243, loss_bbox: 0.0985, roi_loss_intra: 0.0019, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0021, rcnn_loss_inter: 0.0000, loss: 0.1830
+INFO:mmdet:Iter [84/140]	lr: 1.000e-03, eta: 0:02:49, time: 0.896, data_time: 0.181, memory: 3375, loss_rpn_cls: 0.0048, loss_rpn_bbox: 0.0053, loss_cls: 0.0704, acc: 97.4243, loss_bbox: 0.0985, roi_loss_intra: 0.0019, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0021, rcnn_loss_inter: 0.0000, loss: 0.1830
+2021-07-21 05:32:03,468 - mmdet - INFO - Iter [85/140]	lr: 1.000e-03, eta: 0:02:50, time: 8.879, data_time: 6.953, memory: 3375, loss_rpn_cls: 0.0007, loss_rpn_bbox: 0.0066, loss_cls: 0.0698, acc: 96.8628, loss_bbox: 0.1100, roi_loss_intra: 0.0020, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0021, rcnn_loss_inter: 0.0000, loss: 0.1913
+INFO:mmdet:Iter [85/140]	lr: 1.000e-03, eta: 0:02:50, time: 8.879, data_time: 6.953, memory: 3375, loss_rpn_cls: 0.0007, loss_rpn_bbox: 0.0066, loss_cls: 0.0698, acc: 96.8628, loss_bbox: 0.1100, roi_loss_intra: 0.0020, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0021, rcnn_loss_inter: 0.0000, loss: 0.1913
+2021-07-21 05:32:04,496 - mmdet - INFO - Iter [86/140]	lr: 1.000e-03, eta: 0:02:45, time: 1.066, data_time: 0.343, memory: 3375, loss_rpn_cls: 0.0082, loss_rpn_bbox: 0.0048, loss_cls: 0.0787, acc: 96.9604, loss_bbox: 0.1112, roi_loss_intra: 0.0015, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0016, rcnn_loss_inter: 0.0000, loss: 0.2060
+INFO:mmdet:Iter [86/140]	lr: 1.000e-03, eta: 0:02:45, time: 1.066, data_time: 0.343, memory: 3375, loss_rpn_cls: 0.0082, loss_rpn_bbox: 0.0048, loss_cls: 0.0787, acc: 96.9604, loss_bbox: 0.1112, roi_loss_intra: 0.0015, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0016, rcnn_loss_inter: 0.0000, loss: 0.2060
+2021-07-21 05:32:06,123 - mmdet - INFO - Iter [87/140]	lr: 1.000e-03, eta: 0:02:42, time: 1.591, data_time: 0.289, memory: 3375, loss_rpn_cls: 0.0125, loss_rpn_bbox: 0.0048, loss_cls: 0.0693, acc: 96.9727, loss_bbox: 0.1042, roi_loss_intra: 0.0024, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0023, rcnn_loss_inter: 0.0000, loss: 0.1955
+INFO:mmdet:Iter [87/140]	lr: 1.000e-03, eta: 0:02:42, time: 1.591, data_time: 0.289, memory: 3375, loss_rpn_cls: 0.0125, loss_rpn_bbox: 0.0048, loss_cls: 0.0693, acc: 96.9727, loss_bbox: 0.1042, roi_loss_intra: 0.0024, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0023, rcnn_loss_inter: 0.0000, loss: 0.1955
+2021-07-21 05:32:07,701 - mmdet - INFO - Iter [88/140]	lr: 1.000e-03, eta: 0:02:38, time: 1.570, data_time: 0.332, memory: 3375, loss_rpn_cls: 0.0024, loss_rpn_bbox: 0.0061, loss_cls: 0.0527, acc: 97.9858, loss_bbox: 0.0958, roi_loss_intra: 0.0017, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0019, rcnn_loss_inter: 0.0000, loss: 0.1605
+INFO:mmdet:Iter [88/140]	lr: 1.000e-03, eta: 0:02:38, time: 1.570, data_time: 0.332, memory: 3375, loss_rpn_cls: 0.0024, loss_rpn_bbox: 0.0061, loss_cls: 0.0527, acc: 97.9858, loss_bbox: 0.0958, roi_loss_intra: 0.0017, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0019, rcnn_loss_inter: 0.0000, loss: 0.1605
+2021-07-21 05:32:08,945 - mmdet - INFO - Iter [89/140]	lr: 1.000e-03, eta: 0:02:34, time: 1.262, data_time: 0.337, memory: 3375, loss_rpn_cls: 0.0034, loss_rpn_bbox: 0.0042, loss_cls: 0.0610, acc: 97.0703, loss_bbox: 0.0974, roi_loss_intra: 0.0010, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0012, rcnn_loss_inter: 0.0000, loss: 0.1682
+INFO:mmdet:Iter [89/140]	lr: 1.000e-03, eta: 0:02:34, time: 1.262, data_time: 0.337, memory: 3375, loss_rpn_cls: 0.0034, loss_rpn_bbox: 0.0042, loss_cls: 0.0610, acc: 97.0703, loss_bbox: 0.0974, roi_loss_intra: 0.0010, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0012, rcnn_loss_inter: 0.0000, loss: 0.1682
+2021-07-21 05:32:10,445 - mmdet - INFO - Iter [90/140]	lr: 1.000e-03, eta: 0:02:30, time: 1.494, data_time: 0.319, memory: 3375, loss_rpn_cls: 0.0026, loss_rpn_bbox: 0.0044, loss_cls: 0.0535, acc: 97.8516, loss_bbox: 0.0948, roi_loss_intra: 0.0019, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0022, rcnn_loss_inter: 0.0000, loss: 0.1594
+INFO:mmdet:Iter [90/140]	lr: 1.000e-03, eta: 0:02:30, time: 1.494, data_time: 0.319, memory: 3375, loss_rpn_cls: 0.0026, loss_rpn_bbox: 0.0044, loss_cls: 0.0535, acc: 97.8516, loss_bbox: 0.0948, roi_loss_intra: 0.0019, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0022, rcnn_loss_inter: 0.0000, loss: 0.1594
+2021-07-21 05:32:12,077 - mmdet - INFO - Iter [91/140]	lr: 1.000e-03, eta: 0:02:26, time: 1.623, data_time: 0.324, memory: 3375, loss_rpn_cls: 0.0022, loss_rpn_bbox: 0.0054, loss_cls: 0.0683, acc: 97.2290, loss_bbox: 0.0979, roi_loss_intra: 0.0016, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0018, rcnn_loss_inter: 0.0000, loss: 0.1772
+INFO:mmdet:Iter [91/140]	lr: 1.000e-03, eta: 0:02:26, time: 1.623, data_time: 0.324, memory: 3375, loss_rpn_cls: 0.0022, loss_rpn_bbox: 0.0054, loss_cls: 0.0683, acc: 97.2290, loss_bbox: 0.0979, roi_loss_intra: 0.0016, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0018, rcnn_loss_inter: 0.0000, loss: 0.1772
+2021-07-21 05:32:20,884 - mmdet - INFO - Iter [92/140]	lr: 1.000e-03, eta: 0:02:26, time: 8.882, data_time: 5.913, memory: 3375, loss_rpn_cls: 0.0035, loss_rpn_bbox: 0.0058, loss_cls: 0.0575, acc: 97.5342, loss_bbox: 0.0958, roi_loss_intra: 0.0021, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0022, rcnn_loss_inter: 0.0000, loss: 0.1669
+INFO:mmdet:Iter [92/140]	lr: 1.000e-03, eta: 0:02:26, time: 8.882, data_time: 5.913, memory: 3375, loss_rpn_cls: 0.0035, loss_rpn_bbox: 0.0058, loss_cls: 0.0575, acc: 97.5342, loss_bbox: 0.0958, roi_loss_intra: 0.0021, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0022, rcnn_loss_inter: 0.0000, loss: 0.1669
+2021-07-21 05:32:22,415 - mmdet - INFO - Iter [93/140]	lr: 1.000e-03, eta: 0:02:22, time: 1.446, data_time: 0.267, memory: 3375, loss_rpn_cls: 0.0040, loss_rpn_bbox: 0.0038, loss_cls: 0.0692, acc: 97.1436, loss_bbox: 0.1061, roi_loss_intra: 0.0018, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0017, rcnn_loss_inter: 0.0000, loss: 0.1867
+INFO:mmdet:Iter [93/140]	lr: 1.000e-03, eta: 0:02:22, time: 1.446, data_time: 0.267, memory: 3375, loss_rpn_cls: 0.0040, loss_rpn_bbox: 0.0038, loss_cls: 0.0692, acc: 97.1436, loss_bbox: 0.1061, roi_loss_intra: 0.0018, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0017, rcnn_loss_inter: 0.0000, loss: 0.1867
+2021-07-21 05:32:23,988 - mmdet - INFO - Iter [94/140]	lr: 1.000e-03, eta: 0:02:18, time: 1.519, data_time: 0.343, memory: 3375, loss_rpn_cls: 0.0020, loss_rpn_bbox: 0.0046, loss_cls: 0.0510, acc: 98.0957, loss_bbox: 0.0951, roi_loss_intra: 0.0012, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0015, rcnn_loss_inter: 0.0000, loss: 0.1554
+INFO:mmdet:Iter [94/140]	lr: 1.000e-03, eta: 0:02:18, time: 1.519, data_time: 0.343, memory: 3375, loss_rpn_cls: 0.0020, loss_rpn_bbox: 0.0046, loss_cls: 0.0510, acc: 98.0957, loss_bbox: 0.0951, roi_loss_intra: 0.0012, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0015, rcnn_loss_inter: 0.0000, loss: 0.1554
+2021-07-21 05:32:25,516 - mmdet - INFO - Iter [95/140]	lr: 1.000e-03, eta: 0:02:15, time: 1.580, data_time: 0.396, memory: 3375, loss_rpn_cls: 0.0129, loss_rpn_bbox: 0.0089, loss_cls: 0.0705, acc: 97.2778, loss_bbox: 0.0929, roi_loss_intra: 0.0014, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0013, rcnn_loss_inter: 0.0000, loss: 0.1878
+INFO:mmdet:Iter [95/140]	lr: 1.000e-03, eta: 0:02:15, time: 1.580, data_time: 0.396, memory: 3375, loss_rpn_cls: 0.0129, loss_rpn_bbox: 0.0089, loss_cls: 0.0705, acc: 97.2778, loss_bbox: 0.0929, roi_loss_intra: 0.0014, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0013, rcnn_loss_inter: 0.0000, loss: 0.1878
+2021-07-21 05:32:26,875 - mmdet - INFO - Iter [96/140]	lr: 1.000e-03, eta: 0:02:11, time: 1.401, data_time: 0.344, memory: 3375, loss_rpn_cls: 0.0021, loss_rpn_bbox: 0.0041, loss_cls: 0.0449, acc: 98.1689, loss_bbox: 0.0846, roi_loss_intra: 0.0014, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0016, rcnn_loss_inter: 0.0000, loss: 0.1386
+INFO:mmdet:Iter [96/140]	lr: 1.000e-03, eta: 0:02:11, time: 1.401, data_time: 0.344, memory: 3375, loss_rpn_cls: 0.0021, loss_rpn_bbox: 0.0041, loss_cls: 0.0449, acc: 98.1689, loss_bbox: 0.0846, roi_loss_intra: 0.0014, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0016, rcnn_loss_inter: 0.0000, loss: 0.1386
+2021-07-21 05:32:28,229 - mmdet - INFO - Iter [97/140]	lr: 1.000e-03, eta: 0:02:07, time: 1.352, data_time: 0.304, memory: 3375, loss_rpn_cls: 0.0017, loss_rpn_bbox: 0.0047, loss_cls: 0.0500, acc: 98.0103, loss_bbox: 0.0929, roi_loss_intra: 0.0014, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0024, rcnn_loss_inter: 0.0000, loss: 0.1530
+INFO:mmdet:Iter [97/140]	lr: 1.000e-03, eta: 0:02:07, time: 1.352, data_time: 0.304, memory: 3375, loss_rpn_cls: 0.0017, loss_rpn_bbox: 0.0047, loss_cls: 0.0500, acc: 98.0103, loss_bbox: 0.0929, roi_loss_intra: 0.0014, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0024, rcnn_loss_inter: 0.0000, loss: 0.1530
+2021-07-21 05:32:29,651 - mmdet - INFO - Iter [98/140]	lr: 1.000e-03, eta: 0:02:04, time: 1.399, data_time: 0.304, memory: 3375, loss_rpn_cls: 0.0017, loss_rpn_bbox: 0.0050, loss_cls: 0.0647, acc: 97.2290, loss_bbox: 0.1171, roi_loss_intra: 0.0016, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0015, rcnn_loss_inter: 0.0000, loss: 0.1916
+INFO:mmdet:Iter [98/140]	lr: 1.000e-03, eta: 0:02:04, time: 1.399, data_time: 0.304, memory: 3375, loss_rpn_cls: 0.0017, loss_rpn_bbox: 0.0050, loss_cls: 0.0647, acc: 97.2290, loss_bbox: 0.1171, roi_loss_intra: 0.0016, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0015, rcnn_loss_inter: 0.0000, loss: 0.1916
+2021-07-21 05:32:39,032 - mmdet - INFO - Iter [99/140]	lr: 1.000e-03, eta: 0:02:03, time: 9.444, data_time: 8.589, memory: 3375, loss_rpn_cls: 0.0061, loss_rpn_bbox: 0.0049, loss_cls: 0.0563, acc: 97.6074, loss_bbox: 0.0910, roi_loss_intra: 0.0017, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0022, rcnn_loss_inter: 0.0000, loss: 0.1622
+INFO:mmdet:Iter [99/140]	lr: 1.000e-03, eta: 0:02:03, time: 9.444, data_time: 8.589, memory: 3375, loss_rpn_cls: 0.0061, loss_rpn_bbox: 0.0049, loss_cls: 0.0563, acc: 97.6074, loss_bbox: 0.0910, roi_loss_intra: 0.0017, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0022, rcnn_loss_inter: 0.0000, loss: 0.1622
+2021-07-21 05:32:40,378 - mmdet - INFO - Iter [100/140]	lr: 1.000e-03, eta: 0:02:00, time: 1.317, data_time: 0.269, memory: 3375, loss_rpn_cls: 0.0057, loss_rpn_bbox: 0.0049, loss_cls: 0.0592, acc: 97.4243, loss_bbox: 0.0978, roi_loss_intra: 0.0015, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0018, rcnn_loss_inter: 0.0000, loss: 0.1710
+INFO:mmdet:Iter [100/140]	lr: 1.000e-03, eta: 0:02:00, time: 1.317, data_time: 0.269, memory: 3375, loss_rpn_cls: 0.0057, loss_rpn_bbox: 0.0049, loss_cls: 0.0592, acc: 97.4243, loss_bbox: 0.0978, roi_loss_intra: 0.0015, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0018, rcnn_loss_inter: 0.0000, loss: 0.1710
+2021-07-21 05:32:41,853 - mmdet - INFO - Iter [101/140]	lr: 1.000e-03, eta: 0:01:56, time: 1.463, data_time: 0.298, memory: 3375, loss_rpn_cls: 0.0026, loss_rpn_bbox: 0.0045, loss_cls: 0.0667, acc: 97.5464, loss_bbox: 0.0920, roi_loss_intra: 0.0012, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0011, rcnn_loss_inter: 0.0000, loss: 0.1681
+INFO:mmdet:Iter [101/140]	lr: 1.000e-03, eta: 0:01:56, time: 1.463, data_time: 0.298, memory: 3375, loss_rpn_cls: 0.0026, loss_rpn_bbox: 0.0045, loss_cls: 0.0667, acc: 97.5464, loss_bbox: 0.0920, roi_loss_intra: 0.0012, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0011, rcnn_loss_inter: 0.0000, loss: 0.1681
+2021-07-21 05:32:43,184 - mmdet - INFO - Iter [102/140]	lr: 1.000e-03, eta: 0:01:52, time: 1.313, data_time: 0.303, memory: 3375, loss_rpn_cls: 0.0013, loss_rpn_bbox: 0.0063, loss_cls: 0.0482, acc: 98.0103, loss_bbox: 0.0946, roi_loss_intra: 0.0014, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0017, rcnn_loss_inter: 0.0000, loss: 0.1534
+INFO:mmdet:Iter [102/140]	lr: 1.000e-03, eta: 0:01:52, time: 1.313, data_time: 0.303, memory: 3375, loss_rpn_cls: 0.0013, loss_rpn_bbox: 0.0063, loss_cls: 0.0482, acc: 98.0103, loss_bbox: 0.0946, roi_loss_intra: 0.0014, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0017, rcnn_loss_inter: 0.0000, loss: 0.1534
+2021-07-21 05:32:44,711 - mmdet - INFO - Iter [103/140]	lr: 1.000e-03, eta: 0:01:49, time: 1.522, data_time: 0.323, memory: 3375, loss_rpn_cls: 0.0032, loss_rpn_bbox: 0.0040, loss_cls: 0.0478, acc: 98.2666, loss_bbox: 0.0862, roi_loss_intra: 0.0016, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0018, rcnn_loss_inter: 0.0000, loss: 0.1447
+INFO:mmdet:Iter [103/140]	lr: 1.000e-03, eta: 0:01:49, time: 1.522, data_time: 0.323, memory: 3375, loss_rpn_cls: 0.0032, loss_rpn_bbox: 0.0040, loss_cls: 0.0478, acc: 98.2666, loss_bbox: 0.0862, roi_loss_intra: 0.0016, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0018, rcnn_loss_inter: 0.0000, loss: 0.1447
+2021-07-21 05:32:46,120 - mmdet - INFO - Iter [104/140]	lr: 1.000e-03, eta: 0:01:45, time: 1.423, data_time: 0.331, memory: 3375, loss_rpn_cls: 0.0057, loss_rpn_bbox: 0.0041, loss_cls: 0.0542, acc: 97.5830, loss_bbox: 0.0929, roi_loss_intra: 0.0017, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0021, rcnn_loss_inter: 0.0000, loss: 0.1607
+INFO:mmdet:Iter [104/140]	lr: 1.000e-03, eta: 0:01:45, time: 1.423, data_time: 0.331, memory: 3375, loss_rpn_cls: 0.0057, loss_rpn_bbox: 0.0041, loss_cls: 0.0542, acc: 97.5830, loss_bbox: 0.0929, roi_loss_intra: 0.0017, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0021, rcnn_loss_inter: 0.0000, loss: 0.1607
+2021-07-21 05:32:47,375 - mmdet - INFO - Iter [105/140]	lr: 1.000e-03, eta: 0:01:42, time: 1.258, data_time: 0.315, memory: 3375, loss_rpn_cls: 0.0044, loss_rpn_bbox: 0.0057, loss_cls: 0.0520, acc: 98.2178, loss_bbox: 0.1016, roi_loss_intra: 0.0013, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0014, rcnn_loss_inter: 0.0000, loss: 0.1664
+INFO:mmdet:Iter [105/140]	lr: 1.000e-03, eta: 0:01:42, time: 1.258, data_time: 0.315, memory: 3375, loss_rpn_cls: 0.0044, loss_rpn_bbox: 0.0057, loss_cls: 0.0520, acc: 98.2178, loss_bbox: 0.1016, roi_loss_intra: 0.0013, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0014, rcnn_loss_inter: 0.0000, loss: 0.1664
+2021-07-21 05:32:56,471 - mmdet - INFO - Iter [106/140]	lr: 1.000e-03, eta: 0:01:41, time: 9.115, data_time: 5.391, memory: 3375, loss_rpn_cls: 0.0041, loss_rpn_bbox: 0.0044, loss_cls: 0.0536, acc: 97.6807, loss_bbox: 0.0859, roi_loss_intra: 0.0014, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0016, rcnn_loss_inter: 0.0000, loss: 0.1510
+INFO:mmdet:Iter [106/140]	lr: 1.000e-03, eta: 0:01:41, time: 9.115, data_time: 5.391, memory: 3375, loss_rpn_cls: 0.0041, loss_rpn_bbox: 0.0044, loss_cls: 0.0536, acc: 97.6807, loss_bbox: 0.0859, roi_loss_intra: 0.0014, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0016, rcnn_loss_inter: 0.0000, loss: 0.1510
+2021-07-21 05:32:58,080 - mmdet - INFO - Iter [107/140]	lr: 1.000e-03, eta: 0:01:38, time: 1.493, data_time: 0.310, memory: 3375, loss_rpn_cls: 0.0022, loss_rpn_bbox: 0.0047, loss_cls: 0.0588, acc: 97.6929, loss_bbox: 0.1034, roi_loss_intra: 0.0021, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0023, rcnn_loss_inter: 0.0000, loss: 0.1736
+INFO:mmdet:Iter [107/140]	lr: 1.000e-03, eta: 0:01:38, time: 1.493, data_time: 0.310, memory: 3375, loss_rpn_cls: 0.0022, loss_rpn_bbox: 0.0047, loss_cls: 0.0588, acc: 97.6929, loss_bbox: 0.1034, roi_loss_intra: 0.0021, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0023, rcnn_loss_inter: 0.0000, loss: 0.1736
+2021-07-21 05:32:59,556 - mmdet - INFO - Iter [108/140]	lr: 1.000e-03, eta: 0:01:34, time: 1.564, data_time: 0.408, memory: 3375, loss_rpn_cls: 0.0033, loss_rpn_bbox: 0.0048, loss_cls: 0.0653, acc: 97.2534, loss_bbox: 0.0879, roi_loss_intra: 0.0013, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0017, rcnn_loss_inter: 0.0000, loss: 0.1643
+INFO:mmdet:Iter [108/140]	lr: 1.000e-03, eta: 0:01:34, time: 1.564, data_time: 0.408, memory: 3375, loss_rpn_cls: 0.0033, loss_rpn_bbox: 0.0048, loss_cls: 0.0653, acc: 97.2534, loss_bbox: 0.0879, roi_loss_intra: 0.0013, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0017, rcnn_loss_inter: 0.0000, loss: 0.1643
+2021-07-21 05:33:01,074 - mmdet - INFO - Iter [109/140]	lr: 1.000e-03, eta: 0:01:31, time: 1.521, data_time: 0.324, memory: 3375, loss_rpn_cls: 0.0016, loss_rpn_bbox: 0.0042, loss_cls: 0.0395, acc: 98.2666, loss_bbox: 0.0770, roi_loss_intra: 0.0016, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0016, rcnn_loss_inter: 0.0000, loss: 0.1256
+INFO:mmdet:Iter [109/140]	lr: 1.000e-03, eta: 0:01:31, time: 1.521, data_time: 0.324, memory: 3375, loss_rpn_cls: 0.0016, loss_rpn_bbox: 0.0042, loss_cls: 0.0395, acc: 98.2666, loss_bbox: 0.0770, roi_loss_intra: 0.0016, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0016, rcnn_loss_inter: 0.0000, loss: 0.1256
+2021-07-21 05:33:02,515 - mmdet - INFO - Iter [110/140]	lr: 1.000e-03, eta: 0:01:27, time: 1.415, data_time: 0.317, memory: 3375, loss_rpn_cls: 0.0078, loss_rpn_bbox: 0.0053, loss_cls: 0.0569, acc: 97.6807, loss_bbox: 0.0984, roi_loss_intra: 0.0014, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0011, rcnn_loss_inter: 0.0000, loss: 0.1709
+INFO:mmdet:Iter [110/140]	lr: 1.000e-03, eta: 0:01:27, time: 1.415, data_time: 0.317, memory: 3375, loss_rpn_cls: 0.0078, loss_rpn_bbox: 0.0053, loss_cls: 0.0569, acc: 97.6807, loss_bbox: 0.0984, roi_loss_intra: 0.0014, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0011, rcnn_loss_inter: 0.0000, loss: 0.1709
+2021-07-21 05:33:04,036 - mmdet - INFO - Iter [111/140]	lr: 1.000e-03, eta: 0:01:24, time: 1.554, data_time: 0.349, memory: 3375, loss_rpn_cls: 0.0133, loss_rpn_bbox: 0.0070, loss_cls: 0.0674, acc: 97.3022, loss_bbox: 0.1086, roi_loss_intra: 0.0015, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0017, rcnn_loss_inter: 0.0000, loss: 0.1995
+INFO:mmdet:Iter [111/140]	lr: 1.000e-03, eta: 0:01:24, time: 1.554, data_time: 0.349, memory: 3375, loss_rpn_cls: 0.0133, loss_rpn_bbox: 0.0070, loss_cls: 0.0674, acc: 97.3022, loss_bbox: 0.1086, roi_loss_intra: 0.0015, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0017, rcnn_loss_inter: 0.0000, loss: 0.1995
+2021-07-21 05:33:05,568 - mmdet - INFO - Iter [112/140]	lr: 1.000e-03, eta: 0:01:21, time: 1.496, data_time: 0.309, memory: 3375, loss_rpn_cls: 0.0019, loss_rpn_bbox: 0.0043, loss_cls: 0.0587, acc: 97.5464, loss_bbox: 0.1068, roi_loss_intra: 0.0016, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0015, rcnn_loss_inter: 0.0000, loss: 0.1749
+INFO:mmdet:Iter [112/140]	lr: 1.000e-03, eta: 0:01:21, time: 1.496, data_time: 0.309, memory: 3375, loss_rpn_cls: 0.0019, loss_rpn_bbox: 0.0043, loss_cls: 0.0587, acc: 97.5464, loss_bbox: 0.1068, roi_loss_intra: 0.0016, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0015, rcnn_loss_inter: 0.0000, loss: 0.1749
+2021-07-21 05:33:14,214 - mmdet - INFO - Iter [113/140]	lr: 1.000e-03, eta: 0:01:19, time: 8.762, data_time: 7.768, memory: 3375, loss_rpn_cls: 0.0024, loss_rpn_bbox: 0.0039, loss_cls: 0.0453, acc: 98.2422, loss_bbox: 0.0834, roi_loss_intra: 0.0014, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0014, rcnn_loss_inter: 0.0000, loss: 0.1379
+INFO:mmdet:Iter [113/140]	lr: 1.000e-03, eta: 0:01:19, time: 8.762, data_time: 7.768, memory: 3375, loss_rpn_cls: 0.0024, loss_rpn_bbox: 0.0039, loss_cls: 0.0453, acc: 98.2422, loss_bbox: 0.0834, roi_loss_intra: 0.0014, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0014, rcnn_loss_inter: 0.0000, loss: 0.1379
+2021-07-21 05:33:15,131 - mmdet - INFO - Iter [114/140]	lr: 1.000e-03, eta: 0:01:16, time: 0.952, data_time: 0.236, memory: 3375, loss_rpn_cls: 0.0018, loss_rpn_bbox: 0.0048, loss_cls: 0.0450, acc: 98.1934, loss_bbox: 0.0976, roi_loss_intra: 0.0021, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0019, rcnn_loss_inter: 0.0000, loss: 0.1533
+INFO:mmdet:Iter [114/140]	lr: 1.000e-03, eta: 0:01:16, time: 0.952, data_time: 0.236, memory: 3375, loss_rpn_cls: 0.0018, loss_rpn_bbox: 0.0048, loss_cls: 0.0450, acc: 98.1934, loss_bbox: 0.0976, roi_loss_intra: 0.0021, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0019, rcnn_loss_inter: 0.0000, loss: 0.1533
+2021-07-21 05:33:16,218 - mmdet - INFO - Iter [115/140]	lr: 1.000e-03, eta: 0:01:13, time: 0.892, data_time: 0.194, memory: 3375, loss_rpn_cls: 0.0033, loss_rpn_bbox: 0.0058, loss_cls: 0.0546, acc: 97.9004, loss_bbox: 0.0820, roi_loss_intra: 0.0015, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0013, rcnn_loss_inter: 0.0000, loss: 0.1484
+INFO:mmdet:Iter [115/140]	lr: 1.000e-03, eta: 0:01:13, time: 0.892, data_time: 0.194, memory: 3375, loss_rpn_cls: 0.0033, loss_rpn_bbox: 0.0058, loss_cls: 0.0546, acc: 97.9004, loss_bbox: 0.0820, roi_loss_intra: 0.0015, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0013, rcnn_loss_inter: 0.0000, loss: 0.1484
+2021-07-21 05:33:18,522 - mmdet - INFO - Iter [116/140]	lr: 1.000e-03, eta: 0:01:09, time: 2.278, data_time: 0.397, memory: 3375, loss_rpn_cls: 0.0022, loss_rpn_bbox: 0.0044, loss_cls: 0.0432, acc: 98.2422, loss_bbox: 0.0711, roi_loss_intra: 0.0021, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0022, rcnn_loss_inter: 0.0000, loss: 0.1252
+INFO:mmdet:Iter [116/140]	lr: 1.000e-03, eta: 0:01:09, time: 2.278, data_time: 0.397, memory: 3375, loss_rpn_cls: 0.0022, loss_rpn_bbox: 0.0044, loss_cls: 0.0432, acc: 98.2422, loss_bbox: 0.0711, roi_loss_intra: 0.0021, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0022, rcnn_loss_inter: 0.0000, loss: 0.1252
+2021-07-21 05:33:20,520 - mmdet - INFO - Iter [117/140]	lr: 1.000e-03, eta: 0:01:06, time: 2.042, data_time: 0.415, memory: 3375, loss_rpn_cls: 0.0024, loss_rpn_bbox: 0.0044, loss_cls: 0.0622, acc: 97.2046, loss_bbox: 0.1043, roi_loss_intra: 0.0014, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0014, rcnn_loss_inter: 0.0000, loss: 0.1761
+INFO:mmdet:Iter [117/140]	lr: 1.000e-03, eta: 0:01:06, time: 2.042, data_time: 0.415, memory: 3375, loss_rpn_cls: 0.0024, loss_rpn_bbox: 0.0044, loss_cls: 0.0622, acc: 97.2046, loss_bbox: 0.1043, roi_loss_intra: 0.0014, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0014, rcnn_loss_inter: 0.0000, loss: 0.1761
+2021-07-21 05:33:22,509 - mmdet - INFO - Iter [118/140]	lr: 1.000e-03, eta: 0:01:03, time: 1.923, data_time: 0.377, memory: 3375, loss_rpn_cls: 0.0025, loss_rpn_bbox: 0.0039, loss_cls: 0.0493, acc: 98.0713, loss_bbox: 0.0898, roi_loss_intra: 0.0013, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0014, rcnn_loss_inter: 0.0000, loss: 0.1482
+INFO:mmdet:Iter [118/140]	lr: 1.000e-03, eta: 0:01:03, time: 1.923, data_time: 0.377, memory: 3375, loss_rpn_cls: 0.0025, loss_rpn_bbox: 0.0039, loss_cls: 0.0493, acc: 98.0713, loss_bbox: 0.0898, roi_loss_intra: 0.0013, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0014, rcnn_loss_inter: 0.0000, loss: 0.1482
+2021-07-21 05:33:24,505 - mmdet - INFO - Iter [119/140]	lr: 1.000e-03, eta: 0:01:00, time: 2.048, data_time: 0.437, memory: 3375, loss_rpn_cls: 0.0019, loss_rpn_bbox: 0.0050, loss_cls: 0.0407, acc: 98.3521, loss_bbox: 0.0736, roi_loss_intra: 0.0013, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0013, rcnn_loss_inter: 0.0000, loss: 0.1238
+INFO:mmdet:Iter [119/140]	lr: 1.000e-03, eta: 0:01:00, time: 2.048, data_time: 0.437, memory: 3375, loss_rpn_cls: 0.0019, loss_rpn_bbox: 0.0050, loss_cls: 0.0407, acc: 98.3521, loss_bbox: 0.0736, roi_loss_intra: 0.0013, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0013, rcnn_loss_inter: 0.0000, loss: 0.1238
+2021-07-21 05:33:33,246 - mmdet - INFO - Iter [120/140]	lr: 1.000e-03, eta: 0:00:58, time: 8.636, data_time: 7.231, memory: 3375, loss_rpn_cls: 0.0036, loss_rpn_bbox: 0.0050, loss_cls: 0.0683, acc: 97.4243, loss_bbox: 0.1010, roi_loss_intra: 0.0011, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0014, rcnn_loss_inter: 0.0000, loss: 0.1804
+INFO:mmdet:Iter [120/140]	lr: 1.000e-03, eta: 0:00:58, time: 8.636, data_time: 7.231, memory: 3375, loss_rpn_cls: 0.0036, loss_rpn_bbox: 0.0050, loss_cls: 0.0683, acc: 97.4243, loss_bbox: 0.1010, roi_loss_intra: 0.0011, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0014, rcnn_loss_inter: 0.0000, loss: 0.1804
+2021-07-21 05:33:35,404 - mmdet - INFO - Iter [121/140]	lr: 1.000e-03, eta: 0:00:55, time: 2.227, data_time: 0.491, memory: 3375, loss_rpn_cls: 0.0042, loss_rpn_bbox: 0.0057, loss_cls: 0.0503, acc: 97.8882, loss_bbox: 0.0879, roi_loss_intra: 0.0029, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0032, rcnn_loss_inter: 0.0000, loss: 0.1541
+INFO:mmdet:Iter [121/140]	lr: 1.000e-03, eta: 0:00:55, time: 2.227, data_time: 0.491, memory: 3375, loss_rpn_cls: 0.0042, loss_rpn_bbox: 0.0057, loss_cls: 0.0503, acc: 97.8882, loss_bbox: 0.0879, roi_loss_intra: 0.0029, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0032, rcnn_loss_inter: 0.0000, loss: 0.1541
+2021-07-21 05:33:37,426 - mmdet - INFO - Iter [122/140]	lr: 1.000e-03, eta: 0:00:52, time: 2.091, data_time: 0.427, memory: 3375, loss_rpn_cls: 0.0023, loss_rpn_bbox: 0.0038, loss_cls: 0.0604, acc: 97.4854, loss_bbox: 0.1035, roi_loss_intra: 0.0014, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0017, rcnn_loss_inter: 0.0000, loss: 0.1731
+INFO:mmdet:Iter [122/140]	lr: 1.000e-03, eta: 0:00:52, time: 2.091, data_time: 0.427, memory: 3375, loss_rpn_cls: 0.0023, loss_rpn_bbox: 0.0038, loss_cls: 0.0604, acc: 97.4854, loss_bbox: 0.1035, roi_loss_intra: 0.0014, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0017, rcnn_loss_inter: 0.0000, loss: 0.1731
+2021-07-21 05:33:39,548 - mmdet - INFO - Iter [123/140]	lr: 1.000e-03, eta: 0:00:49, time: 2.059, data_time: 0.353, memory: 3375, loss_rpn_cls: 0.0048, loss_rpn_bbox: 0.0056, loss_cls: 0.0580, acc: 97.6685, loss_bbox: 0.1010, roi_loss_intra: 0.0016, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0016, rcnn_loss_inter: 0.0000, loss: 0.1726
+INFO:mmdet:Iter [123/140]	lr: 1.000e-03, eta: 0:00:49, time: 2.059, data_time: 0.353, memory: 3375, loss_rpn_cls: 0.0048, loss_rpn_bbox: 0.0056, loss_cls: 0.0580, acc: 97.6685, loss_bbox: 0.1010, roi_loss_intra: 0.0016, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0016, rcnn_loss_inter: 0.0000, loss: 0.1726
+2021-07-21 05:33:41,636 - mmdet - INFO - Iter [124/140]	lr: 1.000e-03, eta: 0:00:46, time: 2.101, data_time: 0.426, memory: 3375, loss_rpn_cls: 0.0016, loss_rpn_bbox: 0.0045, loss_cls: 0.0605, acc: 97.4121, loss_bbox: 0.0911, roi_loss_intra: 0.0013, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0013, rcnn_loss_inter: 0.0000, loss: 0.1603
+INFO:mmdet:Iter [124/140]	lr: 1.000e-03, eta: 0:00:46, time: 2.101, data_time: 0.426, memory: 3375, loss_rpn_cls: 0.0016, loss_rpn_bbox: 0.0045, loss_cls: 0.0605, acc: 97.4121, loss_bbox: 0.0911, roi_loss_intra: 0.0013, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0013, rcnn_loss_inter: 0.0000, loss: 0.1603
+2021-07-21 05:33:43,765 - mmdet - INFO - Iter [125/140]	lr: 1.000e-03, eta: 0:00:43, time: 2.100, data_time: 0.407, memory: 3375, loss_rpn_cls: 0.0046, loss_rpn_bbox: 0.0053, loss_cls: 0.0634, acc: 97.2412, loss_bbox: 0.0981, roi_loss_intra: 0.0014, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0018, rcnn_loss_inter: 0.0000, loss: 0.1747
+INFO:mmdet:Iter [125/140]	lr: 1.000e-03, eta: 0:00:43, time: 2.100, data_time: 0.407, memory: 3375, loss_rpn_cls: 0.0046, loss_rpn_bbox: 0.0053, loss_cls: 0.0634, acc: 97.2412, loss_bbox: 0.0981, roi_loss_intra: 0.0014, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0018, rcnn_loss_inter: 0.0000, loss: 0.1747
+2021-07-21 05:33:45,976 - mmdet - INFO - Iter [126/140]	lr: 1.000e-03, eta: 0:00:40, time: 2.239, data_time: 0.435, memory: 3375, loss_rpn_cls: 0.0017, loss_rpn_bbox: 0.0059, loss_cls: 0.0499, acc: 97.9004, loss_bbox: 0.0862, roi_loss_intra: 0.0020, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0024, rcnn_loss_inter: 0.0000, loss: 0.1481
+INFO:mmdet:Iter [126/140]	lr: 1.000e-03, eta: 0:00:40, time: 2.239, data_time: 0.435, memory: 3375, loss_rpn_cls: 0.0017, loss_rpn_bbox: 0.0059, loss_cls: 0.0499, acc: 97.9004, loss_bbox: 0.0862, roi_loss_intra: 0.0020, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0024, rcnn_loss_inter: 0.0000, loss: 0.1481
+2021-07-21 05:33:55,092 - mmdet - INFO - Iter [127/140]	lr: 1.000e-03, eta: 0:00:38, time: 9.086, data_time: 6.869, memory: 3375, loss_rpn_cls: 0.0032, loss_rpn_bbox: 0.0054, loss_cls: 0.0453, acc: 98.0835, loss_bbox: 0.0888, roi_loss_intra: 0.0014, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0016, rcnn_loss_inter: 0.0000, loss: 0.1456
+INFO:mmdet:Iter [127/140]	lr: 1.000e-03, eta: 0:00:38, time: 9.086, data_time: 6.869, memory: 3375, loss_rpn_cls: 0.0032, loss_rpn_bbox: 0.0054, loss_cls: 0.0453, acc: 98.0835, loss_bbox: 0.0888, roi_loss_intra: 0.0014, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0016, rcnn_loss_inter: 0.0000, loss: 0.1456
+2021-07-21 05:33:57,251 - mmdet - INFO - Iter [128/140]	lr: 1.000e-03, eta: 0:00:35, time: 2.140, data_time: 0.441, memory: 3375, loss_rpn_cls: 0.0036, loss_rpn_bbox: 0.0050, loss_cls: 0.0472, acc: 97.8394, loss_bbox: 0.0829, roi_loss_intra: 0.0010, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0011, rcnn_loss_inter: 0.0000, loss: 0.1409
+INFO:mmdet:Iter [128/140]	lr: 1.000e-03, eta: 0:00:35, time: 2.140, data_time: 0.441, memory: 3375, loss_rpn_cls: 0.0036, loss_rpn_bbox: 0.0050, loss_cls: 0.0472, acc: 97.8394, loss_bbox: 0.0829, roi_loss_intra: 0.0010, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0011, rcnn_loss_inter: 0.0000, loss: 0.1409
+2021-07-21 05:33:59,395 - mmdet - INFO - Iter [129/140]	lr: 1.000e-03, eta: 0:00:32, time: 2.129, data_time: 0.453, memory: 3375, loss_rpn_cls: 0.0016, loss_rpn_bbox: 0.0040, loss_cls: 0.0519, acc: 97.8638, loss_bbox: 0.0917, roi_loss_intra: 0.0011, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0011, rcnn_loss_inter: 0.0000, loss: 0.1514
+INFO:mmdet:Iter [129/140]	lr: 1.000e-03, eta: 0:00:32, time: 2.129, data_time: 0.453, memory: 3375, loss_rpn_cls: 0.0016, loss_rpn_bbox: 0.0040, loss_cls: 0.0519, acc: 97.8638, loss_bbox: 0.0917, roi_loss_intra: 0.0011, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0011, rcnn_loss_inter: 0.0000, loss: 0.1514
+2021-07-21 05:34:01,424 - mmdet - INFO - Iter [130/140]	lr: 1.000e-03, eta: 0:00:29, time: 2.069, data_time: 0.472, memory: 3375, loss_rpn_cls: 0.0037, loss_rpn_bbox: 0.0044, loss_cls: 0.0663, acc: 97.2900, loss_bbox: 0.1001, roi_loss_intra: 0.0021, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0022, rcnn_loss_inter: 0.0000, loss: 0.1788
+INFO:mmdet:Iter [130/140]	lr: 1.000e-03, eta: 0:00:29, time: 2.069, data_time: 0.472, memory: 3375, loss_rpn_cls: 0.0037, loss_rpn_bbox: 0.0044, loss_cls: 0.0663, acc: 97.2900, loss_bbox: 0.1001, roi_loss_intra: 0.0021, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0022, rcnn_loss_inter: 0.0000, loss: 0.1788
+2021-07-21 05:34:03,531 - mmdet - INFO - Iter [131/140]	lr: 1.000e-03, eta: 0:00:26, time: 2.118, data_time: 0.424, memory: 3375, loss_rpn_cls: 0.0021, loss_rpn_bbox: 0.0048, loss_cls: 0.0457, acc: 97.9736, loss_bbox: 0.0825, roi_loss_intra: 0.0013, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0015, rcnn_loss_inter: 0.0000, loss: 0.1380
+INFO:mmdet:Iter [131/140]	lr: 1.000e-03, eta: 0:00:26, time: 2.118, data_time: 0.424, memory: 3375, loss_rpn_cls: 0.0021, loss_rpn_bbox: 0.0048, loss_cls: 0.0457, acc: 97.9736, loss_bbox: 0.0825, roi_loss_intra: 0.0013, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0015, rcnn_loss_inter: 0.0000, loss: 0.1380
+2021-07-21 05:34:05,601 - mmdet - INFO - Iter [132/140]	lr: 1.000e-03, eta: 0:00:23, time: 2.060, data_time: 0.421, memory: 3375, loss_rpn_cls: 0.0024, loss_rpn_bbox: 0.0046, loss_cls: 0.0476, acc: 97.9614, loss_bbox: 0.0890, roi_loss_intra: 0.0012, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0011, rcnn_loss_inter: 0.0000, loss: 0.1460
+INFO:mmdet:Iter [132/140]	lr: 1.000e-03, eta: 0:00:23, time: 2.060, data_time: 0.421, memory: 3375, loss_rpn_cls: 0.0024, loss_rpn_bbox: 0.0046, loss_cls: 0.0476, acc: 97.9614, loss_bbox: 0.0890, roi_loss_intra: 0.0012, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0011, rcnn_loss_inter: 0.0000, loss: 0.1460
+2021-07-21 05:34:07,781 - mmdet - INFO - Iter [133/140]	lr: 1.000e-03, eta: 0:00:20, time: 2.189, data_time: 0.426, memory: 3375, loss_rpn_cls: 0.0050, loss_rpn_bbox: 0.0041, loss_cls: 0.0656, acc: 97.2290, loss_bbox: 0.1037, roi_loss_intra: 0.0011, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0011, rcnn_loss_inter: 0.0000, loss: 0.1806
+INFO:mmdet:Iter [133/140]	lr: 1.000e-03, eta: 0:00:20, time: 2.189, data_time: 0.426, memory: 3375, loss_rpn_cls: 0.0050, loss_rpn_bbox: 0.0041, loss_cls: 0.0656, acc: 97.2290, loss_bbox: 0.1037, roi_loss_intra: 0.0011, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0011, rcnn_loss_inter: 0.0000, loss: 0.1806
+2021-07-21 05:34:16,999 - mmdet - INFO - Iter [134/140]	lr: 1.000e-03, eta: 0:00:17, time: 9.208, data_time: 7.149, memory: 3375, loss_rpn_cls: 0.0025, loss_rpn_bbox: 0.0036, loss_cls: 0.0574, acc: 97.4854, loss_bbox: 0.0997, roi_loss_intra: 0.0009, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0008, rcnn_loss_inter: 0.0000, loss: 0.1649
+INFO:mmdet:Iter [134/140]	lr: 1.000e-03, eta: 0:00:17, time: 9.208, data_time: 7.149, memory: 3375, loss_rpn_cls: 0.0025, loss_rpn_bbox: 0.0036, loss_cls: 0.0574, acc: 97.4854, loss_bbox: 0.0997, roi_loss_intra: 0.0009, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0008, rcnn_loss_inter: 0.0000, loss: 0.1649
+2021-07-21 05:34:19,086 - mmdet - INFO - Iter [135/140]	lr: 1.000e-03, eta: 0:00:14, time: 2.085, data_time: 0.436, memory: 3375, loss_rpn_cls: 0.0043, loss_rpn_bbox: 0.0063, loss_cls: 0.0606, acc: 97.6562, loss_bbox: 0.0973, roi_loss_intra: 0.0013, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0011, rcnn_loss_inter: 0.0000, loss: 0.1708
+INFO:mmdet:Iter [135/140]	lr: 1.000e-03, eta: 0:00:14, time: 2.085, data_time: 0.436, memory: 3375, loss_rpn_cls: 0.0043, loss_rpn_bbox: 0.0063, loss_cls: 0.0606, acc: 97.6562, loss_bbox: 0.0973, roi_loss_intra: 0.0013, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0011, rcnn_loss_inter: 0.0000, loss: 0.1708
+2021-07-21 05:34:20,862 - mmdet - INFO - Iter [136/140]	lr: 1.000e-03, eta: 0:00:11, time: 1.813, data_time: 0.428, memory: 3375, loss_rpn_cls: 0.0011, loss_rpn_bbox: 0.0046, loss_cls: 0.0451, acc: 98.2666, loss_bbox: 0.0892, roi_loss_intra: 0.0012, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0013, rcnn_loss_inter: 0.0000, loss: 0.1425
+INFO:mmdet:Iter [136/140]	lr: 1.000e-03, eta: 0:00:11, time: 1.813, data_time: 0.428, memory: 3375, loss_rpn_cls: 0.0011, loss_rpn_bbox: 0.0046, loss_cls: 0.0451, acc: 98.2666, loss_bbox: 0.0892, roi_loss_intra: 0.0012, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0013, rcnn_loss_inter: 0.0000, loss: 0.1425
+2021-07-21 05:34:23,097 - mmdet - INFO - Iter [137/140]	lr: 1.000e-03, eta: 0:00:08, time: 2.167, data_time: 0.395, memory: 3375, loss_rpn_cls: 0.0026, loss_rpn_bbox: 0.0043, loss_cls: 0.0496, acc: 97.8394, loss_bbox: 0.0836, roi_loss_intra: 0.0017, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0013, rcnn_loss_inter: 0.0000, loss: 0.1431
+INFO:mmdet:Iter [137/140]	lr: 1.000e-03, eta: 0:00:08, time: 2.167, data_time: 0.395, memory: 3375, loss_rpn_cls: 0.0026, loss_rpn_bbox: 0.0043, loss_cls: 0.0496, acc: 97.8394, loss_bbox: 0.0836, roi_loss_intra: 0.0017, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0013, rcnn_loss_inter: 0.0000, loss: 0.1431
+2021-07-21 05:34:25,179 - mmdet - INFO - Iter [138/140]	lr: 1.000e-03, eta: 0:00:05, time: 2.186, data_time: 0.459, memory: 3375, loss_rpn_cls: 0.0019, loss_rpn_bbox: 0.0048, loss_cls: 0.0511, acc: 97.5220, loss_bbox: 0.0908, roi_loss_intra: 0.0011, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0013, rcnn_loss_inter: 0.0000, loss: 0.1509
+INFO:mmdet:Iter [138/140]	lr: 1.000e-03, eta: 0:00:05, time: 2.186, data_time: 0.459, memory: 3375, loss_rpn_cls: 0.0019, loss_rpn_bbox: 0.0048, loss_cls: 0.0511, acc: 97.5220, loss_bbox: 0.0908, roi_loss_intra: 0.0011, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0013, rcnn_loss_inter: 0.0000, loss: 0.1509
+2021-07-21 05:34:27,454 - mmdet - INFO - Iter [139/140]	lr: 1.000e-03, eta: 0:00:02, time: 2.243, data_time: 0.361, memory: 3375, loss_rpn_cls: 0.0066, loss_rpn_bbox: 0.0054, loss_cls: 0.0517, acc: 98.1689, loss_bbox: 0.0851, roi_loss_intra: 0.0013, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0015, rcnn_loss_inter: 0.0000, loss: 0.1517
+INFO:mmdet:Iter [139/140]	lr: 1.000e-03, eta: 0:00:02, time: 2.243, data_time: 0.361, memory: 3375, loss_rpn_cls: 0.0066, loss_rpn_bbox: 0.0054, loss_cls: 0.0517, acc: 98.1689, loss_bbox: 0.0851, roi_loss_intra: 0.0013, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0015, rcnn_loss_inter: 0.0000, loss: 0.1517
+2021-07-21 05:34:29,146 - mmdet - INFO - Saving checkpoint at 140 iterations
+INFO:mmdet:Saving checkpoint at 140 iterations
+2021-07-21 05:34:30,304 - mmdet - INFO - Iter [140/140]	lr: 1.000e-03, eta: 0:00:00, time: 2.070, data_time: 0.388, memory: 3375, loss_rpn_cls: 0.0038, loss_rpn_bbox: 0.0062, loss_cls: 0.0600, acc: 97.3145, loss_bbox: 0.1027, roi_loss_intra: 0.0009, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0009, rcnn_loss_inter: 0.0000, loss: 0.1744
+INFO:mmdet:Iter [140/140]	lr: 1.000e-03, eta: 0:00:00, time: 2.070, data_time: 0.388, memory: 3375, loss_rpn_cls: 0.0038, loss_rpn_bbox: 0.0062, loss_cls: 0.0600, acc: 97.3145, loss_bbox: 0.1027, roi_loss_intra: 0.0009, roi_loss_inter: 0.0000, rcnn_loss_intra: 0.0009, rcnn_loss_inter: 0.0000, loss: 0.1744
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
