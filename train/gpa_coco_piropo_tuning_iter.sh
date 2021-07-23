@@ -1,7 +1,7 @@
 # dirs
 TOOL_DIR=mmdetection/tools
 CONFIG_FILE=mmdetection/configs/adaptive/faster_rcnn_r50_caffe_fpn_mstrain_1x_coco-person_adaptive.py
-WORK_DIR=work_dirs/GPA/tuning
+WORK_DIR=~/WORK_DIRS/GPA/tuning
 WORK_ROOT=coco_piropo
 RES_DIR=results/GPA/tuning
 RES_ROOT=coco_piropo
@@ -18,8 +18,10 @@ N_GPU=8 # if this is changed, the number of iterations also needs to be adapted
 VIS_GPU=0,1,2,3,4,5,6,7
 GPU_PORT=29502
 
-mkdir $WORK_DIR
-mkdir $RES_DIR
+mkdir ~/WORK_DIRS
+mkdir ~/WORK_DIRS/GPA
+mkdir ${WORK_DIR}
+mkdir ${RES_DIR}
 
 # TRAINING PARAMETERS
 BATCH=16
