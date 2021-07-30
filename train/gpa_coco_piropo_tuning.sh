@@ -1,7 +1,7 @@
 # dirs
 TOOL_DIR=mmdetection/tools
 CONFIG_FILE=mmdetection/configs/adaptive/faster_rcnn_r50_caffe_fpn_mstrain_1x_coco-person_adaptive.py
-WORK_DIR=work_dirs/GPA/tuning
+WORK_DIR=~/WORK_DIRS/GPA/tuning
 WORK_ROOT=coco_piropo
 RES_DIR=results/GPA/tuning
 RES_ROOT=coco_piropo
@@ -16,15 +16,17 @@ TEST_FILE=/data/PIROPO/omni_test2.json
 # GPUs
 N_GPU=8 # if this is changed, the number of iterations also needs to be adapted
 VIS_GPU=0,1,2,3,4,5,6,7
-GPU_PORT=29501
+GPU_PORT=29502
 
-mkdir $WORK_DIR
-mkdir $RES_DIR
+mkdir ~/WORK_DIRS
+mkdir ~/WORK_DIRS/GPA
+mkdir ${WORK_DIR}
+mkdir ${RES_DIR}
 
 # TRAINING PARAMETERS
 BATCH=16
-n=100
-x=a
+n=$1
+x=$2
 # with all images, we train 12 epochs:
 #   ceil(2357/16) = 148 iterations --> 148 * 12 = 1776
 (( ITER_PER_EPOCH=($n+$BATCH-1)/$BATCH )) # this is a custom implementation of the ceiling function
@@ -36,36 +38,45 @@ x=a
 (( VAL_INTERVAL=(178+$ITER_PER_EPOCH-1)/$ITER_PER_EPOCH ))
 
 # only fine-tuning
-SUFFIX=ft_24_nostep
-DA=0
-DA_ROI=1.0
-DA_RCNN=1.0
-DA_INTRA=1.0
-DA_INTER=1.0
+DA=$3
+DA_ROI=$4
+DA_RCNN=$5
+DA_INTRA=$6
+DA_INTER=$7
+DISTANCE=$8
+REP=$9
+SUFFIX=da${DA}_roi${DA_ROI}_rcnn${DA_RCNN}_intra${DA_INTRA}_inter${DA_INTER}_${DISTANCE}_seed${REP}
 
 _WORK_DIR=${WORK_DIR}/${WORK_ROOT}_${n}${x}_${SUFFIX}
 mkdir ${_WORK_DIR}
 
+# use this for iter-based runner:
+# runner._delete_=True \
+# runner.type='IterBasedRunnerAdaptive' \
+# runner.max_iters=140 \
 CUDA_VISIBLE_DEVICES=${VIS_GPU} PORT=${GPU_PORT} ./${TOOL_DIR}/dist_train_adaptive.sh \
 ${CONFIG_FILE} \
 ${N_GPU} \
 --work-dir ${_WORK_DIR} \
+--seed 42 \
 --cfg-options data.samples_per_gpu=$(($BATCH/$N_GPU)) \
     data.train_src.ann_file=${SRC_FILE} \
     data.train_src.img_prefix=${SRC_DIR} \
     data.train_tgt.ann_file=${TGT_DIR}/${TGT_ROOT}_${n}${x}.json \
     data.train_tgt.img_prefix=None \
     data.val.ann_file=${TEST_FILE} \
-    runner.max_epochs=24 \
-    lr_config.step=[40] \
+    data.val.img_prefix=None \
+    runner.max_epochs=40 \
+    lr_config.step=[200] \
     evaluation.interval=1 \
-    checkpoint_config.interval=2000 \
-    model.train_cfg.loss_weight_da=$DA \
-    model.train_cfg.loss_weight_da_roi=$DA_ROI \
-    model.train_cfg.loss_weight_da_rcnn=$DA_RCNN \
-    model.train_cfg.loss_weight_da_intra=$DA_INTRA \
-    model.train_cfg.loss_weight_da_inter=$DA_INTER \
-    data.val.img_prefix=None 2>&1 | tee ${RES_DIR}/${RES_ROOT}_${n}${x}_${SUFFIX}.log
+    checkpoint_config.interval=200 \
+    model.train_cfg.loss_weight_da=${DA} \
+    model.train_cfg.loss_weight_da_roi=${DA_ROI} \
+    model.train_cfg.loss_weight_da_rcnn=${DA_RCNN} \
+    model.train_cfg.loss_weight_da_intra=${DA_INTRA} \
+    model.train_cfg.loss_weight_da_inter=${DA_INTER} \
+    model.train_cfg.da_distance=${DISTANCE} \
+    2>&1 | tee ${RES_DIR}/${RES_ROOT}_${n}${x}_${SUFFIX}.log
 
 # CUDA_VISIBLE_DEVICES=${VIS_GPU} PORT=${GPU_PORT} ./${TOOL_DIR}/dist_test.sh \
 # ${CONFIG_FILE} \
@@ -80,6 +91,4 @@ ${N_GPU} \
 # free up space
 rm ${_WORK_DIR}/*.log
 rm ${_WORK_DIR}/*.pkl
-rm ${_WORK_DIR}/epoch_[1-9].pth
-rm ${_WORK_DIR}/epoch_10.pth
-rm ${_WORK_DIR}/epoch_11.pth
+rm ${_WORK_DIR}/*.json
