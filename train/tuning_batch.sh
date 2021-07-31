@@ -79,25 +79,30 @@ cd ~/MasterthesisCode
 # train/_gpa_coco_piropo_tuning.sh 60 100 a   1   0    1  100   1 mean_squared False False _nofc # remove fc
 
 # more combinations based on best reasonable result so far
-train/_gpa_coco_piropo_tuning.sh 40 100 a 0.1   0    1  100    1 mean_squared False False # absolute weight × 0.1
-train/_gpa_coco_piropo_tuning.sh 40 100 a  10   0    1  100    1 mean_squared False False # absolute weight × 10
-train/_gpa_coco_piropo_tuning.sh 40 100 a   1   1    1  100    1 mean_squared False False # ROI + RCNN
-train/_gpa_coco_piropo_tuning.sh 40 100 a   1   1  0.1  100    1 mean_squared False False # ROI + 0.1 RCNN
-train/_gpa_coco_piropo_tuning.sh 40 100 a   1 0.1    1  100    1 mean_squared False False # 0.1 ROI + RCNN
-train/_gpa_coco_piropo_tuning.sh 40 100 a 0.1   1    1  100    1 mean_squared False False # ROI + RCNN × 0.1
-train/_gpa_coco_piropo_tuning.sh 40 100 a   1   1    0  100    1 mean_squared False False # only ROI
-train/_gpa_coco_piropo_tuning.sh 40 100 a 0.1   1    0  100    1 mean_squared False False # only ROI × 0.1
-train/_gpa_coco_piropo_tuning.sh 40 100 a   1   1    0   10  0.1 mean_squared False False # keep relation
-train/_gpa_coco_piropo_tuning.sh 40 100 a   1   1    0    1 0.01 mean_squared False False # keep relation
-train/_gpa_coco_piropo_tuning.sh 60 100 a   1   0    1  100    1 euclidean    False False # euclidean
-train/_gpa_coco_piropo_tuning.sh 60 100 a   1   0    1  100    1 cosine       False False # cosine
-train/_gpa_coco_piropo_tuning.sh 40 100 a 0.1   0    1  100    1 mean_squared True  False # normalized
-train/_gpa_coco_piropo_tuning.sh 40 100 a 0.1   0    1  100    1 mean_squared False True  # ground truth
+# train/_gpa_coco_piropo_tuning.sh 40 100 a 0.1   0    1  100    1 mean_squared False False # absolute weight × 0.1
+# train/_gpa_coco_piropo_tuning.sh 40 100 a  10   0    1  100    1 mean_squared False False # absolute weight × 10
+# train/_gpa_coco_piropo_tuning.sh 40 100 a   1   1    1  100    1 mean_squared False False # ROI + RCNN
+# train/_gpa_coco_piropo_tuning.sh 40 100 a   1   1  0.1  100    1 mean_squared False False # ROI + 0.1 RCNN
+# train/_gpa_coco_piropo_tuning.sh 40 100 a   1 0.1    1  100    1 mean_squared False False # 0.1 ROI + RCNN
+# train/_gpa_coco_piropo_tuning.sh 40 100 a 0.1   1    1  100    1 mean_squared False False # ROI + RCNN × 0.1
+# train/_gpa_coco_piropo_tuning.sh 40 100 a   1   1    0  100    1 mean_squared False False # only ROI
+# train/_gpa_coco_piropo_tuning.sh 40 100 a 0.1   1    0  100    1 mean_squared False False # only ROI × 0.1
+# train/_gpa_coco_piropo_tuning.sh 40 100 a   1   1    0   10  0.1 mean_squared False False # keep relation
+# train/_gpa_coco_piropo_tuning.sh 40 100 a   1   1    0    1 0.01 mean_squared False False # keep relation
+# train/_gpa_coco_piropo_tuning.sh 60 100 a   1   0    1  100    1 euclidean    False False # euclidean
+# train/_gpa_coco_piropo_tuning.sh 60 100 a   1   0    1  100    1 cosine       False False # cosine
+# train/_gpa_coco_piropo_tuning.sh 40 100 a 0.1   0    1  100    1 mean_squared True  False # normalized
+# train/_gpa_coco_piropo_tuning.sh 40 100 a 0.1   0    1  100    1 mean_squared False True  # ground truth
 
-# more combinations based on best result with only inter loss
-train/_gpa_coco_piropo_tuning.sh 40 100 a   1   1    0    0   1 mean_squared False False # only ROI
-train/_gpa_coco_piropo_tuning.sh 40 100 a   1   0    1    0   1 mean_squared False False # only RCNN
-train/_gpa_coco_piropo_tuning.sh 40 100 a   1   1    1    0 0.1 mean_squared False False # × 10
-train/_gpa_coco_piropo_tuning.sh 40 100 a   1   1    1    0  10 mean_squared False False # × 0.1
+# # more combinations based on best result with only inter loss
+# train/_gpa_coco_piropo_tuning.sh 40 100 a   1   1    0    0   1 mean_squared False False # only ROI
+# train/_gpa_coco_piropo_tuning.sh 40 100 a   1   0    1    0   1 mean_squared False False # only RCNN
+# train/_gpa_coco_piropo_tuning.sh 40 100 a   1   1    1    0 0.1 mean_squared False False # × 10
+# train/_gpa_coco_piropo_tuning.sh 40 100 a   1   1    1    0  10 mean_squared False False # × 0.1
+
+# experiments with new best result
+train/_gpa_coco_piropo_tuning.sh 40 100 a 0.1 0.1    1  100    1 mean_squared False False # 0.1 ROI + RCNN × 0.1
+train/_gpa_coco_piropo_tuning.sh 40 100 a   1 0.1    1   10  0.1 mean_squared False False # 0.1 ROI + RCNN keep relation
+train/_gpa_coco_piropo_tuning.sh 40 100 a   1 0.1    1    1 0.01 mean_squared False False # 0.1 ROI + RCNN keep relation
 
 

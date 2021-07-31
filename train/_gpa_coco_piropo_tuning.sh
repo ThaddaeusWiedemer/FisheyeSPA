@@ -96,4 +96,4 @@ ${N_GPU} \
 # free up space
 rm ${_WORK_DIR}/*.log
 rm ${_WORK_DIR}/*.pkl
-# rm ${_WORK_DIR}/*.json
+rm ${_WORK_DIR}/*.json
