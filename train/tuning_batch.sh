@@ -101,8 +101,21 @@ cd ~/MasterthesisCode
 # train/_gpa_coco_piropo_tuning.sh 40 100 a   1   1    1    0  10 mean_squared False False # × 0.1
 
 # experiments with new best result
-train/_gpa_coco_piropo_tuning.sh 40 100 a 0.1 0.1    1  100    1 mean_squared False False # 0.1 ROI + RCNN × 0.1
-train/_gpa_coco_piropo_tuning.sh 40 100 a   1 0.1    1   10  0.1 mean_squared False False # 0.1 ROI + RCNN keep relation
-train/_gpa_coco_piropo_tuning.sh 40 100 a   1 0.1    1    1 0.01 mean_squared False False # 0.1 ROI + RCNN keep relation
+# train/_gpa_coco_piropo_tuning.sh 40 100 a 0.1 0.1    1  100    1 mean_squared False False # 0.1 ROI + RCNN × 0.1
+# train/_gpa_coco_piropo_tuning.sh 40 100 a   1 0.1    1   10  0.1 mean_squared False False # 0.1 ROI + RCNN keep relation
+# train/_gpa_coco_piropo_tuning.sh 40 100 a   1 0.1    1    1 0.01 mean_squared False False # 0.1 ROI + RCNN keep relation
+# train/_gpa_coco_piropo_tuning.sh 40 100 a   1 0.1    1  100  0.1 mean_squared False False # 0.1 ROI + RCNN + 0.1 inter
+
+# check deterministic=True - !CHANGE _tuning.sh script back to run normally!
+# train/_gpa_coco_piropo_tuning.sh 40 100 a 0 0 0 0 0 mean_squared False False 0
+# train/_gpa_coco_piropo_tuning.sh 40 100 a 0 0 0 0 0 mean_squared False False 1
+# train/_gpa_coco_piropo_tuning.sh 40 100 a 0 0 0 0 0 mean_squared False False 2
+
+# check automatic loss-balancing
+# train/_gpa_coco_piropo_tuning.sh 80 100 a   1 1 1 1 1 mean_squared False False _auto # set all coefficients to 1
+# train/_gpa_coco_piropo_tuning.sh 80 100 a 0.1 1 1 1 1 mean_squared False False _auto # set all coefficients smaller
+# train/_gpa_coco_piropo_tuning.sh 80 100 a   1 1 1 1 1 mean_squared False False _autoall # set all coefficients to 1
+train/_gpa_coco_piropo_tuning.sh 80 100 a   1 0.1 1 100 1 mean_squared False False _autoall # set all coefficients to 1
+train/_gpa_coco_piropo_tuning.sh 80 100 a   1 1 1 1 0.001 mean_squared False False _autoall # set all coefficients to 1
 
 
