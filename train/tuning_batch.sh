@@ -112,10 +112,30 @@ cd ~/MasterthesisCode
 # train/_gpa_coco_piropo_tuning.sh 40 100 a 0 0 0 0 0 mean_squared False False 2
 
 # check automatic loss-balancing
-# train/_gpa_coco_piropo_tuning.sh 80 100 a   1 1 1 1 1 mean_squared False False _auto # set all coefficients to 1
-# train/_gpa_coco_piropo_tuning.sh 80 100 a 0.1 1 1 1 1 mean_squared False False _auto # set all coefficients smaller
-# train/_gpa_coco_piropo_tuning.sh 80 100 a   1 1 1 1 1 mean_squared False False _autoall # set all coefficients to 1
-train/_gpa_coco_piropo_tuning.sh 80 100 a   1 0.1 1 100 1 mean_squared False False _autoall # set all coefficients to 1
-train/_gpa_coco_piropo_tuning.sh 80 100 a   1 1 1 1 0.001 mean_squared False False _autoall # set all coefficients to 1
+# train/_gpa_coco_piropo_tuning.sh 80 100 a   1 1 1 1 1 mean_squared False False _auto # auto-balance DA losses
+# train/_gpa_coco_piropo_tuning.sh 80 100 a 0.1 1 1 1 1 mean_squared False False _auto # auto-balance DA losses but weigh × 0.1
+# train/_gpa_coco_piropo_tuning.sh 80 100 a   1 1 1 1 1 mean_squared False False _autoall # auto-balance all losses
+# train/_gpa_coco_piropo_tuning.sh 80 100 a   1 0.1 1 100 1 mean_squared False False _autoall # auto-balance all losses but weigh with best result so far
+# train/_gpa_coco_piropo_tuning.sh 80 100 a   1 1 1 1 0.001 mean_squared False False _autoall # auto-balance all losses but weigh inter-loss × 0.001
+# train/_gpa_coco_piropo_tuning.sh 80 100 a   1 1 1 1 1 mean_squared False False _autoallinit # auto-balance all losses and initialize coefficients to 1/num_tasks = 0.2
+# train/_gpa_coco_piropo_tuning.sh 80 100 a   1 1 1 1 1 cosine False False _autoallinit # auto-balance all losses and initialize coefficients to 1/num_tasks = 0.2
+# train/_gpa_coco_piropo_tuning.sh 80 100 a   1 1 1 1 1 euclidean False False _autoallinit # auto-balance all losses and initialize coefficients to 1/num_tasks = 0.2
 
+# methodically balancing inter <-> intra
+# train/_gpa_coco_piropo_tuning.sh 40 100 a 1 0   10    10 1 mean_squared False False # 10:1
+# train/_gpa_coco_piropo_tuning.sh 40 100 a 1 0   10   100 1 mean_squared False False # 100:1
+# train/_gpa_coco_piropo_tuning.sh 40 100 a 1 0   10  1000 1 mean_squared False False # 1000:1
+# train/_gpa_coco_piropo_tuning.sh 40 100 a 1 0  0.1    10 1 mean_squared False False # 10:1
+# train/_gpa_coco_piropo_tuning.sh 40 100 a 1 0  0.1   100 1 mean_squared False False # 100:1
+# train/_gpa_coco_piropo_tuning.sh 40 100 a 1 0  0.1  1000 1 mean_squared False False # 1000:1
+# train/_gpa_coco_piropo_tuning.sh 40 100 a 1 0  0.1 10000 1 mean_squared False False # 1000:1
+# train/_gpa_coco_piropo_tuning.sh 40 100 a 1 0 0.01    10 1 mean_squared False False # 10:1
+# train/_gpa_coco_piropo_tuning.sh 40 100 a 1 0 0.01   100 1 mean_squared False False # 100:1
+# train/_gpa_coco_piropo_tuning.sh 40 100 a 1 0 0.01  1000 1 mean_squared False False # 1000:1
+# train/_gpa_coco_piropo_tuning.sh 40 100 a 1 0 0.01 10000 1 mean_squared False False # 10000:1
 
+# methodically balancing ROI <-> RCNN
+# train/_gpa_coco_piropo_tuning.sh 40 100 a 1 0.01 1 100 0.1 mean_squared False False # 0.01:1
+# train/_gpa_coco_piropo_tuning.sh 40 100 a 1    1 1 100 0.1 mean_squared False False #    1:1
+# train/_gpa_coco_piropo_tuning.sh 40 100 a 1   10 1 100 0.1 mean_squared False False #   10:1
+train/_gpa_coco_piropo_tuning.sh 40 100 a 0 0 0 0 0 mean_squared False False _custom # custom weights
