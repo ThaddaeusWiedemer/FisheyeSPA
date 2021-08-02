@@ -138,4 +138,9 @@ cd ~/MasterthesisCode
 # train/_gpa_coco_piropo_tuning.sh 40 100 a 1 0.01 1 100 0.1 mean_squared False False # 0.01:1
 # train/_gpa_coco_piropo_tuning.sh 40 100 a 1    1 1 100 0.1 mean_squared False False #    1:1
 # train/_gpa_coco_piropo_tuning.sh 40 100 a 1   10 1 100 0.1 mean_squared False False #   10:1
-train/_gpa_coco_piropo_tuning.sh 40 100 a 0 0 0 0 0 mean_squared False False _custom # custom weights
+# train/_gpa_coco_piropo_tuning.sh 40 100 a 0 0 0 0 0 mean_squared False False _custom # custom weights
+
+# from here, arguments are
+# EPOCHS SPLITSIZE SPLIT MODEL ROI_INTRA ROI_INTER RCNN_INTRA RCNN_INTER GRAPH FC SUFFIX
+train/_gpa_coco_piropo_tuning.sh 40 100 a TwoStageDetectorAdaptiveAutoBalance 10 0.1 100 0.1 True fc_layer
+# train/_gpa_coco_piropo_tuning.sh 40 100 a TwoStageDetectorAdaptiveAutoBalance

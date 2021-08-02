@@ -39,18 +39,18 @@ x=$3
 # (( VAL_INTERVAL=(178+$ITER_PER_EPOCH-1)/$ITER_PER_EPOCH ))
 
 # only fine-tuning
-DA=$4
-DA_ROI=$5
-DA_RCNN=$6
-DA_INTRA=$7
-DA_INTER=$8
-DISTANCE=$9
-NORMALIZE=${10}
-GT=${11}
-REP=${12}
-SUFFIX=da${DA//.}roi${DA_ROI//.}rcnn${DA_RCNN//.}intra${DA_INTRA//.}inter${DA_INTER//.}n${NORMALIZE}gt${GT}${DISTANCE}_seed${REP}
+MODEL=$4
+ROI_INTRA=$5
+ROI_INTER=$6
+RCNN_INTRA=$7
+RCNN_INTER=$8
+GRAPH=$9
+FC=${10}
+SUFFIX=${11}
 
-_WORK_DIR=${WORK_DIR}/${WORK_ROOT}_${n}${x}_${SUFFIX}
+OUT=${MODEL}_${ROI_INTRA//.}_${ROI_INTER//.}_${RCNN_INTRA//.}_${RCNN_INTER//.}_${FC//_}_g${GRAPH}_seed${SUFFIX}
+
+_WORK_DIR=${WORK_DIR}/${WORK_ROOT}_${n}${x}_${OUT}
 mkdir -p ${_WORK_DIR}
 
 # use this for iter-based runner:
@@ -73,15 +73,14 @@ ${N_GPU} \
     lr_config.step=[200] \
     evaluation.interval=1 \
     checkpoint_config.interval=200 \
-    model.train_cfg.loss_weight_da=${DA} \
-    model.train_cfg.loss_weight_da_roi=${DA_ROI} \
-    model.train_cfg.loss_weight_da_rcnn=${DA_RCNN} \
-    model.train_cfg.loss_weight_da_intra=${DA_INTRA} \
-    model.train_cfg.loss_weight_da_inter=${DA_INTER} \
-    model.train_cfg.da_distance=${DISTANCE} \
-    model.train_cfg.da_normalize=${NORMALIZE} \
-    model.train_cfg.da_gt=${GT} \
-    2>&1 | tee ${RES_DIR}/${RES_ROOT}_${n}${x}_${SUFFIX}.log
+    model.type=${MODEL} \
+    model.train_cfg.gpa.loss_roi_intra=${ROI_INTRA} \
+    model.train_cfg.gpa.loss_roi_inter=${ROI_INTER} \
+    model.train_cfg.gpa.loss_rcnn_intra=${RCNN_INTRA} \
+    model.train_cfg.gpa.loss_rcnn_inter=${RCNN_INTER} \
+    model.train_cfg.gpa.use_graph=${GRAPH} \
+    model.train_cfg.gpa.fc_layer=${FC} \
+    2>&1 | tee ${RES_DIR}/${RES_ROOT}_${n}${x}_${OUT}.log
 
 # CUDA_VISIBLE_DEVICES=${VIS_GPU} PORT=${GPU_PORT} ./${TOOL_DIR}/dist_test.sh \
 # ${CONFIG_FILE} \
@@ -91,7 +90,7 @@ ${N_GPU} \
 # --cfg-options data.samples_per_gpu=$(($BATCH/$N_GPU)) \
 #     data.test.ann_file=${TEST_FILE} \
 #     data.test.img_prefix=None \
-# --out ${_WORK_DIR}/piropo_test2.pkl 2>&1 | tee ${RES_DIR}/${RES_ROOT}_${n}${x}_${SUFFIX}.txt
+# --out ${_WORK_DIR}/piropo_test2.pkl 2>&1 | tee ${RES_DIR}/${RES_ROOT}_${n}${x}_${OUT}.txt
 
 # free up space
 rm ${_WORK_DIR}/*.log
