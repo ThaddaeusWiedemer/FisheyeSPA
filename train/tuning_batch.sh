@@ -142,5 +142,27 @@ cd ~/MasterthesisCode
 
 # from here, arguments are
 # EPOCHS SPLITSIZE SPLIT MODEL ROI_INTRA ROI_INTER RCNN_INTRA RCNN_INTER GRAPH FC SUFFIX
-train/_gpa_coco_piropo_tuning.sh 40 100 a TwoStageDetectorAdaptiveAutoBalance 10 0.1 100 0.1 True fc_layer
-# train/_gpa_coco_piropo_tuning.sh 40 100 a TwoStageDetectorAdaptiveAutoBalance
+
+# test auto-balancing again
+# train/_gpa_coco_piropo_tuning.sh 40 100 a TwoStageDetectorAdaptiveAutoBalance 10 0.1 100 0.1 True fc_layer
+
+# test ROI individually
+# train/_gpa_coco_piropo_tuning.sh 40 100 a TwoStageDetectorAdaptive   0.1 0.01   0 0   True fc_layer
+# train/_gpa_coco_piropo_tuning.sh 40 100 a TwoStageDetectorAdaptive  10   0.01   0 0   True fc_layer
+# train/_gpa_coco_piropo_tuning.sh 40 100 a TwoStageDetectorAdaptive   1   0.1    0 0   True fc_layer
+# train/_gpa_coco_piropo_tuning.sh 40 100 a TwoStageDetectorAdaptive 100   0.1    0 0   True fc_layer
+# train/_gpa_coco_piropo_tuning.sh 40 100 a TwoStageDetectorAdaptive  10   1      0 0   True fc_layer
+
+# test fc-layer
+# train/_gpa_coco_piropo_tuning.sh 40 100 a TwoStageDetectorAdaptive  10   0.1  100 0.1 True none
+# train/_gpa_coco_piropo_tuning.sh 40 100 a TwoStageDetectorAdaptive  10   0.01 100 0.1 True none
+# train/_gpa_coco_piropo_tuning.sh 40 100 a TwoStageDetectorAdaptive  10   0.1  100 0.1 True fc_layer .1
+# train/_gpa_coco_piropo_tuning.sh 40 100 a TwoStageDetectorAdaptive  10   0.1  100 0.1 True fc_layer _0
+# train/_gpa_coco_piropo_tuning.sh 40 100 a TwoStageDetectorAdaptive  10   0.1  100 0.1 True fc_layer _01
+# train/_gpa_coco_piropo_tuning.sh 40 100 a TwoStageDetectorAdaptive  10   0.1  100 0.1 True fc_layer_roi
+# train/_gpa_coco_piropo_tuning.sh 40 100 a TwoStageDetectorAdaptive  10   0.1  100 0.1 True fc_layer_rcnn
+# train/_gpa_coco_piropo_tuning.sh 40 100 a TwoStageDetectorAdaptive  10   0.1  30 0.1 True fc_layer_roi
+
+# test graph-based aggregation
+train/_gpa_coco_piropo_tuning.sh 40 100 a TwoStageDetectorAdaptive  10   0.1  100 0.1 False fc_layer
+train/_gpa_coco_piropo_tuning.sh 40 100 a TwoStageDetectorAdaptive  10   0.01  100 0.1 False fc_layer

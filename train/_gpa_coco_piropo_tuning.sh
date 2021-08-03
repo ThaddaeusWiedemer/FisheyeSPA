@@ -48,7 +48,7 @@ GRAPH=$9
 FC=${10}
 SUFFIX=${11}
 
-OUT=${MODEL}_${ROI_INTRA//.}_${ROI_INTER//.}_${RCNN_INTRA//.}_${RCNN_INTER//.}_${FC//_}_g${GRAPH}_seed${SUFFIX}
+OUT=${MODEL}_${ROI_INTRA//.}_${ROI_INTER//.}_${RCNN_INTRA//.}_${RCNN_INTER//.}_${FC//[_-.]}_g${GRAPH}_seed${SUFFIX}
 
 _WORK_DIR=${WORK_DIR}/${WORK_ROOT}_${n}${x}_${OUT}
 mkdir -p ${_WORK_DIR}
@@ -93,6 +93,6 @@ ${N_GPU} \
 # --out ${_WORK_DIR}/piropo_test2.pkl 2>&1 | tee ${RES_DIR}/${RES_ROOT}_${n}${x}_${OUT}.txt
 
 # free up space
-rm ${_WORK_DIR}/*.log
-rm ${_WORK_DIR}/*.pkl
-rm ${_WORK_DIR}/*.json
+# rm ${_WORK_DIR}/*.log
+# rm ${_WORK_DIR}/*.pkl
+# rm ${_WORK_DIR}/*.json
