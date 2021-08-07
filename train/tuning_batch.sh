@@ -164,5 +164,8 @@ cd ~/MasterthesisCode
 # train/_gpa_coco_piropo_tuning.sh 40 100 a TwoStageDetectorAdaptive  10   0.1  30 0.1 True fc_layer_roi
 
 # test graph-based aggregation
-train/_gpa_coco_piropo_tuning.sh 40 100 a TwoStageDetectorAdaptive  10   0.1  100 0.1 False fc_layer
-train/_gpa_coco_piropo_tuning.sh 40 100 a TwoStageDetectorAdaptive  10   0.01  100 0.1 False fc_layer
+# train/_gpa_coco_piropo_tuning.sh 40 100 a TwoStageDetectorAdaptive  10   0.1  100 0.1 False fc_layer
+# train/_gpa_coco_piropo_tuning.sh 40 100 a TwoStageDetectorAdaptive  10   0.01  100 0.1 False fc_layer
+
+# fine-tuning
+train/_gpa_coco_piropo_tuning.sh 40 100 a TwoStageDetectorAdaptive 0 0 0 0 True fc_layer

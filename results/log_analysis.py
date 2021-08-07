@@ -7,8 +7,8 @@ import matplotlib.pyplot as plt
 import seaborn as sb
 import time
 
-def kit(): return sb.color_palette(['#179C7D','#006E92','#25BAE2','#EB6A0A'])
-def kit_shades(): return sb.color_palette(['#179C7D','#52E5C3','#8CEED7','#C5F6EB'])
+def kit(): return sb.color_palette(['#179C7D','#006E92','#25BAE2','#EB6A0A']) # green, blue, light blue, orange
+def kit_shades(): return sb.color_palette(['#179C7D','#52E5C3','#8CEED7','#C5F6EB']) # green shades
 
 # possible keys for metrics are:
 #   'loss_rpn_cls', 'loss_rpn_bbox', 'loss_cls', 'loss_bbox', 'roi_loss_intra', 'roi_loss_inter', 'rcnn_loss_intra',
