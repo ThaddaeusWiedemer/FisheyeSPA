@@ -7,8 +7,14 @@ import matplotlib.pyplot as plt
 import seaborn as sb
 import time
 
-def kit(): return sb.color_palette(['#179C7D','#006E92','#25BAE2','#EB6A0A']) # green, blue, light blue, orange
-def kit_shades(): return sb.color_palette(['#179C7D','#52E5C3','#8CEED7','#C5F6EB']) # green shades
+
+def kit():
+    return sb.color_palette(['#179C7D', '#006E92', '#25BAE2', '#EB6A0A'])  # green, blue, light blue, orange
+
+
+def kit_shades():
+    return sb.color_palette(['#179C7D', '#52E5C3', '#8CEED7', '#C5F6EB'])  # green shades
+
 
 # possible keys for metrics are:
 #   'loss_rpn_cls', 'loss_rpn_bbox', 'loss_cls', 'loss_bbox', 'roi_loss_intra', 'roi_loss_inter', 'rcnn_loss_intra',
@@ -29,8 +35,8 @@ def keys_from_log_epoch(path: str, keys: list[str]):
     '''
     line_pattern = '(.*) - mmdet - INFO - Epoch \[(\d+)\]\[(\d+).*'
     line_pattern = re.compile(line_pattern)
-    
-    out = {'time': [], 'epoch':[], 'batch': []}
+
+    out = {'time': [], 'epoch': [], 'batch': []}
 
     key_patterns = []
     for key in keys:
@@ -56,7 +62,7 @@ def keys_from_log(path: str, keys: list[str], verbose=False):
 
     Returns:
         dict{'key': value}
-    ''' 
+    '''
     out = {}
     key_patterns = []
     for key in keys:
@@ -77,7 +83,7 @@ def keys_from_log(path: str, keys: list[str], verbose=False):
     return out
 
 
-def df_from_log(cols: list[str], keys: list[str], logs: list[list[str]], get_nth: int=2, get_max: bool=False):
+def df_from_log(cols: list[str], keys: list[str], logs: list[list[str]], get_nth: int = 2, get_max: bool = False):
     '''
 
     Arguments:
@@ -96,30 +102,34 @@ def df_from_log(cols: list[str], keys: list[str], logs: list[list[str]], get_nth
         df = df.melt(id_vars=['occurrence'], var_name='metric')
         # get only every n-th occurence and label them correctly
         if get_nth is not None:
-            df['occurrence']=df['occurrence']/get_nth+1
-            df = df.drop(df[df['occurrence']%1!=0].index)
+            df['occurrence'] = df['occurrence'] / get_nth + 1
+            df = df.drop(df[df['occurrence'] % 1 != 0].index)
         # insert additional columns
         for i, col in enumerate(cols):
-            df.insert(loc=2+i, column=col, value=col_values[i])        
+            df.insert(loc=2 + i, column=col, value=col_values[i])
         # get maximum values and position of maximum value
         if get_max:
-            _maxs={}
+            _maxs = {}
             for key in keys:
                 # i = df[df['metric']==key]['value'].idxmax()
                 # idx = df['occurrence'][i]
                 # value = df[df['metric']==key]['value'][i]
-                _max = df.loc[df[df['metric']==key]['value'].idxmax()]
-                _maxs.update({key: (_max['occurrence'], _max['value'])})
+                if key == 'LAMR':
+                    _max = df.loc[df[df['metric'] == key]['value'].idxmin()]
+                    _maxs.update({key: (_max['occurrence'], _max['value'])})
+                else:
+                    _max = df.loc[df[df['metric'] == key]['value'].idxmax()]
+                    _maxs.update({key: (_max['occurrence'], _max['value'])})
             maxs.append(_maxs)
         dfs.append(df)
 
     df = pd.concat(dfs, axis=0)
 
     return df, maxs
-    
+
 
 def smooth(y, window_length):
     '''smooth 1d data using a convolution filter of lenght ``window-length``'''
-    window = np.ones(window_length)/window_length
+    window = np.ones(window_length) / window_length
     y_smooth = np.convolve(y, window, mode='same')
     return y_smooth

@@ -2,15 +2,15 @@
 TOOL_DIR=mmdetection/tools
 CONFIG_FILE=mmdetection/configs/adaptive/faster_rcnn_r50_caffe_fpn_mstrain_1x_coco-person_adaptive.py
 TEST_FILE=/data/PIROPO/omni_test2.json
-MODEL_DIR=/home/thaddaus/WORK_DIRS/GPA/tuning/coco_piropo_100a_TwoStageDetector_seed
-RES_DIR=results/analysis/finetune
+MODEL_DIR=/home/thaddaus/WORK_DIRS/GPA/tuning/coco_piropo_100a_TwoStageDetectorAdaptive_10_01_100_01_fclayer_gTrue_seed_norot
+RES_DIR=results/analysis/gpa_norot
 
 mkdir -p ${RES_DIR}
 
 # GPUs
 N_GPU=8 # if this is changed, the number of iterations also needs to be adapted
 VIS_GPU=0,1,2,3,4,5,6,7
-GPU_PORT=29502
+GPU_PORT=29503
 BATCH=16
 
 # run test with best epoch and save result

@@ -167,5 +167,39 @@ cd ~/MasterthesisCode
 # train/_gpa_coco_piropo_tuning.sh 40 100 a TwoStageDetectorAdaptive  10   0.1  100 0.1 False fc_layer
 # train/_gpa_coco_piropo_tuning.sh 40 100 a TwoStageDetectorAdaptive  10   0.01  100 0.1 False fc_layer
 
-# fine-tuning
-train/_gpa_coco_piropo_tuning.sh 40 100 a TwoStageDetectorAdaptive 0 0 0 0 True fc_layer
+# fine-tuning without random rotation
+# train/_gpa_coco_piropo_tuning.sh 40 100 a TwoStageDetectorAdaptive 0 0 0 0 True fc_layer
+# train/_gpa_coco_piropo_tuning.sh 40 100 a TwoStageDetectorAdaptive 0 0 0 0 True fc_layer _norot # removed random rotation
+# train/_gpa_coco_piropo_tuning.sh 40    1 a TwoStageDetectorAdaptive 0 0 0 0 True fc_layer _norot # removed random rotation
+# train/_gpa_coco_piropo_tuning.sh 40   10 a TwoStageDetectorAdaptive 0 0 0 0 True fc_layer _norot # removed random rotation
+train/_gpa_coco_piropo_tuning.sh 40   20 a TwoStageDetectorAdaptive 0 0 0 0 True fc_layer _norot # removed random rotation
+train/_gpa_coco_piropo_tuning.sh 40   50 a TwoStageDetectorAdaptive 0 0 0 0 True fc_layer _norot # removed random rotation
+# train/_gpa_coco_piropo_tuning.sh 40  100 b TwoStageDetectorAdaptive 0 0 0 0 True fc_layer _norot # removed random rotation
+# train/_gpa_coco_piropo_tuning.sh 40  100 c TwoStageDetectorAdaptive 0 0 0 0 True fc_layer _norot # removed random rotation
+# train/_gpa_coco_piropo_tuning.sh 40  500 a TwoStageDetectorAdaptive 0 0 0 0 True fc_layer _norot # removed random rotation
+# train/_gpa_coco_piropo_tuning.sh 40 1000 a TwoStageDetectorAdaptive 0 0 0 0 True fc_layer _norot # removed random rotation
+
+# fine-tuning with random 90° rotation
+# train/_gpa_coco_piropo_tuning.sh 40    1 a TwoStageDetectorAdaptive 0 0 0 0 True fc_layer _rot90 # removed random rotation
+# train/_gpa_coco_piropo_tuning.sh 40   10 a TwoStageDetectorAdaptive 0 0 0 0 True fc_layer _rot90 # removed random rotation
+# train/_gpa_coco_piropo_tuning.sh 40   20 a TwoStageDetectorAdaptive 0 0 0 0 True fc_layer _rot90 # removed random rotation
+# train/_gpa_coco_piropo_tuning.sh 40   50 a TwoStageDetectorAdaptive 0 0 0 0 True fc_layer _rot90 # removed random rotation
+# train/_gpa_coco_piropo_tuning.sh 40  100 a TwoStageDetectorAdaptive 0 0 0 0 True fc_layer _rot90 # removed random rotation
+# train/_gpa_coco_piropo_tuning.sh 40  500 a TwoStageDetectorAdaptive 0 0 0 0 True fc_layer _rot90 # removed random rotation
+# train/_gpa_coco_piropo_tuning.sh 40 1000 a TwoStageDetectorAdaptive 0 0 0 0 True fc_layer _rot90 # removed random rotation
+
+
+# GPA without random rotation
+# train/_gpa_coco_piropo_tuning.sh 40 100 a TwoStageDetectorAdaptive 10 0.1 100 0.1 True fc_layer _norot # removed random rotation
+# train/_gpa_coco_piropo_tuning.sh 40 100 a TwoStageDetectorAdaptive 1 1 1 1 True fc_layer _norot # removed random rotation
+# train/_gpa_coco_piropo_tuning.sh 40 1 a TwoStageDetectorAdaptive 10 0.1 100 0.1 True fc_layer _norot # removed random rotation
+# train/_gpa_coco_piropo_tuning.sh 40 10 a TwoStageDetectorAdaptive 10 0.1 100 0.1 True fc_layer _norot # removed random rotation
+train/_gpa_coco_piropo_tuning.sh 40 20 a TwoStageDetectorAdaptive 10 0.1 100 0.1 True fc_layer _norot # removed random rotation
+train/_gpa_coco_piropo_tuning.sh 40 50 a TwoStageDetectorAdaptive 10 0.1 100 0.1 True fc_layer _norot # removed random rotation
+
+# adversarial
+# all trainings removed random rotation
+# train/_gpa_coco_piropo_tuning.sh 40 100 a TwoStageDetectorAdaptiveAdversarial 1 1 1 1 True fc_layer _norot
+# train/_gpa_coco_piropo_tuning.sh 40 100 a TwoStageDetectorAdaptiveAdversarial 0.1 0.1 0.1 0.1 True fc_layer _norot
+# train/_gpa_coco_piropo_tuning.sh 40 100 a TwoStageDetectorAdaptiveAdversarial 1 1 1 1 True fc_layer _norot_ann # increasing lambda
+
