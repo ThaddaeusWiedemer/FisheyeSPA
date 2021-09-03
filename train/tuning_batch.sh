@@ -217,5 +217,5 @@ cd ~/MasterthesisCode
 # train/_gpa_adv_coco_piropo_tuning.sh 40 20 a TwoStageDetectorAdaptiveAdversarial   1   1   1   1 True none _direct7
 # train/_gpa_adv_coco_piropo_tuning.sh 40 20 a TwoStageDetectorAdaptiveAdversarial   1   1   1   1 True none _direct8
 # train/_gpa_coco_piropo_tuning.sh 40 20 a TwoStageDetectorAdaptiveAdversarial   1   1   1   1 True none _direct9
-train/_gpa_coco_piropo_tuning.sh 80 20 a TwoStageDetectorAdaptiveAdversarial   1   1   1   1 True none _direct10
+# train/_gpa_coco_piropo_tuning.sh 80 20 a TwoStageDetectorAdaptiveAdversarial   1   1   1   1 True none _direct10
 

@@ -60,6 +60,7 @@ mkdir -p ${_WORK_DIR_ADV}
 # runner._delete_=True \
 # runner.type='IterBasedRunnerAdaptive' \
 # runner.max_iters=140 \
+
 # first train only domain classifiers
 # CUDA_VISIBLE_DEVICES=${VIS_GPU} PORT=${GPU_PORT} ./${TOOL_DIR}/dist_train_adaptive.sh \
 # ${CONFIG_FILE_ADV} \
@@ -86,7 +87,8 @@ mkdir -p ${_WORK_DIR_ADV}
 
 # then train normally
 # LOAD_FROM=$(ls ${_WORK_DIR_ADV}/latest.pth)
-LOAD_FROM=/home/thaddaus/WORK_DIRS/GPA/tuning/coco_piropo_20a_TwoStageDetectorAdaptiveAdversarial_1_1_1_1_none_gTrue_seed_direct5_adv/latest.pth
+# LOAD_FROM=/home/thaddaus/WORK_DIRS/GPA/tuning/coco_piropo_20a_TwoStageDetectorAdaptiveAdversarial_1_1_1_1_none_gTrue_seed_direct5_adv/latest.pth
+LOAD_FROM=mmdetection/checkpoints/faster_rcnn_r50_fpn_1x_coco-person_20201216_175929-d022e227.pth
 
 CUDA_VISIBLE_DEVICES=${VIS_GPU} PORT=${GPU_PORT} ./${TOOL_DIR}/dist_train_adaptive.sh \
 ${CONFIG_FILE} \
