@@ -40,15 +40,9 @@ x=$3
 
 # only fine-tuning
 MODEL=$4
-ROI_INTRA=$5
-ROI_INTER=$6
-RCNN_INTRA=$7
-RCNN_INTER=$8
-GRAPH=$9
-FC=${10}
-SUFFIX=${11}
+SUFFIX=$5
 
-OUT=${MODEL}_${ROI_INTRA//.}_${ROI_INTER//.}_${RCNN_INTRA//.}_${RCNN_INTER//.}_${FC//[_-.]}_g${GRAPH}_seed${SUFFIX}
+OUT=${MODEL}_seed_${SUFFIX}
 
 _WORK_DIR=${WORK_DIR}/${WORK_ROOT}_${n}${x}_${OUT}
 mkdir -p ${_WORK_DIR}
@@ -70,16 +64,7 @@ ${N_GPU} \
     data.val.ann_file=${TEST_FILE} \
     data.val.img_prefix=None \
     runner.max_epochs=${EPOCHS} \
-    lr_config.step=[200] \
-    evaluation.interval=1 \
-    checkpoint_config.interval=200 \
     model.type=${MODEL} \
-    model.train_cfg.gpa.loss_roi_intra=${ROI_INTRA} \
-    model.train_cfg.gpa.loss_roi_inter=${ROI_INTER} \
-    model.train_cfg.gpa.loss_rcnn_intra=${RCNN_INTRA} \
-    model.train_cfg.gpa.loss_rcnn_inter=${RCNN_INTER} \
-    model.train_cfg.gpa.use_graph=${GRAPH} \
-    model.train_cfg.gpa.fc_layer=${FC} \
     2>&1 | tee ${RES_DIR}/${RES_ROOT}_${n}${x}_${OUT}.log
 
 # CUDA_VISIBLE_DEVICES=${VIS_GPU} PORT=${GPU_PORT} ./${TOOL_DIR}/dist_test.sh \

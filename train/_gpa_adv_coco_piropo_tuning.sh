@@ -107,12 +107,6 @@ ${N_GPU} \
     evaluation.interval=1 \
     checkpoint_config.interval=200 \
     model.type=${MODEL} \
-    model.train_cfg.gpa.loss_roi_intra=${ROI_INTRA} \
-    model.train_cfg.gpa.loss_roi_inter=${ROI_INTER} \
-    model.train_cfg.gpa.loss_rcnn_intra=${RCNN_INTRA} \
-    model.train_cfg.gpa.loss_rcnn_inter=${RCNN_INTER} \
-    model.train_cfg.gpa.use_graph=${GRAPH} \
-    model.train_cfg.gpa.fc_layer=${FC} \
     load_from=${LOAD_FROM} \
     2>&1 | tee ${RES_DIR}/${RES_ROOT}_${n}${x}_${OUT}.log
 
