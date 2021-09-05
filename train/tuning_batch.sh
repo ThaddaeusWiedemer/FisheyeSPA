@@ -220,4 +220,5 @@ cd ~/MasterthesisCode
 # train/_gpa_coco_piropo_tuning.sh 80 20 a TwoStageDetectorAdaptiveAdversarial   1   1   1   1 True none _direct10
 
 # improved framework
-train/_gpa_coco_piropo_tuning.sh 40 20 a TwoStageDetectorDA GPAtest # check validity of framework
+# train/_gpa_coco_piropo_tuning.sh 40 20 a TwoStageDetectorDA GPAtest # check validity of framework
+train/_gpa_coco_piropo_tuning.sh 40 20 a TwoStageDetectorDA GPAratio # don't keep ratio
