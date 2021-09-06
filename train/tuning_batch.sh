@@ -221,6 +221,7 @@ cd ~/MasterthesisCode
 
 # improved framework
 # train/_gpa_coco_piropo_tuning.sh 40 20 a TwoStageDetectorDA GPAtest # check validity of framework
-train/_gpa_coco_piropo_tuning.sh 40 20 a TwoStageDetectorDA GPAtest1 # check validity of framework
+# train/_gpa_coco_piropo_tuning.sh 40 20 a TwoStageDetectorDA GPAtest1 # check validity of framework
 # train/_gpa_coco_piropo_tuning.sh 40 20 a TwoStageDetectorDA GPAratio # don't keep ratio
 # train/_gpa_coco_piropo_tuning.sh 40 20 a TwoStageDetectorDA GPAratiotest # don't keep ratio, even durng testing
+train/_gpa_coco_piropo_tuning.sh 40 20 a TwoStageDetectorDA ADVneck4 # test adversarial on backbone features
