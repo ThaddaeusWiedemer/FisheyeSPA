@@ -56,40 +56,36 @@ mkdir -p ${RES_DIR}
 mkdir -p ${_WORK_DIR}
 
 # PRETEAIN DOMAIN CLASSIFIERS IF NECESSARY
+# - no early-stopping
+# - higher lr
+# - all lrs except for domain classifiers set to 0
+# - only 20 epochs
 if [[ "$PRETRAIN" == 1 ]]; then
-    # make directory
-    # _WORK_DIR_ADV=${WORK_DIR}/${WORK_ROOT}_${n}${x}_${OUT}_pre
-    # mkdir -p ${_WORK_DIR_ADV}
-
-    # TRAIN
-    # - no early-stopping
-    # - higher lr
-    # - all lrs except for domain classifiers set to 0
-    # - only 20 epochs
-    # CUDA_VISIBLE_DEVICES=${VIS_GPU} PORT=${GPU_PORT} ./${TOOL_DIR}/dist_train_adaptive.sh \
-    # ${CONFIG_FILE} \
-    # ${N_GPU} \
-    # --work-dir ${_WORK_DIR} \
-    # --seed 42 \
-    # --cfg-options data.samples_per_gpu=$(($BATCH/$N_GPU)) \
-    #     data.train_src.ann_file=${SRC_FILE} \
-    #     data.train_src.img_prefix=${SRC_DIR} \
-    #     data.train_tgt.ann_file=${TGT_DIR}/${TGT_ROOT}_${n}${x}.json \
-    #     data.train_tgt.img_prefix=None \
-    #     data.val.ann_file=${TEST_FILE} \
-    #     data.val.img_prefix=None \
-    #     runner.max_epochs=20 \
-    #     evaluation._delete_=True \
-    #     evaluation.interval=1 \
-    #     evaluation.metric=bbox \
-    #     optimizer.lr=0.01 \
-    #     optimizer.paramwise_cfg.custom_keys.backbone.lr_mult=0 \
-    #     optimizer.paramwise_cfg.custom_keys.neck.lr_mult=0 \
-    #     optimizer.paramwise_cfg.custom_keys.rpn_head.lr_mult=0 \
-    #     optimizer.paramwise_cfg.custom_keys.roi_head.lr_mult=0 \
-    #     model.type=${MODEL} \
-    #     load_from=${LOAD_FROM} \
-    #     2>&1 | tee ${RES_DIR}/${RES_ROOT}_${n}${x}_${OUT}_pre.log
+    CUDA_VISIBLE_DEVICES=${VIS_GPU} PORT=${GPU_PORT} ./${TOOL_DIR}/dist_train_adaptive.sh \
+    ${CONFIG_FILE} \
+    ${N_GPU} \
+    --work-dir ${_WORK_DIR} \
+    --seed 42 \
+    --cfg-options data.samples_per_gpu=$(($BATCH/$N_GPU)) \
+        data.train_src.ann_file=${SRC_FILE} \
+        data.train_src.img_prefix=${SRC_DIR} \
+        data.train_tgt.ann_file=${TGT_DIR}/${TGT_ROOT}_${n}${x}.json \
+        data.train_tgt.img_prefix=None \
+        data.val.ann_file=${TEST_FILE} \
+        data.val.img_prefix=None \
+        runner.max_epochs=20 \
+        evaluation._delete_=True \
+        evaluation.interval=1 \
+        evaluation.metric=bbox \
+        optimizer.lr=0.01 \
+        optimizer.paramwise_cfg.custom_keys.backbone.lr_mult=0 \
+        optimizer.paramwise_cfg.custom_keys.neck.lr_mult=0 \
+        optimizer.paramwise_cfg.custom_keys.rpn_head.lr_mult=0 \
+        optimizer.paramwise_cfg.custom_keys.roi_head.lr_mult=0 \
+        model.type=${MODEL} \
+        load_from=${LOAD_FROM} \
+        "$@" \
+        2>&1 | tee ${RES_DIR}/${RES_ROOT}_${n}${x}_${OUT}_pre.log
 
     # use pretrained model for actual training
     mv ${_WORK_DIR}/epoch_20.pth ${_WORK_DIR}/pre.pth
@@ -112,6 +108,7 @@ ${N_GPU} \
     runner.max_epochs=${EPOCHS} \
     model.type=${MODEL} \
     load_from=${LOAD_FROM} \
+    "$@" \
     2>&1 | tee ${RES_DIR}/${RES_ROOT}_${n}${x}_${OUT}.log
 
 # CUDA_VISIBLE_DEVICES=${VIS_GPU} PORT=${GPU_PORT} ./${TOOL_DIR}/dist_test.sh \

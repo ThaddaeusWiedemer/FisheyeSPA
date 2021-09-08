@@ -225,4 +225,15 @@ cd ~/MasterthesisCode
 # train/_gpa_coco_piropo_tuning.sh 40 20 a TwoStageDetectorDA GPAratio # don't keep ratio
 # train/_gpa_coco_piropo_tuning.sh 40 20 a TwoStageDetectorDA GPAratiotest # don't keep ratio, even durng testing
 # train/_gpa_coco_piropo_tuning.sh 40 20 a TwoStageDetectorDA ADVneck4 # test adversarial on backbone features
-train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck4 -p # test adversarial on backbone features
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck4 -p # test adversarial on backbone features
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck4_p2 # test pooling2d on backbone features
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck4_c # test conv on backbone features
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck4_ch # test channel mode on backbone features
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck4_s # test sample mode on backbone features
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck4_s16 # test sample mode on backbone features
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck3_s16 model.train_cfg.da.0.feat='neck_3' # test sample mode on backbone features
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck2_s16 model.train_cfg.da.0.feat='neck_2' # test sample mode on backbone features
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck1_s16 model.train_cfg.da.0.feat='neck_1' # test sample mode on backbone features
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck0_s16 model.train_cfg.da.0.feat='neck_0' # test sample mode on backbone features
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneckall_s16 # test sample mode on backbone features
+train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck024_s16 # test sample mode on backbone features
