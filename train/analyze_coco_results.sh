@@ -2,8 +2,8 @@
 TOOL_DIR=mmdetection/tools
 CONFIG_FILE=mmdetection/configs/adaptive/faster_rcnn_r50_caffe_fpn_mstrain_1x_coco-person_adaptive.py
 TEST_FILE=/data/PIROPO/omni_test2.json
-MODEL_DIR=/home/thaddaus/WORK_DIRS/GPA/tuning/coco_piropo_100a_TwoStageDetectorAdaptive_10_01_100_01_fclayer_gTrue_seed_norot
-RES_DIR=results/analysis/gpa_norot
+MODEL_DIR=/home/thaddaus/WORK_DIRS/GPA/tuning/coco_piropo_20a_TwoStageDetectorDA_ADVneck4_s16_s
+RES_DIR=results/analysis/ADVneck4
 
 mkdir -p ${RES_DIR}
 
