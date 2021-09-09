@@ -236,4 +236,9 @@ cd ~/MasterthesisCode
 # train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck1_s16 model.train_cfg.da.0.feat='neck_1' # test sample mode on backbone features
 # train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck0_s16 model.train_cfg.da.0.feat='neck_0' # test sample mode on backbone features
 # train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneckall_s16 # test sample mode on backbone features
-train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck024_s16 # test sample mode on backbone features
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck024_s16 # test sample mode on backbone features
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPAnogt # test sample mode on backbone features
+
+# split head !!! CHANGE BACK IN config.py AND adapt_coco_piropo.sh !!!
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPAsplit # only on rcnn_cls
+train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPAsplit1 # rcnn_cls and rcnn_bbox
