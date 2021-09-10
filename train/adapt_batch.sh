@@ -242,4 +242,6 @@ cd ~/MasterthesisCode
 # split head !!! CHANGE BACK IN config.py AND adapt_coco_piropo.sh !!!
 # train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPAsplit # only on rcnn_cls
 # train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPAsplit1 # rcnn_cls and rcnn_bbox
-train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPAsplit2 # rcnn_cls and rcnn_bbox
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPAsplit2 # rcnn_cls and rcnn_bbox
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPAcls # only on rcnn_cls
+train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPAclsgt91 # only on rcnn_cls

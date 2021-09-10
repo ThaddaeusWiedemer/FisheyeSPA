@@ -19,7 +19,7 @@ TEST_FILE=/data/PIROPO/omni_test2.json
 
 # GPUs
 N_GPU=4 # if this is changed, the number of iterations also needs to be adapted
-VIS_GPU=0,2,4,7
+VIS_GPU=0,1,2,6
 GPU_PORT=29502
 
 # TRAINING PARAMETERS
