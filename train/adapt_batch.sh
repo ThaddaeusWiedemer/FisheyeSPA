@@ -244,4 +244,9 @@ cd ~/MasterthesisCode
 # train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPAsplit1 # rcnn_cls and rcnn_bbox
 # train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPAsplit2 # rcnn_cls and rcnn_bbox
 # train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPAcls # only on rcnn_cls
-train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPAclsgt91 # only on rcnn_cls
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPAclsgt91 # try different IoU threshols
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPAclsstep # only on rcnn_cls
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPAclsinv model.train_cfg.da.0.thr_mode='invers' # only on rcnn_cls
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPAp__  # only on roi pred, cls gt
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPAg__ model.train_cfg.da.0.mode='ground_truth' # only on roi gt, cls gt
+train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPAggg  # only on roi gt, cls gt
