@@ -93,6 +93,9 @@ def df_from_log(cols: list[str], keys: list[str], logs: list[list[str]], get_nth
                                  where 'value_n' is the value for the n-th column in ``cols``
         get_nth           (int): only get every n-th occurence of each key
         get_max          (bool): get max and argmax for every metric in every log as additional output
+
+    Returns:
+        pandas.DataFrame
     '''
     dfs = []
     maxs = []

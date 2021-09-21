@@ -249,4 +249,57 @@ cd ~/MasterthesisCode
 # train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPAclsinv model.train_cfg.da.0.thr_mode='invers' # only on rcnn_cls
 # train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPAp__  # only on roi pred, cls gt
 # train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPAg__ model.train_cfg.da.0.mode='ground_truth' # only on roi gt, cls gt
-train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPAggg  # only on roi gt, cls gt
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPAggg  # only on roi gt, cls gt
+
+
+# A D V E R S A R I A L
+# use a shared head to be consistent with earlier experiments
+# EFFECT OF SAMPLE SIZE
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck4_s16x9 model.train_cfg.da.0.sample_shape=9
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck4_s16x7 model.train_cfg.da.0.sample_shape=7
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck4_s16x5 model.train_cfg.da.0.sample_shape=5
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck4_s16x3 model.train_cfg.da.0.sample_shape=3
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck4_s16x1 model.train_cfg.da.0.sample_shape=1
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck0_s16x15 model.train_cfg.da.0.sample_shape=15
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck0_s16x13 model.train_cfg.da.0.sample_shape=13
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck0_s16x11 model.train_cfg.da.0.sample_shape=11
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck0_s16x9 model.train_cfg.da.0.sample_shape=9
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck0_s16x7 model.train_cfg.da.0.sample_shape=7
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck0_s16x5 model.train_cfg.da.0.sample_shape=5
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck0_s16x3 model.train_cfg.da.0.sample_shape=3
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck0_s16x1 model.train_cfg.da.0.sample_shape=1
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck0_s16x17 model.train_cfg.da.0.sample_shape=17
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck0_s16x19 model.train_cfg.da.0.sample_shape=19
+train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck0_s16x38 model.train_cfg.da.0.sample_shape=38
+# EFFECT OF SAMPLE COUNT
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck4_s20x7 model.train_cfg.da.0.sample_shape=7 model.train_cfg.da.0.feat=feat_neck_4 model.train_cfg.da.0.n_sample=20
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck4_s30x7 model.train_cfg.da.0.sample_shape=7 model.train_cfg.da.0.feat=feat_neck_4 model.train_cfg.da.0.n_sample=30
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck4_s50x7 model.train_cfg.da.0.sample_shape=7 model.train_cfg.da.0.feat=feat_neck_4 model.train_cfg.da.0.n_sample=50
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck4_s100x7 model.train_cfg.da.0.sample_shape=7 model.train_cfg.da.0.feat=feat_neck_4 model.train_cfg.da.0.n_sample=100
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck0_s20x3 model.train_cfg.da.0.sample_shape=3 model.train_cfg.da.0.feat=feat_neck_0 model.train_cfg.da.0.n_sample=20
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck0_s30x3 model.train_cfg.da.0.sample_shape=3 model.train_cfg.da.0.feat=feat_neck_0 model.train_cfg.da.0.n_sample=30
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck0_s50x3 model.train_cfg.da.0.sample_shape=3 model.train_cfg.da.0.feat=feat_neck_0 model.train_cfg.da.0.n_sample=50
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck0_s100x3 model.train_cfg.da.0.sample_shape=3 model.train_cfg.da.0.feat=feat_neck_0 model.train_cfg.da.0.n_sample=100
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck0_s20x7 model.train_cfg.da.0.sample_shape=7 model.train_cfg.da.0.feat=feat_neck_0 model.train_cfg.da.0.n_sample=20
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck0_s30x7 model.train_cfg.da.0.sample_shape=7 model.train_cfg.da.0.feat=feat_neck_0 model.train_cfg.da.0.n_sample=30
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck0_s50x7 model.train_cfg.da.0.sample_shape=7 model.train_cfg.da.0.feat=feat_neck_0 model.train_cfg.da.0.n_sample=50
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck0_s100x7 model.train_cfg.da.0.sample_shape=7 model.train_cfg.da.0.feat=feat_neck_0 model.train_cfg.da.0.n_sample=100
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck0_s20x13 model.train_cfg.da.0.sample_shape=13 model.train_cfg.da.0.feat=feat_neck_0 model.train_cfg.da.0.n_sample=20
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck0_s30x13 model.train_cfg.da.0.sample_shape=13 model.train_cfg.da.0.feat=feat_neck_0 model.train_cfg.da.0.n_sample=30
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck0_s50x13 model.train_cfg.da.0.sample_shape=13 model.train_cfg.da.0.feat=feat_neck_0 model.train_cfg.da.0.n_sample=50
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck0_s100x13 model.train_cfg.da.0.sample_shape=13 model.train_cfg.da.0.feat=feat_neck_0 model.train_cfg.da.0.n_sample=100
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck0_s20x19 model.train_cfg.da.0.sample_shape=19 model.train_cfg.da.0.feat=feat_neck_0 model.train_cfg.da.0.n_sample=20
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck0_s30x19 model.train_cfg.da.0.sample_shape=19 model.train_cfg.da.0.feat=feat_neck_0 model.train_cfg.da.0.n_sample=30
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck0_s50x19 model.train_cfg.da.0.sample_shape=19 model.train_cfg.da.0.feat=feat_neck_0 model.train_cfg.da.0.n_sample=50
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck0_s100x19 model.train_cfg.da.0.sample_shape=19 model.train_cfg.da.0.feat=feat_neck_0 model.train_cfg.da.0.n_sample=100
+
+# G P A
+# use a split head to be consistent with earlier experiments
+
+
+# B R I N G I N G   I T   A L L   T O G E T H E R
+# use a split head to be consistent throughout all combinations
+
+
+# S W E E P S
+# use a split head to be consistent throughout all combinations
