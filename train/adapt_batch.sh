@@ -270,7 +270,7 @@ cd ~/MasterthesisCode
 # train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck0_s16x1 model.train_cfg.da.0.sample_shape=1
 # train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck0_s16x17 model.train_cfg.da.0.sample_shape=17
 # train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck0_s16x19 model.train_cfg.da.0.sample_shape=19
-train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck0_s16x38 model.train_cfg.da.0.sample_shape=38
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck0_s16x38 model.train_cfg.da.0.sample_shape=38
 # EFFECT OF SAMPLE COUNT
 # train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck4_s20x7 model.train_cfg.da.0.sample_shape=7 model.train_cfg.da.0.feat=feat_neck_4 model.train_cfg.da.0.n_sample=20
 # train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck4_s30x7 model.train_cfg.da.0.sample_shape=7 model.train_cfg.da.0.feat=feat_neck_4 model.train_cfg.da.0.n_sample=30
@@ -292,6 +292,18 @@ train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck0_s16x38 model.trai
 # train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck0_s30x19 model.train_cfg.da.0.sample_shape=19 model.train_cfg.da.0.feat=feat_neck_0 model.train_cfg.da.0.n_sample=30
 # train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck0_s50x19 model.train_cfg.da.0.sample_shape=19 model.train_cfg.da.0.feat=feat_neck_0 model.train_cfg.da.0.n_sample=50
 # train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck0_s100x19 model.train_cfg.da.0.sample_shape=19 model.train_cfg.da.0.feat=feat_neck_0 model.train_cfg.da.0.n_sample=100
+# GROUND-TRUTH
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVgtneck0
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVgtneck2 model.train_cfg.da.0.feat=feat_neck_2 model.train_cfg.da.0.sample_shape=13
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVgtneck4 model.train_cfg.da.0.feat=feat_neck_4 model.train_cfg.da.0.sample_shape=7
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVgtneck0_fg model.train_cfg.da.0.only_fg=True
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVgtneck4_fg model.train_cfg.da.0.feat=feat_neck_4 model.train_cfg.da.0.sample_shape=7 model.train_cfg.da.0.only_fg=True
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVgtneck2_fg model.train_cfg.da.0.feat=feat_neck_2 model.train_cfg.da.0.sample_shape=13 model.train_cfg.da.0.only_fg=True
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVgtneck0_d4
+# COMBINATION
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneckall_02
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck04_05
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck024_033
 
 # G P A
 # use a split head to be consistent with earlier experiments
