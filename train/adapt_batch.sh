@@ -307,6 +307,21 @@ cd ~/MasterthesisCode
 
 # G P A
 # use a split head to be consistent with earlier experiments
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPAclsinvtgt model.train_cfg.da.0.thr_mode='invers_tgt'
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPAcls_usecls model.train_cfg.da.0.gt_use_cls=True
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPAcls_useclsinv model.train_cfg.da.0.gt_use_cls=True
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPAbbox model.train_cfg.da.0.mode='prediction'
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPAbboxgt model.train_cfg.da.0.mode='ground_truth'
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPAbboxgt_x05 model.train_cfg.da.0.gt_iou_thrs=0.5
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPAbboxgt_x75 model.train_cfg.da.0.gt_iou_thrs=0.75
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPAbboxgt_x9 model.train_cfg.da.0.gt_iou_thrs=0.9
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPAbboxgt_y9 model.train_cfg.da.0.gt_bbox_dim='y'
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPAbboxgt_w9 model.train_cfg.da.0.gt_bbox_dim='w'
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPAbboxgt_h9 model.train_cfg.da.0.gt_bbox_dim='h'
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPAbboxgt_xywh1
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPApxg
+train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPApxg033
+
 
 
 # B R I N G I N G   I T   A L L   T O G E T H E R

@@ -8,8 +8,8 @@ RES_DIR=results/GPA/tuning
 RES_ROOT=coco_piropo
 
 # model
-LOAD_FROM=mmdetection/checkpoints/faster_rcnn_r50_fpn_1x_coco-person_20201216_175929-d022e227.pth
-# LOAD_FROM=mmdetection/checkpoints/faster_rcnn_r50_fpn_1x_coco-person_20201216_175929-d022e227_split.pth
+# LOAD_FROM=mmdetection/checkpoints/faster_rcnn_r50_fpn_1x_coco-person_20201216_175929-d022e227.pth
+LOAD_FROM=mmdetection/checkpoints/faster_rcnn_r50_fpn_1x_coco-person_20201216_175929-d022e227_split.pth
 
 # data
 SRC_DIR=/data/COCO/train2017
@@ -20,7 +20,7 @@ TEST_FILE=/data/PIROPO/omni_test2.json
 
 # GPUs
 N_GPU=4 # if this is changed, the number of iterations also needs to be adapted
-VIS_GPU=4,5,6,7
+VIS_GPU=2,3,4,5
 GPU_PORT=29502
 
 # TRAINING PARAMETERS
