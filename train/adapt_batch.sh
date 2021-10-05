@@ -304,6 +304,32 @@ cd ~/MasterthesisCode
 # train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneckall_02
 # train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck04_05
 # train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVneck024_033
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVgtall
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADV012gt34 model.train_cfg.da.0.transform=sample model.train_cfg.da.1.transform=sample model.train_cfg.da.2.transform=sample
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADV01gt234
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADV234gt01
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADV34gt012 model.train_cfg.da.3.transform=sample model.train_cfg.da.4.transform=sample
+# BETTER SCHEDULE
+# train/adapt_coco_piropo.sh 80 20 a TwoStageDetectorDA ADVall_scdl_02
+# train/adapt_coco_piropo.sh 80 20 a TwoStageDetectorDA ADVall_scdl model.train_cfg.da.0.lamd_weight=1 model.train_cfg.da.1.lamd_weight=1 model.train_cfg.da.2.lamd_weight=1 model.train_cfg.da.3.lamd_weight=1 model.train_cfg.da.4.lamd_weight=1  
+# train/adapt_coco_piropo.sh 80 20 a TwoStageDetectorDA ADVall_scdl1_02
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVall_max 
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADV0123_max model.train_cfg.da.4.lambd_weight=0
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADV0124_max model.train_cfg.da.3.lambd_weight=0
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADV0134_max model.train_cfg.da.2.lambd_weight=0
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADV0234_max model.train_cfg.da.1.lambd_weight=0
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADV1234_max model.train_cfg.da.0.lambd_weight=0
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA cADVgt014
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA dADVgt0 #model.train_cfg.da.0.lambd_weight=1 model.train_cfg.da.1.lambd_weight=0 model.train_cfg.da.2.lambd_weight=0
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA cADVgt1 model.train_cfg.da.0.feat='feat_neck_1' model.train_cfg.da.0.sample_shape=28
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA cADVgt4
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA cADVgt01 model.train_cfg.da.0.lambd_weight=.5 model.train_cfg.da.1.lambd_weight=.5 model.train_cfg.da.2.lambd_weight=0
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA cADVgt04 model.train_cfg.da.0.lambd_weight=.5 model.train_cfg.da.1.lambd_weight=0 model.train_cfg.da.2.lambd_weight=.5
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA cADVgt14 model.train_cfg.da.0.lambd_weight=0 model.train_cfg.da.1.lambd_weight=.5 model.train_cfg.da.2.lambd_weight=.5
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA cADVgt04
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA cADV0gt4 model.train_cfg.da.0.transfrom='sample'
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA cADV4gt0 model.train_cfg.da.1.transfrom='sample'
+
 
 # G P A
 # use a split head to be consistent with earlier experiments
@@ -320,12 +346,36 @@ cd ~/MasterthesisCode
 # train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPAbboxgt_h9 model.train_cfg.da.0.gt_bbox_dim='h'
 # train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPAbboxgt_xywh1
 # train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPApxg
-train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPApxg033
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPApxg033
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPA-xg
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPApx-
+# COMBINATIONS
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPAppp
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPAppp_033
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPApp- model.train_cfg.da.2.lambd=0
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPAp-p model.train_cfg.da.1.lambd=0
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPA-pp model.train_cfg.da.0.lambd=0
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPAp-- model.train_cfg.da.1.lambd=0 model.train_cfg.da.2.lambd=0
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPA-p- model.train_cfg.da.0.lambd=0 model.train_cfg.da.2.lambd=0
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPA--p model.train_cfg.da.0.lambd=0 model.train_cfg.da.1.lambd=0
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPA-x-_scdl_025
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPA-x-_scdl model.train_cfg.da.0.lambd=1 model.train_cfg.da.1.lambd=1 model.train_cfg.da.2.lambd=1 model.train_cfg.da.3.lambd=1
+
+
+
+
 
 
 
 # B R I N G I N G   I T   A L L   T O G E T H E R
 # use a split head to be consistent throughout all combinations
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVallGPA-xg
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADV04GPAppp
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADV04GPApxg033
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVgt04GPApxg033
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVgt0GPApxg033
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVgt04GPAppp
+train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVgt0GPAppp
 
 
 # S W E E P S
