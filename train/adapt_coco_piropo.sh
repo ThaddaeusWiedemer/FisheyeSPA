@@ -20,8 +20,8 @@ TEST_FILE=/data/PIROPO/omni_test2.json
 
 # GPUs
 N_GPU=4 # if this is changed, the number of iterations also needs to be adapted
-VIS_GPU=2,3,4,5
-GPU_PORT=29502
+VIS_GPU=0,1,2,3
+GPU_PORT=29500
 
 # TRAINING PARAMETERS
 BATCH=16
@@ -95,7 +95,7 @@ if [[ "$PRETRAIN" == 1 ]]; then
 fi
 
 # TRAIN
-CUDA_VISIBLE_DEVICES=${VIS_GPU} PORT=${GPU_PORT} ./${TOOL_DIR}/dist_train_adaptive.sh \
+NCCL_DEBUG=INFO CUDA_VISIBLE_DEVICES=${VIS_GPU} PORT=${GPU_PORT} ./${TOOL_DIR}/dist_train_adaptive.sh \
 ${CONFIG_FILE} \
 ${N_GPU} \
 --work-dir ${_WORK_DIR} \

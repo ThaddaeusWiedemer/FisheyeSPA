@@ -329,6 +329,19 @@ cd ~/MasterthesisCode
 # train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA cADVgt04
 # train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA cADV0gt4 model.train_cfg.da.0.transfrom='sample'
 # train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA cADV4gt0 model.train_cfg.da.1.transfrom='sample'
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADV014_cyc4
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVbb0
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVbb1
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVbb3
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVbb0123
+train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA eADVgt014
+train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA eADVgt01 model.train_cfg.da.0.lambd_weight=.5 model.train_cfg.da.1.lambd_weight=.5 model.train_cfg.da.2.lambd_weight=0
+train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA eADVgt04 model.train_cfg.da.0.lambd_weight=.5 model.train_cfg.da.1.lambd_weight=0 model.train_cfg.da.2.lambd_weight=.5
+train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA eADVgt14 model.train_cfg.da.0.lambd_weight=0 model.train_cfg.da.1.lambd_weight=.5 model.train_cfg.da.2.lambd_weight=.5
+train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA eADVgt0 model.train_cfg.da.0.lambd_weight=1 model.train_cfg.da.1.lambd_weight=0 model.train_cfg.da.2.lambd_weight=0
+train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA eADVgt1 model.train_cfg.da.0.lambd_weight=0 model.train_cfg.da.1.lambd_weight=1 model.train_cfg.da.2.lambd_weight=0
+train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA eADVgt4 model.train_cfg.da.0.lambd_weight=0 model.train_cfg.da.1.lambd_weight=0 model.train_cfg.da.2.lambd_weight=1
+
 
 
 # G P A
@@ -375,7 +388,7 @@ cd ~/MasterthesisCode
 # train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVgt04GPApxg033
 # train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVgt0GPApxg033
 # train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVgt04GPAppp
-train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVgt0GPAppp
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVgt0GPAppp
 
 
 # S W E E P S
