@@ -334,13 +334,13 @@ cd ~/MasterthesisCode
 # train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVbb1
 # train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVbb3
 # train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA ADVbb0123
-train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA eADVgt014
-train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA eADVgt01 model.train_cfg.da.0.lambd_weight=.5 model.train_cfg.da.1.lambd_weight=.5 model.train_cfg.da.2.lambd_weight=0
-train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA eADVgt04 model.train_cfg.da.0.lambd_weight=.5 model.train_cfg.da.1.lambd_weight=0 model.train_cfg.da.2.lambd_weight=.5
-train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA eADVgt14 model.train_cfg.da.0.lambd_weight=0 model.train_cfg.da.1.lambd_weight=.5 model.train_cfg.da.2.lambd_weight=.5
-train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA eADVgt0 model.train_cfg.da.0.lambd_weight=1 model.train_cfg.da.1.lambd_weight=0 model.train_cfg.da.2.lambd_weight=0
-train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA eADVgt1 model.train_cfg.da.0.lambd_weight=0 model.train_cfg.da.1.lambd_weight=1 model.train_cfg.da.2.lambd_weight=0
-train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA eADVgt4 model.train_cfg.da.0.lambd_weight=0 model.train_cfg.da.1.lambd_weight=0 model.train_cfg.da.2.lambd_weight=1
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA eADVgt014
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA eADVgt01 model.train_cfg.da.0.lambd_weight=.5 model.train_cfg.da.1.lambd_weight=.5 model.train_cfg.da.2.lambd_weight=0
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA eADVgt04 model.train_cfg.da.0.lambd_weight=.5 model.train_cfg.da.1.lambd_weight=0 model.train_cfg.da.2.lambd_weight=.5
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA eADVgt14 model.train_cfg.da.0.lambd_weight=0 model.train_cfg.da.1.lambd_weight=.5 model.train_cfg.da.2.lambd_weight=.5
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA eADVgt0 model.train_cfg.da.0.lambd_weight=1 model.train_cfg.da.1.lambd_weight=0 model.train_cfg.da.2.lambd_weight=0
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA eADVgt1 model.train_cfg.da.0.lambd_weight=0 model.train_cfg.da.1.lambd_weight=1 model.train_cfg.da.2.lambd_weight=0
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA eADVgt4 model.train_cfg.da.0.lambd_weight=0 model.train_cfg.da.1.lambd_weight=0 model.train_cfg.da.2.lambd_weight=1
 
 
 
@@ -373,11 +373,8 @@ train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA eADVgt4 model.train_cfg.da
 # train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPA--p model.train_cfg.da.0.lambd=0 model.train_cfg.da.1.lambd=0
 # train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPA-x-_scdl_025
 # train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPA-x-_scdl model.train_cfg.da.0.lambd=1 model.train_cfg.da.1.lambd=1 model.train_cfg.da.2.lambd=1 model.train_cfg.da.3.lambd=1
-
-
-
-
-
+# train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPA-x-_comb
+train/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA GPApxg033_comb
 
 
 # B R I N G I N G   I T   A L L   T O G E T H E R

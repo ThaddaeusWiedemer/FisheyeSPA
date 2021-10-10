@@ -1,0 +1,867 @@
+2021-10-08 19:53:22,757 - mmdet - INFO - Environment info:
+------------------------------------------------------------
+sys.platform: linux
+Python: 3.9.5 (default, May 18 2021, 19:34:48) [GCC 7.3.0]
+CUDA available: True
+GPU 0,1,2,3: NVIDIA GeForce GTX 1080 Ti
+CUDA_HOME: /usr/local/cuda-10.1
+NVCC: Cuda compilation tools, release 10.1, V10.1.105
+GCC: gcc (Ubuntu 6.5.0-2ubuntu1~18.04) 6.5.0 20181026
+PyTorch: 1.8.1
+PyTorch compiling details: PyTorch built with:
+  - GCC 7.3
+  - C++ Version: 201402
+  - Intel(R) oneAPI Math Kernel Library Version 2021.2-Product Build 20210312 for Intel(R) 64 architecture applications
+  - Intel(R) MKL-DNN v1.7.0 (Git Hash 7aed236906b1f7a05c0917e5257a1af05e9ff683)
+  - OpenMP 201511 (a.k.a. OpenMP 4.5)
+  - NNPACK is enabled
+  - CPU capability usage: AVX2
+  - CUDA Runtime 10.1
+  - NVCC architecture flags: -gencode;arch=compute_37,code=sm_37;-gencode;arch=compute_50,code=sm_50;-gencode;arch=compute_60,code=sm_60;-gencode;arch=compute_61,code=sm_61;-gencode;arch=compute_70,code=sm_70;-gencode;arch=compute_75,code=sm_75;-gencode;arch=compute_37,code=compute_37
+  - CuDNN 7.6.3
+  - Magma 2.5.2
+  - Build settings: BLAS_INFO=mkl, BUILD_TYPE=Release, CUDA_VERSION=10.1, CUDNN_VERSION=7.6.3, CXX_COMPILER=/opt/rh/devtoolset-7/root/usr/bin/c++, CXX_FLAGS= -Wno-deprecated -fvisibility-inlines-hidden -DUSE_PTHREADPOOL -fopenmp -DNDEBUG -DUSE_KINETO -DUSE_FBGEMM -DUSE_QNNPACK -DUSE_PYTORCH_QNNPACK -DUSE_XNNPACK -O2 -fPIC -Wno-narrowing -Wall -Wextra -Werror=return-type -Wno-missing-field-initializers -Wno-type-limits -Wno-array-bounds -Wno-unknown-pragmas -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -Wno-unused-result -Wno-unused-local-typedefs -Wno-strict-overflow -Wno-strict-aliasing -Wno-error=deprecated-declarations -Wno-stringop-overflow -Wno-psabi -Wno-error=pedantic -Wno-error=redundant-decls -Wno-error=old-style-cast -fdiagnostics-color=always -faligned-new -Wno-unused-but-set-variable -Wno-maybe-uninitialized -fno-math-errno -fno-trapping-math -Werror=format -Wno-stringop-overflow, LAPACK_INFO=mkl, PERF_WITH_AVX=1, PERF_WITH_AVX2=1, PERF_WITH_AVX512=1, TORCH_VERSION=1.8.1, USE_CUDA=ON, USE_CUDNN=ON, USE_EXCEPTION_PTR=1, USE_GFLAGS=OFF, USE_GLOG=OFF, USE_MKL=ON, USE_MKLDNN=ON, USE_MPI=OFF, USE_NCCL=ON, USE_NNPACK=ON, USE_OPENMP=ON, 
+
+TorchVision: 0.2.2
+OpenCV: 4.5.2
+MMCV: 1.3.6
+MMCV Compiler: GCC 7.5
+MMCV CUDA Compiler: 10.1
+MMDetection: 2.13.0+b49c472
+------------------------------------------------------------
+
+INFO:mmdet:Environment info:
+------------------------------------------------------------
+sys.platform: linux
+Python: 3.9.5 (default, May 18 2021, 19:34:48) [GCC 7.3.0]
+CUDA available: True
+GPU 0,1,2,3: NVIDIA GeForce GTX 1080 Ti
+CUDA_HOME: /usr/local/cuda-10.1
+NVCC: Cuda compilation tools, release 10.1, V10.1.105
+GCC: gcc (Ubuntu 6.5.0-2ubuntu1~18.04) 6.5.0 20181026
+PyTorch: 1.8.1
+PyTorch compiling details: PyTorch built with:
+  - GCC 7.3
+  - C++ Version: 201402
+  - Intel(R) oneAPI Math Kernel Library Version 2021.2-Product Build 20210312 for Intel(R) 64 architecture applications
+  - Intel(R) MKL-DNN v1.7.0 (Git Hash 7aed236906b1f7a05c0917e5257a1af05e9ff683)
+  - OpenMP 201511 (a.k.a. OpenMP 4.5)
+  - NNPACK is enabled
+  - CPU capability usage: AVX2
+  - CUDA Runtime 10.1
+  - NVCC architecture flags: -gencode;arch=compute_37,code=sm_37;-gencode;arch=compute_50,code=sm_50;-gencode;arch=compute_60,code=sm_60;-gencode;arch=compute_61,code=sm_61;-gencode;arch=compute_70,code=sm_70;-gencode;arch=compute_75,code=sm_75;-gencode;arch=compute_37,code=compute_37
+  - CuDNN 7.6.3
+  - Magma 2.5.2
+  - Build settings: BLAS_INFO=mkl, BUILD_TYPE=Release, CUDA_VERSION=10.1, CUDNN_VERSION=7.6.3, CXX_COMPILER=/opt/rh/devtoolset-7/root/usr/bin/c++, CXX_FLAGS= -Wno-deprecated -fvisibility-inlines-hidden -DUSE_PTHREADPOOL -fopenmp -DNDEBUG -DUSE_KINETO -DUSE_FBGEMM -DUSE_QNNPACK -DUSE_PYTORCH_QNNPACK -DUSE_XNNPACK -O2 -fPIC -Wno-narrowing -Wall -Wextra -Werror=return-type -Wno-missing-field-initializers -Wno-type-limits -Wno-array-bounds -Wno-unknown-pragmas -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -Wno-unused-result -Wno-unused-local-typedefs -Wno-strict-overflow -Wno-strict-aliasing -Wno-error=deprecated-declarations -Wno-stringop-overflow -Wno-psabi -Wno-error=pedantic -Wno-error=redundant-decls -Wno-error=old-style-cast -fdiagnostics-color=always -faligned-new -Wno-unused-but-set-variable -Wno-maybe-uninitialized -fno-math-errno -fno-trapping-math -Werror=format -Wno-stringop-overflow, LAPACK_INFO=mkl, PERF_WITH_AVX=1, PERF_WITH_AVX2=1, PERF_WITH_AVX512=1, TORCH_VERSION=1.8.1, USE_CUDA=ON, USE_CUDNN=ON, USE_EXCEPTION_PTR=1, USE_GFLAGS=OFF, USE_GLOG=OFF, USE_MKL=ON, USE_MKLDNN=ON, USE_MPI=OFF, USE_NCCL=ON, USE_NNPACK=ON, USE_OPENMP=ON, 
+
+TorchVision: 0.2.2
+OpenCV: 4.5.2
+MMCV: 1.3.6
+MMCV Compiler: GCC 7.5
+MMCV CUDA Compiler: 10.1
+MMDetection: 2.13.0+b49c472
+------------------------------------------------------------
+
+2021-10-08 19:53:23,161 - mmdet - INFO - Distributed training: True
+INFO:mmdet:Distributed training: True
+2021-10-08 19:53:23,555 - mmdet - INFO - Config:
+model = dict(
+    type='TwoStageDetectorDA',
+    backbone=dict(
+        type='ResNet',
+        depth=50,
+        num_stages=4,
+        out_indices=(0, 1, 2, 3),
+        frozen_stages=1,
+        norm_cfg=dict(type='BN', requires_grad=False),
+        norm_eval=True,
+        style='caffe'),
+    neck=dict(
+        type='FPN',
+        in_channels=[256, 512, 1024, 2048],
+        out_channels=256,
+        num_outs=5),
+    rpn_head=dict(
+        type='RPNHead',
+        in_channels=256,
+        feat_channels=256,
+        anchor_generator=dict(
+            type='AnchorGenerator',
+            scales=[8],
+            ratios=[0.5, 1.0, 2.0],
+            strides=[4, 8, 16, 32, 64]),
+        bbox_coder=dict(
+            type='DeltaXYWHBBoxCoder',
+            target_means=[0.0, 0.0, 0.0, 0.0],
+            target_stds=[1.0, 1.0, 1.0, 1.0]),
+        loss_cls=dict(
+            type='CrossEntropyLoss', use_sigmoid=True, loss_weight=1.0),
+        loss_bbox=dict(type='L1Loss', loss_weight=1.0)),
+    roi_head=dict(
+        type='StandardRoIHeadAdaptive',
+        bbox_roi_extractor=dict(
+            type='SingleRoIExtractor',
+            roi_layer=dict(type='RoIAlign', output_size=7, sampling_ratio=0),
+            out_channels=256,
+            featmap_strides=[4, 8, 16, 32]),
+        bbox_head=dict(
+            type='Split2FCBBoxHeadAdaptive',
+            in_channels=256,
+            fc_out_channels=1024,
+            roi_feat_size=7,
+            num_classes=1,
+            bbox_coder=dict(
+                type='DeltaXYWHBBoxCoder',
+                target_means=[0.0, 0.0, 0.0, 0.0],
+                target_stds=[0.1, 0.1, 0.2, 0.2]),
+            reg_class_agnostic=False,
+            loss_cls=dict(
+                type='CrossEntropyLoss', use_sigmoid=False, loss_weight=1.0),
+            loss_bbox=dict(type='L1Loss', loss_weight=1.0))),
+    train_cfg=dict(
+        train_source=False,
+        da=[
+            dict(
+                type='gpa',
+                feat='feat_roi',
+                loss_weights=dict(intra=10.0, inter=0.1),
+                mode='prediction',
+                lambd=0.33),
+            dict(
+                type='gpa',
+                feat='feat_rcnn_bbox',
+                loss_weights=dict(intra=100.0, inter=0.1),
+                mode='gt_bbox_all',
+                gt_iou_thrs=0.5,
+                lambd=0.33),
+            dict(
+                type='gpa',
+                feat='feat_rcnn_cls',
+                loss_weights=dict(intra=100.0, inter=0.1),
+                mode='ground_truth',
+                lambd=0.33)
+        ],
+        rpn=dict(
+            assigner=dict(
+                type='MaxIoUAssigner',
+                pos_iou_thr=0.7,
+                neg_iou_thr=0.3,
+                min_pos_iou=0.3,
+                match_low_quality=True,
+                ignore_iof_thr=-1),
+            sampler=dict(
+                type='RandomSampler',
+                num=256,
+                pos_fraction=0.5,
+                neg_pos_ub=-1,
+                add_gt_as_proposals=False),
+            allowed_border=-1,
+            pos_weight=-1,
+            debug=False),
+        rpn_proposal=dict(
+            nms_pre=2000,
+            max_per_img=1000,
+            nms=dict(type='nms', iou_threshold=0.7),
+            min_bbox_size=0),
+        rcnn=dict(
+            assigner=dict(
+                type='MaxIoUAssigner',
+                pos_iou_thr=0.5,
+                neg_iou_thr=0.5,
+                min_pos_iou=0.5,
+                match_low_quality=False,
+                ignore_iof_thr=-1),
+            sampler=dict(
+                type='RandomSampler',
+                num=512,
+                pos_fraction=0.25,
+                neg_pos_ub=-1,
+                add_gt_as_proposals=False),
+            pos_weight=-1,
+            debug=False)),
+    test_cfg=dict(
+        rpn=dict(
+            nms_pre=1000,
+            max_per_img=1000,
+            nms=dict(type='nms', iou_threshold=0.7),
+            min_bbox_size=0),
+        rcnn=dict(
+            score_thr=0.05,
+            nms=dict(type='nms', iou_threshold=0.5),
+            max_per_img=100)))
+dataset_type = 'CocoDataset'
+data_root_src = 'data/PIROPO/'
+data_root_tgt = 'data/MW-18Mar/'
+classes = ('person', )
+img_norm_cfg = dict(
+    mean=[103.53, 116.28, 123.675], std=[1.0, 1.0, 1.0], to_rgb=False)
+train_pipeline_src = [
+    dict(type='LoadImageFromFile'),
+    dict(type='LoadAnnotations', with_bbox=True),
+    dict(type='Resize', img_scale=(800, 800), keep_ratio=True),
+    dict(type='RandomFlip', flip_ratio=0.5),
+    dict(
+        type='Normalize',
+        mean=[103.53, 116.28, 123.675],
+        std=[1.0, 1.0, 1.0],
+        to_rgb=False),
+    dict(type='Pad', size_divisor=32),
+    dict(type='DefaultFormatBundle'),
+    dict(type='Collect', keys=['img', 'gt_bboxes', 'gt_labels'])
+]
+train_pipeline_tgt = [
+    dict(type='LoadImageFromFile'),
+    dict(type='LoadAnnotations', with_bbox=True),
+    dict(type='Resize', img_scale=(800, 800), keep_ratio=True),
+    dict(type='RandomFlip', flip_ratio=0.5),
+    dict(
+        type='Normalize',
+        mean=[103.53, 116.28, 123.675],
+        std=[1.0, 1.0, 1.0],
+        to_rgb=False),
+    dict(type='Pad', size_divisor=32),
+    dict(type='DefaultFormatBundle'),
+    dict(type='Collect', keys=['img', 'gt_bboxes', 'gt_labels'])
+]
+test_pipeline = [
+    dict(type='LoadImageFromFile'),
+    dict(
+        type='MultiScaleFlipAug',
+        img_scale=(1333, 800),
+        flip=False,
+        transforms=[
+            dict(type='Resize', keep_ratio=True),
+            dict(type='RandomFlip'),
+            dict(
+                type='Normalize',
+                mean=[103.53, 116.28, 123.675],
+                std=[1.0, 1.0, 1.0],
+                to_rgb=False),
+            dict(type='Pad', size_divisor=32),
+            dict(type='ImageToTensor', keys=['img']),
+            dict(type='Collect', keys=['img'])
+        ])
+]
+data = dict(
+    samples_per_gpu=4,
+    workers_per_gpu=2,
+    train_src=dict(
+        type='CocoDataset',
+        ann_file='/data/COCO/annotations/person_train2017.json',
+        img_prefix='/data/COCO/train2017',
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(type='LoadAnnotations', with_bbox=True),
+            dict(type='Resize', img_scale=(800, 800), keep_ratio=True),
+            dict(type='RandomFlip', flip_ratio=0.5),
+            dict(
+                type='Normalize',
+                mean=[103.53, 116.28, 123.675],
+                std=[1.0, 1.0, 1.0],
+                to_rgb=False),
+            dict(type='Pad', size_divisor=32),
+            dict(type='DefaultFormatBundle'),
+            dict(type='Collect', keys=['img', 'gt_bboxes', 'gt_labels'])
+        ],
+        classes=('person', )),
+    train_tgt=dict(
+        type='CocoDataset',
+        ann_file='/data/PIROPO/omni_training_1c.json',
+        img_prefix='None',
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(type='LoadAnnotations', with_bbox=True),
+            dict(type='Resize', img_scale=(800, 800), keep_ratio=True),
+            dict(type='RandomFlip', flip_ratio=0.5),
+            dict(
+                type='Normalize',
+                mean=[103.53, 116.28, 123.675],
+                std=[1.0, 1.0, 1.0],
+                to_rgb=False),
+            dict(type='Pad', size_divisor=32),
+            dict(type='DefaultFormatBundle'),
+            dict(type='Collect', keys=['img', 'gt_bboxes', 'gt_labels'])
+        ],
+        classes=('person', )),
+    val=dict(
+        type='CocoDataset',
+        ann_file='/data/PIROPO/omni_test2.json',
+        img_prefix='None',
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(
+                type='MultiScaleFlipAug',
+                img_scale=(1333, 800),
+                flip=False,
+                transforms=[
+                    dict(type='Resize', keep_ratio=True),
+                    dict(type='RandomFlip'),
+                    dict(
+                        type='Normalize',
+                        mean=[103.53, 116.28, 123.675],
+                        std=[1.0, 1.0, 1.0],
+                        to_rgb=False),
+                    dict(type='Pad', size_divisor=32),
+                    dict(type='ImageToTensor', keys=['img']),
+                    dict(type='Collect', keys=['img'])
+                ])
+        ],
+        classes=('person', )),
+    test=dict(
+        type='CocoDataset',
+        ann_file='data/MW-18Mar/test.json',
+        img_prefix='data/MW-18Mar/',
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(
+                type='MultiScaleFlipAug',
+                img_scale=(1333, 800),
+                flip=False,
+                transforms=[
+                    dict(type='Resize', keep_ratio=True),
+                    dict(type='RandomFlip'),
+                    dict(
+                        type='Normalize',
+                        mean=[103.53, 116.28, 123.675],
+                        std=[1.0, 1.0, 1.0],
+                        to_rgb=False),
+                    dict(type='Pad', size_divisor=32),
+                    dict(type='ImageToTensor', keys=['img']),
+                    dict(type='Collect', keys=['img'])
+                ])
+        ],
+        classes=('person', )))
+optimizer = dict(type='SGD', lr=0.001, momentum=0.9, weight_decay=0.0001)
+optimizer_config = dict(grad_clip=None)
+lr_config = dict(policy='fixed')
+runner = dict(type='EpochBasedRunnerAdaptive', max_epochs=40)
+checkpoint_config = dict(interval=200)
+evaluation = dict(interval=1, save_best='bbox_mAP_50', metric='bbox')
+log_config = dict(interval=1, hooks=[dict(type='TextLoggerHook')])
+custom_hooks = [dict(type='NumClassCheckHook')]
+dist_params = dict(backend='nccl')
+log_level = 'INFO'
+load_from = 'mmdetection/checkpoints/faster_rcnn_r50_fpn_1x_coco-person_20201216_175929-d022e227_split.pth'
+resume_from = None
+workflow = [('train', 1)]
+work_dir = 'WORK_DIRS/sweeps/gpa_pxg/1c'
+gpu_ids = range(0, 4)
+
+INFO:mmdet:Config:
+model = dict(
+    type='TwoStageDetectorDA',
+    backbone=dict(
+        type='ResNet',
+        depth=50,
+        num_stages=4,
+        out_indices=(0, 1, 2, 3),
+        frozen_stages=1,
+        norm_cfg=dict(type='BN', requires_grad=False),
+        norm_eval=True,
+        style='caffe'),
+    neck=dict(
+        type='FPN',
+        in_channels=[256, 512, 1024, 2048],
+        out_channels=256,
+        num_outs=5),
+    rpn_head=dict(
+        type='RPNHead',
+        in_channels=256,
+        feat_channels=256,
+        anchor_generator=dict(
+            type='AnchorGenerator',
+            scales=[8],
+            ratios=[0.5, 1.0, 2.0],
+            strides=[4, 8, 16, 32, 64]),
+        bbox_coder=dict(
+            type='DeltaXYWHBBoxCoder',
+            target_means=[0.0, 0.0, 0.0, 0.0],
+            target_stds=[1.0, 1.0, 1.0, 1.0]),
+        loss_cls=dict(
+            type='CrossEntropyLoss', use_sigmoid=True, loss_weight=1.0),
+        loss_bbox=dict(type='L1Loss', loss_weight=1.0)),
+    roi_head=dict(
+        type='StandardRoIHeadAdaptive',
+        bbox_roi_extractor=dict(
+            type='SingleRoIExtractor',
+            roi_layer=dict(type='RoIAlign', output_size=7, sampling_ratio=0),
+            out_channels=256,
+            featmap_strides=[4, 8, 16, 32]),
+        bbox_head=dict(
+            type='Split2FCBBoxHeadAdaptive',
+            in_channels=256,
+            fc_out_channels=1024,
+            roi_feat_size=7,
+            num_classes=1,
+            bbox_coder=dict(
+                type='DeltaXYWHBBoxCoder',
+                target_means=[0.0, 0.0, 0.0, 0.0],
+                target_stds=[0.1, 0.1, 0.2, 0.2]),
+            reg_class_agnostic=False,
+            loss_cls=dict(
+                type='CrossEntropyLoss', use_sigmoid=False, loss_weight=1.0),
+            loss_bbox=dict(type='L1Loss', loss_weight=1.0))),
+    train_cfg=dict(
+        train_source=False,
+        da=[
+            dict(
+                type='gpa',
+                feat='feat_roi',
+                loss_weights=dict(intra=10.0, inter=0.1),
+                mode='prediction',
+                lambd=0.33),
+            dict(
+                type='gpa',
+                feat='feat_rcnn_bbox',
+                loss_weights=dict(intra=100.0, inter=0.1),
+                mode='gt_bbox_all',
+                gt_iou_thrs=0.5,
+                lambd=0.33),
+            dict(
+                type='gpa',
+                feat='feat_rcnn_cls',
+                loss_weights=dict(intra=100.0, inter=0.1),
+                mode='ground_truth',
+                lambd=0.33)
+        ],
+        rpn=dict(
+            assigner=dict(
+                type='MaxIoUAssigner',
+                pos_iou_thr=0.7,
+                neg_iou_thr=0.3,
+                min_pos_iou=0.3,
+                match_low_quality=True,
+                ignore_iof_thr=-1),
+            sampler=dict(
+                type='RandomSampler',
+                num=256,
+                pos_fraction=0.5,
+                neg_pos_ub=-1,
+                add_gt_as_proposals=False),
+            allowed_border=-1,
+            pos_weight=-1,
+            debug=False),
+        rpn_proposal=dict(
+            nms_pre=2000,
+            max_per_img=1000,
+            nms=dict(type='nms', iou_threshold=0.7),
+            min_bbox_size=0),
+        rcnn=dict(
+            assigner=dict(
+                type='MaxIoUAssigner',
+                pos_iou_thr=0.5,
+                neg_iou_thr=0.5,
+                min_pos_iou=0.5,
+                match_low_quality=False,
+                ignore_iof_thr=-1),
+            sampler=dict(
+                type='RandomSampler',
+                num=512,
+                pos_fraction=0.25,
+                neg_pos_ub=-1,
+                add_gt_as_proposals=False),
+            pos_weight=-1,
+            debug=False)),
+    test_cfg=dict(
+        rpn=dict(
+            nms_pre=1000,
+            max_per_img=1000,
+            nms=dict(type='nms', iou_threshold=0.7),
+            min_bbox_size=0),
+        rcnn=dict(
+            score_thr=0.05,
+            nms=dict(type='nms', iou_threshold=0.5),
+            max_per_img=100)))
+dataset_type = 'CocoDataset'
+data_root_src = 'data/PIROPO/'
+data_root_tgt = 'data/MW-18Mar/'
+classes = ('person', )
+img_norm_cfg = dict(
+    mean=[103.53, 116.28, 123.675], std=[1.0, 1.0, 1.0], to_rgb=False)
+train_pipeline_src = [
+    dict(type='LoadImageFromFile'),
+    dict(type='LoadAnnotations', with_bbox=True),
+    dict(type='Resize', img_scale=(800, 800), keep_ratio=True),
+    dict(type='RandomFlip', flip_ratio=0.5),
+    dict(
+        type='Normalize',
+        mean=[103.53, 116.28, 123.675],
+        std=[1.0, 1.0, 1.0],
+        to_rgb=False),
+    dict(type='Pad', size_divisor=32),
+    dict(type='DefaultFormatBundle'),
+    dict(type='Collect', keys=['img', 'gt_bboxes', 'gt_labels'])
+]
+train_pipeline_tgt = [
+    dict(type='LoadImageFromFile'),
+    dict(type='LoadAnnotations', with_bbox=True),
+    dict(type='Resize', img_scale=(800, 800), keep_ratio=True),
+    dict(type='RandomFlip', flip_ratio=0.5),
+    dict(
+        type='Normalize',
+        mean=[103.53, 116.28, 123.675],
+        std=[1.0, 1.0, 1.0],
+        to_rgb=False),
+    dict(type='Pad', size_divisor=32),
+    dict(type='DefaultFormatBundle'),
+    dict(type='Collect', keys=['img', 'gt_bboxes', 'gt_labels'])
+]
+test_pipeline = [
+    dict(type='LoadImageFromFile'),
+    dict(
+        type='MultiScaleFlipAug',
+        img_scale=(1333, 800),
+        flip=False,
+        transforms=[
+            dict(type='Resize', keep_ratio=True),
+            dict(type='RandomFlip'),
+            dict(
+                type='Normalize',
+                mean=[103.53, 116.28, 123.675],
+                std=[1.0, 1.0, 1.0],
+                to_rgb=False),
+            dict(type='Pad', size_divisor=32),
+            dict(type='ImageToTensor', keys=['img']),
+            dict(type='Collect', keys=['img'])
+        ])
+]
+data = dict(
+    samples_per_gpu=4,
+    workers_per_gpu=2,
+    train_src=dict(
+        type='CocoDataset',
+        ann_file='/data/COCO/annotations/person_train2017.json',
+        img_prefix='/data/COCO/train2017',
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(type='LoadAnnotations', with_bbox=True),
+            dict(type='Resize', img_scale=(800, 800), keep_ratio=True),
+            dict(type='RandomFlip', flip_ratio=0.5),
+            dict(
+                type='Normalize',
+                mean=[103.53, 116.28, 123.675],
+                std=[1.0, 1.0, 1.0],
+                to_rgb=False),
+            dict(type='Pad', size_divisor=32),
+            dict(type='DefaultFormatBundle'),
+            dict(type='Collect', keys=['img', 'gt_bboxes', 'gt_labels'])
+        ],
+        classes=('person', )),
+    train_tgt=dict(
+        type='CocoDataset',
+        ann_file='/data/PIROPO/omni_training_1c.json',
+        img_prefix='None',
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(type='LoadAnnotations', with_bbox=True),
+            dict(type='Resize', img_scale=(800, 800), keep_ratio=True),
+            dict(type='RandomFlip', flip_ratio=0.5),
+            dict(
+                type='Normalize',
+                mean=[103.53, 116.28, 123.675],
+                std=[1.0, 1.0, 1.0],
+                to_rgb=False),
+            dict(type='Pad', size_divisor=32),
+            dict(type='DefaultFormatBundle'),
+            dict(type='Collect', keys=['img', 'gt_bboxes', 'gt_labels'])
+        ],
+        classes=('person', )),
+    val=dict(
+        type='CocoDataset',
+        ann_file='/data/PIROPO/omni_test2.json',
+        img_prefix='None',
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(
+                type='MultiScaleFlipAug',
+                img_scale=(1333, 800),
+                flip=False,
+                transforms=[
+                    dict(type='Resize', keep_ratio=True),
+                    dict(type='RandomFlip'),
+                    dict(
+                        type='Normalize',
+                        mean=[103.53, 116.28, 123.675],
+                        std=[1.0, 1.0, 1.0],
+                        to_rgb=False),
+                    dict(type='Pad', size_divisor=32),
+                    dict(type='ImageToTensor', keys=['img']),
+                    dict(type='Collect', keys=['img'])
+                ])
+        ],
+        classes=('person', )),
+    test=dict(
+        type='CocoDataset',
+        ann_file='data/MW-18Mar/test.json',
+        img_prefix='data/MW-18Mar/',
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(
+                type='MultiScaleFlipAug',
+                img_scale=(1333, 800),
+                flip=False,
+                transforms=[
+                    dict(type='Resize', keep_ratio=True),
+                    dict(type='RandomFlip'),
+                    dict(
+                        type='Normalize',
+                        mean=[103.53, 116.28, 123.675],
+                        std=[1.0, 1.0, 1.0],
+                        to_rgb=False),
+                    dict(type='Pad', size_divisor=32),
+                    dict(type='ImageToTensor', keys=['img']),
+                    dict(type='Collect', keys=['img'])
+                ])
+        ],
+        classes=('person', )))
+optimizer = dict(type='SGD', lr=0.001, momentum=0.9, weight_decay=0.0001)
+optimizer_config = dict(grad_clip=None)
+lr_config = dict(policy='fixed')
+runner = dict(type='EpochBasedRunnerAdaptive', max_epochs=40)
+checkpoint_config = dict(interval=200)
+evaluation = dict(interval=1, save_best='bbox_mAP_50', metric='bbox')
+log_config = dict(interval=1, hooks=[dict(type='TextLoggerHook')])
+custom_hooks = [dict(type='NumClassCheckHook')]
+dist_params = dict(backend='nccl')
+log_level = 'INFO'
+load_from = 'mmdetection/checkpoints/faster_rcnn_r50_fpn_1x_coco-person_20201216_175929-d022e227_split.pth'
+resume_from = None
+workflow = [('train', 1)]
+work_dir = 'WORK_DIRS/sweeps/gpa_pxg/1c'
+gpu_ids = range(0, 4)
+
+/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/cnn/utils/weight_init.py:118: UserWarning: init_cfg without layer key, if you do not define override key either, this init_cfg will do nothing
+  warnings.warn(
+/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/cnn/utils/weight_init.py:118: UserWarning: init_cfg without layer key, if you do not define override key either, this init_cfg will do nothing
+  warnings.warn(
+/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/cnn/utils/weight_init.py:118: UserWarning: init_cfg without layer key, if you do not define override key either, this init_cfg will do nothing
+  warnings.warn(
+/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/cnn/utils/weight_init.py:118: UserWarning: init_cfg without layer key, if you do not define override key either, this init_cfg will do nothing
+  warnings.warn(
+loading annotations into memory...
+loading annotations into memory...
+loading annotations into memory...
+loading annotations into memory...
+Done (t=5.79s)
+creating index...
+Done (t=5.81s)
+creating index...
+index created!
+index created!
+Done (t=6.21s)
+creating index...
+Done (t=6.26s)
+creating index...
+index created!
+index created!
+loading annotations into memory...
+Done (t=0.00s)
+creating index...
+index created!
+loading annotations into memory...
+Done (t=0.00s)
+creating index...
+index created!
+loading annotations into memory...
+Done (t=0.00s)
+creating index...
+index created!
+loading annotations into memory...
+Done (t=0.00s)
+creating index...
+index created!
+loading annotations into memory...loading annotations into memory...
+
+loading annotations into memory...
+loading annotations into memory...
+Done (t=0.00s)
+creating index...
+index created!
+Done (t=0.00s)
+creating index...
+Done (t=0.00s)
+creating index...
+Done (t=0.00s)
+creating index...
+index created!
+index created!
+index created!
+2021-10-08 19:53:35,568 - mmdet - INFO - load checkpoint from mmdetection/checkpoints/faster_rcnn_r50_fpn_1x_coco-person_20201216_175929-d022e227_split.pth
+INFO:mmdet:load checkpoint from mmdetection/checkpoints/faster_rcnn_r50_fpn_1x_coco-person_20201216_175929-d022e227_split.pth
+2021-10-08 19:53:35,569 - mmdet - INFO - Use load_from_local loader
+INFO:mmdet:Use load_from_local loader
+2021-10-08 19:53:35,764 - mmdet - WARNING - The model and loaded state dict do not match exactly
+
+missing keys in source state_dict: da_heads.feat_roi_gpa.layer.weight, da_heads.feat_roi_gpa.layer.bias, da_heads.feat_rcnn_bbox_gpa.layer.weight, da_heads.feat_rcnn_bbox_gpa.layer.bias, da_heads.feat_rcnn_cls_gpa.layer.weight, da_heads.feat_rcnn_cls_gpa.layer.bias
+
+WARNING:mmdet:The model and loaded state dict do not match exactly
+
+missing keys in source state_dict: da_heads.feat_roi_gpa.layer.weight, da_heads.feat_roi_gpa.layer.bias, da_heads.feat_rcnn_bbox_gpa.layer.weight, da_heads.feat_rcnn_bbox_gpa.layer.bias, da_heads.feat_rcnn_cls_gpa.layer.weight, da_heads.feat_rcnn_cls_gpa.layer.bias
+
+2021-10-08 19:53:35,774 - mmdet - INFO - Start running, host: thaddaus@wu02, work_dir: /home/thaddaus/MasterthesisCode/WORK_DIRS/sweeps/gpa_pxg/1c
+INFO:mmdet:Start running, host: thaddaus@wu02, work_dir: /home/thaddaus/MasterthesisCode/WORK_DIRS/sweeps/gpa_pxg/1c
+2021-10-08 19:53:35,774 - mmdet - INFO - workflow: [('train', 1)], max: 40 epochs
+INFO:mmdet:workflow: [('train', 1)], max: 40 epochs
+Traceback (most recent call last):
+  File "/home/thaddaus/MasterthesisCode/./mmdetection/tools/train_adaptive.py", line 204, in <module>
+    main()
+  File "/home/thaddaus/MasterthesisCode/./mmdetection/tools/train_adaptive.py", line 192, in main
+    train_detector_adaptive(
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/apis/train.py", line 319, in train_detector_adaptive
+    runner.run(data_loaders_src, data_loaders_tgt, cfg.workflow)
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/adaptive/epoch_based_runner_adaptive.py", line 148, in run
+    epoch_runner(data_loaders_src[i], data_loaders_tgt[i], **kwargs)
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/adaptive/epoch_based_runner_adaptive.py", line 70, in train
+    self.run_iter(data_batch, train_mode=True, **kwargs)
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/adaptive/epoch_based_runner_adaptive.py", line 35, in run_iter
+    outputs = self.model.train_step(data_batch, self.optimizer,
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/parallel/distributed.py", line 51, in train_step
+    output = self.module.train_step(*inputs[0], **kwargs[0])
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/detectors/base_adaptive.py", line 48, in train_step
+    losses = self(**data)
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/runner/fp16_utils.py", line 97, in new_func
+    return old_func(*args, **kwargs)
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/detectors/base_adaptive.py", line 94, in forward
+    return self.forward_train(img, img_metas, img_tgt, img_metas_tgt, **kwargs)
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/detectors/two_stage_da.py", line 261, in forward_train
+    losses_da = self._align_domains(feats)
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/detectors/two_stage_da.py", line 287, in _align_domains
+    losses.update(self.da_heads[f"{module['feat']}_{module['type']}{tag}"](feats))
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/utils/gpa.py", line 84, in forward
+    loss_intra, loss_inter = self._compute_loss(x_src, x_tgt, inputs)
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/utils/gpa.py", line 135, in _compute_loss
+    ptt_tgt = self._build_ptt_bbox_gt(x_tgt, gt_tgt, rois_tgt, dim, self.gt_iou_thrs)
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/utils/gpa.py", line 369, in _build_ptt_bbox_gt
+    ptt_pos = torch.stack(ptts_pos, dim=0).mean(dim=0)
+RuntimeError: stack expects a non-empty TensorList
+Traceback (most recent call last):
+  File "/home/thaddaus/MasterthesisCode/./mmdetection/tools/train_adaptive.py", line 204, in <module>
+    main()
+  File "/home/thaddaus/MasterthesisCode/./mmdetection/tools/train_adaptive.py", line 192, in main
+    train_detector_adaptive(
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/apis/train.py", line 319, in train_detector_adaptive
+    runner.run(data_loaders_src, data_loaders_tgt, cfg.workflow)
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/adaptive/epoch_based_runner_adaptive.py", line 148, in run
+    epoch_runner(data_loaders_src[i], data_loaders_tgt[i], **kwargs)
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/adaptive/epoch_based_runner_adaptive.py", line 70, in train
+    self.run_iter(data_batch, train_mode=True, **kwargs)
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/adaptive/epoch_based_runner_adaptive.py", line 35, in run_iter
+    outputs = self.model.train_step(data_batch, self.optimizer,
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/parallel/distributed.py", line 51, in train_step
+    output = self.module.train_step(*inputs[0], **kwargs[0])
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/detectors/base_adaptive.py", line 48, in train_step
+    losses = self(**data)
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/runner/fp16_utils.py", line 97, in new_func
+    return old_func(*args, **kwargs)
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/detectors/base_adaptive.py", line 94, in forward
+    return self.forward_train(img, img_metas, img_tgt, img_metas_tgt, **kwargs)
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/detectors/two_stage_da.py", line 261, in forward_train
+    losses_da = self._align_domains(feats)
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/detectors/two_stage_da.py", line 287, in _align_domains
+    losses.update(self.da_heads[f"{module['feat']}_{module['type']}{tag}"](feats))
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/utils/gpa.py", line 84, in forward
+    loss_intra, loss_inter = self._compute_loss(x_src, x_tgt, inputs)
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/utils/gpa.py", line 135, in _compute_loss
+    ptt_tgt = self._build_ptt_bbox_gt(x_tgt, gt_tgt, rois_tgt, dim, self.gt_iou_thrs)
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/utils/gpa.py", line 369, in _build_ptt_bbox_gt
+    ptt_pos = torch.stack(ptts_pos, dim=0).mean(dim=0)
+RuntimeError: stack expects a non-empty TensorList
+Traceback (most recent call last):
+  File "/home/thaddaus/MasterthesisCode/./mmdetection/tools/train_adaptive.py", line 204, in <module>
+    main()
+  File "/home/thaddaus/MasterthesisCode/./mmdetection/tools/train_adaptive.py", line 192, in main
+    train_detector_adaptive(
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/apis/train.py", line 319, in train_detector_adaptive
+    runner.run(data_loaders_src, data_loaders_tgt, cfg.workflow)
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/adaptive/epoch_based_runner_adaptive.py", line 148, in run
+    epoch_runner(data_loaders_src[i], data_loaders_tgt[i], **kwargs)
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/adaptive/epoch_based_runner_adaptive.py", line 70, in train
+    self.run_iter(data_batch, train_mode=True, **kwargs)
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/adaptive/epoch_based_runner_adaptive.py", line 35, in run_iter
+    outputs = self.model.train_step(data_batch, self.optimizer,
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/parallel/distributed.py", line 51, in train_step
+    output = self.module.train_step(*inputs[0], **kwargs[0])
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/detectors/base_adaptive.py", line 48, in train_step
+    losses = self(**data)
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/runner/fp16_utils.py", line 97, in new_func
+    return old_func(*args, **kwargs)
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/detectors/base_adaptive.py", line 94, in forward
+    return self.forward_train(img, img_metas, img_tgt, img_metas_tgt, **kwargs)
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/detectors/two_stage_da.py", line 261, in forward_train
+    losses_da = self._align_domains(feats)
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/detectors/two_stage_da.py", line 287, in _align_domains
+    losses.update(self.da_heads[f"{module['feat']}_{module['type']}{tag}"](feats))
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/utils/gpa.py", line 84, in forward
+    loss_intra, loss_inter = self._compute_loss(x_src, x_tgt, inputs)
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/utils/gpa.py", line 135, in _compute_loss
+    ptt_tgt = self._build_ptt_bbox_gt(x_tgt, gt_tgt, rois_tgt, dim, self.gt_iou_thrs)
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/utils/gpa.py", line 369, in _build_ptt_bbox_gt
+    ptt_pos = torch.stack(ptts_pos, dim=0).mean(dim=0)
+RuntimeError: stack expects a non-empty TensorList
+Traceback (most recent call last):
+  File "/home/thaddaus/MasterthesisCode/./mmdetection/tools/train_adaptive.py", line 204, in <module>
+    main()
+  File "/home/thaddaus/MasterthesisCode/./mmdetection/tools/train_adaptive.py", line 192, in main
+    train_detector_adaptive(
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/apis/train.py", line 319, in train_detector_adaptive
+    runner.run(data_loaders_src, data_loaders_tgt, cfg.workflow)
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/adaptive/epoch_based_runner_adaptive.py", line 148, in run
+    epoch_runner(data_loaders_src[i], data_loaders_tgt[i], **kwargs)
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/adaptive/epoch_based_runner_adaptive.py", line 70, in train
+    self.run_iter(data_batch, train_mode=True, **kwargs)
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/adaptive/epoch_based_runner_adaptive.py", line 35, in run_iter
+    outputs = self.model.train_step(data_batch, self.optimizer,
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/parallel/distributed.py", line 51, in train_step
+    output = self.module.train_step(*inputs[0], **kwargs[0])
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/detectors/base_adaptive.py", line 48, in train_step
+    losses = self(**data)
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/runner/fp16_utils.py", line 97, in new_func
+    return old_func(*args, **kwargs)
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/detectors/base_adaptive.py", line 94, in forward
+    return self.forward_train(img, img_metas, img_tgt, img_metas_tgt, **kwargs)
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/detectors/two_stage_da.py", line 261, in forward_train
+    losses_da = self._align_domains(feats)
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/detectors/two_stage_da.py", line 287, in _align_domains
+    losses.update(self.da_heads[f"{module['feat']}_{module['type']}{tag}"](feats))
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/utils/gpa.py", line 84, in forward
+    loss_intra, loss_inter = self._compute_loss(x_src, x_tgt, inputs)
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/utils/gpa.py", line 135, in _compute_loss
+    ptt_tgt = self._build_ptt_bbox_gt(x_tgt, gt_tgt, rois_tgt, dim, self.gt_iou_thrs)
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/models/utils/gpa.py", line 369, in _build_ptt_bbox_gt
+    ptt_pos = torch.stack(ptts_pos, dim=0).mean(dim=0)
+RuntimeError: stack expects a non-empty TensorList
+Traceback (most recent call last):
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/torch/distributed/launch.py", line 340, in <module>
+    main()
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/torch/distributed/launch.py", line 326, in main
+    sigkill_handler(signal.SIGTERM, None)  # not coming back
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/torch/distributed/launch.py", line 301, in sigkill_handler
+    raise subprocess.CalledProcessError(returncode=last_return_code, cmd=cmd)
+subprocess.CalledProcessError: Command '['/home/thaddaus/anaconda3/envs/open-mmlab/bin/python', '-u', './mmdetection/tools/train_adaptive.py', '--local_rank=3', 'mmdetection/configs/sweeps/gpa_pxg.py', '--launcher', 'pytorch', '--work-dir', 'WORK_DIRS/sweeps/gpa_pxg/1c', '--cfg-options', 'data.samples_per_gpu=4', 'data.train_src.ann_file=/data/COCO/annotations/person_train2017.json', 'data.train_src.img_prefix=/data/COCO/train2017', 'data.train_tgt.ann_file=/data/PIROPO/omni_training_1c.json', 'data.train_tgt.img_prefix=None', 'data.val.ann_file=/data/PIROPO/omni_test2.json', 'data.val.img_prefix=None', 'runner.max_epochs=40']' returned non-zero exit status 1.
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+Killing subprocess 68642
+Killing subprocess 68643
+Killing subprocess 68644
+Killing subprocess 68645

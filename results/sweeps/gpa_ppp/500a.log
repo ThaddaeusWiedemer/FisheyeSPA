@@ -1,0 +1,801 @@
+2021-10-07 16:39:50,706 - mmdet - INFO - Environment info:
+------------------------------------------------------------
+sys.platform: linux
+Python: 3.9.5 (default, May 18 2021, 19:34:48) [GCC 7.3.0]
+CUDA available: True
+GPU 0,1,2,3: NVIDIA GeForce GTX 1080 Ti
+CUDA_HOME: /usr/local/cuda-10.1
+NVCC: Cuda compilation tools, release 10.1, V10.1.105
+GCC: gcc (Ubuntu 6.5.0-2ubuntu1~18.04) 6.5.0 20181026
+PyTorch: 1.8.1
+PyTorch compiling details: PyTorch built with:
+  - GCC 7.3
+  - C++ Version: 201402
+  - Intel(R) oneAPI Math Kernel Library Version 2021.2-Product Build 20210312 for Intel(R) 64 architecture applications
+  - Intel(R) MKL-DNN v1.7.0 (Git Hash 7aed236906b1f7a05c0917e5257a1af05e9ff683)
+  - OpenMP 201511 (a.k.a. OpenMP 4.5)
+  - NNPACK is enabled
+  - CPU capability usage: AVX2
+  - CUDA Runtime 10.1
+  - NVCC architecture flags: -gencode;arch=compute_37,code=sm_37;-gencode;arch=compute_50,code=sm_50;-gencode;arch=compute_60,code=sm_60;-gencode;arch=compute_61,code=sm_61;-gencode;arch=compute_70,code=sm_70;-gencode;arch=compute_75,code=sm_75;-gencode;arch=compute_37,code=compute_37
+  - CuDNN 7.6.3
+  - Magma 2.5.2
+  - Build settings: BLAS_INFO=mkl, BUILD_TYPE=Release, CUDA_VERSION=10.1, CUDNN_VERSION=7.6.3, CXX_COMPILER=/opt/rh/devtoolset-7/root/usr/bin/c++, CXX_FLAGS= -Wno-deprecated -fvisibility-inlines-hidden -DUSE_PTHREADPOOL -fopenmp -DNDEBUG -DUSE_KINETO -DUSE_FBGEMM -DUSE_QNNPACK -DUSE_PYTORCH_QNNPACK -DUSE_XNNPACK -O2 -fPIC -Wno-narrowing -Wall -Wextra -Werror=return-type -Wno-missing-field-initializers -Wno-type-limits -Wno-array-bounds -Wno-unknown-pragmas -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -Wno-unused-result -Wno-unused-local-typedefs -Wno-strict-overflow -Wno-strict-aliasing -Wno-error=deprecated-declarations -Wno-stringop-overflow -Wno-psabi -Wno-error=pedantic -Wno-error=redundant-decls -Wno-error=old-style-cast -fdiagnostics-color=always -faligned-new -Wno-unused-but-set-variable -Wno-maybe-uninitialized -fno-math-errno -fno-trapping-math -Werror=format -Wno-stringop-overflow, LAPACK_INFO=mkl, PERF_WITH_AVX=1, PERF_WITH_AVX2=1, PERF_WITH_AVX512=1, TORCH_VERSION=1.8.1, USE_CUDA=ON, USE_CUDNN=ON, USE_EXCEPTION_PTR=1, USE_GFLAGS=OFF, USE_GLOG=OFF, USE_MKL=ON, USE_MKLDNN=ON, USE_MPI=OFF, USE_NCCL=ON, USE_NNPACK=ON, USE_OPENMP=ON, 
+
+TorchVision: 0.2.2
+OpenCV: 4.5.2
+MMCV: 1.3.6
+MMCV Compiler: GCC 7.5
+MMCV CUDA Compiler: 10.1
+MMDetection: 2.13.0+b49c472
+------------------------------------------------------------
+
+INFO:mmdet:Environment info:
+------------------------------------------------------------
+sys.platform: linux
+Python: 3.9.5 (default, May 18 2021, 19:34:48) [GCC 7.3.0]
+CUDA available: True
+GPU 0,1,2,3: NVIDIA GeForce GTX 1080 Ti
+CUDA_HOME: /usr/local/cuda-10.1
+NVCC: Cuda compilation tools, release 10.1, V10.1.105
+GCC: gcc (Ubuntu 6.5.0-2ubuntu1~18.04) 6.5.0 20181026
+PyTorch: 1.8.1
+PyTorch compiling details: PyTorch built with:
+  - GCC 7.3
+  - C++ Version: 201402
+  - Intel(R) oneAPI Math Kernel Library Version 2021.2-Product Build 20210312 for Intel(R) 64 architecture applications
+  - Intel(R) MKL-DNN v1.7.0 (Git Hash 7aed236906b1f7a05c0917e5257a1af05e9ff683)
+  - OpenMP 201511 (a.k.a. OpenMP 4.5)
+  - NNPACK is enabled
+  - CPU capability usage: AVX2
+  - CUDA Runtime 10.1
+  - NVCC architecture flags: -gencode;arch=compute_37,code=sm_37;-gencode;arch=compute_50,code=sm_50;-gencode;arch=compute_60,code=sm_60;-gencode;arch=compute_61,code=sm_61;-gencode;arch=compute_70,code=sm_70;-gencode;arch=compute_75,code=sm_75;-gencode;arch=compute_37,code=compute_37
+  - CuDNN 7.6.3
+  - Magma 2.5.2
+  - Build settings: BLAS_INFO=mkl, BUILD_TYPE=Release, CUDA_VERSION=10.1, CUDNN_VERSION=7.6.3, CXX_COMPILER=/opt/rh/devtoolset-7/root/usr/bin/c++, CXX_FLAGS= -Wno-deprecated -fvisibility-inlines-hidden -DUSE_PTHREADPOOL -fopenmp -DNDEBUG -DUSE_KINETO -DUSE_FBGEMM -DUSE_QNNPACK -DUSE_PYTORCH_QNNPACK -DUSE_XNNPACK -O2 -fPIC -Wno-narrowing -Wall -Wextra -Werror=return-type -Wno-missing-field-initializers -Wno-type-limits -Wno-array-bounds -Wno-unknown-pragmas -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -Wno-unused-result -Wno-unused-local-typedefs -Wno-strict-overflow -Wno-strict-aliasing -Wno-error=deprecated-declarations -Wno-stringop-overflow -Wno-psabi -Wno-error=pedantic -Wno-error=redundant-decls -Wno-error=old-style-cast -fdiagnostics-color=always -faligned-new -Wno-unused-but-set-variable -Wno-maybe-uninitialized -fno-math-errno -fno-trapping-math -Werror=format -Wno-stringop-overflow, LAPACK_INFO=mkl, PERF_WITH_AVX=1, PERF_WITH_AVX2=1, PERF_WITH_AVX512=1, TORCH_VERSION=1.8.1, USE_CUDA=ON, USE_CUDNN=ON, USE_EXCEPTION_PTR=1, USE_GFLAGS=OFF, USE_GLOG=OFF, USE_MKL=ON, USE_MKLDNN=ON, USE_MPI=OFF, USE_NCCL=ON, USE_NNPACK=ON, USE_OPENMP=ON, 
+
+TorchVision: 0.2.2
+OpenCV: 4.5.2
+MMCV: 1.3.6
+MMCV Compiler: GCC 7.5
+MMCV CUDA Compiler: 10.1
+MMDetection: 2.13.0+b49c472
+------------------------------------------------------------
+
+2021-10-07 16:39:51,069 - mmdet - INFO - Distributed training: True
+INFO:mmdet:Distributed training: True
+2021-10-07 16:39:51,438 - mmdet - INFO - Config:
+model = dict(
+    type='TwoStageDetectorDA',
+    backbone=dict(
+        type='ResNet',
+        depth=50,
+        num_stages=4,
+        out_indices=(0, 1, 2, 3),
+        frozen_stages=1,
+        norm_cfg=dict(type='BN', requires_grad=False),
+        norm_eval=True,
+        style='caffe'),
+    neck=dict(
+        type='FPN',
+        in_channels=[256, 512, 1024, 2048],
+        out_channels=256,
+        num_outs=5),
+    rpn_head=dict(
+        type='RPNHead',
+        in_channels=256,
+        feat_channels=256,
+        anchor_generator=dict(
+            type='AnchorGenerator',
+            scales=[8],
+            ratios=[0.5, 1.0, 2.0],
+            strides=[4, 8, 16, 32, 64]),
+        bbox_coder=dict(
+            type='DeltaXYWHBBoxCoder',
+            target_means=[0.0, 0.0, 0.0, 0.0],
+            target_stds=[1.0, 1.0, 1.0, 1.0]),
+        loss_cls=dict(
+            type='CrossEntropyLoss', use_sigmoid=True, loss_weight=1.0),
+        loss_bbox=dict(type='L1Loss', loss_weight=1.0)),
+    roi_head=dict(
+        type='StandardRoIHeadAdaptive',
+        bbox_roi_extractor=dict(
+            type='SingleRoIExtractor',
+            roi_layer=dict(type='RoIAlign', output_size=7, sampling_ratio=0),
+            out_channels=256,
+            featmap_strides=[4, 8, 16, 32]),
+        bbox_head=dict(
+            type='Split2FCBBoxHeadAdaptive',
+            in_channels=256,
+            fc_out_channels=1024,
+            roi_feat_size=7,
+            num_classes=1,
+            bbox_coder=dict(
+                type='DeltaXYWHBBoxCoder',
+                target_means=[0.0, 0.0, 0.0, 0.0],
+                target_stds=[0.1, 0.1, 0.2, 0.2]),
+            reg_class_agnostic=False,
+            loss_cls=dict(
+                type='CrossEntropyLoss', use_sigmoid=False, loss_weight=1.0),
+            loss_bbox=dict(type='L1Loss', loss_weight=1.0))),
+    train_cfg=dict(
+        train_source=False,
+        da=[
+            dict(
+                type='gpa',
+                feat='feat_roi',
+                loss_weights=dict(intra=10.0, inter=0.1),
+                mode='prediction',
+                lambd=1),
+            dict(
+                type='gpa',
+                feat='feat_rcnn_bbox',
+                loss_weights=dict(intra=100.0, inter=0.1),
+                mode='prediction',
+                lambd=1),
+            dict(
+                type='gpa',
+                feat='feat_rcnn_cls',
+                loss_weights=dict(intra=100.0, inter=0.1),
+                mode='prediction',
+                lambd=1)
+        ],
+        rpn=dict(
+            assigner=dict(
+                type='MaxIoUAssigner',
+                pos_iou_thr=0.7,
+                neg_iou_thr=0.3,
+                min_pos_iou=0.3,
+                match_low_quality=True,
+                ignore_iof_thr=-1),
+            sampler=dict(
+                type='RandomSampler',
+                num=256,
+                pos_fraction=0.5,
+                neg_pos_ub=-1,
+                add_gt_as_proposals=False),
+            allowed_border=-1,
+            pos_weight=-1,
+            debug=False),
+        rpn_proposal=dict(
+            nms_pre=2000,
+            max_per_img=1000,
+            nms=dict(type='nms', iou_threshold=0.7),
+            min_bbox_size=0),
+        rcnn=dict(
+            assigner=dict(
+                type='MaxIoUAssigner',
+                pos_iou_thr=0.5,
+                neg_iou_thr=0.5,
+                min_pos_iou=0.5,
+                match_low_quality=False,
+                ignore_iof_thr=-1),
+            sampler=dict(
+                type='RandomSampler',
+                num=512,
+                pos_fraction=0.25,
+                neg_pos_ub=-1,
+                add_gt_as_proposals=False),
+            pos_weight=-1,
+            debug=False)),
+    test_cfg=dict(
+        rpn=dict(
+            nms_pre=1000,
+            max_per_img=1000,
+            nms=dict(type='nms', iou_threshold=0.7),
+            min_bbox_size=0),
+        rcnn=dict(
+            score_thr=0.05,
+            nms=dict(type='nms', iou_threshold=0.5),
+            max_per_img=100)))
+dataset_type = 'CocoDataset'
+data_root_src = 'data/PIROPO/'
+data_root_tgt = 'data/MW-18Mar/'
+classes = ('person', )
+img_norm_cfg = dict(
+    mean=[103.53, 116.28, 123.675], std=[1.0, 1.0, 1.0], to_rgb=False)
+train_pipeline_src = [
+    dict(type='LoadImageFromFile'),
+    dict(type='LoadAnnotations', with_bbox=True),
+    dict(type='Resize', img_scale=(800, 800), keep_ratio=True),
+    dict(type='RandomFlip', flip_ratio=0.5),
+    dict(
+        type='Normalize',
+        mean=[103.53, 116.28, 123.675],
+        std=[1.0, 1.0, 1.0],
+        to_rgb=False),
+    dict(type='Pad', size_divisor=32),
+    dict(type='DefaultFormatBundle'),
+    dict(type='Collect', keys=['img', 'gt_bboxes', 'gt_labels'])
+]
+train_pipeline_tgt = [
+    dict(type='LoadImageFromFile'),
+    dict(type='LoadAnnotations', with_bbox=True),
+    dict(type='Resize', img_scale=(800, 800), keep_ratio=True),
+    dict(type='RandomFlip', flip_ratio=0.5),
+    dict(
+        type='Normalize',
+        mean=[103.53, 116.28, 123.675],
+        std=[1.0, 1.0, 1.0],
+        to_rgb=False),
+    dict(type='Pad', size_divisor=32),
+    dict(type='DefaultFormatBundle'),
+    dict(type='Collect', keys=['img', 'gt_bboxes', 'gt_labels'])
+]
+test_pipeline = [
+    dict(type='LoadImageFromFile'),
+    dict(
+        type='MultiScaleFlipAug',
+        img_scale=(1333, 800),
+        flip=False,
+        transforms=[
+            dict(type='Resize', keep_ratio=True),
+            dict(type='RandomFlip'),
+            dict(
+                type='Normalize',
+                mean=[103.53, 116.28, 123.675],
+                std=[1.0, 1.0, 1.0],
+                to_rgb=False),
+            dict(type='Pad', size_divisor=32),
+            dict(type='ImageToTensor', keys=['img']),
+            dict(type='Collect', keys=['img'])
+        ])
+]
+data = dict(
+    samples_per_gpu=4,
+    workers_per_gpu=2,
+    train_src=dict(
+        type='CocoDataset',
+        ann_file='/data/COCO/annotations/person_train2017.json',
+        img_prefix='/data/COCO/train2017',
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(type='LoadAnnotations', with_bbox=True),
+            dict(type='Resize', img_scale=(800, 800), keep_ratio=True),
+            dict(type='RandomFlip', flip_ratio=0.5),
+            dict(
+                type='Normalize',
+                mean=[103.53, 116.28, 123.675],
+                std=[1.0, 1.0, 1.0],
+                to_rgb=False),
+            dict(type='Pad', size_divisor=32),
+            dict(type='DefaultFormatBundle'),
+            dict(type='Collect', keys=['img', 'gt_bboxes', 'gt_labels'])
+        ],
+        classes=('person', )),
+    train_tgt=dict(
+        type='CocoDataset',
+        ann_file='/data/PIROPO/omni_training_500a.json',
+        img_prefix='None',
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(type='LoadAnnotations', with_bbox=True),
+            dict(type='Resize', img_scale=(800, 800), keep_ratio=True),
+            dict(type='RandomFlip', flip_ratio=0.5),
+            dict(
+                type='Normalize',
+                mean=[103.53, 116.28, 123.675],
+                std=[1.0, 1.0, 1.0],
+                to_rgb=False),
+            dict(type='Pad', size_divisor=32),
+            dict(type='DefaultFormatBundle'),
+            dict(type='Collect', keys=['img', 'gt_bboxes', 'gt_labels'])
+        ],
+        classes=('person', )),
+    val=dict(
+        type='CocoDataset',
+        ann_file='',
+        img_prefix='None',
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(
+                type='MultiScaleFlipAug',
+                img_scale=(1333, 800),
+                flip=False,
+                transforms=[
+                    dict(type='Resize', keep_ratio=True),
+                    dict(type='RandomFlip'),
+                    dict(
+                        type='Normalize',
+                        mean=[103.53, 116.28, 123.675],
+                        std=[1.0, 1.0, 1.0],
+                        to_rgb=False),
+                    dict(type='Pad', size_divisor=32),
+                    dict(type='ImageToTensor', keys=['img']),
+                    dict(type='Collect', keys=['img'])
+                ])
+        ],
+        classes=('person', )),
+    test=dict(
+        type='CocoDataset',
+        ann_file='data/MW-18Mar/test.json',
+        img_prefix='data/MW-18Mar/',
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(
+                type='MultiScaleFlipAug',
+                img_scale=(1333, 800),
+                flip=False,
+                transforms=[
+                    dict(type='Resize', keep_ratio=True),
+                    dict(type='RandomFlip'),
+                    dict(
+                        type='Normalize',
+                        mean=[103.53, 116.28, 123.675],
+                        std=[1.0, 1.0, 1.0],
+                        to_rgb=False),
+                    dict(type='Pad', size_divisor=32),
+                    dict(type='ImageToTensor', keys=['img']),
+                    dict(type='Collect', keys=['img'])
+                ])
+        ],
+        classes=('person', )))
+optimizer = dict(type='SGD', lr=0.001, momentum=0.9, weight_decay=0.0001)
+optimizer_config = dict(grad_clip=None)
+lr_config = dict(policy='fixed')
+runner = dict(type='EpochBasedRunnerAdaptive', max_epochs=40)
+checkpoint_config = dict(interval=200)
+evaluation = dict(interval=1, save_best='bbox_mAP_50', metric='bbox')
+log_config = dict(interval=1, hooks=[dict(type='TextLoggerHook')])
+custom_hooks = [dict(type='NumClassCheckHook')]
+dist_params = dict(backend='nccl')
+log_level = 'INFO'
+load_from = 'mmdetection/checkpoints/faster_rcnn_r50_fpn_1x_coco-person_20201216_175929-d022e227_split.pth'
+resume_from = None
+workflow = [('train', 1)]
+work_dir = 'WORK_DIRS/sweeps/gpa/500a'
+gpu_ids = range(0, 4)
+
+INFO:mmdet:Config:
+model = dict(
+    type='TwoStageDetectorDA',
+    backbone=dict(
+        type='ResNet',
+        depth=50,
+        num_stages=4,
+        out_indices=(0, 1, 2, 3),
+        frozen_stages=1,
+        norm_cfg=dict(type='BN', requires_grad=False),
+        norm_eval=True,
+        style='caffe'),
+    neck=dict(
+        type='FPN',
+        in_channels=[256, 512, 1024, 2048],
+        out_channels=256,
+        num_outs=5),
+    rpn_head=dict(
+        type='RPNHead',
+        in_channels=256,
+        feat_channels=256,
+        anchor_generator=dict(
+            type='AnchorGenerator',
+            scales=[8],
+            ratios=[0.5, 1.0, 2.0],
+            strides=[4, 8, 16, 32, 64]),
+        bbox_coder=dict(
+            type='DeltaXYWHBBoxCoder',
+            target_means=[0.0, 0.0, 0.0, 0.0],
+            target_stds=[1.0, 1.0, 1.0, 1.0]),
+        loss_cls=dict(
+            type='CrossEntropyLoss', use_sigmoid=True, loss_weight=1.0),
+        loss_bbox=dict(type='L1Loss', loss_weight=1.0)),
+    roi_head=dict(
+        type='StandardRoIHeadAdaptive',
+        bbox_roi_extractor=dict(
+            type='SingleRoIExtractor',
+            roi_layer=dict(type='RoIAlign', output_size=7, sampling_ratio=0),
+            out_channels=256,
+            featmap_strides=[4, 8, 16, 32]),
+        bbox_head=dict(
+            type='Split2FCBBoxHeadAdaptive',
+            in_channels=256,
+            fc_out_channels=1024,
+            roi_feat_size=7,
+            num_classes=1,
+            bbox_coder=dict(
+                type='DeltaXYWHBBoxCoder',
+                target_means=[0.0, 0.0, 0.0, 0.0],
+                target_stds=[0.1, 0.1, 0.2, 0.2]),
+            reg_class_agnostic=False,
+            loss_cls=dict(
+                type='CrossEntropyLoss', use_sigmoid=False, loss_weight=1.0),
+            loss_bbox=dict(type='L1Loss', loss_weight=1.0))),
+    train_cfg=dict(
+        train_source=False,
+        da=[
+            dict(
+                type='gpa',
+                feat='feat_roi',
+                loss_weights=dict(intra=10.0, inter=0.1),
+                mode='prediction',
+                lambd=1),
+            dict(
+                type='gpa',
+                feat='feat_rcnn_bbox',
+                loss_weights=dict(intra=100.0, inter=0.1),
+                mode='prediction',
+                lambd=1),
+            dict(
+                type='gpa',
+                feat='feat_rcnn_cls',
+                loss_weights=dict(intra=100.0, inter=0.1),
+                mode='prediction',
+                lambd=1)
+        ],
+        rpn=dict(
+            assigner=dict(
+                type='MaxIoUAssigner',
+                pos_iou_thr=0.7,
+                neg_iou_thr=0.3,
+                min_pos_iou=0.3,
+                match_low_quality=True,
+                ignore_iof_thr=-1),
+            sampler=dict(
+                type='RandomSampler',
+                num=256,
+                pos_fraction=0.5,
+                neg_pos_ub=-1,
+                add_gt_as_proposals=False),
+            allowed_border=-1,
+            pos_weight=-1,
+            debug=False),
+        rpn_proposal=dict(
+            nms_pre=2000,
+            max_per_img=1000,
+            nms=dict(type='nms', iou_threshold=0.7),
+            min_bbox_size=0),
+        rcnn=dict(
+            assigner=dict(
+                type='MaxIoUAssigner',
+                pos_iou_thr=0.5,
+                neg_iou_thr=0.5,
+                min_pos_iou=0.5,
+                match_low_quality=False,
+                ignore_iof_thr=-1),
+            sampler=dict(
+                type='RandomSampler',
+                num=512,
+                pos_fraction=0.25,
+                neg_pos_ub=-1,
+                add_gt_as_proposals=False),
+            pos_weight=-1,
+            debug=False)),
+    test_cfg=dict(
+        rpn=dict(
+            nms_pre=1000,
+            max_per_img=1000,
+            nms=dict(type='nms', iou_threshold=0.7),
+            min_bbox_size=0),
+        rcnn=dict(
+            score_thr=0.05,
+            nms=dict(type='nms', iou_threshold=0.5),
+            max_per_img=100)))
+dataset_type = 'CocoDataset'
+data_root_src = 'data/PIROPO/'
+data_root_tgt = 'data/MW-18Mar/'
+classes = ('person', )
+img_norm_cfg = dict(
+    mean=[103.53, 116.28, 123.675], std=[1.0, 1.0, 1.0], to_rgb=False)
+train_pipeline_src = [
+    dict(type='LoadImageFromFile'),
+    dict(type='LoadAnnotations', with_bbox=True),
+    dict(type='Resize', img_scale=(800, 800), keep_ratio=True),
+    dict(type='RandomFlip', flip_ratio=0.5),
+    dict(
+        type='Normalize',
+        mean=[103.53, 116.28, 123.675],
+        std=[1.0, 1.0, 1.0],
+        to_rgb=False),
+    dict(type='Pad', size_divisor=32),
+    dict(type='DefaultFormatBundle'),
+    dict(type='Collect', keys=['img', 'gt_bboxes', 'gt_labels'])
+]
+train_pipeline_tgt = [
+    dict(type='LoadImageFromFile'),
+    dict(type='LoadAnnotations', with_bbox=True),
+    dict(type='Resize', img_scale=(800, 800), keep_ratio=True),
+    dict(type='RandomFlip', flip_ratio=0.5),
+    dict(
+        type='Normalize',
+        mean=[103.53, 116.28, 123.675],
+        std=[1.0, 1.0, 1.0],
+        to_rgb=False),
+    dict(type='Pad', size_divisor=32),
+    dict(type='DefaultFormatBundle'),
+    dict(type='Collect', keys=['img', 'gt_bboxes', 'gt_labels'])
+]
+test_pipeline = [
+    dict(type='LoadImageFromFile'),
+    dict(
+        type='MultiScaleFlipAug',
+        img_scale=(1333, 800),
+        flip=False,
+        transforms=[
+            dict(type='Resize', keep_ratio=True),
+            dict(type='RandomFlip'),
+            dict(
+                type='Normalize',
+                mean=[103.53, 116.28, 123.675],
+                std=[1.0, 1.0, 1.0],
+                to_rgb=False),
+            dict(type='Pad', size_divisor=32),
+            dict(type='ImageToTensor', keys=['img']),
+            dict(type='Collect', keys=['img'])
+        ])
+]
+data = dict(
+    samples_per_gpu=4,
+    workers_per_gpu=2,
+    train_src=dict(
+        type='CocoDataset',
+        ann_file='/data/COCO/annotations/person_train2017.json',
+        img_prefix='/data/COCO/train2017',
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(type='LoadAnnotations', with_bbox=True),
+            dict(type='Resize', img_scale=(800, 800), keep_ratio=True),
+            dict(type='RandomFlip', flip_ratio=0.5),
+            dict(
+                type='Normalize',
+                mean=[103.53, 116.28, 123.675],
+                std=[1.0, 1.0, 1.0],
+                to_rgb=False),
+            dict(type='Pad', size_divisor=32),
+            dict(type='DefaultFormatBundle'),
+            dict(type='Collect', keys=['img', 'gt_bboxes', 'gt_labels'])
+        ],
+        classes=('person', )),
+    train_tgt=dict(
+        type='CocoDataset',
+        ann_file='/data/PIROPO/omni_training_500a.json',
+        img_prefix='None',
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(type='LoadAnnotations', with_bbox=True),
+            dict(type='Resize', img_scale=(800, 800), keep_ratio=True),
+            dict(type='RandomFlip', flip_ratio=0.5),
+            dict(
+                type='Normalize',
+                mean=[103.53, 116.28, 123.675],
+                std=[1.0, 1.0, 1.0],
+                to_rgb=False),
+            dict(type='Pad', size_divisor=32),
+            dict(type='DefaultFormatBundle'),
+            dict(type='Collect', keys=['img', 'gt_bboxes', 'gt_labels'])
+        ],
+        classes=('person', )),
+    val=dict(
+        type='CocoDataset',
+        ann_file='',
+        img_prefix='None',
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(
+                type='MultiScaleFlipAug',
+                img_scale=(1333, 800),
+                flip=False,
+                transforms=[
+                    dict(type='Resize', keep_ratio=True),
+                    dict(type='RandomFlip'),
+                    dict(
+                        type='Normalize',
+                        mean=[103.53, 116.28, 123.675],
+                        std=[1.0, 1.0, 1.0],
+                        to_rgb=False),
+                    dict(type='Pad', size_divisor=32),
+                    dict(type='ImageToTensor', keys=['img']),
+                    dict(type='Collect', keys=['img'])
+                ])
+        ],
+        classes=('person', )),
+    test=dict(
+        type='CocoDataset',
+        ann_file='data/MW-18Mar/test.json',
+        img_prefix='data/MW-18Mar/',
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(
+                type='MultiScaleFlipAug',
+                img_scale=(1333, 800),
+                flip=False,
+                transforms=[
+                    dict(type='Resize', keep_ratio=True),
+                    dict(type='RandomFlip'),
+                    dict(
+                        type='Normalize',
+                        mean=[103.53, 116.28, 123.675],
+                        std=[1.0, 1.0, 1.0],
+                        to_rgb=False),
+                    dict(type='Pad', size_divisor=32),
+                    dict(type='ImageToTensor', keys=['img']),
+                    dict(type='Collect', keys=['img'])
+                ])
+        ],
+        classes=('person', )))
+optimizer = dict(type='SGD', lr=0.001, momentum=0.9, weight_decay=0.0001)
+optimizer_config = dict(grad_clip=None)
+lr_config = dict(policy='fixed')
+runner = dict(type='EpochBasedRunnerAdaptive', max_epochs=40)
+checkpoint_config = dict(interval=200)
+evaluation = dict(interval=1, save_best='bbox_mAP_50', metric='bbox')
+log_config = dict(interval=1, hooks=[dict(type='TextLoggerHook')])
+custom_hooks = [dict(type='NumClassCheckHook')]
+dist_params = dict(backend='nccl')
+log_level = 'INFO'
+load_from = 'mmdetection/checkpoints/faster_rcnn_r50_fpn_1x_coco-person_20201216_175929-d022e227_split.pth'
+resume_from = None
+workflow = [('train', 1)]
+work_dir = 'WORK_DIRS/sweeps/gpa/500a'
+gpu_ids = range(0, 4)
+
+/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/cnn/utils/weight_init.py:118: UserWarning: init_cfg without layer key, if you do not define override key either, this init_cfg will do nothing
+  warnings.warn(
+/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/cnn/utils/weight_init.py:118: UserWarning: init_cfg without layer key, if you do not define override key either, this init_cfg will do nothing
+  warnings.warn(
+/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/cnn/utils/weight_init.py:118: UserWarning: init_cfg without layer key, if you do not define override key either, this init_cfg will do nothing
+  warnings.warn(
+/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/cnn/utils/weight_init.py:118: UserWarning: init_cfg without layer key, if you do not define override key either, this init_cfg will do nothing
+  warnings.warn(
+loading annotations into memory...
+loading annotations into memory...
+loading annotations into memory...
+loading annotations into memory...
+Done (t=5.28s)
+creating index...
+Done (t=5.29s)
+creating index...
+Done (t=5.42s)
+creating index...
+Done (t=5.48s)
+creating index...
+index created!
+index created!
+index created!
+index created!
+loading annotations into memory...
+loading annotations into memory...
+Done (t=0.01s)
+creating index...
+index created!
+Done (t=0.01s)
+creating index...
+index created!
+loading annotations into memory...
+Done (t=0.01s)
+creating index...
+index created!
+loading annotations into memory...
+Done (t=0.04s)
+creating index...
+index created!
+loading annotations into memory...loading annotations into memory...
+
+loading annotations into memory...
+loading annotations into memory...
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/utils/registry.py", line 51, in build_from_cfg
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/utils/registry.py", line 51, in build_from_cfg
+Traceback (most recent call last):
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/utils/registry.py", line 51, in build_from_cfg
+        return obj_cls(**args)return obj_cls(**args)
+
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/datasets/custom.py", line 88, in __init__
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/datasets/custom.py", line 88, in __init__
+Traceback (most recent call last):
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/utils/registry.py", line 51, in build_from_cfg
+        self.data_infos = self.load_annotations(self.ann_file)self.data_infos = self.load_annotations(self.ann_file)
+
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/datasets/coco.py", line 50, in load_annotations
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/datasets/coco.py", line 50, in load_annotations
+        self.coco = COCO(ann_file)self.coco = COCO(ann_file)
+
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/datasets/api_wrappers/coco_api.py", line 22, in __init__
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/datasets/api_wrappers/coco_api.py", line 22, in __init__
+    return obj_cls(**args)
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/datasets/custom.py", line 88, in __init__
+        super().__init__(annotation_file=annotation_file)super().__init__(annotation_file=annotation_file)
+
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/pycocotools/coco.py", line 84, in __init__
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/pycocotools/coco.py", line 84, in __init__
+            with open(annotation_file, 'r') as f:with open(annotation_file, 'r') as f:self.data_infos = self.load_annotations(self.ann_file)
+    
+
+return obj_cls(**args)  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/datasets/coco.py", line 50, in load_annotations
+
+FileNotFoundError  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/datasets/custom.py", line 88, in __init__
+FileNotFoundError: [Errno 2] No such file or directory: '': 
+[Errno 2] No such file or directory: ''
+
+During handling of the above exception, another exception occurred:
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/home/thaddaus/MasterthesisCode/./mmdetection/tools/train_adaptive.py", line 204, in <module>
+  File "/home/thaddaus/MasterthesisCode/./mmdetection/tools/train_adaptive.py", line 204, in <module>
+    self.coco = COCO(ann_file)
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/datasets/api_wrappers/coco_api.py", line 22, in __init__
+    self.data_infos = self.load_annotations(self.ann_file)
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/datasets/coco.py", line 50, in load_annotations
+    super().__init__(annotation_file=annotation_file)    
+main()  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/pycocotools/coco.py", line 84, in __init__
+
+  File "/home/thaddaus/MasterthesisCode/./mmdetection/tools/train_adaptive.py", line 192, in main
+    main()
+  File "/home/thaddaus/MasterthesisCode/./mmdetection/tools/train_adaptive.py", line 192, in main
+    self.coco = COCO(ann_file)
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/datasets/api_wrappers/coco_api.py", line 22, in __init__
+    with open(annotation_file, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: ''        
+train_detector_adaptive(super().__init__(annotation_file=annotation_file)
+During handling of the above exception, another exception occurred:
+
+
+
+Traceback (most recent call last):
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/apis/train.py", line 289, in train_detector_adaptive
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/pycocotools/coco.py", line 84, in __init__
+  File "/home/thaddaus/MasterthesisCode/./mmdetection/tools/train_adaptive.py", line 204, in <module>
+    train_detector_adaptive(
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/apis/train.py", line 289, in train_detector_adaptive
+    with open(annotation_file, 'r') as f:
+FileNotFoundError    : main()[Errno 2] No such file or directory: ''
+
+  File "/home/thaddaus/MasterthesisCode/./mmdetection/tools/train_adaptive.py", line 192, in main
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/thaddaus/MasterthesisCode/./mmdetection/tools/train_adaptive.py", line 204, in <module>
+    val_dataset = build_dataset(cfg.data.val, dict(test_mode=True))
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/datasets/builder.py", line 71, in build_dataset
+    main()
+      File "/home/thaddaus/MasterthesisCode/./mmdetection/tools/train_adaptive.py", line 192, in main
+val_dataset = build_dataset(cfg.data.val, dict(test_mode=True))
+    dataset = build_from_cfg(cfg, DATASETS, default_args)  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/datasets/builder.py", line 71, in build_dataset
+
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/utils/registry.py", line 54, in build_from_cfg
+    train_detector_adaptive(
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/apis/train.py", line 289, in train_detector_adaptive
+        raise type(e)(f'{obj_cls.__name__}: {e}')dataset = build_from_cfg(cfg, DATASETS, default_args)
+
+FileNotFoundError  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/utils/registry.py", line 54, in build_from_cfg
+: CocoDataset: [Errno 2] No such file or directory: ''
+    train_detector_adaptive(
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/apis/train.py", line 289, in train_detector_adaptive
+    raise type(e)(f'{obj_cls.__name__}: {e}')
+FileNotFoundError: CocoDataset: [Errno 2] No such file or directory: ''
+    val_dataset = build_dataset(cfg.data.val, dict(test_mode=True))
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/datasets/builder.py", line 71, in build_dataset
+        val_dataset = build_dataset(cfg.data.val, dict(test_mode=True))dataset = build_from_cfg(cfg, DATASETS, default_args)
+
+  File "/home/thaddaus/MasterthesisCode/mmdetection/mmdet/datasets/builder.py", line 71, in build_dataset
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/utils/registry.py", line 54, in build_from_cfg
+    raise type(e)(f'{obj_cls.__name__}: {e}')
+    FileNotFoundErrordataset = build_from_cfg(cfg, DATASETS, default_args): 
+CocoDataset: [Errno 2] No such file or directory: ''  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/mmcv/utils/registry.py", line 54, in build_from_cfg
+
+    raise type(e)(f'{obj_cls.__name__}: {e}')
+FileNotFoundError: CocoDataset: [Errno 2] No such file or directory: ''
+Traceback (most recent call last):
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/torch/distributed/launch.py", line 340, in <module>
+    main()
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/torch/distributed/launch.py", line 326, in main
+    sigkill_handler(signal.SIGTERM, None)  # not coming back
+  File "/home/thaddaus/anaconda3/envs/open-mmlab/lib/python3.9/site-packages/torch/distributed/launch.py", line 301, in sigkill_handler
+    raise subprocess.CalledProcessError(returncode=last_return_code, cmd=cmd)
+subprocess.CalledProcessError: Command '['/home/thaddaus/anaconda3/envs/open-mmlab/bin/python', '-u', './mmdetection/tools/train_adaptive.py', '--local_rank=3', 'mmdetection/configs/sweeps/gpa.py', '--launcher', 'pytorch', '--work-dir', 'WORK_DIRS/sweeps/gpa/500a', '--cfg-options', 'data.samples_per_gpu=4', 'data.train_src.ann_file=/data/COCO/annotations/person_train2017.json', 'data.train_src.img_prefix=/data/COCO/train2017', 'data.train_tgt.ann_file=/data/PIROPO/omni_training_500a.json', 'data.train_tgt.img_prefix=None', 'data.val.ann_file=', 'data.val.img_prefix=None', 'runner.max_epochs=40']' returned non-zero exit status 1.
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+Killing subprocess 35421
+Killing subprocess 35422
+Killing subprocess 35423
+Killing subprocess 35424
