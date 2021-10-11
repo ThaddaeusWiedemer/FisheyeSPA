@@ -10,9 +10,12 @@ TOOL_DIR=mmdetection/tools
 # CONFIG_FILE=mmdetection/configs/sweeps/gpa_pxg.py
 # WORK_DIR=WORK_DIRS/sweeps/gpa_pxg
 # RES_DIR=results/sweeps/gpa_pxg
-CONFIG_FILE=mmdetection/configs/sweeps/gpa_-xg.py
-WORK_DIR=WORK_DIRS/sweeps/gpa_-xg
-RES_DIR=results/sweeps/gpa_-xg
+# CONFIG_FILE=mmdetection/configs/sweeps/gpa_-xg.py
+# WORK_DIR=WORK_DIRS/sweeps/gpa_-xg
+# RES_DIR=results/sweeps/gpa_-xg
+CONFIG_FILE=mmdetection/configs/sweeps/adv_0.py
+WORK_DIR=WORK_DIRS/sweeps/adv_0
+RES_DIR=results/sweeps/adv_0
 mkdir -p ${WORK_DIR}
 mkdir -p ${RES_DIR}
 
@@ -54,22 +57,30 @@ do
             data.val.img_prefix=${TEST_PRE} \
             runner.max_epochs=${EPOCHS} \
             2>&1 | tee ${RES_DIR}/${n}${x}.log
+        
+        # free up space
+        rm ${WORK_DIR}/${n}${x}/*.log # we already save the log in the results file
+        rm ${WORK_DIR}/${n}${x}/*.json # we don't need the log as .json file
+        rm ${WORK_DIR}/${n}${x}/epoch_40.pth # we only want the best, not the last model
+        rm ${WORK_DIR}/${n}${x}/latest.pth # we only want the best, not the last model
+        rm ${WORK_DIR}/${n}${x}/*.py # we already save the model config in the log file
+
     done
 done
 
 # train once on whole dataset
-mkdir ${WORK_DIR}/all
+# mkdir ${WORK_DIR}/all
 
-CUDA_VISIBLE_DEVICES=${VIS_GPU} PORT=${GPU_PORT} ./${TOOL_DIR}/dist_train_adaptive.sh \
-${CONFIG_FILE} \
-${N_GPU} \
---work-dir ${WORK_DIR}/all \
---cfg-options data.samples_per_gpu=$(($BATCH/$N_GPU)) \
-    data.train_src.ann_file=${SRC_ANNS} \
-    data.train_src.img_prefix=${SRC_PRE} \
-    data.train_tgt.ann_file=${TGT_ANNS}.json \
-    data.train_tgt.img_prefix=${TGT_PRE} \
-    data.val.ann_file=${TEST_ANNS} \
-    data.val.img_prefix=${TEST_PRE} \
-    runner.max_epochs=${EPOCHS} \
-    2>&1 | tee ${RES_DIR}/all.log
+# CUDA_VISIBLE_DEVICES=${VIS_GPU} PORT=${GPU_PORT} ./${TOOL_DIR}/dist_train_adaptive.sh \
+# ${CONFIG_FILE} \
+# ${N_GPU} \
+# --work-dir ${WORK_DIR}/all \
+# --cfg-options data.samples_per_gpu=$(($BATCH/$N_GPU)) \
+#     data.train_src.ann_file=${SRC_ANNS} \
+#     data.train_src.img_prefix=${SRC_PRE} \
+#     data.train_tgt.ann_file=${TGT_ANNS}.json \
+#     data.train_tgt.img_prefix=${TGT_PRE} \
+#     data.val.ann_file=${TEST_ANNS} \
+#     data.val.img_prefix=${TEST_PRE} \
+#     runner.max_epochs=${EPOCHS} \
+#     2>&1 | tee ${RES_DIR}/all.log
