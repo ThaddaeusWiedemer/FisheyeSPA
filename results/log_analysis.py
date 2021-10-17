@@ -6,6 +6,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sb
 import time
+import os.path
 
 
 def kit():
@@ -85,6 +86,9 @@ def keys_from_log(path: str, keys: list[str], verbose=False):
 
 def df_from_log(cols: list[str], keys: list[str], logs: list[list[str]], get_nth: int = 2, get_max: bool = False):
     '''
+    Get a dataframe containing all ``get_nth`` values corresponding to ``keys`` in the log.
+
+    If `´get_max`` is set also return the maximum value per key.
 
     Arguments:
         cols        (list[str]): list of columns to be added to the dataframe
@@ -95,7 +99,8 @@ def df_from_log(cols: list[str], keys: list[str], logs: list[list[str]], get_nth
         get_max          (bool): get max and argmax for every metric in every log as additional output
 
     Returns:
-        pandas.DataFrame
+        pandas.DataFrame: containing the value sequence for each key
+        dict(tupel(int, float)), optional: containing the (argmax, max) of each sequence
     '''
     dfs = []
     maxs = []
@@ -129,6 +134,38 @@ def df_from_log(cols: list[str], keys: list[str], logs: list[list[str]], get_nth
     df = pd.concat(dfs, axis=0)
 
     return df, maxs
+
+
+def df_from_sweep(dir, sizes, splits=['a', 'b', 'c'], all_size=2357):
+    res = []
+    for n in sizes:
+        if n != 'all':
+            for x in splits:
+                if not os.path.isfile(f'{dir}/{n}{x}.log'):
+                    print(f'{dir}/{n}{x}.log does not exist, skipping it ...')
+                    continue
+                log = [[f'{dir}/{n}{x}.log', n, x]]
+                _, maxs = df_from_log(['size', 'split'], ['bbox_mAP', 'bbox_mAP_75', 'bbox_mAP_50', 'LAMR'],
+                                      log,
+                                      get_max=True)
+                _res = {'size': n, 'split': x}
+                for k, v in maxs[0].items():
+                    _res.update({k: v[1]})
+                res.append(_res)
+        else:
+            log = [[f'{dir}/all.log', all_size, 'a']]
+            _, maxs = df_from_log(['size', 'split'], ['bbox_mAP', 'bbox_mAP_75', 'bbox_mAP_50', 'LAMR'],
+                                  log,
+                                  get_max=True)
+            _res = {'size': all_size, 'split': 'a'}
+            for k, v in maxs[0].items():
+                _res.update({k: v[1]})
+            res.append(_res)
+
+    df = pd.DataFrame(res)
+    df = df.melt(id_vars=['size', 'split'], var_name='metric')
+
+    return df
 
 
 def smooth(y, window_length):
