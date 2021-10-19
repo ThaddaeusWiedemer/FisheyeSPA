@@ -13,8 +13,16 @@ def kit():
     return sb.color_palette(['#179C7D', '#006E92', '#25BAE2', '#EB6A0A'])  # green, blue, light blue, orange
 
 
+def kit3():
+    return sb.color_palette(['#179C7D', '#006E92', '#EB6A0A'])  # green, blue, orange
+
+
 def kit_shades():
     return sb.color_palette(['#179C7D', '#52E5C3', '#8CEED7', '#C5F6EB'])  # green shades
+
+
+def kit_shades2():
+    return sb.color_palette(['#179C7D', '#006E92', '#52E5C3', '#25BAE2'])  # green, blue + shades
 
 
 # possible keys for metrics are:
@@ -54,12 +62,13 @@ def keys_from_log_epoch(path: str, keys: list[str]):
     return out
 
 
-def keys_from_log(path: str, keys: list[str], verbose=False):
+def keys_from_log(path: str, keys: list[str], verbose=False, alt_pattern=False, **kwargs):
     '''get all occurences of keys from a log file
     
     Arguments:
         path        (str): path to log file
         keys  (list[str]): keys to be extracted
+        alt_pattern (bool): whether to use <key', value> pattern instead of <key: value>
 
     Returns:
         dict{'key': value}
@@ -68,7 +77,10 @@ def keys_from_log(path: str, keys: list[str], verbose=False):
     key_patterns = []
     for key in keys:
         out.update({key: []})
-        key_patterns.append(re.compile(f'{key}: (nan|-?\d*.?\d*e?-?\d*),?'))
+        if alt_pattern:
+            key_patterns.append(re.compile(f"{key}', (nan|-?\d*.?\d*e?-?\d*)"))
+        else:
+            key_patterns.append(re.compile(f'{key}: (nan|-?\d*.?\d*e?-?\d*),?'))
 
     for i, line in enumerate(open(path, 'r')):
         for key, pattern in zip(keys, key_patterns):
@@ -84,7 +96,12 @@ def keys_from_log(path: str, keys: list[str], verbose=False):
     return out
 
 
-def df_from_log(cols: list[str], keys: list[str], logs: list[list[str]], get_nth: int = 2, get_max: bool = False):
+def df_from_log(cols: list[str],
+                keys: list[str],
+                logs: list[list[str]],
+                get_nth: int = 2,
+                get_max: bool = False,
+                **kwargs):
     '''
     Get a dataframe containing all ``get_nth`` values corresponding to ``keys`` in the log.
 
@@ -106,7 +123,7 @@ def df_from_log(cols: list[str], keys: list[str], logs: list[list[str]], get_nth
     maxs = []
     for log, *col_values in logs:
         # collect keys and save in long-form dataframe
-        df = pd.DataFrame(keys_from_log(log, keys))
+        df = pd.DataFrame(keys_from_log(log, keys, **kwargs))
         df = df.melt(id_vars=['occurrence'], var_name='metric')
         # get only every n-th occurence and label them correctly
         if get_nth is not None:
@@ -123,11 +140,17 @@ def df_from_log(cols: list[str], keys: list[str], logs: list[list[str]], get_nth
                 # idx = df['occurrence'][i]
                 # value = df[df['metric']==key]['value'][i]
                 if key == 'LAMR':
-                    _max = df.loc[df[df['metric'] == key]['value'].idxmin()]
-                    _maxs.update({key: (_max['occurrence'], _max['value'])})
+                    try:
+                        _max = df.loc[df[df['metric'] == key]['value'].idxmin()]
+                        _maxs.update({key: (_max['occurrence'], _max['value'])})
+                    except ValueError:
+                        print(f'no values in log {log}')
                 else:
-                    _max = df.loc[df[df['metric'] == key]['value'].idxmax()]
-                    _maxs.update({key: (_max['occurrence'], _max['value'])})
+                    try:
+                        _max = df.loc[df[df['metric'] == key]['value'].idxmax()]
+                        _maxs.update({key: (_max['occurrence'], _max['value'])})
+                    except ValueError:
+                        print(f'no values in log {log}')
             maxs.append(_maxs)
         dfs.append(df)
 
@@ -136,7 +159,7 @@ def df_from_log(cols: list[str], keys: list[str], logs: list[list[str]], get_nth
     return df, maxs
 
 
-def df_from_sweep(dir, sizes, splits=['a', 'b', 'c'], all_size=2357):
+def df_from_sweep(dir, sizes, splits=['a', 'b', 'c'], all_size=2357, **kwargs):
     res = []
     for n in sizes:
         if n != 'all':
@@ -147,7 +170,8 @@ def df_from_sweep(dir, sizes, splits=['a', 'b', 'c'], all_size=2357):
                 log = [[f'{dir}/{n}{x}.log', n, x]]
                 _, maxs = df_from_log(['size', 'split'], ['bbox_mAP', 'bbox_mAP_75', 'bbox_mAP_50', 'LAMR'],
                                       log,
-                                      get_max=True)
+                                      get_max=True,
+                                      **kwargs)
                 _res = {'size': n, 'split': x}
                 for k, v in maxs[0].items():
                     _res.update({k: v[1]})
@@ -156,7 +180,8 @@ def df_from_sweep(dir, sizes, splits=['a', 'b', 'c'], all_size=2357):
             log = [[f'{dir}/all.log', all_size, 'a']]
             _, maxs = df_from_log(['size', 'split'], ['bbox_mAP', 'bbox_mAP_75', 'bbox_mAP_50', 'LAMR'],
                                   log,
-                                  get_max=True)
+                                  get_max=True,
+                                  **kwargs)
             _res = {'size': all_size, 'split': 'a'}
             for k, v in maxs[0].items():
                 _res.update({k: v[1]})

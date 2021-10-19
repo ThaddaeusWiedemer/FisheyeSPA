@@ -1,15 +1,15 @@
 # dirs
 TOOL_DIR=mmdetection/tools
-CONFIG_FILE=mmdetection/configs/adaptive/faster_rcnn_r50_caffe_fpn_mstrain_1x_coco-person_adaptive.py
+CONFIG_FILE=mmdetection/configs/sweeps/fine-tune.py
 TEST_FILE=/data/PIROPO/omni_test2.json
-MODEL_DIR=/home/thaddaus/WORK_DIRS/GPA/tuning/coco_piropo_20a_TwoStageDetectorDA_ADVneck4_s16_s
-RES_DIR=results/analysis/ADVneck4
+MODEL_DIR=/data/thaddaus/WORK_DIRS/sweeps/fine-tune/20a
+RES_DIR=results/analysis/final_fine-tune
 
 mkdir -p ${RES_DIR}
 
 # GPUs
-N_GPU=8 # if this is changed, the number of iterations also needs to be adapted
-VIS_GPU=0,1,2,3,4,5,6,7
+N_GPU=4 # if this is changed, the number of iterations also needs to be adapted
+VIS_GPU=0,1,2,3
 GPU_PORT=29503
 BATCH=16
 
