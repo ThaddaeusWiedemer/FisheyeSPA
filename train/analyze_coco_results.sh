@@ -1,9 +1,21 @@
 # dirs
 TOOL_DIR=mmdetection/tools
-CONFIG_FILE=mmdetection/configs/sweeps/fine-tune.py
 TEST_FILE=/data/PIROPO/omni_test2.json
-MODEL_DIR=/data/thaddaus/WORK_DIRS/sweeps/fine-tune/20a
-RES_DIR=results/analysis/final_fine-tune
+# on PIROPO 5a
+# base
+# CONFIG_FILE=mmdetection/configs/sweeps/fine-tune.py
+# MODEL=mmdetection/checkpoints/faster_rcnn_r50_fpn_1x_coco-person_20201216_175929-d022e227_split.pth
+# RES_DIR=results/analysis/paper_base_5a_cp_15deg
+# fine-tuning
+# CONFIG_FILE=mmdetection/configs/sweeps/fine-tune.py
+# MODEL_DIR=/data/thaddaus/WORK_DIRS/sweeps/fine-tune/20a
+# MODEL=$(ls ${MODEL_DIR}/best_bbox_mAP_50_epoch_*.pth)
+# RES_DIR=results/analysis/paper_ft_20a_cp_15deg
+# method
+CONFIG_FILE=mmdetection/configs/sweeps/adv_0_gpa_-xg.py
+MODEL_DIR=/data/thaddaus/WORK_DIRS/sweeps/adv_0_gpa_-xg/20a
+MODEL=$(ls ${MODEL_DIR}/best_bbox_mAP_50_epoch_*.pth)
+RES_DIR=results/analysis/paper_ours_20a_cp_15deg
 
 mkdir -p ${RES_DIR}
 
@@ -14,9 +26,6 @@ GPU_PORT=29503
 BATCH=16
 
 # run test with best epoch and save result
-MODEL=$(ls ${MODEL_DIR}/best_bbox_mAP_50_epoch_*.pth)
-# MODEL=mmdetection/checkpoints/faster_rcnn_r50_fpn_1x_coco-person_20201216_175929-d022e227.pth
-
 CUDA_VISIBLE_DEVICES=${VIS_GPU} PORT=${GPU_PORT} ./${TOOL_DIR}/dist_test.sh \
 ${CONFIG_FILE} \
 ${MODEL} \

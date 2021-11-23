@@ -74,6 +74,44 @@ def intersect_slice_rect(
     return True
 
 
+def center_in_slice(
+    slice_x: float,
+    slice_y: float,
+    slice_a1: float,
+    slice_a2: float,
+    rect_x: float,
+    rect_y: float,
+    rect_w: float,
+    rect_h: float,
+) -> bool:
+    """Check whether the center point of a rectangle lies within a circle slice.
+
+    Args:
+        slice_x (float): circle center x
+        slice_y (float): circle center y
+        slice_a1 (float): slice min angle (in degrees, counted clockwise from 0° pointing upwards)
+        slice_a2 (float): slice max angle (in degrees, counted clockwise from 0° pointing upwards)
+        rect_x (float): rectangle lower left x
+        rect_y (float): rectangle lower left y
+        rect_w (float): rectangle width
+        rect_h (float): rectangle height
+    
+    Returns:
+        bool: intersect
+    """
+
+    # get angles from slice origin to all corners and
+    def angle(x, y):
+        return np.rad2deg((np.arctan2(x, y) % (2 * np.pi)))
+
+    # get angle to rectangle center point
+    center_x = rect_x + rect_w / 2
+    center_y = rect_y + rect_h / 2
+    center_angle = angle(center_x - slice_y, center_y - slice_y)
+    # check whether angle lies between slice angles
+    return slice_a1 <= center_angle and center_angle < slice_a2
+
+
 def intersect_ring_rect(
     circ_x: float,
     circ_y: float,
@@ -112,6 +150,41 @@ def intersect_ring_rect(
     dist = (circ_x - closest_x)**2 + (circ_y - closest_y)**2
     # compare to radii
     return circ_ri**2 < dist and dist < circ_ro**2
+
+
+def center_in_ring(
+    circ_x: float,
+    circ_y: float,
+    circ_ri: float,
+    circ_ro: float,
+    rect_x: float,
+    rect_y: float,
+    rect_w: float,
+    rect_h: float,
+) -> bool:
+    """Checks whether the centerpoint of a rectangle lies inside a ring.
+
+    Args:
+        circ_x (float): ring center x
+        circ_y (float): ring center y
+        circ_ri (float): ring inner radius
+        circ_ro (float): ring outer radius
+        rect_x (float): rectangle lower left x
+        rect_y (float): rectangle lower left y
+        rect_w (float): rectangle width
+        rect_h (float): rectangle height
+
+    Returns:
+        bool: intersect
+    """
+    # get distance of center point to circle center
+    center_x = rect_x + rect_w / 2
+    center_y = rect_y + rect_h / 2
+    dx = center_x - circ_x
+    dy = center_y - circ_y
+    dist = dx**2 + dy**2
+    # compare to radii
+    return circ_ri**2 <= dist and dist < circ_ro**2
 
 
 def get_coco_eval_df(cocoGt, cocoDt, imgIds, areas, metric_names, size_names):
@@ -185,13 +258,15 @@ def plot_precision_recall(df: pd.DataFrame, outDir: str) -> None:
 
     line_style = ["--", "-", "-", "-", "-"]
     hatches = ["///", None, None, None]
-    line_colors = ["#179C7D", "#179C7D", "#006E92", "#25BAE2"]
-    fill_colors = ["#179C7D", "#179C7D", "#006E92", "#25BAE2"]
+    # line_colors = ["#179C7D", "#179C7D", "#006E92", "#25BAE2"]
+    line_colors = ['#00AF90', '#00AF90', '#2B7AC2', '#FF9929']
+    # fill_colors = ["#179C7D", "#179C7D", "#006E92", "#25BAE2"]
+    fill_colors = ['#00AF90', '#00AF90', '#2B7AC2', '#FF9929']
     text = [
         "IoU=0.75",
         "IoU=0.50",
-        "if bbox was correct (IoU=0.1)",
-        "if classification was correct",
+        "ignoring localization error",
+        "ignoring localization and classification error",
     ]
 
     # first make a plot for overall info
@@ -326,12 +401,13 @@ def plot_aps_size_distance_angle(ap_size: pd.DataFrame,
 
     line_styles = ["--", "-", "-", "-"]
     hatches = ["///", None, None, None]
-    colors = ["#179C7D", "#179C7D", "#006E92", "#25BAE2"]
+    # colors = ["#179C7D", "#179C7D", "#006E92", "#25BAE2"]
+    colors = ['#00AF90', '#00AF90', '#2B7AC2', '#FF9929']
     texts = [
         "IoU=0.75",
         "IoU=0.50",
-        "if bbox was correct (IoU=0.1)",
-        "if classification was correct",
+        "ignoring localization error",
+        "ignoring localization and classification error",
     ]
 
     fig = plt.figure(figsize=(18, 4))
@@ -427,14 +503,13 @@ def plot_aps_size_distance_angle(ap_size: pd.DataFrame,
     plt.close(fig)
 
 
-def analyze_results(
-        res_file,
-        ann_file,
-        out_dir,
-        extraplots=None,
-        areas=None,
-        center=(400, 300),
-):
+def analyze_results(res_file,
+                    ann_file,
+                    out_dir,
+                    extraplots=None,
+                    areas=None,
+                    center=(400, 300),
+                    only_check_centerpoints=True):
     if areas:
         assert (len(areas) == 3), "3 integers should be specified as areas, \
             representing 3 area regions"
@@ -447,7 +522,8 @@ def analyze_results(
     metrics = ["AP@.75", "AP@.50", "AP@.1", "BG", "FN"]
     sizes = ["overall", "small", "medium", "large"]
     distances = range(64, 321, 64)
-    angles = range(0, 360, 5)
+    d_ang = 15
+    angles = range(0, 360, d_ang)
 
     cocoGt = COCO(ann_file)
     cocoDt = cocoGt.loadRes(res_file)
@@ -478,16 +554,25 @@ def analyze_results(
         dt_anns = dt.dataset["annotations"]
         select_dt_anns = []
         for ann in dt_anns:
-            if intersect_ring_rect(*center, d - 64, d, *ann["bbox"]):
-                select_dt_anns.append(ann)
+            if only_check_centerpoints:
+                if center_in_ring(*center, d - 64, d, *ann["bbox"]):
+                    select_dt_anns.append(ann)
+            else:
+                if intersect_ring_rect(*center, d - 64, d, *ann["bbox"]):
+                    select_dt_anns.append(ann)
         dt.dataset["annotations"] = select_dt_anns
         dt.createIndex()
         # only consider ground-truths that intersect the current ring
         gt = copy.deepcopy(cocoGt)
         for idx, ann in enumerate(gt.dataset["annotations"]):
-            if not intersect_ring_rect(*center, d - 64, d, *ann["bbox"]):
-                gt.dataset["annotations"][idx]["ignore"] = 1
-                gt.dataset["annotations"][idx]["iscrowd"] = 1
+            if only_check_centerpoints:
+                if not center_in_ring(*center, d - 64, d, *ann["bbox"]):
+                    gt.dataset["annotations"][idx]["ignore"] = 1
+                    gt.dataset["annotations"][idx]["iscrowd"] = 1
+            else:
+                if not intersect_ring_rect(*center, d - 64, d, *ann["bbox"]):
+                    gt.dataset["annotations"][idx]["ignore"] = 1
+                    gt.dataset["annotations"][idx]["iscrowd"] = 1
         # evaluate and compute APs
         df = get_coco_eval_df(gt, dt, imgIds, areas, metrics, sizes)
         for size in ["overall", "large", "medium", "small"]:
@@ -506,20 +591,33 @@ def analyze_results(
     ap_angle = pd.DataFrame(columns=["angle", "metric", "ap"])
     for a in angles:
         # only consider detections that intersect the current slice
+        # if only considering center point of detections, disregard detections lying within the central ring, as their
+        # angle is not well defined
         dt = copy.deepcopy(cocoDt)
         dt_anns = dt.dataset["annotations"]
         select_dt_anns = []
         for ann in dt_anns:
-            if intersect_slice_rect(*center, a, a + 5, *ann["bbox"]):
-                select_dt_anns.append(ann)
+            if only_check_centerpoints:
+                if center_in_slice(*center, a, a + d_ang, *
+                                   ann["bbox"]) and not center_in_ring(*center, 0, 64, *ann["bbox"]):
+                    select_dt_anns.append(ann)
+            else:
+                if intersect_slice_rect(*center, a, a + d_ang, *ann["bbox"]):
+                    select_dt_anns.append(ann)
         dt.dataset["annotations"] = select_dt_anns
         dt.createIndex()
         # only consider ground-truths that intersect the current slice
         gt = copy.deepcopy(cocoGt)
         for idx, ann in enumerate(gt.dataset["annotations"]):
-            if not intersect_slice_rect(*center, a, a + 5, *ann["bbox"]):
-                gt.dataset["annotations"][idx]["ignore"] = 1
-                gt.dataset["annotations"][idx]["iscrowd"] = 1
+            if only_check_centerpoints:
+                if not center_in_slice(*center, a, a + d_ang, *ann["bbox"]) or center_in_ring(
+                        *center, 0, 64, *ann["bbox"]):
+                    gt.dataset["annotations"][idx]["ignore"] = 1
+                    gt.dataset["annotations"][idx]["iscrowd"] = 1
+            else:
+                if not intersect_slice_rect(*center, a, a + d_ang, *ann["bbox"]):
+                    gt.dataset["annotations"][idx]["ignore"] = 1
+                    gt.dataset["annotations"][idx]["iscrowd"] = 1
         # evaluate and compute APs
         df = get_coco_eval_df(gt, dt, imgIds, areas, metrics, sizes)
         for metric in metrics:
