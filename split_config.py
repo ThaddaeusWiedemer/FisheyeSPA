@@ -1,3 +1,5 @@
+# Split shared head of pre-trained model into classification and bounding-box heads
+
 import torch
 
 in_path = 'mmdetection/checkpoints/faster_rcnn_r50_fpn_1x_coco-person_20201216_175929-d022e227.pth'
