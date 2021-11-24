@@ -9,31 +9,27 @@ import time
 import os.path
 
 
-def kit4cyan():
-    # return sb.color_palette(['#179C7D', '#006E92', '#25BAE2', '#EB6A0A'])  # green, blue, light blue, orange
+def cyan():
     return sb.color_palette(['#00AF90', '#2B7AC2', '#50AAE6', '#FF9929'])  # green, blue, light blue, orange
 
 
-def kit4palegreen():
-    # return sb.color_palette(['#179C7D', '#006E92', '#25BAE2', '#EB6A0A'])  # green, blue, light blue, orange
-    return sb.color_palette(['#00AF90', '#82BE3C', '#2B7AC2', '#FF9929'])  # green, blue, light blue, orange
+def palegreen():
+    return sb.color_palette(['#00AF90', '#82BE3C', '#2B7AC2', '#FF9929'])  # green, light green, light blue, orange
 
 
-def kit4green():
-    # return sb.color_palette(['#179C7D', '#006E92', '#25BAE2', '#EB6A0A'])  # green, blue, light blue, orange
-    return sb.color_palette(['#00AF90', '#00AF90', '#2B7AC2', '#FF9929'])  # green, blue, light blue, orange
+def green():
+    return sb.color_palette(['#00AF90', '#00AF90', '#2B7AC2', '#FF9929'])  # green, green, light blue, orange
 
 
-def kit3():
-    # return sb.color_palette(['#179C7D', '#006E92', '#EB6A0A'])  # green, blue, orange
+def default():
     return sb.color_palette(['#00AF90', '#2B7AC2', '#FF9929'])  # green, blue, orange
 
 
-def kit_shades():
+def shades():
     return sb.color_palette(['#179C7D', '#52E5C3', '#8CEED7', '#C5F6EB'])  # green shades
 
 
-def kit_shades2():
+def shades2():
     return sb.color_palette(['#179C7D', '#006E92', '#52E5C3', '#25BAE2'])  # green, blue + shades
 
 

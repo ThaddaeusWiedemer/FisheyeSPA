@@ -1,5 +1,8 @@
-# PIROPO
-## download
+# Datasets
+This section describes how the data splits were created.
+
+## PIROPO
+### Download Data
 Download complete dataset, but only unzip data from omnidirectional cameras, as we're only using that.
 
 ```bash
@@ -20,7 +23,7 @@ unzip omni_2A.zip
 unzip omni_3A.zip
 ```
 
-## download annotations
+### Download Annotations
 Download annotations (only available for `test2`, `test3`, and `training` sequence) and unzip them in their own folder,
 since they also contain annotations for other datasets.
 
@@ -33,7 +36,7 @@ cd /data/hitachi_annotations
 tar -xzvf normal.tar.gz
 ```
 
-## convert annotations to COCO-style
+### Convert Annotations to COCO-Style
 The converter script needs a list of all images with available annotation, which we generate from the annotation files.
 Then we can run the converter script (in `mmdetection/tools/dataset_converters`) for each subset (e.g. 
 `PIROPO/omni_1A/omni1A_test2`).
@@ -68,7 +71,7 @@ The script can also be used to generate multiple splits of different sizes. Thes
 `PIROPO/omni_<sequence name>_<size><suffix>.json`, where `<suffix>` is alphabetically enumerating the different random 
 splits.
 
-## testing
+### Testing
 A COCO-pretrained model for person detection is run to test the datasets:
 
 ```bash
@@ -79,8 +82,8 @@ python mmdetection/tools/test.py \
     --out results/piropo_test.pkl
 ```
 
-# Mirror Worlds
-## download
+## Mirror Worlds
+### Download Data
 Then unzip complete data.
 
 ```bash
@@ -93,7 +96,7 @@ cd /data/MW-18Mar
 unzip MWAll.zip
 ```
 
-## annotations
+### Download Annotations
 While the datasets comes with horizontal bounding boxes annotated per frame, there is very little movement of objects
 between adjacents frames. The Hitachi Annotations seem to have sampled the available images and additionally provide
 annotations for the test sequences, which the original dataset don't. While this results in less annotated training
@@ -124,19 +127,21 @@ for dir in ${dirs[@]}; do
 done
 ```
 
-## splits
+### Generate Splits
 We use `mmdetection/tools/misc/coco_concat.py` to concat the subsets to a `train` and `test` sequence in 
 `MW-18Mar/<sequence name>.json`. Different splits of the `train` sequence are also saved as
 `<sequence name>_<size><suffix>.json`.
 
-# Bomni-DB
-## download
+## Bomni-DB
+> There is still an error with the Bomni dataset. Everything in this section should be double-checked.
+
+### Download Data
 ```bash
 cd /data/Bomni-DB
 unzip bomni-5841.zip
 ```
 
-## annotations
+### Download Annotations
 All video sequences are annotated in the original dataset. However, since these annotations don't vary a lot per frame,
 the sampling of every 10th frame as in the hitachi annotations seems useful. For now, only the annotations from there
 are used. These only include sequences with top views.
@@ -185,12 +190,12 @@ for i in {0..3}; do
 done
 ```
 
-## splits
+### Generate Splits
 We use `mmdetection/tools/misc/coco_concat.py` to concat the subsets to a `train` sequence (`top-1`, `top-2`, `top-3`)
 and `test` sequence (`top-0`) in `Bomni-DB/<sequence name>.json`. Different splits of the `train` sequence are also
 saved as `<sequence name>_<size><suffix>.json`.
 
-# COCO
+## COCO
 ```bash
 wget -O /data/COCO/train2017.zip 'http://images.cocodataset.org/zips/train2017.zip'
 wget -O /data/COCO/val2017.zip 'http://images.cocodataset.org/zips/val2017.zip'
@@ -203,6 +208,6 @@ unzip test2017.zip
 unzip trainval2017.zip
 ```
 
-## COCO person
+### COCO person
 Create an annotation file with all ground-truths other than `person` removed and remove all annotations which don't
 contain the `person` class to begin with.
