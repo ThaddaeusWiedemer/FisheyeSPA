@@ -11,7 +11,7 @@ GPU_PORT=29503
 
 # T R A I N   O N   M I R R O R W O R L D   T E S T   O N   P I R O P O
 # PATHS
-MODEL_DIR=/data/thaddaus/WORK_DIRS/sweeps_mw/${SETTING}
+MODEL_DIR= # path to model checkpoint
 RES_DIR=results/sweeps/${SETTING}_mw
 mkdir -p ${RES_DIR}
 
@@ -41,7 +41,7 @@ done
 
 # T R A I N   O N   P I R O P O   T E S T   O N   M I R R O R W O R L D
 # PATHS
-MODEL_DIR=/data/thaddaus/WORK_DIRS/sweeps/${SETTING}
+MODEL_DIR= # path to model checkpoint
 RES_DIR=results/sweeps_mw/${SETTING}_piropo
 mkdir -p ${RES_DIR}
 

@@ -1,16 +1,17 @@
 TOOL_DIR=mmdetection/tools
 
-# MODEL and OUTPUT
-# CONFIG_FILE=mmdetection/configs/sweeps/fine-tune.py
-# RES_FILE=results/sweeps/baseline.log
+# MODEL, OUTPUT, and DATA
+# PIROPO
 CONFIG_FILE=mmdetection/configs/sweeps/fine-tune.py
-RES_FILE=results/sweeps_mw/baseline.log
-
-# DATA
-# TEST_ANNS=/data/PIROPO/omni_test2.json
-# TEST_PRE=None
-TEST_ANNS=/data/MW-18Mar/test.json
+RES_FILE=results/sweeps/baseline.log
+TEST_ANNS=/data/PIROPO/omni_test2.json
 TEST_PRE=None
+
+# Mirror Worlds
+# CONFIG_FILE=mmdetection/configs/sweeps/fine-tune.py
+# RES_FILE=results/sweeps_mw/baseline.log
+# TEST_ANNS=/data/MW-18Mar/test.json
+# TEST_PRE=None
 
 # GPUs
 N_GPU=2

@@ -45,3 +45,34 @@ wget -O data/COCO/train2017.zip 'http://images.cocodataset.org/zips/train2017.zi
 cd /data/COCO
 unzip train2017.zip
 ```
+
+## Running the Model
+Run `fine-tune.sh` and `adaptive.sh` in `sweeps/` to train models on training sets with sizes 1 to 100 and log the results.
+Uncomment the corresponding sections in these scripts to switch datasets or model configuration.
+
+Run `baseline.sh` to test the COCO pre-trained model on the fisheye datasets.
+
+Additionally, `cross_test.sh` can be used to replicate the experiments with training on PIROPO and testing on Mirror Worlds (and vice-versa)
+
+### Experiments on Individual Datasets
+`train_test/adapt_coco_piropo.sh` can be used to train a model on a single training set. The script takes 5 arguments:
+number of epochs, training set size, training set split, model definition, and output name. Additionally, individual configuration
+parameters can be overwritten.
+
+For example, run
+
+```
+train_test/adapt_coco_piropo.sh 80 20 a TwoStageDetectorDA more_epochs
+```
+
+to train and test the final model on PIROPO-20a for 80 epochs (instead of the 40 used in other experiments). To overwrite
+configuration parameters, pass their name and value as additional parameters. E.g., to change the sample size for adversarial
+adaptation, run
+
+```
+train_test/adapt_coco_piropo.sh 40 20 a TwoStageDetectorDA smaller_sample_size model.train_cfg.da.0.sample_shape=9
+```
+
+## Analyzing Results
+You can use the `paper.ipynb` Jupyter notebook to recreate plots as shown in the paper based on the training/testing logs.
+Similarly, running `analysis.sh` with the training/testing logs will reproduce the analyis of results by object characteristics size, distant, and angle.

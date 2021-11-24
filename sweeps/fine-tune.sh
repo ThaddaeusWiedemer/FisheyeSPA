@@ -1,12 +1,15 @@
 TOOL_DIR=mmdetection/tools
 
 # MODEL and OUTPUT
-# CONFIG_FILE=mmdetection/configs/sweeps/fine-tune.py
-# WORK_DIR=WORK_DIRS/sweeps/fine-tune
-# RES_DIR=results/sweeps/fine-tune
+# PIROPO
 CONFIG_FILE=mmdetection/configs/sweeps/fine-tune.py
-WORK_DIR=WORK_DIRS/sweeps_mw/fine-tune
-RES_DIR=results/sweeps_mw/fine-tune
+WORK_DIR=WORK_DIRS/sweeps/fine-tune
+RES_DIR=results/sweeps/fine-tune
+
+# Mirror Worlds
+# CONFIG_FILE=mmdetection/configs/sweeps/fine-tune.py
+# WORK_DIR=WORK_DIRS/sweeps_mw/fine-tune
+# RES_DIR=results/sweeps_mw/fine-tune
 
 mkdir -p ${WORK_DIR}
 mkdir -p ${RES_DIR}
