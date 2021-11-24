@@ -46,6 +46,15 @@ cd /data/COCO
 unzip train2017.zip
 ```
 
+### Pre-Trained Model
+Download the COCO-person pre-trained model from MMDetection:
+
+```
+https://download.openmmlab.com/mmdetection/v2.0/faster_rcnn/faster_rcnn_r50_fpn_1x_coco-person/faster_rcnn_r50_fpn_1x_coco-person_20201216_175929-d022e227.pth
+```
+
+Then run `train_test/split_config.py` to generate a version where the shared head is split into classification and bounding-box regression.
+
 ## Running the Model
 Run `fine-tune.sh` and `adaptive.sh` in `sweeps/` to train models on training sets with sizes 1 to 100 and log the results.
 Uncomment the corresponding sections in these scripts to switch datasets or model configuration.
