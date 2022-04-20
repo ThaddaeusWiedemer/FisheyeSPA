@@ -1,7 +1,7 @@
 #!/bin/bash
 # dirs
 TOOL_DIR=mmdetection/tools
-CONFIG_FILE=mmdetection/configs/adaptive/faster_rcnn_r50_caffe_fpn_mstrain_1x_coco-person_adaptive.py
+CONFIG_FILE=mmdetection/configs/sweeps/adv_0_gpa_-xg.py
 WORK_DIR=~/WORK_DIRS/GPA/tuning
 WORK_ROOT=coco_piropo
 RES_DIR=results/GPA/tuning
